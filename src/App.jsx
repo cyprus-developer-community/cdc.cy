@@ -57,6 +57,7 @@ function App() {
             <a
               class="text-cyan-400"
               href="https://github.com/cyprus-developer-community/home/discussions"
+              target="_blank"
             >
               discussions on GitHub.
             </a>
