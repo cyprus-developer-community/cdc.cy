@@ -33,7 +33,7 @@ function App() {
             Reach out on{' '}
             <a
               class="text-cyan-400"
-              href="https://discord.gg/3xKSyZM4mB"
+              href="https://discord.gg/ttZbgesc6w"
               target="_blank"
             >
               Discord
@@ -48,7 +48,7 @@ function App() {
             Join us on{' '}
             <a
               class="text-cyan-400"
-              href="https://discord.gg/3xKSyZM4mB"
+              href="https://discord.gg/ttZbgesc6w"
               target="_blank"
             >
               Discord
