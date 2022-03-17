@@ -31,11 +31,7 @@ function App() {
           </div>
           <p>
             Reach out on{' '}
-            <a
-              class="text-cyan-400"
-              href="https://discord.gg/ttZbgesc6w"
-              target="_blank"
-            >
+            <a class="text-cyan-400" href="https://chat.cdc.cy" target="_blank">
               Discord
             </a>{' '}
             if you want to join us.
@@ -46,11 +42,7 @@ function App() {
 
           <p>
             Join us on{' '}
-            <a
-              class="text-cyan-400"
-              href="https://discord.gg/ttZbgesc6w"
-              target="_blank"
-            >
+            <a class="text-cyan-400" href="https://chat.cdc.cy" target="_blank">
               Discord
             </a>{' '}
             or follow our{' '}
