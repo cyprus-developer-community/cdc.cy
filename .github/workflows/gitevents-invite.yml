@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: 16
       - name: gitevents
-        uses: gitevents/inclusive-org@v1
+        uses: gitevents/inclusive-org@v1.0.0
         with:
           gitevents-app-id: ${{ secrets.GE_APP_ID }}
           gitevents-app-private-key: ${{ secrets.GE_APP_PRIVATE_KEY }}
