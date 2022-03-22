@@ -28,6 +28,20 @@ function App() {
                 alt="AWS User Group Cyprus"
               />
             </div>
+            <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+              <img
+                class="h-32"
+                src="https://raw.githubusercontent.com/cyprus-developer-community/home/main/assets/gdgcyprus.png"
+                alt="GCG Cyprus"
+              />
+            </div>
+            <div class="col-span-1 flex justify-center md:col-span-2 lg:col-span-1">
+              <img
+                class="h-32"
+                src="https://raw.githubusercontent.com/cyprus-developer-community/home/main/assets/pydata-cyprus.jpeg"
+                alt="PyData Cyprus"
+              />
+            </div>
           </div>
           <p>
             Reach out on{' '}
