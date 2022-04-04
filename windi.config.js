@@ -1,5 +1,4 @@
 import { defineConfig } from 'windicss/helpers'
-import plugin from 'windicss/plugin'
 import formPlugin from 'windicss/plugin/forms'
 import typoPlugin from 'windicss/plugin/typography'
 
@@ -8,6 +7,10 @@ export default defineConfig({
     fontFamily: {
       sans: ['Doppio One', 'sans-serif']
     }
+  },
+  extract: {
+    include: ['app/**/*.{html,jsx,js}'],
+    exclude: ['node_modules', '.git']
   },
   plugins: [formPlugin, typoPlugin]
 })

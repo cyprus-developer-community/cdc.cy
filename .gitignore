@@ -1,2 +1,6 @@
 node_modules
-dist
+
+/.cache
+/functions/\[\[path\]\].js
+/public/build
+.env
