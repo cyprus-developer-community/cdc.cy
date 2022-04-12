@@ -1,9 +1,6 @@
-import Header from './components/Header'
-
-function App() {
+export default function Index() {
   return (
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <Header />
       <main class="max-w-3xl mx-auto">
         <section>
           We're just starting up. There will be more content and events soon.
@@ -45,7 +42,12 @@ function App() {
           </div>
           <p>
             Reach out on{' '}
-            <a class="text-cyan-400" href="https://chat.cdc.cy" target="_blank">
+            <a
+              class="text-cyan-400"
+              href="https://chat.cdc.cy"
+              target="_blank"
+              rel="noreferrer"
+            >
               Discord
             </a>{' '}
             if you want to join us.
@@ -56,7 +58,12 @@ function App() {
 
           <p>
             Join us on{' '}
-            <a class="text-cyan-400" href="https://chat.cdc.cy" target="_blank">
+            <a
+              class="text-cyan-400"
+              href="https://chat.cdc.cy"
+              target="_blank"
+              rel="noreferrer"
+            >
               Discord
             </a>{' '}
             or follow our{' '}
@@ -64,6 +71,7 @@ function App() {
               class="text-cyan-400"
               href="https://github.com/cyprus-developer-community/home/discussions"
               target="_blank"
+              rel="noreferrer"
             >
               discussions on GitHub.
             </a>
@@ -73,5 +81,3 @@ function App() {
     </div>
   )
 }
-
-export default App
