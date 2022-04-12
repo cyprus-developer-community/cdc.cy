@@ -6,10 +6,13 @@ import {
   Scripts,
   ScrollRestoration
 } from '@remix-run/react'
+import windiStylesheetUrl from './styles/windi.css'
+
+export const links = () => [{ rel: 'stylesheet', href: windiStylesheetUrl }]
 
 export const meta = () => ({
   charset: 'utf-8',
-  title: 'Cyprus Developer Community',
+  title: 'New Remix App',
   viewport: 'width=device-width,initial-scale=1'
 })
 

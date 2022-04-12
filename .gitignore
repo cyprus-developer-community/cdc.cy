@@ -4,3 +4,4 @@ node_modules
 /functions/\[\[path\]\].js
 /public/build
 .env
+keyfile.pem
