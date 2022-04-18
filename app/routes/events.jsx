@@ -39,21 +39,25 @@ export default function EventsRoute() {
           <div className="lg:grid lg:grid-cols-12 lg:gap-x-16">
             <div className="mt-10 text-center lg:col-start-8 lg:col-end-13 lg:row-start-1 lg:mt-9 xl:col-start-9">
               <div className="flex items-center text-gray-900">
-                <button
+                {/* <button
                   type="button"
                   className="-m-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
                 >
                   <span className="sr-only">Previous month</span>
                   <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
-                </button>
-                <div className="flex-auto font-semibold">January</div>
-                <button
+                </button> */}
+                <div className="flex-auto font-semibold">
+                  {new Intl.DateTimeFormat('en-US', { month: 'long' }).format(
+                    new Date()
+                  )}
+                </div>
+                {/* <button
                   type="button"
                   className="-m-1.5 flex flex-none items-center justify-center p-1.5 text-gray-400 hover:text-gray-500"
                 >
                   <span className="sr-only">Next month</span>
                   <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
-                </button>
+                </button> */}
               </div>
               <div className="mt-6 grid grid-cols-7 text-xs leading-6 text-gray-500">
                 <div>M</div>

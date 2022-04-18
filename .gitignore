@@ -5,3 +5,5 @@ node_modules
 /public/build
 .env
 keyfile.pem
+build
+.pnpm-debug.log
