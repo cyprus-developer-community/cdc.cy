@@ -88,6 +88,7 @@ export default async function getEvents() {
                 body
                 createdAt
                 updatedAt
+                state
                 labels(first:10) {
                   nodes {
                     name
@@ -157,8 +158,8 @@ export default async function getEvents() {
           datetime: utcDate,
           description: content.text,
           url: issue.url,
+          state: issue.state,
           categories: issue.labels.nodes.map((l) => l.name),
-          status: 'CONFIRMED',
           organizer: { name: organizer },
           attendees: issue.reactions.edges.map((r) => {
             return {
@@ -196,7 +197,12 @@ export default async function getEvents() {
   const days = calculateDays(events)
 
   const sorted = events.sort((a, b) => new Date(a.start) - new Date(b.start))
-  const upcoming = sorted.filter((e) => new Date(e.start) > new Date())
+  const upcoming = sorted
+    .filter((e) => new Date(e.start) > new Date())
+    .map((e) => {
+      e.status = e.state === 'OPEN' ? 'CONFIRMED' : 'CANCELLED'
+      return e
+    })
   const past = sorted.filter((e) => new Date(e.start) < new Date())
 
   return {

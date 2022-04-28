@@ -100,9 +100,19 @@ export default function Events({ upcoming, past, days }) {
                   className="h-14 w-14 flex-none rounded-full"
                 />
                 <div className="flex-auto">
-                  <h3 className="pr-10 font-semibold text-gray-900 xl:pr-0">
-                    {event.title}
-                  </h3>
+                  {event.status === 'CANCELLED' && (
+                    <h3 className="pr-10 font-semibold text-gray-900 xl:pr-0">
+                      <span className="line-through">{event.title}</span>
+                      <span className="inline-flex ml-2 items-center px-3 py-0.5 rounded-full text-sm font-medium bg-pink-100 text-pink-800">
+                        Cancelled
+                      </span>
+                    </h3>
+                  )}
+                  {event.status !== 'CANCELLED' && (
+                    <h3 className="pr-10 font-semibold text-gray-900 xl:pr-0">
+                      {event.title}
+                    </h3>
+                  )}
                   <dl className="mt-2 flex flex-col text-gray-500 xl:flex-row">
                     <div className="flex items-start space-x-3">
                       <dt className="mt-0.5">

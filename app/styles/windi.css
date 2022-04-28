@@ -352,6 +352,10 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
 }
+.bg-pink-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(252, 231, 243, var(--tw-bg-opacity));
+}
 .border-transparent {
   border-color: transparent;
 }
@@ -384,6 +388,12 @@ select {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+}
+.inline-flex {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: -webkit-inline-flex;
+  display: inline-flex;
 }
 .grid {
   display: -ms-grid;
@@ -525,6 +535,9 @@ select {
 .mt-16 {
   margin-top: 4rem;
 }
+.ml-2 {
+  margin-left: 0.5rem;
+}
 .mt-3 {
   margin-top: 0.75rem;
 }
@@ -576,6 +589,14 @@ select {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+}
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+.py-0\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
 }
 .py-12 {
   padding-top: 3rem;
@@ -672,6 +693,10 @@ select {
   --tw-text-opacity: 1;
   color: rgba(75, 85, 99, var(--tw-text-opacity));
 }
+.text-pink-800 {
+  --tw-text-opacity: 1;
+  color: rgba(157, 23, 77, var(--tw-text-opacity));
+}
 .text-cyan-400 {
   --tw-text-opacity: 1;
   color: rgba(34, 211, 238, var(--tw-text-opacity));
@@ -683,6 +708,10 @@ select {
 .text-cyan-900 {
   --tw-text-opacity: 1;
   color: rgba(22, 78, 99, var(--tw-text-opacity));
+}
+.line-through {
+  -webkit-text-decoration-line: line-through;
+  text-decoration-line: line-through;
 }
 .antialiased {
   -webkit-font-smoothing: antialiased;
