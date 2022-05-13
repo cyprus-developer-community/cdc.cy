@@ -5,7 +5,7 @@ export default function Groups({ groups }) {
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div>
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-12">
-            Particpating Member Groups
+            Participating Member Groups
           </h2>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
             {groups.map((group, idx) => (
