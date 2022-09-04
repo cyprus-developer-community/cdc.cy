@@ -3,6 +3,7 @@
     "strict": true,
     "baseUrl": ".",
     "noEmit": true,
+    "jsx": "react-jsx",
     "paths": {
       "~/*": ["./app/*"]
     }
