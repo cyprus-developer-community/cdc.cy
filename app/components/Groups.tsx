@@ -1,5 +1,10 @@
-/* This example requires Tailwind CSS v2.0+ */
-export default function Groups({ groups }) {
+import type { Group } from '@types'
+
+type GroupsProps = {
+  groups: Group[]
+}
+
+export default function Groups({ groups }: GroupsProps) {
   return (
     <section className="py-16">
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">

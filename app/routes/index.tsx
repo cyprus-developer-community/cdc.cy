@@ -11,23 +11,23 @@ const groups = [
   {
     id: 'cyprusjs',
     logo: 'https://raw.githubusercontent.com/cyprus-developer-community/home/main/assets/cyprusjs.jpeg',
-    name: 'CyprusJS'
+    name: 'CyprusJS',
   },
   {
     id: 'aws-cy',
     logo: 'https://raw.githubusercontent.com/cyprus-developer-community/home/main/assets/aws-user-group-cyprus.jpg',
-    name: 'AWS User Group Cyprus'
+    name: 'AWS User Group Cyprus',
   },
   {
     id: 'gdg-cy',
     logo: 'https://raw.githubusercontent.com/cyprus-developer-community/home/main/assets/gdgcyprus.png',
-    name: 'GDG Cyprus'
+    name: 'GDG Cyprus',
   },
   {
     id: 'py-data-cy',
     logo: 'https://raw.githubusercontent.com/cyprus-developer-community/home/main/assets/pydata-cyprus.jpeg',
-    name: 'Py-Data-Cy'
-  }
+    name: 'Py-Data-Cy',
+  },
 ]
 
 export default function Index() {
@@ -72,7 +72,7 @@ export default function Index() {
               src="https://canary.discord.com/widget?id=855088264180400198&theme=dark"
               width="350"
               height="500"
-              allowtransparency="true"
+              allowTransparency
               frameBorder="0"
               sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
             ></iframe>
@@ -81,7 +81,7 @@ export default function Index() {
 
         <Groups groups={groups} />
 
-        <Events upcoming={upcoming} past={past} days={days} events={events} />
+        <Events upcoming={upcoming} past={past} days={days} />
 
         <section className="my-16">
           <h3 className="my-2 text-lg leading-6 font-medium text-cyan-900">
