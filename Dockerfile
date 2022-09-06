@@ -1,41 +1,32 @@
 # base node image
 FROM node:16-bullseye-slim as base
 
-# Install openssl for Prisma
-RUN apt-get update && apt-get install -y openssl
+# set for base and all layer that inherit from it
+ENV NODE_ENV production
 
 # Install all node_modules, including dev dependencies
 FROM base as deps
 
-RUN mkdir /app
-WORKDIR /app
+WORKDIR /myapp
 
-ADD package.json package-lock.json ./
+ADD package.json .npmrc ./
 RUN npm install --production=false
 
 # Setup production node_modules
 FROM base as production-deps
 
-RUN mkdir /app
-WORKDIR /app
+WORKDIR /myapp
 
-COPY --from=deps /app/node_modules /app/node_modules
-ADD package.json package-lock.json ./
+COPY --from=deps /myapp/node_modules /myapp/node_modules
+ADD package.json .npmrc ./
 RUN npm prune --production
 
 # Build the app
 FROM base as build
 
-ENV NODE_ENV=production
+WORKDIR /myapp
 
-RUN mkdir /app
-WORKDIR /app
-
-COPY --from=deps /app/node_modules /app/node_modules
-
-# If we're using Prisma, uncomment to cache the prisma schema
-# ADD prisma .
-# RUN npx prisma generate
+COPY --from=deps /myapp/node_modules /myapp/node_modules
 
 ADD . .
 RUN npm run build
@@ -43,18 +34,20 @@ RUN npm run build
 # Finally, build the production image with minimal footprint
 FROM base
 
-ENV NODE_ENV=production
+ENV DATABASE_URL=file:/data/sqlite.db
+ENV PORT="8080"
+ENV NODE_ENV="production"
 
-RUN mkdir /app
-WORKDIR /app
+# add shortcut for connecting to database CLI
+RUN echo "#!/bin/sh\nset -x\nsqlite3 \$DATABASE_URL" > /usr/local/bin/database-cli && chmod +x /usr/local/bin/database-cli
 
-COPY --from=production-deps /app/node_modules /app/node_modules
+WORKDIR /myapp
 
-# Uncomment if using Prisma
-# COPY --from=build /app/node_modules/.prisma /app/node_modules/.prisma
+COPY --from=production-deps /myapp/node_modules /myapp/node_modules
 
-COPY --from=build /app/build /app/build
-COPY --from=build /app/public /app/public
-ADD . .
+COPY --from=build /myapp/build /myapp/build
+COPY --from=build /myapp/public /myapp/public
+COPY --from=build /myapp/package.json /myapp/package.json
+COPY --from=build /myapp/start.sh /myapp/start.sh
 
 CMD ["npm", "run", "start"]
