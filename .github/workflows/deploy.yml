@@ -10,10 +10,12 @@ jobs:
     name: Deploy cdc.cy
     runs-on: ubuntu-latest
     steps:
+      - uses: styfle/cancel-workflow-action@0.10.0
       - uses: actions/checkout@v3
       - uses: superfly/flyctl-actions@1.3
-      - run: flyctl deploy --remote-only
+        with:
+          args:
+            'deploy --app cdc-cy --remote-only --build-arg COMMIT_SHA=${{
+            github.sha }}'
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-        with:
-          args: 'deploy --build-arg COMMIT_SHA=${{ github.sha }}'
