@@ -59,7 +59,7 @@ jobs:
           AUTH0_TEST_PASSWORD: test22!
 
       - name: Upload screenshot of failure
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         if: failure()
         with:
           name: cypress-failure-screenshots
