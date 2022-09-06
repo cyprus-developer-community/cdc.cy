@@ -7,3 +7,4 @@ node_modules
 keyfile.pem
 build
 .pnpm-debug.log
+.eslintcache

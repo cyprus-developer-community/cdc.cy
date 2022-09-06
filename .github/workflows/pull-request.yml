@@ -1,0 +1,66 @@
+name: Pull Request Checks
+on:
+  pull_request: {}
+
+permissions:
+  actions: write
+  contents: read
+
+jobs:
+  codequality:
+    name: Lint & type check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: styfle/cancel-workflow-action@0.10.0
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - name: 🔬 Lint
+        run: pnpm lint
+      - name: 🔎 Type check
+        run: pnpm typecheck
+
+  test:
+    name: Cypress E2E Tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: styfle/cancel-workflow-action@0.10.0
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build
+
+      - name: 🌳 Cypress run
+        uses: cypress-io/github-action@v4
+        with:
+          start: pnpm start:mocks
+          wait-on: 'http://localhost:8080'
+        env:
+          PORT: '8080'
+          SERVER_URL: http://localhost:8080
+          AUTH0_CLIENT_ID: ${{ secrets.AUTH0_CLIENT_ID }}
+          AUTH0_CLIENT_SECRET: ${{ secrets.AUTH0_CLIENT_SECRET }}
+          SESSION_SECRET: super-duper-s3cret
+          AUTH0_DOMAIN: nevados-dev.us.auth0.com
+          AUTH0_ORGANIZATION: org_3pmM22dWDm2Ppb95
+          AUTH0_TEST_USERNAME: test@nevados.solar
+          AUTH0_TEST_PASSWORD: test22!
+
+      - name: Upload screenshot of failure
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: cypress-failure-screenshots
+          path: cypress/screenshots
