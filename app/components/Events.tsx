@@ -2,11 +2,23 @@ import { Fragment } from 'react'
 import {
   CalendarIcon,
   DotsHorizontalIcon,
-  LocationMarkerIcon
+  LocationMarkerIcon,
 } from '@heroicons/react/solid'
 import { Menu, Transition } from '@headlessui/react'
+import type { Event, Day, Maybe } from '@types'
 
-export default function Events({ upcoming, past, days }) {
+type EventProps = {
+  upcoming: Event[]
+  past: Event[]
+  days: Day[]
+}
+
+const formatDay = (day: Day): Maybe<string> => {
+  const datePart = day.date.split('-').pop()
+  return datePart ? datePart.replace(/^0/, '') : undefined
+}
+
+export default function Events({ upcoming, past, days }: EventProps) {
   return (
     <section className="py-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,7 +88,7 @@ export default function Events({ upcoming, past, days }) {
                     dateTime={day.date}
                     className="mx-auto flex h-7 w-7 items-center justify-center rounded-full"
                   >
-                    {day.date.split('-').pop().replace(/^0/, '')}
+                    {formatDay(day)}
                   </time>
                 </button>
               ))}
@@ -89,7 +101,7 @@ export default function Events({ upcoming, past, days }) {
             </a>
           </div>
           <ol className="mt-4 divide-y divide-gray-100 text-sm leading-6 lg:col-span-7 xl:col-span-8">
-            {upcoming.map((event) => (
+            {upcoming.map(event => (
               <li
                 key={event.id}
                 className="relative flex space-x-6 py-6 xl:static"
@@ -188,7 +200,7 @@ export default function Events({ upcoming, past, days }) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
         <h2 className="text-lg font-semibold text-gray-900">Past events</h2>
         <ol className="mt-4 divide-y divide-gray-100 text-sm leading-6 lg:col-span-7 xl:col-span-8">
-          {past.map((event) => (
+          {past.map(event => (
             <li
               key={event.id}
               className="relative flex space-x-6 py-6 xl:static"

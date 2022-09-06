@@ -1,15 +1,15 @@
 import { PassThrough } from 'stream'
-import { Response } from '@remix-run/node'
+import { EntryContext, Response } from '@remix-run/node'
 import { RemixServer } from '@remix-run/react'
 import { renderToPipeableStream } from 'react-dom/server'
 
 const ABORT_DELAY = 5000
 
 export default function handleRequest(
-  request,
-  responseStatusCode,
-  responseHeaders,
-  remixContext
+  request: Request,
+  responseStatusCode: number,
+  responseHeaders: Headers,
+  remixContext: EntryContext
 ) {
   return new Promise((resolve, reject) => {
     let didError = false

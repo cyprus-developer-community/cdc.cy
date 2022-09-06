@@ -4,7 +4,7 @@ import {
   Meta,
   Outlet,
   Scripts,
-  ScrollRestoration
+  ScrollRestoration,
 } from '@remix-run/react'
 import windiStylesheetUrl from './styles/windi.css'
 // import Header from '~/components/Header.jsx'
@@ -14,7 +14,7 @@ export const links = () => [{ rel: 'stylesheet', href: windiStylesheetUrl }]
 export const meta = () => ({
   charset: 'utf-8',
   title: 'Cyprus Developer Community | CDC.cy',
-  viewport: 'width=device-width,initial-scale=1'
+  viewport: 'width=device-width,initial-scale=1',
 })
 
 export default function App() {
