@@ -26,7 +26,7 @@ jobs:
           node-version: ${{ inputs.node-version }}
           cache: 'pnpm'
 
-      - name: Install Dependencies
+      - name: Install Node Modules
         run: pnpm i
 
       - name: Prettier

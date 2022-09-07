@@ -22,10 +22,10 @@ jobs:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
         with:
-          version: 'lts/gallium'
+          version: 'latest'
       - uses: actions/setup-node@v3
         with:
-          node-version: 'latest'
+          node-version: 'lts/gallium'
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm build

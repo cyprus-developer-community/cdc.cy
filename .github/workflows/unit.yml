@@ -16,12 +16,12 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2.0.1
-        with:
-          version: '${{ inputs.pnpm-version }}'
       - uses: actions/setup-node@v3
         with:
           node-version: '${{ inputs.node-version }}'
+
+      - name: Install Node Modules
+        run: pnpm i
 
       - name: Unit Tests
         run: npm run test:unit
