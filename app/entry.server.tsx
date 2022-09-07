@@ -26,20 +26,20 @@ export default function handleRequest(
           resolve(
             new Response(body, {
               headers: responseHeaders,
-              status: didError ? 500 : responseStatusCode,
+              status: didError ? 500 : responseStatusCode
             })
           )
 
           pipe(body)
         },
-        onShellError: err => {
+        onShellError: (err) => {
           reject(err)
         },
-        onError: error => {
+        onError: (error) => {
           didError = true
 
           console.error(error)
-        },
+        }
       }
     )
 

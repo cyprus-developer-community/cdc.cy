@@ -15,8 +15,8 @@ module.exports = {
   content: ['./app/**/*.{ts,tsx,jsx,js}'],
   theme: {
     fontFamily: {
-      sans: ['sans-serif'],
-    },
+      sans: ['sans-serif']
+    }
   },
   shortcuts: {},
   plugins: [
@@ -25,6 +25,6 @@ module.exports = {
     arPlugin,
     filtersPlugin,
     lcPlugin,
-    scollPlugin,
-  ],
+    scollPlugin
+  ]
 }

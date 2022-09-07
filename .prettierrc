@@ -1,9 +1,6 @@
 {
   "singleQuote": true,
   "semi": false,
-  "trailingComma": "es5",
-  "proseWrap": "always",
-  "bracketSpacing": true,
-  "quoteProps": "preserve",
-  "arrowParens": "avoid"
+  "trailingComma": "none",
+  "proseWrap": "always"
 }

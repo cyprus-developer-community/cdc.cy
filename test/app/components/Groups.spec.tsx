@@ -1,15 +1,15 @@
 import { render, screen } from '@testing-library/react'
-import type { GroupsProps } from './Groups'
-import Groups from './Groups'
+import type { GroupsProps } from '~/components/Groups'
+import Groups from '~/components/Groups'
 
 const defaultProps: GroupsProps = {
   groups: [
     {
       id: '1',
       name: 'group 1',
-      logo: 'http://localhost:3000',
-    },
-  ],
+      logo: 'http://localhost:3000'
+    }
+  ]
 }
 
 describe('Groups', () => {

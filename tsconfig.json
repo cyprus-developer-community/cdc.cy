@@ -18,6 +18,5 @@
     "types": ["node", "vitest/globals"],
     "noEmit": true
   },
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["./node_modules/cypress", "./cypress/**"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }

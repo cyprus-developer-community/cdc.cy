@@ -5,6 +5,6 @@ module.exports = {
     '@remix-run/eslint-config/node',
     'prettier',
     'plugin:markdown/recommended',
-    'plugin:json/recommended',
-  ],
+    'plugin:json/recommended'
+  ]
 }

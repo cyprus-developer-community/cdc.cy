@@ -10,3 +10,6 @@ jobs:
   codequality:
     name: Check
     uses: ./.github/workflows/codequality.yml
+  unit:
+    name: Check
+    uses: ./.github/workflows/unit.yml

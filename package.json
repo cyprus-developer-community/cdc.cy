@@ -17,9 +17,9 @@
     "build:remix": "remix build",
     "dev": "run-p dev:*",
     "dev:css": "npm run generate:css -- --dev",
-    "dev:remix": "PORT=8080 remix dev",
+    "dev:remix": "remix dev",
     "generate:css": "npx windicss './app/**/*.{jsx,tsx}' -to ./app/styles/windi.css -f windi.config.js",
-    "start": "PORT=8080 remix-serve build",
+    "start": "remix-serve build",
     "typecheck": "tsc -b",
     "prettier": "prettier .",
     "prettier:check": "pnpm prettier --check",
@@ -27,10 +27,7 @@
     "lint:check": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "lint:format": "pnpm lint:check --fix",
     "test:unit": "vitest run",
-    "test:unit:watch": "vitest dev",
-    "test:e2e:open": "cypress open --config-file ./cypress/cypress.config.ts --e2e",
-    "test:e2e:run": "cypress run --config-file ./cypress/cypress.config.ts --e2e",
-    "test:e2e": "pnpm build && start-server-and-test start 'http://localhost:8080' test:e2e"
+    "test:unit:watch": "vitest dev"
   },
   "commitlint": {
     "extends": [
@@ -39,8 +36,8 @@
   },
   "lint-staged": {
     "*.{ts,tsx,js,jsx,json,md,mdx}": [
-      "prettier --write",
-      "eslint --cache --fix"
+      "pnpm prettier:format",
+      "pnpm lint:format"
     ],
     "*.!(ts|tsx)": "prettier --write --ignore-unknown"
   },
