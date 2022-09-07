@@ -18,13 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: '${{ inputs.pnpm-version }}'
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ inputs.node-version }}
           cache: 'pnpm'
-      - uses: pnpm/action-setup@v2.0.1
-        with:
-          version: '${{ inputs.pnpm-version }}'
 
       - name: Install Dependencies
         run: pnpm i
@@ -35,5 +35,5 @@ jobs:
       - name: Lint
         run: pnpm lint:check
 
-      # - name: Type check
-      #   run: pnpm typecheck
+      - name: Type check
+        run: pnpm typecheck
