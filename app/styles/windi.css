@@ -29,7 +29,7 @@
   appearance: none;
   padding: 0;
   -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
+  color-adjust: exact;
   display: inline-block;
   vertical-align: middle;
   background-origin: border-box;
@@ -128,7 +128,7 @@
   background-size: initial;
   padding-right: 0.75rem;
   -webkit-print-color-adjust: unset;
-  print-color-adjust: unset;
+  color-adjust: unset;
 }
 [type='checkbox'] {
   border-radius: 0px;
@@ -255,7 +255,7 @@ select {
   background-size: 1.5em 1.5em;
   padding-right: 2.5rem;
   -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
+  color-adjust: exact;
 }
 .container {
   width: 100%;
@@ -348,13 +348,13 @@ select {
   --tw-bg-opacity: 1;
   background-color: rgba(14, 116, 144, var(--tw-bg-opacity));
 }
-.bg-pink-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(252, 231, 243, var(--tw-bg-opacity));
-}
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}
+.bg-pink-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(252, 231, 243, var(--tw-bg-opacity));
 }
 .border-transparent {
   border-color: transparent;
@@ -529,14 +529,14 @@ select {
 .mt-4 {
   margin-top: 1rem;
 }
-.ml-2 {
-  margin-left: 0.5rem;
-}
 .mt-0\.5 {
   margin-top: 0.125rem;
 }
 .mt-16 {
   margin-top: 4rem;
+}
+.ml-2 {
+  margin-left: 0.5rem;
 }
 .mt-3 {
   margin-top: 0.75rem;
@@ -586,6 +586,10 @@ select {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -593,10 +597,6 @@ select {
 .py-0\.5 {
   padding-top: 0.125rem;
   padding-bottom: 0.125rem;
-}
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 .py-12 {
   padding-top: 3rem;
@@ -689,13 +689,13 @@ select {
   --tw-text-opacity: 1;
   color: rgba(8, 145, 178, var(--tw-text-opacity));
 }
-.text-pink-800 {
-  --tw-text-opacity: 1;
-  color: rgba(157, 23, 77, var(--tw-text-opacity));
-}
 .hover\:text-gray-600:hover {
   --tw-text-opacity: 1;
   color: rgba(75, 85, 99, var(--tw-text-opacity));
+}
+.text-pink-800 {
+  --tw-text-opacity: 1;
+  color: rgba(157, 23, 77, var(--tw-text-opacity));
 }
 .text-cyan-400 {
   --tw-text-opacity: 1;
