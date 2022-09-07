@@ -6,9 +6,18 @@ on:
       - 'main'
 
 jobs:
+  codequality:
+    name: Check
+    uses: ./.github/workflows/codequality.yml
+  unit:
+    name: Check
+    uses: ./.github/workflows/unit.yml
+
   deploy:
     name: Deploy cdc.cy
     runs-on: ubuntu-latest
+    needs: [codequality, unit]
+    if: needs.codequality.result == 'success' && needs.unit.result == 'success'
     steps:
       - uses: styfle/cancel-workflow-action@0.10.0
       - uses: actions/checkout@v3
