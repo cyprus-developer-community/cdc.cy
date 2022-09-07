@@ -10,37 +10,3 @@ jobs:
   codequality:
     name: Check
     uses: ./.github/workflows/codequality.yml
-  unit:
-    name: Test
-    uses: ./.github/workflows/unit.yml
-
-  test:
-    name: Cypress E2E Tests
-    runs-on: ubuntu-latest
-    steps:
-      - uses: styfle/cancel-workflow-action@0.10.0
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 'latest'
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 'lts/gallium'
-          cache: 'pnpm'
-      - run: pnpm install
-      - run: pnpm build
-
-      - name: Cypress run
-        env:
-          GH_APP_ID: ${{ secrets.GH_APP_ID }}
-          GH_PRIVATE_KEY: ${{ secrets.GH_PRIVATE_KEY }}
-          GH_APP_INSTALLATION_ID: ${{ secrets.GH_APP_INSTALLATION_ID }}
-          WAIT_ON_TIMEOUT: 60000
-        run: pnpm test:e2e
-
-      - name: Upload screenshot of failure
-        uses: actions/upload-artifact@v3
-        if: failure()
-        with:
-          name: cypress-failure-screenshots
-          path: cypress/screenshots
