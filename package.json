@@ -30,7 +30,7 @@
     "test:unit:watch": "vitest dev",
     "test:e2e:open": "cypress open --config-file ./cypress/cypress.config.ts --e2e",
     "test:e2e:run": "cypress run --config-file ./cypress/cypress.config.ts --e2e",
-    "test:e2e": "pnpm build && start-server-and-test start 'http://localhost:8080' test:e2e"
+    "test:e2e": "pnpm build && start-server-and-test start 'http://localhost:8081' test:e2e"
   },
   "commitlint": {
     "extends": [

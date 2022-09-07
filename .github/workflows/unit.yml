@@ -19,6 +19,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '${{ inputs.node-version }}'
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: '${{ inputs.pnpm-version }}'
 
       - name: Install Node Modules
         run: pnpm i

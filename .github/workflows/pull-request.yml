@@ -35,6 +35,7 @@ jobs:
           GH_APP_ID: ${{ secrets.GH_APP_ID }}
           GH_PRIVATE_KEY: ${{ secrets.GH_PRIVATE_KEY }}
           GH_APP_INSTALLATION_ID: ${{ secrets.GH_APP_INSTALLATION_ID }}
+          WAIT_ON_TIMEOUT: 60000
         run: pnpm test:e2e
 
       - name: Upload screenshot of failure
