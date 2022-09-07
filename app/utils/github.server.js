@@ -6,7 +6,7 @@ import {
   sub,
   isSameDay,
   isSameMonth,
-  startOfMonth
+  startOfMonth,
 } from 'date-fns'
 import pkg from 'date-fns-tz'
 const { zonedTimeToUtc } = pkg
@@ -22,7 +22,7 @@ function calculateDays(events) {
   let slider = sub(startOfMonth(today), { days: 5 })
   for (let idx = 0; idx < 40; idx++) {
     const currentday = {
-      date: format(slider, 'yyyy-MM-dd')
+      date: format(slider, 'yyyy-MM-dd'),
     }
 
     if (isSameDay(slider, today)) {
@@ -38,7 +38,7 @@ function calculateDays(events) {
   }
 
   for (const event of events) {
-    const found = days.findIndex((d) => compareDateStrings(event.start, d.date))
+    const found = days.findIndex(d => compareDateStrings(event.start, d.date))
     if (found > 0) {
       days[found].hasEvent = true
       days[found].eventTitle = event.title
@@ -57,13 +57,13 @@ export default async function getEvents() {
   const auth = createAppAuth({
     appId: parseInt(process.env.GH_APP_ID),
     privateKey: atob(process.env.GH_PRIVATE_KEY),
-    installationId: process.env.GH_APP_INSTALLATION_ID
+    installationId: process.env.GH_APP_INSTALLATION_ID,
   })
 
   const graphqlWithAuth = graphql.defaults({
     request: {
-      hook: auth.hook
-    }
+      hook: auth.hook,
+    },
   })
 
   const locationsFile = await fetch(
@@ -121,7 +121,7 @@ export default async function getEvents() {
     `,
     {
       owner: 'cyprus-developer-community',
-      repo: 'events'
+      repo: 'events',
     }
   )
 
@@ -159,9 +159,9 @@ export default async function getEvents() {
           description: content.text,
           url: issue.url,
           state: issue.state,
-          categories: issue.labels.nodes.map((l) => l.name),
+          categories: issue.labels.nodes.map(l => l.name),
           organizer: { name: organizer },
-          attendees: issue.reactions.edges.map((r) => {
+          attendees: issue.reactions.edges.map(r => {
             return {
               name:
                 r.node.user.name?.length > 0
@@ -169,13 +169,13 @@ export default async function getEvents() {
                   : r.node.user.login,
               rsvp: true,
               partstat: 'ACCEPTED',
-              dir: r.node.user.url
+              dir: r.node.user.url,
             }
-          })
+          }),
         }
 
         if (locations && locations.length > 0) {
-          const locationLookup = locations.find((l) => l.id === location.id)
+          const locationLookup = locations.find(l => l.id === location.id)
           if (!locationLookup) {
             event.location = location.text
           } else {
@@ -198,17 +198,17 @@ export default async function getEvents() {
 
   const sorted = events.sort((a, b) => new Date(a.start) - new Date(b.start))
   const upcoming = sorted
-    .filter((e) => new Date(e.start) > new Date())
-    .map((e) => {
+    .filter(e => new Date(e.start) > new Date())
+    .map(e => {
       e.status = e.state === 'OPEN' ? 'CONFIRMED' : 'CANCELLED'
       return e
     })
-  const past = sorted.filter((e) => new Date(e.start) < new Date())
+  const past = sorted.filter(e => new Date(e.start) < new Date())
 
   return {
     upcoming,
     past,
-    days
+    days,
   }
 }
 

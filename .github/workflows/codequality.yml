@@ -1,0 +1,39 @@
+name: Code Quality
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        type: string
+        required: false
+        default: lts/gallium
+      pnpm-version:
+        type: string
+        required: false
+        default: latest
+
+jobs:
+  codequality:
+    name: Prettier & Lint & Type check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: 'pnpm'
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: '${{ inputs.pnpm-version }}'
+
+      - name: Install Dependencies
+        run: pnpm i
+
+      - name: Prettier
+        run: pnpm prettier:check
+
+      - name: Lint
+        run: pnpm lint:check
+
+      # - name: Type check
+      #   run: pnpm typecheck

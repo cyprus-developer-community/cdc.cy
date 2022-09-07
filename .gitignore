@@ -3,6 +3,7 @@ node_modules
 /.cache
 /functions/\[\[path\]\].js
 /public/build
+/cypress/screenshots/
 .env
 keyfile.pem
 build
