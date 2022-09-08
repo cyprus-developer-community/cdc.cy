@@ -1,0 +1,4 @@
+build/
+node_modules/
+app/styles/windi.css
+.pnpm-store

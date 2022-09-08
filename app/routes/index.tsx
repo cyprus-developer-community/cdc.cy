@@ -11,23 +11,23 @@ const groups = [
   {
     id: 'cyprusjs',
     logo: 'https://raw.githubusercontent.com/cyprus-developer-community/home/main/assets/cyprusjs.jpeg',
-    name: 'CyprusJS',
+    name: 'CyprusJS'
   },
   {
     id: 'aws-cy',
     logo: 'https://raw.githubusercontent.com/cyprus-developer-community/home/main/assets/aws-user-group-cyprus.jpg',
-    name: 'AWS User Group Cyprus',
+    name: 'AWS User Group Cyprus'
   },
   {
     id: 'gdg-cy',
     logo: 'https://raw.githubusercontent.com/cyprus-developer-community/home/main/assets/gdgcyprus.png',
-    name: 'GDG Cyprus',
+    name: 'GDG Cyprus'
   },
   {
     id: 'py-data-cy',
     logo: 'https://raw.githubusercontent.com/cyprus-developer-community/home/main/assets/pydata-cyprus.jpeg',
-    name: 'Py-Data-Cy',
-  },
+    name: 'Py-Data-Cy'
+  }
 ]
 
 export default function Index() {

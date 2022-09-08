@@ -1,5 +1,6 @@
 import { PassThrough } from 'stream'
-import { EntryContext, Response } from '@remix-run/node'
+import { Response } from '@remix-run/node'
+import type { EntryContext } from '@remix-run/node'
 import { RemixServer } from '@remix-run/react'
 import { renderToPipeableStream } from 'react-dom/server'
 
@@ -25,20 +26,20 @@ export default function handleRequest(
           resolve(
             new Response(body, {
               headers: responseHeaders,
-              status: didError ? 500 : responseStatusCode,
+              status: didError ? 500 : responseStatusCode
             })
           )
 
           pipe(body)
         },
-        onShellError: err => {
+        onShellError: (err) => {
           reject(err)
         },
-        onError: error => {
+        onError: (error) => {
           didError = true
 
           console.error(error)
-        },
+        }
       }
     )
 

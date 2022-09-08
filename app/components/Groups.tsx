@@ -1,6 +1,6 @@
 import type { Group } from '@types'
 
-type GroupsProps = {
+export type GroupsProps = {
   groups: Group[]
 }
 

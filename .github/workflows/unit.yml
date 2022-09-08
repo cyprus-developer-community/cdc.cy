@@ -1,0 +1,30 @@
+name: Unit Tests
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        type: string
+        required: false
+        default: lts/gallium
+      pnpm-version:
+        type: string
+        required: false
+        default: latest
+jobs:
+  unit:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '${{ inputs.node-version }}'
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: '${{ inputs.pnpm-version }}'
+
+      - name: Install Node Modules
+        run: pnpm i
+
+      - name: Unit Tests
+        run: npm run test:unit

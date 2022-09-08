@@ -8,20 +8,8 @@ permissions:
 
 jobs:
   codequality:
-    name: Lint & type check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: styfle/cancel-workflow-action@0.10.0
-      - uses: actions/checkout@v3
-      - uses: pnpm/action-setup@v2
-        with:
-          version: latest
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
-          cache: 'pnpm'
-      - run: pnpm install
-      - name: 🔬 Lint
-        run: pnpm lint
-      - name: 🔎 Type check
-        run: pnpm typecheck
+    name: Check
+    uses: ./.github/workflows/codequality.yml
+  unit:
+    name: Check
+    uses: ./.github/workflows/unit.yml
