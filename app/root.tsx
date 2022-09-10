@@ -7,7 +7,7 @@ import {
   ScrollRestoration
 } from '@remix-run/react'
 import windiStylesheetUrl from './styles/windi.css'
-// import Header from '~/components/Header.jsx'
+import { MainLayout } from '~/features/components'
 
 export const links = () => [{ rel: 'stylesheet', href: windiStylesheetUrl }]
 
@@ -43,8 +43,9 @@ export default function App() {
         <Links />
       </head>
       <body className="antialiased font-sans bg-white">
-        {/* <Header /> */}
-        <Outlet />
+        <MainLayout>
+          <Outlet />
+        </MainLayout>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

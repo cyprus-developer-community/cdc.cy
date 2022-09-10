@@ -1,12 +1,6 @@
+import type getEvents from '~/utils/github.server'
 export type Nullable<TData = unknown> = TData | null
 export type Maybe<TData = unknown> = TData | undefined
-export type Day = {
-  isSelected: boolean
-  isToday: boolean
-  isCurrentMonth: boolean
-  date: string
-  hasEvent: boolean
-}
 
 export type ID = string
 type EventStatus = 'CANCELLED'
@@ -27,4 +21,10 @@ export type Group = {
   id: string
   logo: string
   name: string
+  excerpt: string
+  slug: string
+  href: string
 }
+
+export type GetEventsResult = Awaited<ReturnType<typeof getEvents>>
+export type Day = GetEventsResult['days']['0']

@@ -16,6 +16,14 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['sans-serif']
+    },
+    extend: {
+      maxWidth: {
+        page: '1200px;'
+      },
+      height: {
+        'card-image': '250px;'
+      }
     }
   },
   shortcuts: {},
