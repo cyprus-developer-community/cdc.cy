@@ -10,7 +10,7 @@ export async function loader() {
 const groups = [
   {
     id: 'cyprusjs',
-    logo: 'https://raw.githubusercontent.com/cyprus-developer-community/home/main/assets/cyprusjs.jpeg',
+    logo: 'https://raw.githubusercontent.com/cyprus-developer-community/home/main/assets/cyprusjs.png',
     name: 'CyprusJS'
   },
   {

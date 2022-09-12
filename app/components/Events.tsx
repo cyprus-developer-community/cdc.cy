@@ -1,9 +1,9 @@
 import { Fragment } from 'react'
 import {
   CalendarIcon,
-  DotsHorizontalIcon,
-  LocationMarkerIcon
-} from '@heroicons/react/solid'
+  EllipsisVerticalIcon,
+  MapPinIcon
+} from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
 import type { Event, Day, Maybe } from '@types'
 
@@ -143,7 +143,7 @@ export default function Events({ upcoming, past, days }: EventProps) {
                     <div className="mt-2 flex items-start space-x-3 xl:mt-0 xl:ml-3.5 xl:border-l xl:border-gray-400 xl:border-opacity-50 xl:pl-3.5">
                       <dt className="mt-0.5">
                         <span className="sr-only">Location</span>
-                        <LocationMarkerIcon
+                        <MapPinIcon
                           className="h-5 w-5 text-gray-400"
                           aria-hidden="true"
                         />
@@ -159,7 +159,7 @@ export default function Events({ upcoming, past, days }: EventProps) {
                   <div>
                     <Menu.Button className="-m-2 flex items-center rounded-full p-2 text-gray-500 hover:text-gray-600">
                       <span className="sr-only">Open options</span>
-                      <DotsHorizontalIcon
+                      <EllipsisVerticalIcon
                         className="h-5 w-5"
                         aria-hidden="true"
                       />
@@ -232,7 +232,7 @@ export default function Events({ upcoming, past, days }: EventProps) {
                   <div className="mt-2 flex items-start space-x-3 xl:mt-0 xl:ml-3.5 xl:border-l xl:border-gray-400 xl:border-opacity-50 xl:pl-3.5">
                     <dt className="mt-0.5">
                       <span className="sr-only">Location</span>
-                      <LocationMarkerIcon
+                      <MapPinIcon
                         className="h-5 w-5 text-gray-400"
                         aria-hidden="true"
                       />
