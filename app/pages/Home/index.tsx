@@ -1,13 +1,21 @@
 import { Events } from '~/features/components'
 import { useLoaderData } from '@remix-run/react'
-import getEvents from '~/utils/github.server'
-import groups from '~/pages/ParticipatingGroups/groups'
 import { GroupsList } from './components/GroupsList'
+import { newDataProvider } from '~/features/dataProvider'
 
 type LoaderData = Awaited<ReturnType<typeof loader>>
+
 export const loader = async () => {
+  const dataProvider = newDataProvider()
+  const [getParticipatingGroupError, groups] =
+    await dataProvider.commands.getParticipatingGroups()
+
+  if (getParticipatingGroupError) {
+    throw new Response(getParticipatingGroupError.message)
+  }
+
   return {
-    events: await getEvents(),
+    events: await dataProvider.commands.getEvents(),
     groups
   }
 }

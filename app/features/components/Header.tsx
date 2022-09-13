@@ -15,8 +15,8 @@ const HeaderLink: React.FC<NavLinkProps> = ({ children, ...rest }) => {
 
 export const Header: React.FC = () => {
   return (
-    <header className="py-4 px-8 lg:px-16 bg-neutral-100 sticky top-0 shadow-md z-50 ">
-      <div className="bg-transparent relative bg-white max-w-page m-auto">
+    <header className="bg-slate-50 py-4 px-8 sticky top-0 shadow-md z-50">
+      <div className="relative max-w-page m-auto">
         <nav className="grid grid-flow-col gap-4">
           <Link to="/">
             <img

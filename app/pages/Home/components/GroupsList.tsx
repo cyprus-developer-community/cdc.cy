@@ -1,4 +1,4 @@
-import type { Group } from '@types'
+import type { Group } from '~/features/dataProvider'
 import { Link } from '@remix-run/react'
 
 export type GroupsListProps = {
@@ -17,10 +17,10 @@ export const GroupsList: React.FC<GroupsListProps> = ({ groups }) => {
         <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center">
           {groups.map((group) => (
             <div
-              key={group.id}
+              key={group.name}
               className="w-full p-1 flex justify-center block rounded-lg border border-gray-200 shadow-md"
             >
-              <img className="h-32" src={group.logo} alt={group.name} />
+              <img className="h-32" src={group.logo.png} alt={group.name} />
             </div>
           ))}
         </div>

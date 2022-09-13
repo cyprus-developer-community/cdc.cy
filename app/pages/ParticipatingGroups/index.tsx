@@ -1,9 +1,17 @@
 import { useLoaderData } from '@remix-run/react'
-import type { Group } from '@types'
-import groups from './groups'
+import type { Group } from '~/features/dataProvider'
+import { newDataProvider, getGroupAnyLink } from '~/features/dataProvider'
 
 type LoaderData = { groups: Group[] }
-export const loader = () => {
+export const loader = async () => {
+  const dataProvider = newDataProvider()
+  const [getParticipatingGroupError, groups] =
+    await dataProvider.commands.getParticipatingGroups()
+
+  if (getParticipatingGroupError) {
+    throw new Response(getParticipatingGroupError.message)
+  }
+
   return { groups }
 }
 
@@ -18,32 +26,45 @@ const ParticipatingGroups = () => {
             Participating Groups
           </h2>
           <p className="text-gray-700">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt
-            consequuntur eaque facilis obcaecati, cupiditate doloribus expedita
-            perspiciatis veniam quis modi? Accusamus quaerat optio vero officia
-            sint cumque animi doloribus provident?
+            While technology can be divided into multiple sub-groups with
+            different tools and technologies, our goal is to bring all those
+            communities together and discuss common issues which we encounter in
+            our daily routine. Feel free to navigate through our participating
+            groups.
+          </p>
+          <p className="mt-3 text-gray-700">
+            <span className="px-1">
+              If you want to learn more, reach out to
+            </span>{' '}
+            <a
+              href="https://canary.discord.com/widget?id=855088264180400198&theme=dark"
+              className="text-cyan-400"
+            >
+              Discord
+            </a>
           </p>
         </div>
 
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {groups.map((group) => {
+            const { href } = getGroupAnyLink(group, 'website', 'meetup')
             return (
               <div
-                key={group.id}
+                key={group.name}
                 className="grid gap-3 hover:opacity-80 hover:cursor-pointer block max-w-sm rounded-lg border border-gray-200 shadow-md"
               >
                 <img
-                  src={group.logo}
+                  src={group.logo.png}
                   className="max-w-full h-card-image rounded-lg m-auto"
                   alt={group.name}
                   title={group.name}
                 />
-                <div className="grid gap-3 px-8 py-4 bg-[#f9f9f9]">
+                <div className="grid gap-3 px-8 py-4 bg-slate-50">
                   <h2 className="text-xl text-gray-800">{group.name}</h2>
                   <p className="text-gray-500">{group.excerpt}</p>
                   <a
                     className="text-cyan-400 hover:underline"
-                    href={group.href}
+                    href={href}
                     target="_blank"
                     rel="noreferrer"
                   >

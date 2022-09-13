@@ -6,12 +6,16 @@ import { BrowserRouter } from 'react-router-dom'
 const defaultProps: GroupsListProps = {
   groups: [
     {
-      id: '1',
       name: 'group 1',
-      logo: 'http://localhost:3000',
+      logo: {
+        png: 'http://localhost:3000',
+        width: 300,
+        height: 300
+      },
+      organizers: [],
       excerpt: 'group 1 excerpt',
       slug: 'group-1',
-      href: 'http://localhost:3000/group-1'
+      links: [{ type: 'website', href: 'http://localhost:3000/group-1' }]
     }
   ]
 }
