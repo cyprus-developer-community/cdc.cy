@@ -194,31 +194,6 @@ button, [type='button'], [type='reset'], [type='submit'] {
 button, [role="button"] {
   cursor: pointer;
 }
-b, strong {
-  font-weight: bolder;
-}
-button, input, optgroup, select, textarea {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-  padding: 0;
-  line-height: inherit;
-  color: inherit;
-}
-button, select {
-  text-transform: none;
-}
-blockquote, dl, dd, h1, h2, h3, h4, h5, h6, hr, figure, p, pre {
-  margin: 0;
-}
-code, kbd, samp, pre {
-  font-size: 1em;
-}
-fieldset {
-  margin: 0;
-  padding: 0;
-}
 html {
   -webkit-text-size-adjust: 100%;
   font-family: sans-serif;
@@ -245,15 +220,6 @@ h2 {
   font-size: inherit;
   font-weight: inherit;
 }
-hr {
-  height: 0;
-  color: inherit;
-  border-top-width: 1px;
-}
-h1, h2, h3, h4, h5, h6 {
-  font-size: inherit;
-  font-weight: inherit;
-}
 input::-moz-placeholder, textarea::-moz-placeholder {
   color: #6b7280;
   opacity: 1;
@@ -277,52 +243,10 @@ iframe {
   display: block;
   vertical-align: middle;
 }
-input::placeholder {
-  opacity: 1;
-  color: #9ca3af;
-}
-input::webkit-input-placeholder {
-  opacity: 1;
-  color: #9ca3af;
-}
-input::-moz-placeholder {
-  opacity: 1;
-  color: #9ca3af;
-}
-input:-ms-input-placeholder {
-  opacity: 1;
-  color: #9ca3af;
-}
-input::-ms-input-placeholder {
-  opacity: 1;
-  color: #9ca3af;
-}
-img, svg, video, canvas, audio, iframe, embed, object {
-  display: block;
-  vertical-align: middle;
-}
-img, video {
-  max-width: 100%;
-  height: auto;
-}
-legend {
-  padding: 0;
-}
 ol {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-ol, ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-progress {
-  vertical-align: baseline;
-}
-pre, code, kbd, samp {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 select {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
@@ -426,6 +350,10 @@ select {
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}
+.bg-slate-50 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(248, 250, 252, var(--tw-bg-opacity));
 }
 .border-transparent {
   border-color: transparent;
@@ -635,8 +563,8 @@ select {
 .mt-16 {
   margin-top: 4rem;
 }
-.mt-3 {
-  margin-top: 0.75rem;
+.ml-4 {
+  margin-left: 1rem;
 }
 .mt-5 {
   margin-top: 1.25rem;
@@ -707,15 +635,24 @@ select {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 .pr-10 {
   padding-right: 2.5rem;
-}
-.pl-8 {
-  padding-left: 2rem;
 }
 .absolute {
   position: absolute;
@@ -816,11 +753,6 @@ select {
   color: rgba(157, 23, 77, var(--tw-text-opacity));
 }
 .hover\:text-gray-600:hover {
-  --tw-text-opacity: 1;
-  color: rgba(75, 85, 99, var(--tw-text-opacity));
-}
-.text-cyan-400 {
->>>>>>> main
   --tw-text-opacity: 1;
   color: rgba(75, 85, 99, var(--tw-text-opacity));
 }
@@ -963,17 +895,9 @@ select {
   .lg\:mt-9 {
     margin-top: 2.25rem;
   }
-  .lg\:px-16 {
-    padding-left: 4rem;
-    padding-right: 4rem;
-  }
   .lg\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
-  }
-  .lg\:px-0 {
-    padding-left: 0px;
-    padding-right: 0px;
   }
   .lg\:text-left {
     text-align: left;

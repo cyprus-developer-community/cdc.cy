@@ -5,7 +5,10 @@ import {
   MapPinIcon
 } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
-import type { GetEventsResult, Day, Maybe } from '@types'
+import type { Maybe } from '@types'
+import type { GetEventsResult } from '~/features/dataProvider'
+
+type Day = GetEventsResult['days']['0']
 
 const formatDay = (day: Day): Maybe<string> => {
   const datePart = day.date.split('-').pop()
