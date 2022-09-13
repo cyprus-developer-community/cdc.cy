@@ -18,7 +18,7 @@
     "dev": "run-p dev:*",
     "dev:css": "pnpm generate:css --dev",
     "dev:remix": "remix dev",
-    "generate:css": "windicss './app/**/*.{jsx,tsx}' -to ./app/styles/windi.css -f windi.config.js",
+    "generate:css": "npx windicss './app/**/*.{jsx,tsx}' -to ./app/styles/windi.css -f windi.config.js",
     "start": "remix-serve build",
     "typecheck": "tsc -b",
     "prettier": "prettier .",
@@ -90,11 +90,6 @@
   },
   "engines": {
     "node": "^16||^18"
-  },
-  "release": {
-    "branches": [
-      "main"
-    ]
   },
   "release": {
     "branches": [
