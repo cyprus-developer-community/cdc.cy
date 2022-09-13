@@ -333,52 +333,6 @@ select {
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
 }
-small {
-  font-size: 80%;
-}
-sub, sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-sub {
-  bottom: -0.25em;
-}
-sup {
-  top: -0.5em;
-}
-summary {
-  display: list-item;
-}
-table {
-  text-indent: 0;
-  border-color: inherit;
-  border-collapse: collapse;
-}
-textarea {
-  resize: vertical;
-}
-textarea::placeholder {
-  opacity: 1;
-  color: #9ca3af;
-}
-textarea::webkit-input-placeholder {
-  opacity: 1;
-  color: #9ca3af;
-}
-textarea::-moz-placeholder {
-  opacity: 1;
-  color: #9ca3af;
-}
-textarea:-ms-input-placeholder {
-  opacity: 1;
-  color: #9ca3af;
-}
-textarea::-ms-input-placeholder {
-  opacity: 1;
-  color: #9ca3af;
-}
 .container {
   width: 100%;
 }
@@ -472,17 +426,6 @@ textarea::-ms-input-placeholder {
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
-}
-.bg-neutral-100 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(245, 245, 245, var(--tw-bg-opacity));
-}
-.bg-transparent {
-  background-color: transparent;
-}
-.bg-\[\#f9f9f9\] {
-  --tw-bg-opacity: 1;
-  background-color: rgba(249, 249, 249, var(--tw-bg-opacity));
 }
 .border-transparent {
   border-color: transparent;
@@ -692,8 +635,8 @@ textarea::-ms-input-placeholder {
 .mt-16 {
   margin-top: 4rem;
 }
-.ml-4 {
-  margin-left: 1rem;
+.mt-3 {
+  margin-top: 0.75rem;
 }
 .mt-5 {
   margin-top: 1.25rem;
@@ -764,20 +707,15 @@ textarea::-ms-input-placeholder {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
 }
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 .pr-10 {
   padding-right: 2.5rem;
+}
+.pl-8 {
+  padding-left: 2rem;
 }
 .absolute {
   position: absolute;
@@ -878,6 +816,11 @@ textarea::-ms-input-placeholder {
   color: rgba(157, 23, 77, var(--tw-text-opacity));
 }
 .hover\:text-gray-600:hover {
+  --tw-text-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-text-opacity));
+}
+.text-cyan-400 {
+>>>>>>> main
   --tw-text-opacity: 1;
   color: rgba(75, 85, 99, var(--tw-text-opacity));
 }
