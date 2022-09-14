@@ -55,7 +55,7 @@ const ParticipatingGroups = () => {
               >
                 <img
                   src={group.logo.png}
-                  className="max-w-full h-card-image rounded-lg m-auto"
+                  className="max-w-full object-contain h-card-image rounded-lg m-auto"
                   alt={group.name}
                   title={group.name}
                 />

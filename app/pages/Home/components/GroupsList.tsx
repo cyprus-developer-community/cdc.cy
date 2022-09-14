@@ -20,7 +20,11 @@ export const GroupsList: React.FC<GroupsListProps> = ({ groups }) => {
               key={group.name}
               className="w-full p-1 flex justify-center block rounded-lg border border-gray-200 shadow-md"
             >
-              <img className="h-32" src={group.logo.png} alt={group.name} />
+              <img
+                className="h-32 w-full object-contain"
+                src={group.logo.png}
+                alt={group.name}
+              />
             </div>
           ))}
         </div>
