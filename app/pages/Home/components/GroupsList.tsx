@@ -1,5 +1,6 @@
 import type { Group } from '~/features/dataProvider'
 import { Link } from '@remix-run/react'
+import { Image } from 'remix-image'
 
 export type GroupsListProps = {
   groups: Group[]
@@ -18,11 +19,12 @@ export const GroupsList: React.FC<GroupsListProps> = ({ groups }) => {
           {groups.map((group) => (
             <div
               key={group.name}
-              className="w-full p-1 flex justify-center block rounded-lg border border-gray-200 shadow-md"
+              className="w-full p-1 flex justify-center rounded-lg border border-gray-200 shadow-md lg:border-transparent lg:shadow-none"
             >
-              <img
-                className="h-32 w-full object-contain"
+              <Image
                 src={group.logo.png}
+                className="max-h-[200px]"
+                title={group.name}
                 alt={group.name}
               />
             </div>

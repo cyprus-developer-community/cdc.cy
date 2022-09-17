@@ -1,6 +1,7 @@
 import { useLoaderData } from '@remix-run/react'
 import type { Group } from '~/features/dataProvider'
 import { newDataProvider, getGroupAnyLink } from '~/features/dataProvider'
+import { Image } from 'remix-image'
 
 type LoaderData = { groups: Group[] }
 export const loader = async () => {
@@ -51,15 +52,15 @@ const ParticipatingGroups = () => {
             return (
               <div
                 key={group.name}
-                className="grid gap-3 hover:opacity-80 hover:cursor-pointer block max-w-sm rounded-lg border border-gray-200 shadow-md"
+                className="grid grid-rows-card hover:opacity-80 hover:cursor-pointer block max-w-sm rounded-lg border border-gray-200 shadow-md"
               >
-                <img
+                <Image
                   src={group.logo.png}
-                  className="max-w-full object-contain h-card-image rounded-lg m-auto"
+                  className="m-auto h-full"
                   alt={group.name}
                   title={group.name}
                 />
-                <div className="grid gap-3 px-8 py-4 bg-slate-50">
+                <div className="grid gap-3 px-8 py-6 bg-slate-50">
                   <h2 className="text-xl text-gray-800">{group.name}</h2>
                   <p className="text-gray-500">{group.excerpt}</p>
                   <a

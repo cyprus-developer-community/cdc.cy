@@ -21,8 +21,8 @@ module.exports = {
       maxWidth: {
         page: '1200px;'
       },
-      height: {
-        'card-image': '250px;'
+      gridTemplateRows: {
+        card: '225px 1fr'
       }
     }
   },

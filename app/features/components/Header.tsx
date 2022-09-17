@@ -1,6 +1,7 @@
 import React from 'react'
 import type { NavLinkProps } from '@remix-run/react'
 import { NavLink, Link } from '@remix-run/react'
+import { Image } from 'remix-image'
 
 const HeaderLink: React.FC<NavLinkProps> = ({ children, ...rest }) => {
   return (
@@ -19,13 +20,7 @@ export const Header: React.FC = () => {
       <div className="relative max-w-page m-auto">
         <nav className="grid grid-flow-col gap-4">
           <Link to="/">
-            <img
-              src="/cdc-logo.png"
-              width={48}
-              height={48}
-              title="Cyprus Developer Community"
-              alt="Cyprus Developer Community"
-            />
+            <Image src="/cdc-logo.png" width={48} height={48} />
           </Link>
           <div className="flex items-center justify-end">
             <HeaderLink to="/">Home</HeaderLink>
