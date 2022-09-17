@@ -21,7 +21,8 @@ export const Header: React.FC = () => {
           <Link to="/">
             <img
               src="/cdc-logo.png"
-              className="w-16 h-16"
+              width={48}
+              height={48}
               title="Cyprus Developer Community"
               alt="Cyprus Developer Community"
             />
