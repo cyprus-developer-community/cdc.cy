@@ -21,13 +21,13 @@ export const Header: React.FC = () => {
   const shouldAddExtraPadding = y > 80
 
   return (
-    <header
-      className={classnames(
-        'sticky top-0 bg-slate-50 py-4 px-8 shadow-md z-50 transition-all duration-500',
-        shouldAddExtraPadding && 'py-8 px-16'
-      )}
-    >
-      <div className="relative max-w-page m-auto">
+    <header className="sticky top-0 bg-slate-50 py-4 px-8 shadow-md z-50">
+      <div
+        className={classnames(
+          'relative max-w-page m-auto transition-all duration-500',
+          shouldAddExtraPadding && 'py-8 px-16'
+        )}
+      >
         <nav className="grid grid-flow-col gap-4">
           <Link to="/">
             <Image src="/cdc-logo.png" width={48} height={48} />
