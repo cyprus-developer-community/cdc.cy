@@ -4,6 +4,7 @@ RUN npm install -g pnpm
 
 # Install all node_modules, including dev dependencies
 FROM base as deps
+ENV CI=true
 WORKDIR /myapp
 ADD package.json pnpm-lock.yaml .npmrc ./
 RUN pnpm install

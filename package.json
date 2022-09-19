@@ -28,7 +28,7 @@
     "lint:format": "pnpm lint:check --fix",
     "test:unit": "vitest run",
     "test:unit:watch": "vitest dev",
-    "prepare": "husky install"
+    "prepare": "is-ci || husky install"
   },
   "commitlint": {
     "extends": [
@@ -79,6 +79,7 @@
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-markdown": "^3.0.0",
     "husky": "8.0.1",
+    "is-ci": "^3.0.1",
     "jsdom": "^20.0.0",
     "lint-staged": "^13.0.3",
     "npm-run-all": "^4.1.5",
