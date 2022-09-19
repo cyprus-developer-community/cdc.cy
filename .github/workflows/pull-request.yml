@@ -13,3 +13,10 @@ jobs:
   unit:
     name: Check
     uses: ./.github/workflows/unit.yml
+  docker:
+    name: Check / Build Docker Image
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build Docker Image
+        run: docker build .

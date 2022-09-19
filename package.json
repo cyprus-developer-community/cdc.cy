@@ -8,7 +8,8 @@
   "license": "MIT",
   "author": "Patrick Heneise <yassas@heneise.co> (https://heneise.co)",
   "contributors": [
-    "Patrick Heneise (https://github.com/PatrickHeneise)"
+    "Patrick Heneise (https://github.com/PatrickHeneise)",
+    "Marios Simou (https://github.com/MarioSimou)"
   ],
   "sideEffects": false,
   "scripts": {
@@ -28,7 +29,7 @@
     "lint:format": "pnpm lint:check --fix",
     "test:unit": "vitest run",
     "test:unit:watch": "vitest dev",
-    "prepare": "husky install"
+    "prepare": "test -n \"$CI\" && exit 0 || husky install"
   },
   "commitlint": {
     "extends": [
@@ -73,7 +74,6 @@
     "@types/react-dom": "^18.0.6",
     "@types/testing-library__jest-dom": "^5.14.5",
     "@vitejs/plugin-react": "^2.1.0",
-    "cypress": "^10.7.0",
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-json": "^3.1.0",

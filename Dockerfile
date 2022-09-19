@@ -1,5 +1,6 @@
 # base node image
 FROM node:16-bullseye-slim as base
+ENV CI=true
 RUN npm install -g pnpm
 
 # Install all node_modules, including dev dependencies
