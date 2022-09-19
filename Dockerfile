@@ -1,6 +1,6 @@
 # base node image
 FROM node:16-bullseye-slim as base
-RUN npm install -g pnpm
+RUN npm install -g pnpm is-ci husky 
 
 # Install all node_modules, including dev dependencies
 FROM base as deps
@@ -13,12 +13,12 @@ RUN pnpm install
 FROM base as production-deps
 ENV NODE_ENV production
 WORKDIR /myapp
-COPY --from=deps /myapp/node_modules /myapp/node_modules
 ADD package.json pnpm-lock.yaml .npmrc ./
 RUN pnpm prune --prod
 
 # Build the app
 FROM base as build
+ENV CI=true
 ENV NODE_ENV production
 WORKDIR /myapp
 COPY --from=deps /myapp/node_modules /myapp/node_modules
