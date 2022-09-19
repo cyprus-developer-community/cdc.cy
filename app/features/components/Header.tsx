@@ -2,7 +2,6 @@ import React from 'react'
 import type { NavLinkProps } from '@remix-run/react'
 import { NavLink, Link } from '@remix-run/react'
 import { Image } from 'remix-image'
-import classnames from 'classnames'
 import { useScroll } from '~/features/hooks'
 
 const HeaderLink: React.FC<NavLinkProps> = ({ children, ...rest }) => {
@@ -23,14 +22,13 @@ export const Header: React.FC = () => {
   return (
     <header className="sticky top-0 bg-slate-50 py-4 px-8 shadow-md z-50">
       <div
-        className={classnames(
-          'relative max-w-page m-auto transition-all duration-500',
-          shouldAddExtraPadding && 'py-8 px-16'
-        )}
+        className={`relative max-w-page m-auto transition-all duration-500 ${
+          shouldAddExtraPadding ? 'py-8 px-16' : 'py-0 px-0'
+        }`}
       >
         <nav className="grid grid-flow-col gap-4">
           <Link to="/">
-            <Image src="/cdc-logo.png" width={48} height={48} />
+            <Image src="/cdc-logo.svg" width={48} height={48} />
           </Link>
           <div className="flex items-center justify-end">
             <HeaderLink to="/">Home</HeaderLink>
