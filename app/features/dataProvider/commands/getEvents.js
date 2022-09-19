@@ -48,7 +48,16 @@ function calculateDays(events) {
   return days
 }
 
-export default async function getEvents() {
+export async function getEvents() {
+  // Note: Temporal solution until we introduce a mock service
+  if (process.env.NODE_ENV === 'development') {
+    return {
+      upcoming: [],
+      past: [],
+      days: []
+    }
+  }
+
   const timeZone = 'Europe/Nicosia'
   const { default: bodyParser } = await import(
     '@zentered/issue-forms-body-parser/src/parse.js'

@@ -1,20 +1,32 @@
 import { render, screen } from '@testing-library/react'
-import type { GroupsProps } from '~/components/Groups'
-import Groups from '~/components/Groups'
+import type { GroupsListProps } from '~/pages/Home/components'
+import { GroupsList } from '~/pages/Home/components'
+import { BrowserRouter } from 'react-router-dom'
 
-const defaultProps: GroupsProps = {
+const defaultProps: GroupsListProps = {
   groups: [
     {
-      id: '1',
       name: 'group 1',
-      logo: 'http://localhost:3000'
+      logo: {
+        png: 'http://localhost:3000',
+        width: 300,
+        height: 300
+      },
+      organizers: [],
+      excerpt: 'group 1 excerpt',
+      slug: 'group-1',
+      links: [{ type: 'website', href: 'http://localhost:3000/group-1' }]
     }
   ]
 }
 
 describe('Groups', () => {
   it('should render title of Groups component', () => {
-    render(<Groups {...defaultProps} />)
+    render(
+      <BrowserRouter>
+        <GroupsList {...defaultProps} />
+      </BrowserRouter>
+    )
     expect(
       screen.getByRole('heading', { name: 'Participating Member Groups' })
     ).toBeInTheDocument()

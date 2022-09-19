@@ -5,23 +5,20 @@ import {
   MapPinIcon
 } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
-import type { Event, Day, Maybe } from '@types'
+import type { Maybe } from '@types'
+import type { GetEventsResult } from '~/features/dataProvider'
 
-type EventProps = {
-  upcoming: Event[]
-  past: Event[]
-  days: Day[]
-}
+type Day = GetEventsResult['days']['0']
 
 const formatDay = (day: Day): Maybe<string> => {
   const datePart = day.date.split('-').pop()
   return datePart ? datePart.replace(/^0/, '') : undefined
 }
 
-export default function Events({ upcoming, past, days }: EventProps) {
+export const Events: React.FC<GetEventsResult> = ({ upcoming, past, days }) => {
   return (
     <section className="py-16">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto">
         <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl mb-12">
           Upcoming events
         </h2>
@@ -197,7 +194,7 @@ export default function Events({ upcoming, past, days }: EventProps) {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-16">
+      <div className="container mx-auto mt-16">
         <h2 className="text-lg font-semibold text-gray-900">Past events</h2>
         <ol className="mt-4 divide-y divide-gray-100 text-sm leading-6 lg:col-span-7 xl:col-span-8">
           {past.map((event) => (
