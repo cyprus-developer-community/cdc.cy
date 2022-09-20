@@ -23,7 +23,7 @@ export const Header: React.FC = () => {
     <header className="sticky top-0 bg-slate-50 py-4 px-8 shadow-md z-50">
       <div
         className={`relative max-w-page m-auto transition-all duration-500 ${
-          shouldAddExtraPadding ? 'py-8 px-16' : 'py-0 px-0'
+          shouldAddExtraPadding ? 'py-4 px-16' : 'py-0 px-0'
         }`}
       >
         <nav className="grid grid-flow-col gap-4">
