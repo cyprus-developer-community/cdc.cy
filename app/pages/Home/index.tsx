@@ -2,6 +2,12 @@ import { Events } from '~/features/components'
 import { useLoaderData } from '@remix-run/react'
 import { GroupsList } from './components/GroupsList'
 import { newDataProvider } from '~/features/dataProvider'
+import {
+  getConfig,
+  getDiscordChatLink,
+  getDiscordWidgetLink,
+  getGithubDiscussionsLink
+} from '~/features/configuration'
 
 type LoaderData = Awaited<ReturnType<typeof loader>>
 
@@ -23,6 +29,7 @@ export const loader = async () => {
 const Home = () => {
   const { groups, events } = useLoaderData() as LoaderData
   const { upcoming, past, days } = events
+  const config = getConfig()
 
   return (
     <div>
@@ -55,7 +62,7 @@ const Home = () => {
           <iframe
             className="max-w-full"
             title="Cyprus Developer Community Discord Server"
-            src="https://canary.discord.com/widget?id=855088264180400198&theme=dark"
+            src={getDiscordWidgetLink(config)}
             width="350"
             height="500"
             allowTransparency
@@ -77,7 +84,7 @@ const Home = () => {
           Join us on{' '}
           <a
             className="text-cyan-400"
-            href="https://chat.cdc.cy"
+            href={getDiscordChatLink(config)}
             target="_blank"
             rel="noreferrer"
           >
@@ -86,7 +93,7 @@ const Home = () => {
           or follow our{' '}
           <a
             className="text-cyan-400"
-            href="https://github.com/cyprus-developer-community/home/discussions"
+            href={getGithubDiscussionsLink(config)}
             target="_blank"
             rel="noreferrer"
           >

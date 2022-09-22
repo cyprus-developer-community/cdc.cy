@@ -2,6 +2,7 @@ import { useLoaderData } from '@remix-run/react'
 import type { Group } from '~/features/dataProvider'
 import { newDataProvider, getGroupAnyLink } from '~/features/dataProvider'
 import { Image } from 'remix-image'
+import { getConfig, getDiscordChatLink } from '~/features/configuration'
 
 type LoaderData = { groups: Group[] }
 export const loader = async () => {
@@ -18,6 +19,7 @@ export const loader = async () => {
 
 const ParticipatingGroups = () => {
   const { groups } = useLoaderData() as LoaderData
+  const config = getConfig()
 
   return (
     <div className="flex justify-center py-4">
@@ -37,10 +39,7 @@ const ParticipatingGroups = () => {
             <span className="px-1">
               If you want to learn more, reach out to
             </span>{' '}
-            <a
-              href="https://canary.discord.com/widget?id=855088264180400198&theme=dark"
-              className="text-cyan-400"
-            >
+            <a href={getDiscordChatLink(config)} className="text-cyan-400">
               Discord
             </a>
           </p>

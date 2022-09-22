@@ -1,0 +1,357 @@
+{
+  "repository": {
+    "issues": {
+      "edges": [
+        {
+          "node": {
+            "id": "I_kwDOG7Tv585FCdON",
+            "url": "https://github.com/cyprus-developer-community/events/issues/1",
+            "title": "CDCoffee",
+            "body": "---\r\nstartDate: 10.03.2022\r\nstartTime: 10.00\r\nduration: 1h\r\nlocation: online\r\n\r\n---\r\n\r\nLet's chat about tech, coding and Cyprus.\r\n\r\nhttps://discord.gg/qA7wHjbs?event=948887583507755048",
+            "createdAt": "2022-03-03T11:05:08Z",
+            "updatedAt": "2022-03-18T13:55:57Z",
+            "state": "CLOSED",
+            "labels": {
+              "nodes": [
+                {
+                  "name": "Event :sparkles:"
+                },
+                {
+                  "name": "Approved :white_check_mark:"
+                }
+              ]
+            },
+            "author": {
+              "login": "PatrickHeneise",
+              "name": "Patrick Heneise",
+              "url": "https://github.com/PatrickHeneise"
+            },
+            "reactions": {
+              "edges": []
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "I_kwDOG7Tv585HBvOr",
+            "url": "https://github.com/cyprus-developer-community/events/issues/4",
+            "title": "CDC Paphos Meet & Greet, 28/04, 18.30h",
+            "body": "### Event Description\r\n\r\nEvery last Thursday of the month, the CDC Paphos Chapter meets for drinks and snacks at Baracas Lounge.\r\n\r\n### Location\r\n\r\nbaracas-lounge\r\n\r\n### Date\r\n\r\n28/04/2022\r\n\r\n### Time\r\n\r\n18:30\r\n\r\n### Duration\r\n\r\n1h30m\r\n\r\n### Code of Conduct\r\n\r\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+            "createdAt": "2022-04-04T11:22:19Z",
+            "updatedAt": "2022-04-28T06:31:07Z",
+            "state": "CLOSED",
+            "labels": {
+              "nodes": [
+                {
+                  "name": "Event :sparkles:"
+                },
+                {
+                  "name": "Approved :white_check_mark:"
+                }
+              ]
+            },
+            "author": {
+              "login": "PatrickHeneise",
+              "name": "Patrick Heneise",
+              "url": "https://github.com/PatrickHeneise"
+            },
+            "reactions": {
+              "edges": []
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "I_kwDOG7Tv585HCJzC",
+            "url": "https://github.com/cyprus-developer-community/events/issues/5",
+            "title": "CDC Organizers Meetup",
+            "body": "### Event Description\r\n\r\nMonthly organizers sync\r\n\r\n### Location\r\n\r\nonline\r\n\r\n### Date\r\n\r\n06.04.2022\r\n\r\n### Time\r\n\r\n20:30\r\n\r\n### Duration\r\n\r\n0h30m\r\n\r\n### Code of Conduct\r\n\r\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+            "createdAt": "2022-04-04T12:56:59Z",
+            "updatedAt": "2022-05-04T06:50:19Z",
+            "state": "CLOSED",
+            "labels": {
+              "nodes": [
+                {
+                  "name": "Event :sparkles:"
+                },
+                {
+                  "name": "Approved :white_check_mark:"
+                }
+              ]
+            },
+            "author": {
+              "login": "PatrickHeneise",
+              "name": "Patrick Heneise",
+              "url": "https://github.com/PatrickHeneise"
+            },
+            "reactions": {
+              "edges": []
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "I_kwDOG7Tv585HOaeq",
+            "url": "https://github.com/cyprus-developer-community/events/issues/6",
+            "title": "CDC Limassol Meet&Greet Meetup, 14/04, 18.30h",
+            "body": "### Event Description\n\nStart of Meet&Greet in Limassol\n\n### Location\n\nbono\n\n### Date\n\n14.04.2022\n\n### Time\n\n18.30\n\n### Duration\n\n1h30m\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+            "createdAt": "2022-04-06T18:10:00Z",
+            "updatedAt": "2022-04-18T09:56:07Z",
+            "state": "CLOSED",
+            "labels": {
+              "nodes": [
+                {
+                  "name": "Event :sparkles:"
+                },
+                {
+                  "name": "Approved :white_check_mark:"
+                }
+              ]
+            },
+            "author": {
+              "login": "saitonakamura",
+              "name": "Michael サイトー 中村 Bashurov",
+              "url": "https://github.com/saitonakamura"
+            },
+            "reactions": {
+              "edges": []
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "I_kwDOG7Tv585HOfKx",
+            "url": "https://github.com/cyprus-developer-community/events/issues/7",
+            "title": "CDC Organizers Meetup 04/05, 20.30h",
+            "body": "### Event Description\n\nMonthly organizers sync\n\n### Location\n\nonline\n\n### Date\n\n04.05.2022\n\n### Time\n\n20:30\n\n### Duration\n\n0h30m\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+            "createdAt": "2022-04-06T18:26:20Z",
+            "updatedAt": "2022-05-05T07:13:09Z",
+            "state": "CLOSED",
+            "labels": {
+              "nodes": [
+                {
+                  "name": "Event :sparkles:"
+                },
+                {
+                  "name": "Approved :white_check_mark:"
+                }
+              ]
+            },
+            "author": {
+              "login": "michdim",
+              "name": null,
+              "url": "https://github.com/michdim"
+            },
+            "reactions": {
+              "edges": [
+                {
+                  "node": {
+                    "user": {
+                      "name": "Patrick Heneise",
+                      "login": "PatrickHeneise",
+                      "url": "https://github.com/PatrickHeneise"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "I_kwDOG7Tv585HO2jV",
+            "url": "https://github.com/cyprus-developer-community/events/issues/8",
+            "title": "CDCoffee April 2022",
+            "body": "### Event Description\n\nMonthly virtual coffee hour for all Cypriot developers and tech enthusiasts to meet and chat.\n\n### Location\n\nonline\n\n### Date\n\n13.04.2022\n\n### Time\n\n10.00\n\n### Duration\n\n1h00m\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+            "createdAt": "2022-04-06T19:27:40Z",
+            "updatedAt": "2022-04-27T12:38:42Z",
+            "state": "CLOSED",
+            "labels": {
+              "nodes": [
+                {
+                  "name": "Event :sparkles:"
+                },
+                {
+                  "name": "Approved :white_check_mark:"
+                }
+              ]
+            },
+            "author": {
+              "login": "PatrickHeneise",
+              "name": "Patrick Heneise",
+              "url": "https://github.com/PatrickHeneise"
+            },
+            "reactions": {
+              "edges": []
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "I_kwDOG7Tv585HcKyY",
+            "url": "https://github.com/cyprus-developer-community/events/issues/9",
+            "title": "CDC Larnaka Meet & Greet Meetup",
+            "body": "### Event Description\r\n\r\n<img width=\"1107\" alt=\"The Brewery Larnaka\" src=\"https://user-images.githubusercontent.com/3581331/162574191-3c023b32-34d9-4035-90bf-7297cdccaf06.png\">\r\n\r\nWelcome to the CDC - Cyprus Developer Community! Join us for our monthly Larnaka meet & greet event. Meet likeminded people, discuss topics we would like to hear about in upcoming talks, welcome potential speakers, discuss all things tech and have fun!\r\n\r\nNotice with regards to COVID:\r\n\r\nAll attendees must follow measures in accordance with Ministry of Health directives. https://www.pio.gov.cy/coronavirus/eng\r\n\r\n### Location\r\n\r\nThe Brewery Larnaka - https://goo.gl/maps/UWSwofFp37nvtGmb6\r\n\r\n### Date\r\n\r\n15.04.2022\r\n\r\n### Time\r\n\r\n18.30\r\n\r\n### Duration\r\n\r\n2h\r\n\r\n### Code of Conduct\r\n\r\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+            "createdAt": "2022-04-09T12:28:18Z",
+            "updatedAt": "2022-04-27T12:38:42Z",
+            "state": "CLOSED",
+            "labels": {
+              "nodes": [
+                {
+                  "name": "Event :sparkles:"
+                },
+                {
+                  "name": "Approved :white_check_mark:"
+                }
+              ]
+            },
+            "author": {
+              "login": "NVerban",
+              "name": "Nicholas Verban",
+              "url": "https://github.com/NVerban"
+            },
+            "reactions": {
+              "edges": []
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "I_kwDOG7Tv585JL5k1",
+            "url": "https://github.com/cyprus-developer-community/events/issues/10",
+            "title": "CDC Organizers Meetup 07/06, 20.30h",
+            "body": "### Event Description\n\nMonthly organizers sync\n\n### Location\n\nonline\n\n### Date\n\n07.06.2022\n\n### Time\n\n20:30\n\n### Duration\n\n0h30m\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+            "createdAt": "2022-05-06T13:14:37Z",
+            "updatedAt": "2022-09-06T13:34:20Z",
+            "state": "CLOSED",
+            "labels": {
+              "nodes": [
+                {
+                  "name": "Event :sparkles:"
+                },
+                {
+                  "name": "Approved :white_check_mark:"
+                }
+              ]
+            },
+            "author": {
+              "login": "saitonakamura",
+              "name": "Michael サイトー 中村 Bashurov",
+              "url": "https://github.com/saitonakamura"
+            },
+            "reactions": {
+              "edges": []
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "I_kwDOG7Tv585JaaTm",
+            "url": "https://github.com/cyprus-developer-community/events/issues/11",
+            "title": "A practical introduction to Test Driven Development (TDD) by Marios Georgiou",
+            "body": "### Event Description\n\nGDG is happy to host Marios Georgiou!\r\n\r\nIn this talk, Marios will walk us through the steps of creating automated unit tests that run every time we build our code, and cover all the basic concepts of unit testing, code coverage and some best practices by showing examples in an interactive, workshop like experience.\r\n\r\nThis course is targeted to beginners or to more experience developers who want to learn more about TDD.\r\n\r\nThe examples will use very simple code written in React, however the concepts and practices are similarly applicable on most programming languages, e.g. Java, Python etc.\r\n\r\nThis is a hybrid event. The physical event will take place at University of Cyprus (Nicosia), in the department of Computer Science building THEE 01, Room B101 (Basement, Walk-in Lab). map: https://goo.gl/maps/BoDyu6fmyNPaYkwC6\r\n\r\nThe virtual event will be on zoom (see below) and also on CDC discord channel. Visit https://cdc.cy to access the discord channel and view the events channel for details on how to access.\r\n\r\nFor the participants of the physical event, pizza and refreshments will be offered by our sponsor \"TSYS A Global Payments Company\".\r\n\r\nFor RSVP, kindly visit https://gdg.community.dev/j/wt7w56qhpa29j/\r\n\r\nLooking forward to see you there!\r\n\r\nDon't forget to like our FB page at https://www.facebook.com/GDGCyprus and also checkout http://cdc.cy, the Cyprus Developer Community portal.\r\n\r\nLike/Share :)\r\n\r\nZoom:\r\nhttps://us06web.zoom.us/j/81182498281?pwd=RTdwakZ5ZklvdG8xOW5ESzdjSElKQT09\r\n\r\nMeeting ID: 811 8249 8281\r\nPasscode: 576202\n\n### Location\n\nNicosia at University Of Cyprus / Virtual on zoom and discord\n\n### Date\n\n17.05.2022\n\n### Time\n\n19.00\n\n### Duration\n\n1h30m\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+            "createdAt": "2022-05-10T20:31:29Z",
+            "updatedAt": "2022-09-06T13:34:32Z",
+            "state": "CLOSED",
+            "labels": {
+              "nodes": [
+                {
+                  "name": "Event :sparkles:"
+                },
+                {
+                  "name": "Approved :white_check_mark:"
+                }
+              ]
+            },
+            "author": {
+              "login": "michdim",
+              "name": null,
+              "url": "https://github.com/michdim"
+            },
+            "reactions": {
+              "edges": []
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "I_kwDOG7Tv585Jmda8",
+            "url": "https://github.com/cyprus-developer-community/events/issues/12",
+            "title": "CDC Meet & Greet - The Brewery Larnaka",
+            "body": "### Event Description\n\n<img width=\"1107\" alt=\"The Brewery Larnaka\" src=\"https://user-images.githubusercontent.com/3581331/162574191-3c023b32-34d9-4035-90bf-7297cdccaf06.png\">\r\n\r\n# Join us for CDC Meet & Greet - The Brewery Larnaka \r\n\r\nWelcome to the CDC - Cyprus Developer Community! Join us for our monthly Larnaka meet & greet event. Meet likeminded people, discuss all things tech and have fun!\n\n### Location\n\nThe Brewery Larnaka - https://goo.gl/maps/UWSwofFp37nvtGmb6\n\n### Date\n\n20.05.2022\n\n### Time\n\n18.30\n\n### Duration\n\n2h\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+            "createdAt": "2022-05-13T06:56:52Z",
+            "updatedAt": "2022-09-06T13:34:20Z",
+            "state": "CLOSED",
+            "labels": {
+              "nodes": [
+                {
+                  "name": "Event :sparkles:"
+                },
+                {
+                  "name": "Approved :white_check_mark:"
+                }
+              ]
+            },
+            "author": {
+              "login": "NVerban",
+              "name": "Nicholas Verban",
+              "url": "https://github.com/NVerban"
+            },
+            "reactions": {
+              "edges": []
+            }
+          }
+        },
+        {
+          "node": {
+            "id": "I_kwDOG7Tv585SPAlr",
+            "url": "https://github.com/cyprus-developer-community/events/issues/15",
+            "title": "BeerJS Limassol #2",
+            "body": "### Event Description\r\n\r\nBeerJS is back in Limassol! Let's meet and talk stuff and have fun!\r\n\r\n**note on drinking and js**\r\n\r\nBeerJS is about creating social spaces to strengthen software communities. There is no requirement to drink to participate, nor talk specifically js (I personally can support conversation on variety of topics and I would love to listen to people talking about it)\r\n\r\n### Location\r\n\r\nbono\r\n\r\n### Date\r\n\r\n29.09.2022\r\n\r\n### Time\r\n\r\n18.30\r\n\r\n### Duration\r\n\r\n2h\r\n\r\n### Code of Conduct\r\n\r\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+            "createdAt": "2022-09-20T16:09:59Z",
+            "updatedAt": "2022-09-21T06:25:21Z",
+            "state": "OPEN",
+            "labels": {
+              "nodes": [
+                {
+                  "name": "Event :sparkles:"
+                },
+                {
+                  "name": "Approved :white_check_mark:"
+                }
+              ]
+            },
+            "author": {
+              "login": "saitonakamura",
+              "name": "Michael サイトー 中村 Bashurov",
+              "url": "https://github.com/saitonakamura"
+            },
+            "reactions": {
+              "edges": [
+                {
+                  "node": {
+                    "user": {
+                      "name": "Jacek Gębal",
+                      "login": "jgebal",
+                      "url": "https://github.com/jgebal"
+                    }
+                  }
+                },
+                {
+                  "node": {
+                    "user": {
+                      "name": "Gennadion",
+                      "login": "Gennadion",
+                      "url": "https://github.com/Gennadion"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "totalCount": 11
+    }
+  }
+}

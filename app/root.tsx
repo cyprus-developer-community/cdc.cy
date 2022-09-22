@@ -8,6 +8,7 @@ import {
 } from '@remix-run/react'
 import windiStylesheetUrl from './styles/windi.css'
 import { MainLayout } from '~/features/components'
+import { server } from './mocks'
 
 export const links = () => [{ rel: 'stylesheet', href: windiStylesheetUrl }]
 
@@ -16,6 +17,11 @@ export const meta = () => ({
   title: 'Cyprus Developer Community | CDC.cy',
   viewport: 'width=device-width,initial-scale=1'
 })
+
+if (process.env.MOCKS_ENABLED === 'true') {
+  // For debugging purposes, you can update the strategy to 'warn'
+  server.listen({ onUnhandledRequest: 'bypass' })
+}
 
 export default function App() {
   return (
