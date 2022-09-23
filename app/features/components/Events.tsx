@@ -7,6 +7,7 @@ import {
 import { Menu, Transition } from '@headlessui/react'
 import type { Maybe } from '@types'
 import type { GetEventsResult } from '~/features/dataProvider'
+import { getConfig, getGithubNewIssueLink } from '~/features/configuration'
 
 type Day = GetEventsResult['days']['0']
 
@@ -16,6 +17,8 @@ const formatDay = (day: Day): Maybe<string> => {
 }
 
 export const Events: React.FC<GetEventsResult> = ({ upcoming, past, days }) => {
+  const config = getConfig()
+
   return (
     <section className="py-16">
       <div className="container mx-auto">
@@ -91,7 +94,7 @@ export const Events: React.FC<GetEventsResult> = ({ upcoming, past, days }) => {
               ))}
             </div>
             <a
-              href="https://github.com/cyprus-developer-community/events/issues/new?assignees=&labels=Event+%3Asparkles%3A&template=event.yml&title=Event+Title"
+              href={getGithubNewIssueLink(config)}
               className="focus:outline-none mt-8 w-full rounded-md border border-transparent bg-cyan-600 py-2 px-4 text-sm font-medium text-white shadow hover:bg-cyan-700 focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2"
             >
               Add event

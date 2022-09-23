@@ -49,15 +49,6 @@ function calculateDays(events) {
 }
 
 export async function getEvents() {
-  // Note: Temporal solution until we introduce a mock service
-  if (process.env.NODE_ENV === 'development') {
-    return {
-      upcoming: [],
-      past: [],
-      days: []
-    }
-  }
-
   const timeZone = 'Europe/Nicosia'
   const { default: bodyParser } = await import(
     '@zentered/issue-forms-body-parser/src/parse.js'
@@ -66,7 +57,7 @@ export async function getEvents() {
   const auth = createAppAuth({
     appId: parseInt(process.env.GH_APP_ID),
     privateKey: atob(process.env.GH_PRIVATE_KEY),
-    installationId: process.env.GH_APP_INSTALLATION_ID
+    installationId: parseInt(process.env.GH_APP_INSTALLATION_ID)
   })
 
   const graphqlWithAuth = graphql.defaults({

@@ -7,6 +7,23 @@
 
 Work in progress. Stay tuned.
 
+## Setup
+
+1. At the top level of your repository, run the below bash command. It will
+   autogenerate a .env file with some dummy values.
+
+```bash
+tee .env <<EOF
+MOCKS_ENABLED=true
+GH_APP_ID=1
+GH_PRIVATE_KEY=$(openssl genrsa 2048 | awk -v ORS='\n' '1' | openssl base64 -A)
+GH_APP_INSTALLATION_ID=1234
+EOF
+```
+
+2. Run `pnpm dev:remix` and access the page in the browser. The page is
+   available in `http://localhost:3000`
+
 ## Code of Conduct
 
 Our goal is to have an awesome, inclusive and safe community meetup where people
