@@ -48,6 +48,14 @@ export default function App() {
         />
         <link rel="manifest" href="/site.webmanifest"></link>
         <Links />
+        <script async defer src="https://sa.cdc.cy/latest.js"></script>
+        <noscript>
+          <img
+            src="https://sa.cdc.cy/noscript.gif"
+            alt=""
+            referrerpolicy="no-referrer-when-downgrade"
+          />
+        </noscript>
         <script
           dangerouslySetInnerHTML={{
             __html: `
