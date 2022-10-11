@@ -52,7 +52,7 @@ export default function App() {
         <noscript>
           <img
             src="https://sa.cdc.cy/noscript.gif"
-            alt=""
+            alt="noscript"
             referrerpolicy="no-referrer-when-downgrade"
           />
         </noscript>

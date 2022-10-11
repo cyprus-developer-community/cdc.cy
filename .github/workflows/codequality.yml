@@ -6,7 +6,7 @@ on:
       node-version:
         type: string
         required: false
-        default: lts/gallium
+        default: 16
       pnpm-version:
         type: string
         required: false
