@@ -6,5 +6,8 @@ module.exports = {
     'prettier',
     'plugin:markdown/recommended',
     'plugin:json/recommended'
-  ]
+  ],
+  rules: {
+    '@typescript-eslint/no-unused-vars': 'error'
+  }
 }

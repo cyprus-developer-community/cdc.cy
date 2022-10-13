@@ -18,9 +18,9 @@ export const GroupsList: React.FC<GroupsListProps> = ({ groups }) => {
             Participating Member Groups
           </h2>
         </Link>
-        <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center">
+        <ul className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 items-center">
           {groups.map((group) => (
-            <div
+            <li
               key={group.name}
               className="w-full p-1 flex justify-center rounded-lg border border-gray-200 shadow-md lg:border-transparent lg:shadow-none"
             >
@@ -30,9 +30,9 @@ export const GroupsList: React.FC<GroupsListProps> = ({ groups }) => {
                 title={group.name}
                 alt={group.name}
               />
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
       <div className="mt-3 sm:mt-0 sm:ml-3">
         <p>

@@ -60,12 +60,11 @@ const Home = () => {
         </div>
         <div className="justify-self-center">
           <iframe
-            className="max-w-full"
+            className="max-w-full bg-transparent"
             title="Cyprus Developer Community Discord Server"
             src={getDiscordWidgetLink(config)}
             width="350"
             height="500"
-            allowTransparency
             frameBorder="0"
             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
           ></iframe>
@@ -76,10 +75,9 @@ const Home = () => {
       <Events upcoming={upcoming} past={past} days={days} />
 
       <section className="my-16">
-        <h3 className="my-2 text-lg leading-6 font-medium text-cyan-900">
+        <h2 className="my-2 text-lg leading-6 font-medium text-cyan-900">
           Chat
-        </h3>
-
+        </h2>
         <p>
           Join us on{' '}
           <a

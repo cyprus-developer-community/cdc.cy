@@ -27,21 +27,21 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   eslint-plugin-json: ^3.1.0
   eslint-plugin-markdown: ^3.0.0
-  husky: 8.0.1
+  husky: 8.0.2
   is-ci: ^3.0.1
   jsdom: ^20.0.0
   lint-staged: ^13.0.3
-  msw: ^0.47.3
+  msw: ^0.49.0
   npm-run-all: ^4.1.5
   prettier: ^2.7.1
   react: ^18.2.0
   react-dom: ^18.2.0
-  react-router-dom: 6.3.0
+  react-router-dom: 6.4.3
   remix-image: ^1.3.2
   typescript: ^4.8.3
   vite: ^3.1.2
   vite-tsconfig-paths: ^3.5.0
-  vitest: ^0.23.4
+  vitest: ^0.25.0
   windicss: ^3.5.6
 
 dependencies:
@@ -76,18 +76,18 @@ devDependencies:
   eslint-config-prettier: 8.5.0_eslint@8.23.1
   eslint-plugin-json: 3.1.0
   eslint-plugin-markdown: 3.0.0_eslint@8.23.1
-  husky: 8.0.1
+  husky: 8.0.2
   is-ci: 3.0.1
   jsdom: 20.0.0
   lint-staged: 13.0.3
-  msw: 0.47.3_typescript@4.8.3
+  msw: 0.49.0_typescript@4.8.3
   npm-run-all: 4.1.5
   prettier: 2.7.1
-  react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
+  react-router-dom: 6.4.3_biqbaboplfbrettd7655fr4n2y
   typescript: 4.8.3
   vite: 3.1.2
   vite-tsconfig-paths: 3.5.0_vite@3.1.2
-  vitest: 0.23.4_jsdom@20.0.0
+  vitest: 0.25.2_jsdom@20.0.0
   windicss: 3.5.6
 
 packages:
@@ -2110,7 +2110,7 @@ packages:
       debug: 4.3.4
       headers-polyfill: 3.1.0
       outvariant: 1.3.0
-      strict-event-emitter: 0.2.4
+      strict-event-emitter: 0.2.8
       web-encoding: 1.1.5
     transitivePeerDependencies:
       - supports-color
@@ -2544,6 +2544,11 @@ packages:
       react-dom: 18.2.0_react@18.2.0
       react-router-dom: 6.3.0_biqbaboplfbrettd7655fr4n2y
     dev: false
+
+  /@remix-run/router/1.0.3:
+    resolution: {integrity: sha512-ceuyTSs7PZ/tQqi19YZNBc5X7kj1f8p+4DIyrcIYFY9h+hd1OKm4RqtiWldR9eGEvIiJfsqwM4BsuCtRIuEw6Q==}
+    engines: {node: '>=14'}
+    dev: true
 
   /@remix-run/serve/1.7.5_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-SB01hAjdzFYVLetbVY3qFJKkoiHM3Z5JeX0UmeGrVK+AAYHVrs+2nY2GYfdMc+cnPL/iZeGZmrf6PvHrOexKMQ==}
@@ -6334,8 +6339,8 @@ packages:
     engines: {node: '>=12.20.0'}
     dev: true
 
-  /husky/8.0.1:
-    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
+  /husky/8.0.2:
+    resolution: {integrity: sha512-Tkv80jtvbnkK3mYWxPZePGFpQ/tT3HNSs/sasF9P2YfkMezDl3ON37YN6jUUI4eTg5LcyVynlb6r4eyvOmspvg==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
@@ -8153,13 +8158,13 @@ packages:
   /ms/2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  /msw/0.47.3_typescript@4.8.3:
-    resolution: {integrity: sha512-X3w/1fi29mEqoCajgFV59hrmns+mdD/FPegYMRwW7CK0vi//yX9NVy07/XspdBm6W1TNtb8Giv79SmS2BAb0Wg==}
+  /msw/0.49.0_typescript@4.8.3:
+    resolution: {integrity: sha512-xX5RMSMjN58j8G/V26Uaf5LP464VltuWyd66TQimLueVYfG47RKydGsd4JW165Jb/gjoaQxh5Tdvv31wdZAOlA==}
     engines: {node: '>=14'}
     hasBin: true
     requiresBuild: true
     peerDependencies:
-      typescript: '>= 4.2.x <= 4.8.x'
+      typescript: '>= 4.4.x <= 4.9.x'
     peerDependenciesMeta:
       typescript:
         optional: true
@@ -8180,8 +8185,7 @@ packages:
       node-fetch: 2.6.7
       outvariant: 1.3.0
       path-to-regexp: 6.2.1
-      statuses: 2.0.1
-      strict-event-emitter: 0.2.4
+      strict-event-emitter: 0.2.8
       type-fest: 2.19.0
       typescript: 4.8.3
       yargs: 17.5.1
@@ -9010,6 +9014,19 @@ packages:
       react-dom: 18.2.0_react@18.2.0
       react-router: 6.3.0_react@18.2.0
 
+  /react-router-dom/6.4.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-MiaYQU8CwVCaOfJdYvt84KQNjT78VF0TJrA17SIQgNHRvLnXDJO6qsFqq8F/zzB1BWZjCFIrQpu4QxcshitziQ==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+      react-dom: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.0.3
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-router: 6.4.3_react@18.2.0
+    dev: true
+
   /react-router/6.3.0_react@18.2.0:
     resolution: {integrity: sha512-7Wh1DzVQ+tlFjkeo+ujvjSqSJmkt1+8JO+T5xklPlgrh70y7ogx75ODRW0ThWhY7S+6yEDks8TYrtQe/aoboBQ==}
     peerDependencies:
@@ -9017,6 +9034,16 @@ packages:
     dependencies:
       history: 5.3.0
       react: 18.2.0
+
+  /react-router/6.4.3_react@18.2.0:
+    resolution: {integrity: sha512-BT6DoGn6aV1FVP5yfODMOiieakp3z46P1Fk0RNzJMACzE7C339sFuHebfvWtnB4pzBvXXkHP2vscJzWRuUjTtA==}
+    engines: {node: '>=14'}
+    peerDependencies:
+      react: '>=16.8'
+    dependencies:
+      '@remix-run/router': 1.0.3
+      react: 18.2.0
+    dev: true
 
   /react/18.2.0:
     resolution: {integrity: sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==}
@@ -9792,8 +9819,8 @@ packages:
   /stream-slice/0.1.2:
     resolution: {integrity: sha512-QzQxpoacatkreL6jsxnVb7X5R/pGw9OUv2qWTYWnmLpg4NdN31snPy/f3TdQE1ZUXaThRvj1Zw4/OGg0ZkaLMA==}
 
-  /strict-event-emitter/0.2.4:
-    resolution: {integrity: sha512-xIqTLS5azUH1djSUsLH9DbP6UnM/nI18vu8d43JigCQEoVsnY+mrlE+qv6kYqs6/1OkMnMIiL6ffedQSZStuoQ==}
+  /strict-event-emitter/0.2.8:
+    resolution: {integrity: sha512-KDf/ujU8Zud3YaLtMCcTI4xkZlZVIYxTLr+XIULexP+77EEVWixeXroLUXQXiVtH4XH2W7jr/3PT1v3zBuvc3A==}
     dependencies:
       events: 3.3.0
     dev: true
@@ -10049,8 +10076,8 @@ packages:
       globrex: 0.1.2
     dev: true
 
-  /tinybench/2.1.5:
-    resolution: {integrity: sha512-ak+PZZEuH3mw6CCFOgf5S90YH0MARnZNhxjhjguAmoJimEMAJuNip/rJRd6/wyylHItomVpKTzZk9zrhTrQCoQ==}
+  /tinybench/2.3.1:
+    resolution: {integrity: sha512-hGYWYBMPr7p4g5IarQE7XhlyWveh1EKhy4wUBS1LrHXCKYgvz+4/jCqgmJqZxxldesn05vccrtME2RLLZNW7iA==}
     dev: true
 
   /tinypool/0.3.0:
@@ -10579,8 +10606,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.23.4_jsdom@20.0.0:
-    resolution: {integrity: sha512-iukBNWqQAv8EKDBUNntspLp9SfpaVFbmzmM0sNcnTxASQZMzRw3PsM6DMlsHiI+I6GeO5/sYDg3ecpC+SNFLrQ==}
+  /vitest/0.25.2_jsdom@20.0.0:
+    resolution: {integrity: sha512-qqkzfzglEFbQY7IGkgSJkdOhoqHjwAao/OrphnHboeYHC5JzsVFoLCaB2lnAy8krhj7sbrFTVRApzpkTOeuDWQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
@@ -10604,12 +10631,15 @@ packages:
       '@types/chai': 4.3.3
       '@types/chai-subset': 1.3.3
       '@types/node': 18.7.18
+      acorn: 8.8.0
+      acorn-walk: 8.2.0
       chai: 4.3.6
       debug: 4.3.4
       jsdom: 20.0.0
       local-pkg: 0.4.2
+      source-map: 0.6.1
       strip-literal: 0.4.2
-      tinybench: 2.1.5
+      tinybench: 2.3.1
       tinypool: 0.3.0
       tinyspy: 1.0.2
       vite: 3.1.2
