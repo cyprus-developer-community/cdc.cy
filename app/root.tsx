@@ -17,7 +17,9 @@ export const meta = () => ({
   viewport: 'width=device-width,initial-scale=1'
 })
 
-if (process.env.MOCKS_ENABLED === 'true') {
+const isServer = typeof window === 'undefined'
+
+if (isServer && process?.env?.MOCKS_ENABLED === 'true') {
   // For debugging purposes, you can update the strategy to 'warn'
   import('./mocks').then(({ server }) => {
     return server.listen({ onUnhandledRequest: 'bypass' })
