@@ -84,7 +84,7 @@
     "msw": "^0.47.3",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.7.1",
-    "react-router-dom": "6.3.0",
+    "react-router-dom": "6.4.3",
     "typescript": "^4.8.3",
     "vite": "^3.1.2",
     "vite-tsconfig-paths": "^3.5.0",
