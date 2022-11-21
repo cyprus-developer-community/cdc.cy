@@ -34,10 +34,10 @@ const Home = () => {
   return (
     <div>
       <div className="text-center py-16">
-        <h1 className="text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+        <h1 className="text-4xl font-extrabold text-primary-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
           Cyprus Developer Community
         </h1>
-        <p className="max-w-xl mt-5 mx-auto text-xl text-gray-500">
+        <p className="max-w-xl mt-5 mx-auto text-xl text-primary-500">
           We're just starting up. There will be more content and events soon.
           Stay tuned.
         </p>
@@ -45,10 +45,10 @@ const Home = () => {
 
       <section className="py-16 grid gap-12 md:grid-cols-2">
         <div>
-          <h2 className="text-3xl font-extrabold text-gray-900 mb-12 sm:text-4xl text-center lg:text-left">
+          <h2 className="text-3xl font-extrabold text-secondary-700 mb-12 sm:text-4xl text-center lg:text-left">
             CDC.cy
           </h2>
-          <p className="mt-4 max-w-3xl mx-auto text-xl text-gray-500 text-center lg:text-left">
+          <p className="mt-4 max-w-3xl mx-auto text-xl text-secondary-500 text-center lg:text-left">
             The Cyprus Developer Community is an umbrella for developer and
             technology groups in Cyprus. We provide a central website and chat
             for all things tech/engineering/development. You can join our
@@ -75,13 +75,13 @@ const Home = () => {
       <Events upcoming={upcoming} past={past} days={days} />
 
       <section className="my-16">
-        <h2 className="my-2 text-lg leading-6 font-medium text-cyan-900">
+        <h2 className="my-2 text-lg leading-6 font-medium text-primary-700">
           Chat
         </h2>
         <p>
           Join us on{' '}
           <a
-            className="text-cyan-400"
+            className="text-primary-500"
             href={getDiscordChatLink(config)}
             target="_blank"
             rel="noreferrer"
@@ -90,7 +90,7 @@ const Home = () => {
           </a>{' '}
           or follow our{' '}
           <a
-            className="text-cyan-400"
+            className="text-primary-500"
             href={getGithubDiscussionsLink(config)}
             target="_blank"
             rel="noreferrer"

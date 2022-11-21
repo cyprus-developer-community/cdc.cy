@@ -7,7 +7,7 @@ import { useScroll } from '~/features/hooks'
 const HeaderLink: React.FC<NavLinkProps> = ({ children, ...rest }) => {
   return (
     <NavLink
-      className="text-lg font-bold text-gray-500 hover:text-gray-900 ml-4"
+      className="text-lg font-bold text-primary-900 hover:text-primary-400 ml-4"
       {...rest}
     >
       {children}
@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
   const shouldAddExtraPadding = y > 80
 
   return (
-    <header className="sticky top-0 bg-slate-50 py-4 px-8 shadow-md z-50">
+    <header className="sticky top-0 bg-light-50 py-4 px-8 shadow-md z-50">
       <div
         className={`relative max-w-page m-auto transition-all duration-500 ${
           shouldAddExtraPadding ? 'lg:py-4 lg:px-16' : 'py-0 px-0'
