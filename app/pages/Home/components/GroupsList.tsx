@@ -3,13 +3,14 @@ import { Link } from '@remix-run/react'
 import { Image } from 'remix-image'
 import { getConfig, getDiscordChatLink } from '~/features/configuration'
 
+const config = getConfig()
+const discordChatLink = getDiscordChatLink(config)
+
 export type GroupsListProps = {
   groups: Group[]
 }
 
 export const GroupsList: React.FC<GroupsListProps> = ({ groups }) => {
-  const config = getConfig()
-
   return (
     <section className="py-16 grid gap-8">
       <div>
@@ -39,7 +40,7 @@ export const GroupsList: React.FC<GroupsListProps> = ({ groups }) => {
           Reach out on{' '}
           <a
             className="text-cyan-400"
-            href={getDiscordChatLink(config)}
+            href={discordChatLink}
             target="_blank"
             rel="noreferrer"
           >
