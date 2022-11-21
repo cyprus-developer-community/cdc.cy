@@ -34,9 +34,6 @@ module.exports = {
         },
         secondary: colors.gray
       },
-      maxWidth: {
-        page: '1200px;'
-      },
       gridTemplateRows: {
         card: '225px 1fr'
       }

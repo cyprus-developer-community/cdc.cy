@@ -42,7 +42,7 @@ const ParticipatingGroup = () => {
       </div>
       <div className="grid gap-12">
         <section className="grid gap-6">
-          <h2 className="text-3xl font-extrabold text-secondary-900 md:text-left">
+          <h2 className="text-3xl font-extrabold text-secondary-900 text-center md:text-left">
             Description
           </h2>
           <p className="text-secondary-700">{group.excerpt}</p>
@@ -51,7 +51,7 @@ const ParticipatingGroup = () => {
           <h2 className="text-3xl font-extrabold text-secondary-900 text-center md:text-left">
             Organizers
           </h2>
-          <ul className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
+          <ul className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {group.organizers.map((organizer) => {
               return (
                 <OrganizerCard key={organizer.name} organizer={organizer} />

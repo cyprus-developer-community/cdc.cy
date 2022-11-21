@@ -22,7 +22,7 @@ export const Events: React.FC<GetEventsResult> = ({ upcoming, past, days }) => {
   return (
     <section className="py-16">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-extrabold text-secondary-700 sm:text-4xl mb-12">
+        <h2 className="text-3xl font-extrabold text-secondary-700 sm:text-4xl mb-12 text-center md:text-left">
           Upcoming events
         </h2>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-16">
@@ -198,7 +198,7 @@ export const Events: React.FC<GetEventsResult> = ({ upcoming, past, days }) => {
       </div>
 
       <div className="container mx-auto mt-16">
-        <h2 className="text-lg font-semibold text-secondary-900">
+        <h2 className="text-lg font-semibold text-secondary-900 text-center md:text-left">
           Past events
         </h2>
         <ol className="mt-4 divide-y divide-secondary-100 text-sm leading-6 lg:col-span-7 xl:col-span-8">

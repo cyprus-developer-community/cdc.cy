@@ -23,7 +23,7 @@ const ParticipatingGroups = () => {
 
   return (
     <div className="flex justify-center py-4">
-      <section className="grid gap-4 max-w-page">
+      <section className="grid gap-4 max-w-screen-xl">
         <div className="mb-12">
           <h1 className="text-4xl lg:text-6xl font-extrabold text-center mb-12 text-primary-900">
             Participating Groups
