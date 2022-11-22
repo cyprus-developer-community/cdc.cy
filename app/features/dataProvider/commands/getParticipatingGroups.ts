@@ -14,7 +14,7 @@ export type GroupLink<TGroupLinkType extends GroupLinkType = GroupLinkType> = {
   href: string
 }
 
-type Organizer = {
+export type Organizer = {
   name: string
   github: string
   avatar: string
