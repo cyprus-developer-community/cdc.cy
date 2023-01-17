@@ -19,7 +19,8 @@ function calculateDays(events) {
 
   const days = []
   const today = new Date()
-  let slider = sub(startOfMonth(today), { days: 5 })
+  // TODO: seems there's an issue with 31/30 days
+  let slider = sub(startOfMonth(today), { days: 6 })
   for (let idx = 0; idx < 40; idx++) {
     const currentday = {
       date: format(slider, 'yyyy-MM-dd')
