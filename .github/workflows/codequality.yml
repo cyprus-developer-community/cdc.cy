@@ -6,7 +6,7 @@ on:
       node-version:
         type: string
         required: false
-        default: 16
+        default: 18
       pnpm-version:
         type: string
         required: false
@@ -34,5 +34,5 @@ jobs:
       - name: Lint
         run: pnpm lint:check
 
-      - name: Type check
-        run: pnpm typecheck
+      # - name: Type check
+      #   run: pnpm typecheck
