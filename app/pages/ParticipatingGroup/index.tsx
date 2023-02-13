@@ -7,6 +7,11 @@ import {
 } from '~/features/dataProvider'
 import type { Group } from '~/features/dataProvider'
 import { OrganizerCard } from './components/OrganizerCard'
+import {
+  BreacrumbItem,
+  BreadcrumbLink,
+  Breadcrumbs
+} from '~/features/components/Breadcrumbs'
 
 type LoaderData = { group: Group }
 export const loader = async ({ params }) => {
@@ -31,6 +36,19 @@ const ParticipatingGroup = () => {
 
   return (
     <div className="grid gap-8">
+      <Breadcrumbs>
+        <BreacrumbItem>
+          <BreadcrumbLink to="/">Home</BreadcrumbLink>
+        </BreacrumbItem>
+        <BreacrumbItem>
+          <BreadcrumbLink to="/groups">Groups</BreadcrumbLink>
+        </BreacrumbItem>
+        <BreacrumbItem isCurrentPage>
+          <BreadcrumbLink to={`/groups/${group.slug}`}>
+            {group.name}
+          </BreadcrumbLink>
+        </BreacrumbItem>
+      </Breadcrumbs>
       <div className="flex flex-col place-items-center gap-4">
         <h1 className="text-4xl lg:text-6xl font-extrabold text-center text-primary-900">
           {group.name}
@@ -69,9 +87,9 @@ const ParticipatingGroup = () => {
                 <a
                   className="px-6 py-4 text-secondary-600 bg-secondary-100 shadow-xl rounded-lg capitalize outline outline-3 outline-transparent hover:outline-primary-400 focus:outline-primary-400 border border-3 border-secondary-200"
                   target="_blank"
+                  rel="noopener noreferrer"
                   key={link.href}
                   href={link.href}
-                  rel="noreferrer"
                 >
                   {link.type}
                 </a>
