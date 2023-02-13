@@ -2,7 +2,12 @@ import { useLoaderData } from '@remix-run/react'
 import type { Group } from '~/features/dataProvider'
 import { newDataProvider } from '~/features/dataProvider'
 import { getConfig, getDiscordChatLink } from '~/features/configuration'
-import { ParticipatingGroupCard } from '../../features/components/ParticipatingGroupCard'
+import { ParticipatingGroupCard } from '~/features/components/ParticipatingGroupCard'
+import {
+  Breadcrumbs,
+  BreadcrumbLink,
+  BreacrumbItem
+} from '~/features/components/Breadcrumbs'
 
 type LoaderData = { groups: Group[] }
 export const loader = async () => {
@@ -22,8 +27,16 @@ const ParticipatingGroups = () => {
   const config = getConfig()
 
   return (
-    <div className="flex justify-center py-4">
-      <section className="grid gap-4 max-w-screen-xl">
+    <div className="flex flex-col justify-center">
+      <Breadcrumbs>
+        <BreacrumbItem>
+          <BreadcrumbLink to="/">Home</BreadcrumbLink>
+        </BreacrumbItem>
+        <BreacrumbItem isCurrentPage>
+          <BreadcrumbLink to="/groups">Groups</BreadcrumbLink>
+        </BreacrumbItem>
+      </Breadcrumbs>
+      <section className="grid gap-4 max-w-screen-xl mt-4">
         <div className="mb-12">
           <h1 className="text-4xl lg:text-6xl font-extrabold text-center mb-12 text-primary-900">
             Participating Groups
