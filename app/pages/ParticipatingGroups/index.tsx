@@ -27,7 +27,7 @@ const ParticipatingGroups = () => {
   const config = getConfig()
 
   return (
-    <div className="flex flex-col justify-center py-4">
+    <div className="flex flex-col justify-center">
       <Breadcrumbs>
         <BreacrumbItem>
           <BreadcrumbLink to="/">Home</BreadcrumbLink>
@@ -36,7 +36,7 @@ const ParticipatingGroups = () => {
           <BreadcrumbLink to="/groups">Groups</BreadcrumbLink>
         </BreacrumbItem>
       </Breadcrumbs>
-      <section className="grid gap-4 max-w-screen-xl">
+      <section className="grid gap-4 max-w-screen-xl mt-4">
         <div className="mb-12">
           <h1 className="text-4xl lg:text-6xl font-extrabold text-center mb-12 text-primary-900">
             Participating Groups

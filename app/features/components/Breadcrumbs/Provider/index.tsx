@@ -4,6 +4,7 @@ import type { Separator } from '../types'
 
 type BreadcrumbProviderContextProps = {
   separator: Separator
+  spacing: number
 }
 const BreadcrumbProviderContext =
   React.createContext<Maybe<BreadcrumbProviderContextProps>>(undefined)
@@ -23,9 +24,10 @@ type BreadcrumbProviderProps = {
 
 export const BreadcrumbProvider = ({
   children,
-  separator
+  separator,
+  spacing
 }: BreadcrumbProviderProps) => {
-  const value = { separator }
+  const value = { separator, spacing }
   return (
     <BreadcrumbProviderContext.Provider value={value}>
       {children}

@@ -9,17 +9,17 @@ export type BreadcrumbsProps = {
 
 export const Breadcrumbs = ({
   children,
-  separator = '>',
-  spacing = 2,
-  className
+  separator = '/',
+  spacing = 1,
+  className = ''
 }: BreadcrumbsProps) => {
   return (
-    <BreadcrumbProvider separator={separator}>
+    <BreadcrumbProvider separator={separator} spacing={spacing}>
       <nav
-        className={`text-secondary-500 font-light text-lg ${className}`}
+        className={`text-primary-500 font-light text-lg ${className}`}
         aria-label="breadcrumb"
       >
-        <ol className={`flex wrap gap-x-${spacing}`}>{children}</ol>
+        <ol className="flex wrap">{children}</ol>
       </nav>
     </BreadcrumbProvider>
   )

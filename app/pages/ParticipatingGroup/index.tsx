@@ -49,7 +49,7 @@ const ParticipatingGroup = () => {
           </BreadcrumbLink>
         </BreacrumbItem>
       </Breadcrumbs>
-      <div className="flex flex-col place-items-center gap-4">
+      <div className="flex flex-col place-items-center gap-4 mt-4">
         <h1 className="text-4xl lg:text-6xl font-extrabold text-center text-primary-900">
           {group.name}
         </h1>
