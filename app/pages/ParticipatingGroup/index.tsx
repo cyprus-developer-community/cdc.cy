@@ -87,7 +87,7 @@ const ParticipatingGroup = () => {
                 <a
                   className="px-6 py-4 text-secondary-600 bg-secondary-100 shadow-xl rounded-lg capitalize outline outline-3 outline-transparent hover:outline-primary-400 focus:outline-primary-400 border border-3 border-secondary-200"
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener"
                   key={link.href}
                   href={link.href}
                 >
