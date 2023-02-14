@@ -10,11 +10,14 @@ export type BreacrumbItemProps = {
 export const BreacrumbItem = ({
   isCurrentPage,
   children,
-  className
+  className = ''
 }: BreacrumbItemProps) => {
   const { separator, spacing } = useBreadcrumb()
   return (
-    <li className={className} aria-current={isCurrentPage ? 'page' : undefined}>
+    <li
+      className={`hover:text-primary-900 ${className}`}
+      aria-current={isCurrentPage ? 'page' : undefined}
+    >
       {children}
       {!isCurrentPage && (
         <span

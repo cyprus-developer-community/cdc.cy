@@ -20,7 +20,7 @@ export const Header: React.FC = () => {
   const shouldAddExtraPadding = y > 80
 
   return (
-    <header className="sticky top-0 bg-light-50 py-4 px-8 shadow-md z-50">
+    <header className="sticky top-0 bg-light-50 py-4 px-8 shadow-lg bg-white z-50">
       <div
         className={`relative max-w-screen-xl m-auto transition-all duration-500 ${
           shouldAddExtraPadding ? 'lg:py-4 lg:px-16' : 'py-0 px-0'

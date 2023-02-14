@@ -6,10 +6,14 @@ import {
   Scripts,
   ScrollRestoration
 } from '@remix-run/react'
-import windiStylesheetUrl from './styles/windi.css'
+import unoStylesheetUrl from './styles/uno.css'
+import resetStylesheetUrl from '@unocss/reset/tailwind.css'
 import { MainLayout } from '~/features/components'
 
-export const links = () => [{ rel: 'stylesheet', href: windiStylesheetUrl }]
+export const links = () => [
+  { rel: 'stylesheet', href: unoStylesheetUrl },
+  { rel: 'stylesheet', href: resetStylesheetUrl }
+]
 
 export const meta = () => ({
   charset: 'utf-8',

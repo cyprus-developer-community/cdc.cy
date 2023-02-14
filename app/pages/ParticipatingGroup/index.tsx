@@ -85,9 +85,9 @@ const ParticipatingGroup = () => {
             {group.links.map((link) => {
               return (
                 <a
-                  className="px-6 py-4 text-secondary-600 bg-secondary-100 shadow-xl rounded-lg capitalize outline outline-3 outline-transparent hover:outline-primary-400 focus:outline-primary-400 border border-3 border-secondary-200"
+                  className="px-6 py-4 text-secondary-600 bg-secondary-100 shadow-lg rounded-lg capitalize outline outline-3 outline-secondary-200 hover:outline-primary-400 focus:outline-primary-400"
                   target="_blank"
-                  rel="noopener"
+                  rel="noreferrer noopener"
                   key={link.href}
                   href={link.href}
                 >

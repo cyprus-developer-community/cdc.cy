@@ -52,13 +52,18 @@ const ParticipatingGroups = () => {
             <span className="px-1">
               If you want to learn more, reach out to
             </span>
-            <a href={getDiscordChatLink(config)} className="text-cyan-400">
+            <a
+              href={getDiscordChatLink(config)}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="text-cyan-400"
+            >
               Discord
             </a>
           </p>
         </div>
 
-        <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {groups.map((group) => {
             return <ParticipatingGroupCard key={group.name} group={group} />
           })}

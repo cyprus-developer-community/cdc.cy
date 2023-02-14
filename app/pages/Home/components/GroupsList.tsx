@@ -16,7 +16,7 @@ export const GroupsList: React.FC<GroupsListProps> = ({ groups }) => {
         <h2 className="text-3xl font-extrabold text-secondary-700 sm:text-4xl mb-12 text-center md:text-left">
           Participating Member Groups
         </h2>
-        <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 items-center">
+        <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
           {groups.map((group) => (
             <ParticipatingGroupCard key={group.name} group={group} />
           ))}
