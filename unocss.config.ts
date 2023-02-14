@@ -33,7 +33,7 @@ const colors = {
 const globalOverrides = ({
   theme
 }: PreflightContext<{ colors: typeof colors }>) => `
-a:focus,a:focus-visible {
+a:focus-visible {
   outline-color: ${theme.colors.primary[200]};
   outline-width: 3px;
   outline-style: solid;
@@ -43,14 +43,14 @@ a:focus,a:focus-visible {
 
 export default defineConfig({
   presets: [presetUno(), presetTypography()],
+  rules: [
+    ['group-card', { display: 'grid', 'grid-template-rows': '225px 1fr' }]
+  ],
   theme: {
     fontFamily: {
       sans: 'sans-serif'
     },
-    colors,
-    gridTemplateRow: {
-      card: '225px 1fr'
-    }
+    colors
   },
   preflights: [
     {

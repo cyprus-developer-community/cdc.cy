@@ -54,6 +54,7 @@ const ParticipatingGroups = () => {
             </span>
             <a
               href={getDiscordChatLink(config)}
+              target="_blank"
               rel="noreferrer noopener"
               className="text-cyan-400"
             >

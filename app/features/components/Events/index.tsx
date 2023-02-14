@@ -63,7 +63,6 @@ export const Events: React.FC<GetEventsResult> = ({ upcoming, past, days }) => {
                 return (
                   <button
                     key={day.date}
-                    type="button"
                     className={`py-1.5 hover:bg-secondary-100 focus:z-10 ${
                       day.isCurrentMonth ? 'bg-white' : 'bg-secondary-50'
                     }
