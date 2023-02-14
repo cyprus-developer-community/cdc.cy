@@ -6,10 +6,10 @@ import {
   Scripts,
   ScrollRestoration
 } from '@remix-run/react'
-import windiStylesheetUrl from './styles/windi.css'
+import stylesheetUrl from './styles/tailwind.css'
 import { MainLayout } from '~/features/components'
 
-export const links = () => [{ rel: 'stylesheet', href: windiStylesheetUrl }]
+export const links = () => [{ rel: 'stylesheet', href: stylesheetUrl }]
 
 export const meta = () => ({
   charset: 'utf-8',

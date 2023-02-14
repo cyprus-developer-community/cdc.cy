@@ -58,7 +58,7 @@ const ParticipatingGroups = () => {
           </p>
         </div>
 
-        <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid gap-4 justify-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {groups.map((group) => {
             return <ParticipatingGroupCard key={group.name} group={group} />
           })}

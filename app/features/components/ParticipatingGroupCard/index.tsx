@@ -12,9 +12,13 @@ export const ParticipatingGroupCard: React.FC<ParticipatingGroupCardProps> = ({
   return (
     <li
       key={group.name}
-      className="grid grid-rows-card block max-w-sm border-solid border-3 border-secondary-200 shadow-lg rounded-lg relative"
+      className="grid grid-rows-card max-w-sm border-solid border-3 border-secondary-200 shadow-lg rounded-lg relative w-full"
     >
-      <Image src={group.logo.png} className="m-auto h-full" alt={group.name} />
+      <Image
+        src={group.logo.png}
+        className="m-auto h-full object-contain"
+        alt={group.name}
+      />
       <div>
         <h2>
           <Link

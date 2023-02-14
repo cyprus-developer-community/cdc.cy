@@ -17,10 +17,7 @@ export const BreacrumbItem = ({
     <li className={className} aria-current={isCurrentPage ? 'page' : undefined}>
       {children}
       {!isCurrentPage && (
-        <span
-          className={spacing ? `px-${spacing}` : 'px-1'}
-          role="presentation"
-        >
+        <span className={`px-${spacing}`} role="presentation">
           {separator}
         </span>
       )}

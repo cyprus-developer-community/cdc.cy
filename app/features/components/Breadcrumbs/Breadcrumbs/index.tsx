@@ -10,7 +10,7 @@ export type BreadcrumbsProps = {
 export const Breadcrumbs = ({
   children,
   separator = '/',
-  spacing = 1,
+  spacing = 3,
   className = ''
 }: BreadcrumbsProps) => {
   return (
