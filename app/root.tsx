@@ -74,7 +74,7 @@ export default function App() {
           }}
         />
       </head>
-      <body className="antialiased font-sans bg-white m-0">
+      <body className="antialiased font-sans bg-white">
         <MainLayout>
           <Outlet />
         </MainLayout>
