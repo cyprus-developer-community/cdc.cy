@@ -6,10 +6,14 @@ import {
   Scripts,
   ScrollRestoration
 } from '@remix-run/react'
-import windiStylesheetUrl from './styles/windi.css'
+import unoStylesheetUrl from './styles/uno.css'
+import resetStylesheetUrl from '@unocss/reset/tailwind.css'
 import { MainLayout } from '~/features/components'
 
-export const links = () => [{ rel: 'stylesheet', href: windiStylesheetUrl }]
+export const links = () => [
+  { rel: 'stylesheet', href: unoStylesheetUrl },
+  { rel: 'stylesheet', href: resetStylesheetUrl }
+]
 
 export const meta = () => ({
   charset: 'utf-8',
@@ -70,7 +74,7 @@ export default function App() {
           }}
         />
       </head>
-      <body className="antialiased font-sans bg-white">
+      <body className="antialiased font-sans bg-white m-0">
         <MainLayout>
           <Outlet />
         </MainLayout>
