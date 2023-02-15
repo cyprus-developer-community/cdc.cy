@@ -7,7 +7,7 @@ query getPastEvents(
   repository(owner: $owner, name: $repo) {
     issues(
       filterBy: { labels: "Approved :white_check_mark:" }
-      orderBy: { field: CREATED_AT, direction: ASC }
+      orderBy: { field: CREATED_AT, direction: DESC }
       after: $after
       first: $size
       states: CLOSED

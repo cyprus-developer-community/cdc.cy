@@ -44,7 +44,8 @@ a:focus-visible {
 export default defineConfig({
   presets: [presetUno(), presetTypography()],
   rules: [
-    ['group-card', { display: 'grid', 'grid-template-rows': '225px 1fr' }]
+    ['group-card', { display: 'grid', 'grid-template-rows': '225px 1fr' }],
+    ['content-empty', { content: '""' }]
   ],
   theme: {
     fontFamily: {
