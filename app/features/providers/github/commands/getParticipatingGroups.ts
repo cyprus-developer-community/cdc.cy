@@ -1,5 +1,9 @@
-import type { ApiResponse } from '@types'
-import { StatusOk } from './constants'
+import type { ApiResponse } from '~/types'
+import {
+  newErrorResponse,
+  newSuccessfulResponse,
+  STATUS_OK
+} from '~/features/providers/misc/http'
 
 type Logo = {
   svg?: string
@@ -36,13 +40,14 @@ export const getParticipatingGroups = async (): Promise<
     const res = await fetch(
       'https://raw.githubusercontent.com/cyprus-developer-community/home/main/groups.json'
     )
-    if (res.status !== StatusOk) {
-      return [new Error('error: invalid status code')]
+    if (res.status !== STATUS_OK) {
+      const result = await res.json()
+      return newErrorResponse(result)
     }
 
     const groups: Group[] = await res.json()
-    return [null, groups]
+    return newSuccessfulResponse(groups)
   } catch (e) {
-    return [e]
+    return newErrorResponse(e)
   }
 }

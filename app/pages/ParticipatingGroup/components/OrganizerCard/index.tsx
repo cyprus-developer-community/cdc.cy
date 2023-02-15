@@ -1,4 +1,4 @@
-import type { Organizer } from '~/features/dataProvider'
+import type { Organizer } from '~/types'
 import { Image } from 'remix-image'
 
 type OrganizerCardProps = {

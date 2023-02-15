@@ -14,9 +14,9 @@
     "noUnusedParameters": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"],
-      "@types": ["./app/types/index.ts"]
+      "~/*": ["./app/*"]
     },
+    "skipLibCheck": true,
     "types": ["node", "vitest/globals"],
     "noEmit": true
   },

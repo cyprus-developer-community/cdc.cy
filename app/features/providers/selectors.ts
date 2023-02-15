@@ -1,5 +1,5 @@
-import type { Group, GroupLink, GroupLinkType } from './commands'
-import type { Maybe } from '@types'
+import type { Group, GroupLink, GroupLinkType } from './github/commands'
+import type { Maybe } from '~/types'
 
 export const getGroupLink = (
   group: Group,

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { createAppAuth } from '@octokit/auth-app'
 import { graphql } from '@octokit/graphql'
 import {
@@ -8,6 +9,8 @@ import {
   isSameMonth,
   startOfMonth
 } from 'date-fns'
+import getEventsQuery from '~/features/providers/github/graphql/queries/getEvents'
+
 import pkg from 'date-fns-tz'
 const { zonedTimeToUtc } = pkg
 
@@ -72,59 +75,10 @@ export async function getEvents() {
   )
   const locations = await locationsFile.json()
 
-  const response = await graphqlWithAuth(
-    `
-      query lastIssues($owner: String!, $repo: String!) {
-        repository(owner: $owner, name: $repo) {
-          issues(
-            filterBy: {labels: "Approved :white_check_mark:"}
-            orderBy: {field: CREATED_AT, direction: ASC}
-            first: 100
-          ) {
-            edges {
-              node {
-                id
-                url
-                title
-                body
-                createdAt
-                updatedAt
-                state
-                labels(first:10) {
-                  nodes {
-                    name
-                  }
-                }
-                author {
-                  ... on User {
-                    login
-                    name
-                    url
-                  }
-                }
-                reactions(first: 100, content: THUMBS_UP) {
-                  edges {
-                    node {
-                      user {
-                        name
-                        login
-                        url
-                      }
-                    }
-                  }
-                }
-              }
-            }
-            totalCount
-          }
-        }
-      }
-    `,
-    {
-      owner: 'cyprus-developer-community',
-      repo: 'events'
-    }
-  )
+  const response = await graphqlWithAuth(getEventsQuery, {
+    owner: 'cyprus-developer-community',
+    repo: 'events'
+  })
 
   const events = []
   let idx = 0

@@ -1,5 +1,5 @@
 import { Image } from 'remix-image'
-import type { Group } from '~/features/dataProvider'
+import type { Group } from '~/types'
 import { Link } from '@remix-run/react'
 
 type ParticipatingGroupCardProps = {

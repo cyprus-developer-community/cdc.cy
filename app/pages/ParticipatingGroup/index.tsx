@@ -1,34 +1,14 @@
 import { useLoaderData } from '@remix-run/react'
 import { Image } from 'remix-image'
-import {
-  newDataProvider,
-  ErrGroupNotFound,
-  StatusNotFound
-} from '~/features/dataProvider'
-import type { Group } from '~/features/dataProvider'
 import { OrganizerCard } from './components/OrganizerCard'
 import {
   BreacrumbItem,
   BreadcrumbLink,
   Breadcrumbs
 } from '~/features/components/Breadcrumbs'
+import type { LoaderData } from './loader'
 
-type LoaderData = { group: Group }
-export const loader = async ({ params }) => {
-  const dataProvider = newDataProvider()
-  const { slug } = params
-
-  if (!slug) {
-    throw new Response(ErrGroupNotFound.message, { status: StatusNotFound })
-  }
-
-  const [e, group] = await dataProvider.commands.getParticipatingGroup(slug)
-  if (e === ErrGroupNotFound) {
-    throw new Response(ErrGroupNotFound.message, { status: StatusNotFound })
-  }
-
-  return { group }
-}
+export { loader } from './loader'
 
 const ParticipatingGroup = () => {
   const { group } = useLoaderData() as LoaderData

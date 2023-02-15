@@ -1,4 +1,4 @@
-import type { Group } from '~/features/dataProvider'
+import type { Group } from '~/types'
 import { getConfig, getDiscordChatLink } from '~/features/configuration'
 import { ParticipatingGroupCard } from '~/features/components'
 

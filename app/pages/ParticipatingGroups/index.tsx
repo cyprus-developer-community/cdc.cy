@@ -1,6 +1,4 @@
 import { useLoaderData } from '@remix-run/react'
-import type { Group } from '~/features/dataProvider'
-import { newDataProvider } from '~/features/dataProvider'
 import { getConfig, getDiscordChatLink } from '~/features/configuration'
 import { ParticipatingGroupCard } from '~/features/components/ParticipatingGroupCard'
 import {
@@ -8,19 +6,9 @@ import {
   BreadcrumbLink,
   BreacrumbItem
 } from '~/features/components/Breadcrumbs'
+import type { LoaderData } from './loader'
 
-type LoaderData = { groups: Group[] }
-export const loader = async () => {
-  const dataProvider = newDataProvider()
-  const [getParticipatingGroupError, groups] =
-    await dataProvider.commands.getParticipatingGroups()
-
-  if (getParticipatingGroupError) {
-    throw new Response(getParticipatingGroupError.message)
-  }
-
-  return { groups }
-}
+export { loader } from './loader'
 
 const ParticipatingGroups = () => {
   const { groups } = useLoaderData() as LoaderData
