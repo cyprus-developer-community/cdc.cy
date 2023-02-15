@@ -27041,6 +27041,82 @@ export type GetAllEventsQuery = {
   } | null
 }
 
+export type GetEventQueryVariables = Exact<{
+  owner: Scalars['String']
+  repo: Scalars['String']
+  number: Scalars['Int']
+}>
+
+export type GetEventQuery = {
+  __typename?: 'Query'
+  repository?: {
+    __typename?: 'Repository'
+    issue?: {
+      __typename?: 'Issue'
+      id: string
+      url: any
+      title: string
+      body: string
+      bodyHTML: any
+      createdAt: any
+      updatedAt: any
+      publishedAt?: any | null
+      state: IssueState
+      closed: boolean
+      number: number
+      closedAt?: any | null
+      author?:
+        | { __typename?: 'Bot' }
+        | { __typename?: 'EnterpriseUserAccount' }
+        | { __typename?: 'Mannequin' }
+        | { __typename?: 'Organization' }
+        | {
+            __typename?: 'User'
+            id: string
+            name?: string | null
+            login: string
+            url: any
+            avatarUrl: any
+          }
+        | null
+      reactions: {
+        __typename?: 'ReactionConnection'
+        totalCount: number
+        nodes?: Array<{
+          __typename?: 'Reaction'
+          user?: {
+            __typename?: 'User'
+            id: string
+            name?: string | null
+            login: string
+            url: any
+            avatarUrl: any
+          } | null
+        } | null> | null
+      }
+      labels?: {
+        __typename?: 'LabelConnection'
+        nodes?: Array<{
+          __typename?: 'Label'
+          name: string
+          description?: string | null
+          url: any
+          color: string
+        } | null> | null
+      } | null
+    } | null
+  } | null
+}
+
+export type GetEventUserFragmentFragment = {
+  __typename?: 'User'
+  id: string
+  name?: string | null
+  login: string
+  url: any
+  avatarUrl: any
+}
+
 export type GetPastEventsQueryVariables = Exact<{
   owner: Scalars['String']
   repo: Scalars['String']
@@ -27067,6 +27143,7 @@ export type GetPastEventsQuery = {
         publishedAt?: any | null
         state: IssueState
         closed: boolean
+        number: number
         closedAt?: any | null
         author?:
           | { __typename?: 'Bot' }
@@ -27075,9 +27152,11 @@ export type GetPastEventsQuery = {
           | { __typename?: 'Organization' }
           | {
               __typename?: 'User'
-              login: string
+              id: string
               name?: string | null
+              login: string
               url: any
+              avatarUrl: any
             }
           | null
         reactions: {
@@ -27087,9 +27166,11 @@ export type GetPastEventsQuery = {
             __typename?: 'Reaction'
             user?: {
               __typename?: 'User'
-              login: string
+              id: string
               name?: string | null
+              login: string
               url: any
+              avatarUrl: any
             } | null
           } | null> | null
         }
@@ -27114,51 +27195,13 @@ export type GetPastEventsQuery = {
   } | null
 }
 
-export type ReactionsFragmentFragment = {
-  __typename?: 'Reaction'
-  user?: {
-    __typename?: 'User'
-    login: string
-    name?: string | null
-    url: any
-  } | null
-}
-
-export type LabelFragmentFragment = {
-  __typename?: 'Label'
-  name: string
-  description?: string | null
-  url: any
-  color: string
-}
-
-export type IssueFragmentFragment = {
-  __typename?: 'Issue'
-  id: string
-  url: any
-  title: string
-  body: string
-  bodyHTML: any
-  createdAt: any
-  updatedAt: any
-  publishedAt?: any | null
-  state: IssueState
-  closed: boolean
-  closedAt?: any | null
-}
-
-export type UserFragmentFragment = {
+export type GetPastEventsUserFragmentFragment = {
   __typename?: 'User'
-  login: string
+  id: string
   name?: string | null
+  login: string
   url: any
-}
-
-export type PageInfoFragmentFragment = {
-  __typename?: 'PageInfo'
-  endCursor?: string | null
-  hasNextPage: boolean
-  hasPreviousPage: boolean
+  avatarUrl: any
 }
 
 export type GetUpcomingEventsQueryVariables = Exact<{
@@ -27187,6 +27230,7 @@ export type GetUpcomingEventsQuery = {
         publishedAt?: any | null
         state: IssueState
         closed: boolean
+        number: number
         closedAt?: any | null
         author?:
           | { __typename?: 'Bot' }
@@ -27195,9 +27239,11 @@ export type GetUpcomingEventsQuery = {
           | { __typename?: 'Organization' }
           | {
               __typename?: 'User'
-              login: string
+              id: string
               name?: string | null
+              login: string
               url: any
+              avatarUrl: any
             }
           | null
         reactions: {
@@ -27207,9 +27253,11 @@ export type GetUpcomingEventsQuery = {
             __typename?: 'Reaction'
             user?: {
               __typename?: 'User'
-              login: string
+              id: string
               name?: string | null
+              login: string
               url: any
+              avatarUrl: any
             } | null
           } | null> | null
         }

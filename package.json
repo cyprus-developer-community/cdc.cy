@@ -24,7 +24,7 @@
     "typecheck": "tsc -b",
     "prettier": "prettier .",
     "prettier:check": "pnpm prettier --check",
-    "prettier:format": "pnpm prettier --write",
+    "prettier:format": "pnpm prettier -l --write",
     "lint:check": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "lint:format": "pnpm lint:check --fix",
     "test:unit": "vitest run",

@@ -13,11 +13,14 @@
           "publishedAt": "2023-01-22T10:18:43Z",
           "state": "OPEN",
           "closed": false,
+          "number": 38,
           "closedAt": null,
           "author": {
-            "login": "saitonakamura",
+            "id": "MDQ6VXNlcjE1NTIxODk=",
             "name": "Michael サイトー 中村 Bashurov",
-            "url": "https://github.com/saitonakamura"
+            "login": "saitonakamura",
+            "url": "https://github.com/saitonakamura",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
           },
           "reactions": {
             "nodes": [],
@@ -51,11 +54,14 @@
           "publishedAt": "2023-02-15T07:44:18Z",
           "state": "OPEN",
           "closed": false,
+          "number": 40,
           "closedAt": null,
           "author": {
-            "login": "MarioSimou",
+            "id": "MDQ6VXNlcjMyMjQzNDU5",
             "name": "msimou",
-            "url": "https://github.com/MarioSimou"
+            "login": "MarioSimou",
+            "url": "https://github.com/MarioSimou",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/32243459?u=95acc24f98109cd72dcd6cfac98571015c0fa378&v=4"
           },
           "reactions": {
             "nodes": [],
@@ -89,11 +95,14 @@
           "publishedAt": "2023-02-15T08:08:54Z",
           "state": "OPEN",
           "closed": false,
+          "number": 41,
           "closedAt": null,
           "author": {
-            "login": "PatrickHeneise",
+            "id": "MDQ6VXNlcjc0Mzkw",
             "name": "Patrick Heneise",
-            "url": "https://github.com/PatrickHeneise"
+            "login": "PatrickHeneise",
+            "url": "https://github.com/PatrickHeneise",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
           },
           "reactions": {
             "nodes": [],
@@ -121,14 +130,55 @@
               }
             ]
           }
+        },
+        {
+          "id": "I_kwDOG7Tv585egXkb",
+          "url": "https://github.com/cyprus-developer-community/events/issues/42",
+          "title": "Cyprus Kotlin User Group",
+          "body": "### Event Description\n\nKUG Cyprus is for everyone who is interested in Kotlin. Doesn't matter whether you're a beginner or an expert, more into Android or Backend - we all want to learn more about Kotlin and have some fun together!\r\n\r\nPlease [register here.](https://www.eventbrite.com/e/cyprus-kotlin-user-group-meetup-0203-tickets-547755831437)\r\n\r\n**Agenda**\r\n19:00 - 19:30 - Gathering & Intro\r\n19:30 - 20:00 - \"10 myths about cross platform mobile development with Kotlin\" by Katerina Petrova (JetBrains)\r\nBusting myths about Kotlin Mobile Multiplatform!\r\n20:00 - 20:30 - TBA\r\n20:30 - 21:00 - Networking\r\n\r\n**СFP**\r\nWe are open to talk proposals. If you are interested in making a Kotlin-related tech talk at this meeting, please fill in an[ issue here](https://github.com/Cyprus-Kotlin-User-Group/Cyprus-KUG/issues/new?assignees=oldtuna&labels=talk+proposal&template=talk-proposal.md&title=).\n\n### Location\n\nExness office (Porto Bello Business & Cultural center), Limassol\n\n### Date\n\n02.03.2023\n\n### Time\n\n19:00\n\n### Duration\n\n2h\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+          "bodyHTML": "<h3 dir=\"auto\">Event Description</h3>\n<p dir=\"auto\">KUG Cyprus is for everyone who is interested in Kotlin. Doesn't matter whether you're a beginner or an expert, more into Android or Backend - we all want to learn more about Kotlin and have some fun together!</p>\n<p dir=\"auto\">Please <a href=\"https://www.eventbrite.com/e/cyprus-kotlin-user-group-meetup-0203-tickets-547755831437\" rel=\"nofollow\">register here.</a></p>\n<p dir=\"auto\"><strong>Agenda</strong><br>\n19:00 - 19:30 - Gathering &amp; Intro<br>\n19:30 - 20:00 - \"10 myths about cross platform mobile development with Kotlin\" by Katerina Petrova (JetBrains)<br>\nBusting myths about Kotlin Mobile Multiplatform!<br>\n20:00 - 20:30 - TBA<br>\n20:30 - 21:00 - Networking</p>\n<p dir=\"auto\"><strong>СFP</strong><br>\nWe are open to talk proposals. If you are interested in making a Kotlin-related tech talk at this meeting, please fill in an<a href=\"https://github.com/Cyprus-Kotlin-User-Group/Cyprus-KUG/issues/new?assignees=oldtuna&amp;labels=talk+proposal&amp;template=talk-proposal.md&amp;title=\"> issue here</a>.</p>\n<h3 dir=\"auto\">Location</h3>\n<p dir=\"auto\">Exness office (Porto Bello Business &amp; Cultural center), Limassol</p>\n<h3 dir=\"auto\">Date</h3>\n<p dir=\"auto\">02.03.2023</p>\n<h3 dir=\"auto\">Time</h3>\n<p dir=\"auto\">19:00</p>\n<h3 dir=\"auto\">Duration</h3>\n<p dir=\"auto\">2h</p>\n<h3 dir=\"auto\">Code of Conduct</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" id=\"\" disabled=\"\" class=\"task-list-item-checkbox\" checked=\"\"> I agree to follow this project's <a href=\"https://berlincodeofconduct.org\" rel=\"nofollow\">Code of Conduct</a></li>\n</ul>",
+          "createdAt": "2023-02-15T09:50:26Z",
+          "updatedAt": "2023-02-15T14:16:02Z",
+          "publishedAt": "2023-02-15T09:50:26Z",
+          "state": "OPEN",
+          "closed": false,
+          "number": 42,
+          "closedAt": null,
+          "author": {
+            "id": "MDQ6VXNlcjI2MjUyMzkw",
+            "name": "Mike Klyuev",
+            "login": "oldtuna",
+            "url": "https://github.com/oldtuna",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/26252390?u=8d87562c64ee284db95f497b6efbc30742cd1fae&v=4"
+          },
+          "reactions": {
+            "nodes": [],
+            "totalCount": 0
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "Event :sparkles:",
+                "description": "An event proposal.",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Event%20%3Asparkles%3A",
+                "color": "F075B7"
+              },
+              {
+                "name": "Approved :white_check_mark:",
+                "description": "approved & confirmed",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Approved%20%3Awhite_check_mark%3A",
+                "color": "2DA44E"
+              }
+            ]
+          }
         }
       ],
       "pageInfo": {
-        "endCursor": "Y3Vyc29yOnYyOpK5MjAyMy0wMi0xNVQxMDowODo1NCswMjowMM5ef1Ys",
+        "endCursor": "Y3Vyc29yOnYyOpK5MjAyMy0wMi0xNVQxMTo1MDoyNiswMjowMM5egXkb",
         "hasNextPage": false,
         "hasPreviousPage": false
       },
-      "totalCount": 3
+      "totalCount": 4
     }
   }
 }

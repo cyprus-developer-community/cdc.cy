@@ -1,11 +1,22 @@
-// import { useLoaderData } from '@remix-run/react'
-// import type { LoaderData } from './loader'
+import { Link, useLoaderData } from '@remix-run/react'
+import type { LoaderData } from './loader'
 
 const Events = () => {
-  // const { pastEvents, upcomingEvents } = useLoaderData() as LoaderData
-  // console.log('past events: ', pastEvents)
-  // console.log('upcoming events: ', upcomingEvents)
-  return <div>events page</div>
+  const { pastEvents } = useLoaderData() as LoaderData
+
+  return (
+    <section>
+      <ul>
+        {pastEvents.nodes.map((event) => {
+          return (
+            <li key={event.id}>
+              <Link to={`/events/${event.number}`}>{event.id} </Link>
+            </li>
+          )
+        })}
+      </ul>
+    </section>
+  )
 }
 
 export default Events

@@ -13,65 +13,52 @@ query getUpcomingEvents(
       states: OPEN
     ) {
       nodes {
-        ...issueFragment
+        id
+        url
+        title
+        body
+        bodyHTML
+        createdAt
+        updatedAt
+        publishedAt
+        state
+        closed
+        number
+        closedAt
         author {
-          ...userFragment
+          ...getPastEventsUserFragment
         }
         reactions(first: 100) {
           nodes {
-            ...reactionsFragment
+            user {
+              ...getPastEventsUserFragment
+            }
           }
           totalCount
         }
         labels(first: 10) {
           nodes {
-            ...labelFragment
+            name
+            description
+            url
+            color
           }
         }
       }
       pageInfo {
-        ...pageInfoFragment
+        endCursor
+        hasNextPage
+        hasPreviousPage
       }
       totalCount
     }
   }
 }
 
-fragment reactionsFragment on Reaction {
-  user {
-    ...userFragment
-  }
-}
-
-fragment labelFragment on Label {
-  name
-  description
-  url
-  color
-}
-
-fragment issueFragment on Issue {
+fragment getPastEventsUserFragment on User {
   id
-  url
-  title
-  body
-  bodyHTML
-  createdAt
-  updatedAt
-  publishedAt
-  state
-  closed
-  closedAt
-}
-
-fragment userFragment on User {
-  login
   name
+  login
   url
-}
-
-fragment pageInfoFragment on PageInfo {
-  endCursor
-  hasNextPage
-  hasPreviousPage
+  avatarUrl
 }

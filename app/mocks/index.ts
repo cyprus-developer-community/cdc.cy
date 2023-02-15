@@ -22,7 +22,17 @@ export const handlers = [
   ),
   graphql.query('getUpcomingEvents', async (_, res, ctx) =>
     res(ctx.data(getUpcomingEvents))
-  )
+  ),
+  graphql.query('getEvent', async (req, res, ctx) => {
+    const { number } = req.variables
+    const events = [
+      ...getUpcomingEvents.repository.issues.nodes,
+      ...getPastEvents.repository.issues.nodes
+    ]
+    const event = events.find((currentEvent) => currentEvent.number === number)
+
+    return res(ctx.data({ repository: { issue: event } }))
+  })
 ]
 
 export const server = setupServer(...handlers)
