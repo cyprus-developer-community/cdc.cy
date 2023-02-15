@@ -6,18 +6,18 @@ import {
 } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
 import type { Maybe } from '~/types'
-import type { getEvents } from '~/features/providers/github/commands/getEvents'
+import type { getAllEvents } from '~/features/providers/github/commands/getAllEvents'
 import { getConfig, getGithubNewIssueLink } from '~/features/configuration'
 
-type GetEventsResult = Awaited<ReturnType<typeof getEvents>>
-type Day = GetEventsResult['days'][0]
+type GetAllEvents = Awaited<ReturnType<typeof getAllEvents>>
+type Day = GetAllEvents['days'][0]
 
 const formatDay = (day: Day): Maybe<string> => {
   const datePart = day.date.split('-').pop()
   return datePart ? datePart.replace(/^0/, '') : undefined
 }
 
-export const Events: React.FC<GetEventsResult> = ({ upcoming, past, days }) => {
+export const Events: React.FC<GetAllEvents> = ({ upcoming, past, days }) => {
   const config = getConfig()
 
   return (

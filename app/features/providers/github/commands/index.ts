@@ -1,3 +1,6 @@
 export * from './getParticipatingGroups'
 export * from './getParticipatingGroup'
-export * from './getEvents'
+export * from './getAllEvents'
+export * from './getPastEvents'
+export * from './getUpcomingEvents'
+export * from './getLocations'

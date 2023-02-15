@@ -1,0 +1,77 @@
+query getUpcomingEvents(
+  $owner: String!
+  $repo: String!
+  $size: Int!
+  $after: String
+) {
+  repository(owner: $owner, name: $repo) {
+    issues(
+      filterBy: { labels: "Approved :white_check_mark:" }
+      orderBy: { field: CREATED_AT, direction: ASC }
+      after: $after
+      first: $size
+      states: OPEN
+    ) {
+      nodes {
+        ...issueFragment
+        author {
+          ...userFragment
+        }
+        reactions(first: 100) {
+          nodes {
+            ...reactionsFragment
+          }
+          totalCount
+        }
+        labels(first: 10) {
+          nodes {
+            ...labelFragment
+          }
+        }
+      }
+      pageInfo {
+        ...pageInfoFragment
+      }
+      totalCount
+    }
+  }
+}
+
+fragment reactionsFragment on Reaction {
+  user {
+    ...userFragment
+  }
+}
+
+fragment labelFragment on Label {
+  name
+  description
+  url
+  color
+}
+
+fragment issueFragment on Issue {
+  id
+  url
+  title
+  body
+  bodyHTML
+  createdAt
+  updatedAt
+  publishedAt
+  state
+  closed
+  closedAt
+}
+
+fragment userFragment on User {
+  login
+  name
+  url
+}
+
+fragment pageInfoFragment on PageInfo {
+  endCursor
+  hasNextPage
+  hasPreviousPage
+}

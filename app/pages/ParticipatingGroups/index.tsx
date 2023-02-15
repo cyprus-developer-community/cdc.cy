@@ -8,8 +8,6 @@ import {
 } from '~/features/components/Breadcrumbs'
 import type { LoaderData } from './loader'
 
-export { loader } from './loader'
-
 const ParticipatingGroups = () => {
   const { groups } = useLoaderData() as LoaderData
   const config = getConfig()

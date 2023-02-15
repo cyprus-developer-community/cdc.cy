@@ -9,8 +9,6 @@ import {
 } from '~/features/configuration'
 import type { LoaderData } from './loader'
 
-export { loader } from './loader'
-
 const Home = () => {
   const { groups, events } = useLoaderData() as LoaderData
   const { upcoming, past, days } = events

@@ -1,1 +1,2 @@
-export { default, loader } from '~/pages/Home'
+export { default } from '~/pages/Home'
+export { loader } from '~/pages/Home/loader'

@@ -1,0 +1,134 @@
+{
+  "repository": {
+    "issues": {
+      "nodes": [
+        {
+          "id": "I_kwDOG7Tv585cgqpE",
+          "url": "https://github.com/cyprus-developer-community/events/issues/38",
+          "title": "CDC Meet & Greet Limassol",
+          "body": "### Event Description\n\nInformal meet & greet to talk about the latest in software and web development, technology and science.\n\n### Location\n\nbono\n\n### Date\n\n26.01.2023\n\n### Time\n\n19.00\n\n### Duration\n\n2h00m\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+          "bodyHTML": "<h3 dir=\"auto\">Event Description</h3>\n<p dir=\"auto\">Informal meet &amp; greet to talk about the latest in software and web development, technology and science.</p>\n<h3 dir=\"auto\">Location</h3>\n<p dir=\"auto\">bono</p>\n<h3 dir=\"auto\">Date</h3>\n<p dir=\"auto\">26.01.2023</p>\n<h3 dir=\"auto\">Time</h3>\n<p dir=\"auto\">19.00</p>\n<h3 dir=\"auto\">Duration</h3>\n<p dir=\"auto\">2h00m</p>\n<h3 dir=\"auto\">Code of Conduct</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" id=\"\" disabled=\"\" class=\"task-list-item-checkbox\" checked=\"\"> I agree to follow this project's <a href=\"https://berlincodeofconduct.org\" rel=\"nofollow\">Code of Conduct</a></li>\n</ul>",
+          "createdAt": "2023-01-22T10:18:43Z",
+          "updatedAt": "2023-01-23T05:49:51Z",
+          "publishedAt": "2023-01-22T10:18:43Z",
+          "state": "OPEN",
+          "closed": false,
+          "closedAt": null,
+          "author": {
+            "login": "saitonakamura",
+            "name": "Michael サイトー 中村 Bashurov",
+            "url": "https://github.com/saitonakamura"
+          },
+          "reactions": {
+            "nodes": [],
+            "totalCount": 0
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "Event :sparkles:",
+                "description": "An event proposal.",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Event%20%3Asparkles%3A",
+                "color": "F075B7"
+              },
+              {
+                "name": "Approved :white_check_mark:",
+                "description": "approved & confirmed",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Approved%20%3Awhite_check_mark%3A",
+                "color": "2DA44E"
+              }
+            ]
+          }
+        },
+        {
+          "id": "I_kwDOG7Tv585efuCt",
+          "url": "https://github.com/cyprus-developer-community/events/issues/40",
+          "title": "CDC Meet & Greet Ammochostos",
+          "body": "### Event Description\n\nInformal meet & greet to talk about the latest in software and web development, technology and science.\n\n### Location\n\nCosta Coffee Protaras\n\n### Date\n\n25.02.2023\n\n### Time\n\n19.00\n\n### Duration\n\n2h\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+          "bodyHTML": "<h3 dir=\"auto\">Event Description</h3>\n<p dir=\"auto\">Informal meet &amp; greet to talk about the latest in software and web development, technology and science.</p>\n<h3 dir=\"auto\">Location</h3>\n<p dir=\"auto\">Costa Coffee Protaras</p>\n<h3 dir=\"auto\">Date</h3>\n<p dir=\"auto\">25.02.2023</p>\n<h3 dir=\"auto\">Time</h3>\n<p dir=\"auto\">19.00</p>\n<h3 dir=\"auto\">Duration</h3>\n<p dir=\"auto\">2h</p>\n<h3 dir=\"auto\">Code of Conduct</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" id=\"\" disabled=\"\" class=\"task-list-item-checkbox\" checked=\"\"> I agree to follow this project's <a href=\"https://berlincodeofconduct.org\" rel=\"nofollow\">Code of Conduct</a></li>\n</ul>",
+          "createdAt": "2023-02-15T07:44:18Z",
+          "updatedAt": "2023-02-15T07:50:23Z",
+          "publishedAt": "2023-02-15T07:44:18Z",
+          "state": "OPEN",
+          "closed": false,
+          "closedAt": null,
+          "author": {
+            "login": "MarioSimou",
+            "name": "msimou",
+            "url": "https://github.com/MarioSimou"
+          },
+          "reactions": {
+            "nodes": [],
+            "totalCount": 0
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "Event :sparkles:",
+                "description": "An event proposal.",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Event%20%3Asparkles%3A",
+                "color": "F075B7"
+              },
+              {
+                "name": "Approved :white_check_mark:",
+                "description": "approved & confirmed",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Approved%20%3Awhite_check_mark%3A",
+                "color": "2DA44E"
+              }
+            ]
+          }
+        },
+        {
+          "id": "I_kwDOG7Tv585ef1Ys",
+          "url": "https://github.com/cyprus-developer-community/events/issues/41",
+          "title": "CDC Paphos Meet & Greet",
+          "body": "### Event Description\n\n![patrickheneise_three_young_software_engineers_in_a_pub_drinking_658796ae-12f9-4766-a3e1-614ba29cb6e5](https://user-images.githubusercontent.com/74390/218968911-ad4e40c5-e9ed-4546-8f71-7ef9858cd181.png)\r\n\r\ninformal get together to discuss the latest in technology and science\n\n### Location\n\noneills-paphos\n\n### Date\n\n16.02.2023\n\n### Time\n\n19.00\n\n### Duration\n\n2h\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+          "bodyHTML": "<h3 dir=\"auto\">Event Description</h3>\n<p dir=\"auto\"><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://user-images.githubusercontent.com/74390/218968911-ad4e40c5-e9ed-4546-8f71-7ef9858cd181.png\"><img src=\"https://user-images.githubusercontent.com/74390/218968911-ad4e40c5-e9ed-4546-8f71-7ef9858cd181.png\" alt=\"patrickheneise_three_young_software_engineers_in_a_pub_drinking_658796ae-12f9-4766-a3e1-614ba29cb6e5\" style=\"max-width: 100%;\"></a></p>\n<p dir=\"auto\">informal get together to discuss the latest in technology and science</p>\n<h3 dir=\"auto\">Location</h3>\n<p dir=\"auto\">oneills-paphos</p>\n<h3 dir=\"auto\">Date</h3>\n<p dir=\"auto\">16.02.2023</p>\n<h3 dir=\"auto\">Time</h3>\n<p dir=\"auto\">19.00</p>\n<h3 dir=\"auto\">Duration</h3>\n<p dir=\"auto\">2h</p>\n<h3 dir=\"auto\">Code of Conduct</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" id=\"\" disabled=\"\" class=\"task-list-item-checkbox\" checked=\"\"> I agree to follow this project's <a href=\"https://berlincodeofconduct.org\" rel=\"nofollow\">Code of Conduct</a></li>\n</ul>",
+          "createdAt": "2023-02-15T08:08:54Z",
+          "updatedAt": "2023-02-15T08:09:04Z",
+          "publishedAt": "2023-02-15T08:08:54Z",
+          "state": "OPEN",
+          "closed": false,
+          "closedAt": null,
+          "author": {
+            "login": "PatrickHeneise",
+            "name": "Patrick Heneise",
+            "url": "https://github.com/PatrickHeneise"
+          },
+          "reactions": {
+            "nodes": [],
+            "totalCount": 0
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "Event :sparkles:",
+                "description": "An event proposal.",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Event%20%3Asparkles%3A",
+                "color": "F075B7"
+              },
+              {
+                "name": "Approved :white_check_mark:",
+                "description": "approved & confirmed",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Approved%20%3Awhite_check_mark%3A",
+                "color": "2DA44E"
+              },
+              {
+                "name": "Paphos",
+                "description": "Πάφου / Baf kazası",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Paphos",
+                "color": "E3FDFE"
+              }
+            ]
+          }
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "Y3Vyc29yOnYyOpK5MjAyMy0wMi0xNVQxMDowODo1NCswMjowMM5ef1Ys",
+        "hasNextPage": false,
+        "hasPreviousPage": false
+      },
+      "totalCount": 3
+    }
+  }
+}

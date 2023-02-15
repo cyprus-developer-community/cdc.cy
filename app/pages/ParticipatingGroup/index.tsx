@@ -8,8 +8,6 @@ import {
 } from '~/features/components/Breadcrumbs'
 import type { LoaderData } from './loader'
 
-export { loader } from './loader'
-
 const ParticipatingGroup = () => {
   const { group } = useLoaderData() as LoaderData
   const groupImage = group.logo.svg ?? group.logo.png

@@ -2,7 +2,7 @@ import type { ApiResponse } from '~/types'
 import {
   newErrorResponse,
   newSuccessfulResponse,
-  STATUS_OK
+  isErrorStatus
 } from '~/features/providers/misc/http'
 
 type Logo = {
@@ -40,7 +40,7 @@ export const getParticipatingGroups = async (): Promise<
     const res = await fetch(
       'https://raw.githubusercontent.com/cyprus-developer-community/home/main/groups.json'
     )
-    if (res.status !== STATUS_OK) {
+    if (isErrorStatus(res.status)) {
       const result = await res.json()
       return newErrorResponse(result)
     }

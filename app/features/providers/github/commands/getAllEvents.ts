@@ -1,6 +1,4 @@
 // @ts-nocheck
-import { createAppAuth } from '@octokit/auth-app'
-import { graphql } from '@octokit/graphql'
 import {
   format,
   add,
@@ -9,7 +7,9 @@ import {
   isSameMonth,
   startOfMonth
 } from 'date-fns'
-import getEventsQuery from '~/features/providers/github/graphql/queries/getEvents'
+import getAllEventsQuery from '~/features/providers/github/graphql/queries/getAllEvents.graphql'
+import { getLocations } from './getLocations'
+import { newGraphQLClientFactory } from '~/features/providers/github/newGraphQLClientFactory'
 
 import pkg from 'date-fns-tz'
 const { zonedTimeToUtc } = pkg
@@ -52,30 +52,22 @@ function calculateDays(events) {
   return days
 }
 
-export async function getEvents() {
+export async function getAllEvents() {
   const timeZone = 'Europe/Nicosia'
   const { default: bodyParser } = await import(
     '@zentered/issue-forms-body-parser/src/parse.js'
   )
 
-  const auth = createAppAuth({
-    appId: parseInt(process.env.GH_APP_ID),
-    privateKey: atob(process.env.GH_PRIVATE_KEY),
-    installationId: parseInt(process.env.GH_APP_INSTALLATION_ID)
-  })
+  const client = newGraphQLClientFactory()
 
-  const graphqlWithAuth = graphql.defaults({
-    request: {
-      hook: auth.hook
-    }
-  })
+  const getLocationsResult = await getLocations()
+  if (getLocationsResult.success === false) {
+    const { message } = getLocationsResult
+    throw new Error(message)
+  }
 
-  const locationsFile = await fetch(
-    'https://raw.githubusercontent.com/cyprus-developer-community/events/main/locations.json'
-  )
-  const locations = await locationsFile.json()
-
-  const response = await graphqlWithAuth(getEventsQuery, {
+  const locations = getLocationsResult.data
+  const response = await client(getAllEventsQuery, {
     owner: 'cyprus-developer-community',
     repo: 'events'
   })
@@ -166,58 +158,3 @@ export async function getEvents() {
     days
   }
 }
-
-/** 
- * these are for cloudflare workers without using the github libraries
-async function getAccessToken(context) {
-  const appInstallationId = parseInt(context.GH_APP_INSTALLATION_ID)
-
-  // authenticate the github app
-  const auth = await createAppAuth({
-    appId: parseInt(context.GH_APP_ID),
-    privateKey: atob(context.GH_PRIVATE_KEY),
-    installationId: appInstallationId
-  })
-  const appAuthentication = await auth({ type: 'app' })
-
-  // fetch an access token for the installation
-  const headers = new Headers({
-    Accept: 'application/vnd.github.v3+json',
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${appAuthentication.token}`,
-    'User-Agent': 'Remix-Run'
-  })
-  const tokenRequest = await fetch(
-    `https://api.github.com/app/installations/${appInstallationId}/access_tokens`,
-    { method: 'POST', headers: headers }
-  )
-  const accessToken = await tokenRequest.json()
-
-  return accessToken.token
-}
-
-export async function getEvents(context) {
-  const accessToken = await getAccessToken(context)
-
-  const headers = new Headers({
-    Accept: 'application/vnd.github.v3+json',
-    'Content-Type': 'application/json',
-    Authorization: `Bearer ${accessToken}`,
-    'User-Agent': 'Remix-Run'
-  })
-  const res = await fetch(
-    'https://api.github.com/repos/cyprus-developer-community/events/issues',
-    {
-      headers: headers
-    }
-  )
-  const events = await res.json()
-  console.log(bodyParser)
-  console.log(bodyParser())
-  const testing = await bodyParser(events[0])
-  console.log(testing)
-  return events.map((e) => {
-    return e
-  })
-}
- */

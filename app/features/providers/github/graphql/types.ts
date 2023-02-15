@@ -26981,12 +26981,12 @@ export enum WorkflowRunOrderField {
   CreatedAt = 'CREATED_AT'
 }
 
-export type GetEventsQueryVariables = Exact<{
+export type GetAllEventsQueryVariables = Exact<{
   owner: Scalars['String']
   repo: Scalars['String']
 }>
 
-export type GetEventsQuery = {
+export type GetAllEventsQuery = {
   __typename?: 'Query'
   repository?: {
     __typename?: 'Repository'
@@ -27037,6 +27037,199 @@ export type GetEventsQuery = {
           }
         } | null
       } | null> | null
+    }
+  } | null
+}
+
+export type GetPastEventsQueryVariables = Exact<{
+  owner: Scalars['String']
+  repo: Scalars['String']
+  size: Scalars['Int']
+  after?: InputMaybe<Scalars['String']>
+}>
+
+export type GetPastEventsQuery = {
+  __typename?: 'Query'
+  repository?: {
+    __typename?: 'Repository'
+    issues: {
+      __typename?: 'IssueConnection'
+      totalCount: number
+      nodes?: Array<{
+        __typename?: 'Issue'
+        id: string
+        url: any
+        title: string
+        body: string
+        bodyHTML: any
+        createdAt: any
+        updatedAt: any
+        publishedAt?: any | null
+        state: IssueState
+        closed: boolean
+        closedAt?: any | null
+        author?:
+          | { __typename?: 'Bot' }
+          | { __typename?: 'EnterpriseUserAccount' }
+          | { __typename?: 'Mannequin' }
+          | { __typename?: 'Organization' }
+          | {
+              __typename?: 'User'
+              login: string
+              name?: string | null
+              url: any
+            }
+          | null
+        reactions: {
+          __typename?: 'ReactionConnection'
+          totalCount: number
+          nodes?: Array<{
+            __typename?: 'Reaction'
+            user?: {
+              __typename?: 'User'
+              login: string
+              name?: string | null
+              url: any
+            } | null
+          } | null> | null
+        }
+        labels?: {
+          __typename?: 'LabelConnection'
+          nodes?: Array<{
+            __typename?: 'Label'
+            name: string
+            description?: string | null
+            url: any
+            color: string
+          } | null> | null
+        } | null
+      } | null> | null
+      pageInfo: {
+        __typename?: 'PageInfo'
+        endCursor?: string | null
+        hasNextPage: boolean
+        hasPreviousPage: boolean
+      }
+    }
+  } | null
+}
+
+export type ReactionsFragmentFragment = {
+  __typename?: 'Reaction'
+  user?: {
+    __typename?: 'User'
+    login: string
+    name?: string | null
+    url: any
+  } | null
+}
+
+export type LabelFragmentFragment = {
+  __typename?: 'Label'
+  name: string
+  description?: string | null
+  url: any
+  color: string
+}
+
+export type IssueFragmentFragment = {
+  __typename?: 'Issue'
+  id: string
+  url: any
+  title: string
+  body: string
+  bodyHTML: any
+  createdAt: any
+  updatedAt: any
+  publishedAt?: any | null
+  state: IssueState
+  closed: boolean
+  closedAt?: any | null
+}
+
+export type UserFragmentFragment = {
+  __typename?: 'User'
+  login: string
+  name?: string | null
+  url: any
+}
+
+export type PageInfoFragmentFragment = {
+  __typename?: 'PageInfo'
+  endCursor?: string | null
+  hasNextPage: boolean
+  hasPreviousPage: boolean
+}
+
+export type GetUpcomingEventsQueryVariables = Exact<{
+  owner: Scalars['String']
+  repo: Scalars['String']
+  size: Scalars['Int']
+  after?: InputMaybe<Scalars['String']>
+}>
+
+export type GetUpcomingEventsQuery = {
+  __typename?: 'Query'
+  repository?: {
+    __typename?: 'Repository'
+    issues: {
+      __typename?: 'IssueConnection'
+      totalCount: number
+      nodes?: Array<{
+        __typename?: 'Issue'
+        id: string
+        url: any
+        title: string
+        body: string
+        bodyHTML: any
+        createdAt: any
+        updatedAt: any
+        publishedAt?: any | null
+        state: IssueState
+        closed: boolean
+        closedAt?: any | null
+        author?:
+          | { __typename?: 'Bot' }
+          | { __typename?: 'EnterpriseUserAccount' }
+          | { __typename?: 'Mannequin' }
+          | { __typename?: 'Organization' }
+          | {
+              __typename?: 'User'
+              login: string
+              name?: string | null
+              url: any
+            }
+          | null
+        reactions: {
+          __typename?: 'ReactionConnection'
+          totalCount: number
+          nodes?: Array<{
+            __typename?: 'Reaction'
+            user?: {
+              __typename?: 'User'
+              login: string
+              name?: string | null
+              url: any
+            } | null
+          } | null> | null
+        }
+        labels?: {
+          __typename?: 'LabelConnection'
+          nodes?: Array<{
+            __typename?: 'Label'
+            name: string
+            description?: string | null
+            url: any
+            color: string
+          } | null> | null
+        } | null
+      } | null> | null
+      pageInfo: {
+        __typename?: 'PageInfo'
+        endCursor?: string | null
+        hasNextPage: boolean
+        hasPreviousPage: boolean
+      }
     }
   } | null
 }

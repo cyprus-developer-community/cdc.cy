@@ -14,7 +14,7 @@ export const loader = async () => {
   }
 
   return {
-    events: await providers.github.getEvents(),
+    events: await providers.github.getAllEvents(),
     groups: getParticipatingGroupsResult.data
   }
 }

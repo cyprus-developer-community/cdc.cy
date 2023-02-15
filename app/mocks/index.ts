@@ -1,14 +1,27 @@
 import { setupServer } from 'msw/node'
 import { graphql, rest } from 'msw'
-import getEventsQuery from './getEventsQuery.json'
+import getAllEvents from './getAllEvents.json'
+import getUpcomingEvents from './getUpcomingEvents.json'
+import getPastEvents from './getPastEvents.json'
+import getLocations from './getLocations.json'
 
 export const handlers = [
   rest.post(
     'https://api.github.com/app/installations/:installationID/access_tokens',
     (_, res, ctx) => res(ctx.status(200))
   ),
-  graphql.query('getEvents', async (_, res, ctx) =>
-    res(ctx.data(getEventsQuery))
+  rest.get(
+    'https://raw.githubusercontent.com/cyprus-developer-community/events/main/locations.json',
+    (_, res, ctx) => res(ctx.json(getLocations))
+  ),
+  graphql.query('getAllEvents', async (_, res, ctx) =>
+    res(ctx.data(getAllEvents))
+  ),
+  graphql.query('getPastEvents', async (_, res, ctx) =>
+    res(ctx.data(getPastEvents))
+  ),
+  graphql.query('getUpcomingEvents', async (_, res, ctx) =>
+    res(ctx.data(getUpcomingEvents))
   )
 ]
 
