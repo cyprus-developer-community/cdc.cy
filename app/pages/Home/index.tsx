@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <div>
       <div className="text-center py-16">
-        <h1 className="text-4xl font-extrabold text-primary-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
+        <h1 className="text-4xl font-extrabold sm:text-5xl sm:tracking-tight lg:text-6xl text-primary-gradient">
           Cyprus Developer Community
         </h1>
         <p className="max-w-xl mt-5 mx-auto text-xl text-primary-500">
@@ -28,7 +28,7 @@ const Home = () => {
 
       <section className="py-16 grid gap-12 md:grid-cols-2">
         <div>
-          <h2 className="text-3xl font-extrabold text-secondary-700 mb-12 sm:text-4xl text-center lg:text-left">
+          <h2 className="text-3xl font-extrabold mb-12 sm:text-4xl text-center lg:text-left text-primary-gradient">
             CDC.cy
           </h2>
           <p className="mt-4 max-w-3xl mx-auto text-xl text-secondary-500 text-center lg:text-left">

@@ -11,7 +11,7 @@ const Events = () => {
   const { pastEvents, upcomingEvents } = useLoaderData() as LoaderData
 
   return (
-    <article className="grid gap-4 max-w-screen-xl mx-auto">
+    <article className="page">
       <Breadcrumbs>
         <BreacrumbItem>
           <BreadcrumbLink to="/">Home</BreadcrumbLink>
@@ -20,18 +20,18 @@ const Events = () => {
           <BreadcrumbLink to="/events">Events</BreadcrumbLink>
         </BreacrumbItem>
       </Breadcrumbs>
-      <h1 className="text-4xl lg:text-6xl font-extrabold text-center mb-12 text-primary-900">
-        Events
-      </h1>
+      <h1 className="page-title">Events</h1>
       <div className="grid gap-12 lg:gap-24">
         <section className="grid gap-8">
-          <h2 className="text-2xl lg:text-4xl text-primary-500">
+          <h2 className="text-2xl lg:text-4xl text-primary-gradient">
             Upcoming events
           </h2>
           <EventList events={upcomingEvents.nodes} />
         </section>
         <section className="grid gap-8">
-          <h2 className="text-2xl lg:text-4xl text-primary-500">Past events</h2>
+          <h2 className="text-2xl lg:text-4xl text-primary-gradient">
+            Past events
+          </h2>
           <EventList events={pastEvents.nodes} />
         </section>
       </div>

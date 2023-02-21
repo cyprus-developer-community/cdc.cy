@@ -14,16 +14,16 @@ const primary = {
   900: '#4BA0D0'
 }
 const secondary = {
-  50: '#f9fafb',
-  100: '#f3f4f6',
-  200: '#e5e7eb',
-  300: '#d1d5db',
-  400: '#9ca3af',
-  500: '#6b7280',
-  600: '#4b5563',
-  700: '#374151',
-  800: '#1f2937',
-  900: '#111827'
+  50: '#F7FAFC',
+  100: '#EDF2F7',
+  200: '#E2E8F0',
+  300: '#CBD5E0',
+  400: '#A0AEC0',
+  500: '#718096',
+  600: '#4A5568',
+  700: '#2D3748',
+  800: '#1A202C',
+  900: '#171923'
 }
 const colors = {
   primary,
@@ -47,6 +47,13 @@ export default defineConfig({
     ['group-card', { display: 'grid', 'grid-template-rows': '225px 1fr' }],
     ['content-empty', { content: '""' }]
   ],
+  shortcuts: {
+    'text-primary-gradient':
+      'bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-900',
+    page: 'grid gap-8 max-w-screen-xl mx-auto',
+    'page-title':
+      'text-4xl lg:text-6xl font-extrabold text-center text-primary-gradient mt-8 mb-8'
+  },
   theme: {
     fontFamily: {
       sans: 'sans-serif'

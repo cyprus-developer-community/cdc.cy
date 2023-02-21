@@ -13,7 +13,7 @@ const ParticipatingGroups = () => {
   const config = getConfig()
 
   return (
-    <article className="flex flex-col justify-center max-w-screen-xl mx-auto">
+    <article className="page">
       <Breadcrumbs>
         <BreacrumbItem>
           <BreadcrumbLink to="/">Home</BreadcrumbLink>
@@ -24,17 +24,15 @@ const ParticipatingGroups = () => {
       </Breadcrumbs>
       <section className="grid gap-4 mt-4">
         <div className="mb-12">
-          <h1 className="text-4xl lg:text-6xl font-extrabold text-center mb-12 text-primary-900">
-            Participating Groups
-          </h1>
-          <p className="text-secondary-700 text-center md:text-left">
+          <h1 className="page-title">Participating Groups</h1>
+          <p className="text-center text-lg text-primary-gradient max-w-screen-md mx-auto">
             While technology can be divided into multiple sub-groups with
             different tools and technologies, our goal is to bring all those
             communities together and discuss common issues which we encounter in
             our daily routine. Feel free to navigate through our participating
             groups.
           </p>
-          <p className="mt-3 text-secondary-700 text-center md:text-left">
+          <p className="mt-16 text-secondary-700 text-center md:text-left">
             <span className="px-1">
               If you want to learn more, reach out to
             </span>

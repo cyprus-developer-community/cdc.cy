@@ -13,7 +13,7 @@ const ParticipatingGroup = () => {
   const groupImage = group.logo.svg ?? group.logo.png
 
   return (
-    <div className="grid gap-8">
+    <div className="page">
       <Breadcrumbs>
         <BreacrumbItem>
           <BreadcrumbLink to="/">Home</BreadcrumbLink>
@@ -28,9 +28,7 @@ const ParticipatingGroup = () => {
         </BreacrumbItem>
       </Breadcrumbs>
       <div className="flex flex-col place-items-center gap-4 mt-4">
-        <h1 className="text-4xl lg:text-6xl font-extrabold text-center text-primary-900">
-          {group.name}
-        </h1>
+        <h1 className="page-title mb-3">{group.name}</h1>
         <Image
           src={groupImage}
           className="w-40 h-40 rounded-full border-3 border-primary-500 object-contain"
@@ -63,7 +61,7 @@ const ParticipatingGroup = () => {
             {group.links.map((link) => {
               return (
                 <a
-                  className="px-6 py-4 text-secondary-600 bg-secondary-100 shadow-lg rounded-lg capitalize outline outline-3 outline-secondary-200 hover:outline-primary-400 focus:outline-primary-400"
+                  className="px-6 py-4 text-secondary-600 bg-secondary-50 shadow-lg rounded-lg capitalize outline outline-3 outline-secondary-100 hover:outline-primary-400 focus:outline-primary-400"
                   target="_blank"
                   rel="noreferrer noopener"
                   key={link.href}
