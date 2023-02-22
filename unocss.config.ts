@@ -56,10 +56,8 @@ export default defineConfig({
     page: 'grid gap-8 max-w-screen-xl mx-auto',
     'page-title':
       'text-4xl lg:text-6xl font-extrabold text-center text-primary-gradient mt-8 mb-8',
-    'card-link':
-      'focus:outline-none hover:outline-none focus:outline-transparent before:content-empty before:absolute before:inset-0 before:rounded-lg before:outline-transparent before:outline before:outline-3 hover:cursor-pointer hover:before:outline-primary-400 focus:before:outline-primary-400 focus:before:cursor-pointer hover:before:cursor-pointer',
     'outline-link':
-      'rounded-lg outline-transparent outline outline-3 hover:outline-primary-400 focus:outline-primary-400 hover:text-secondary-600'
+      'focus:outline-none hover:outline-none focus:outline-transparent before:content-empty before:absolute before:inset-0 before:rounded-lg before:outline-transparent before:outline before:outline-3 hover:cursor-pointer hover:before:outline-primary-400 focus:before:outline-primary-400 focus:before:cursor-pointer hover:before:cursor-pointer'
   },
   theme: {
     fontFamily: {

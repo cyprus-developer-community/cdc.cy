@@ -2,17 +2,23 @@ import { useLoaderData } from '@remix-run/react'
 import {
   BreacrumbItem,
   BreadcrumbLink,
-  Breadcrumbs
-} from '~/features/components/Breadcrumbs'
+  Breadcrumbs,
+  Page,
+  H1,
+  H2,
+  Section,
+  Avatar,
+  AvatarLink,
+  AvatarGroup,
+  Tag
+} from '~/features/components'
 import type { LoaderData } from './loader'
-import { Avatar, AvatarLink } from '~/features/components'
-import { Tag } from '~/features/components/Tag'
 
 const Event = () => {
   const { event } = useLoaderData() as LoaderData
 
   return (
-    <article className="page">
+    <Page>
       <Breadcrumbs>
         <BreacrumbItem>
           <BreadcrumbLink to="/">Home</BreadcrumbLink>
@@ -27,59 +33,63 @@ const Event = () => {
         </BreacrumbItem>
       </Breadcrumbs>
       <div className="grid gap-8">
-        <h1 className="page-title">{event.title}</h1>
+        <H1>{event.title}</H1>
         {event?.reactions?.nodes?.length > 0 && (
-          <section className="grid gap-4">
-            <h2 className="text-3xl text-primary-gradient">Reactions</h2>
-            <ul className="flex flex-wrap">
+          <Section>
+            <H2>Reactions</H2>
+            <AvatarGroup>
               {event?.reactions?.nodes?.map((reaction) => {
                 return (
-                  <AvatarLink key={reaction.user.id} to={reaction.user.url}>
-                    <Avatar
-                      name={reaction.user.login}
-                      src={reaction.user.avatarUrl}
-                      className="w-lg h-lg"
-                    />
-                  </AvatarLink>
+                  <li key={reaction.user.id}>
+                    <AvatarLink to={reaction.user.url}>
+                      <Avatar
+                        name={reaction.user.login}
+                        src={reaction.user.avatarUrl}
+                        className="w-lg h-lg"
+                      />
+                    </AvatarLink>
+                  </li>
                 )
               })}
-            </ul>
-          </section>
+            </AvatarGroup>
+          </Section>
         )}
-        <section>
-          <h2 className="text-3xl text-primary-gradient">Status</h2>
+        <Section>
+          <H2>Status</H2>
           <ul>
             <Tag>{event.state}</Tag>
           </ul>
-        </section>
-        <section className="grid gap-4">
-          <h2 className="text-3xl text-primary-gradient">Labels</h2>
+        </Section>
+        <Section>
+          <H2>Labels</H2>
           <ul className="flex flex-wrap gap-3">
             {event.labels.nodes.map((label) => {
               return <Tag key={label.name}>{label.name}</Tag>
             })}
           </ul>
-        </section>
+        </Section>
         {event?.participants?.nodes?.length > 0 && (
-          <section className="grid gap-4">
-            <h2 className="text-3xl text-primary-gradient">Participants</h2>
-            <ul className="flex flex-wrap">
+          <Section>
+            <H2>Participants</H2>
+            <AvatarGroup className="flex flex-wrap">
               {event?.participants?.nodes?.map((participant) => {
                 return (
-                  <AvatarLink key={participant.id} to={participant.url}>
-                    <Avatar
-                      name={participant.login}
-                      src={participant.avatarUrl}
-                      className="w-lg h-lg"
-                    />
-                  </AvatarLink>
+                  <li key={participant.id}>
+                    <AvatarLink to={participant.url}>
+                      <Avatar
+                        name={participant.login}
+                        src={participant.avatarUrl}
+                        className="w-lg h-lg"
+                      />
+                    </AvatarLink>
+                  </li>
                 )
               })}
-            </ul>
-          </section>
+            </AvatarGroup>
+          </Section>
         )}
       </div>
-    </article>
+    </Page>
   )
 }
 

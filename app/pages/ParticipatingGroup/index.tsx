@@ -1,12 +1,12 @@
 import { useLoaderData } from '@remix-run/react'
 import { Image } from 'remix-image'
+import type { LoaderData } from './loader'
 import {
   BreacrumbItem,
   BreadcrumbLink,
-  Breadcrumbs
-} from '~/features/components/Breadcrumbs'
-import type { LoaderData } from './loader'
-import {
+  Breadcrumbs,
+  AvatarGroup,
+  AvatarItem,
   AvatarLink,
   Avatar,
   Page,
@@ -50,34 +50,40 @@ const ParticipatingGroup = () => {
         </Section>
         <Section>
           <H2>Organizers</H2>
-          <ul className="flex flex-wrap justify-center lg:justify-start grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+          <AvatarGroup>
             {group.organizers.map((organizer) => {
               return (
-                <AvatarLink key={organizer.name} to={organizer.github}>
-                  <Avatar
-                    name={organizer.name}
-                    src={organizer.avatar}
-                    className="w-lg h-lg"
-                  />
-                </AvatarLink>
+                <AvatarItem key={organizer.name}>
+                  <AvatarLink to={organizer.github}>
+                    <Avatar
+                      name={organizer.name}
+                      src={organizer.avatar}
+                      className="w-lg h-lg"
+                    />
+                  </AvatarLink>
+                </AvatarItem>
               )
             })}
-          </ul>
+          </AvatarGroup>
         </Section>
         <Section>
           <H2>Do you want to learn more?</H2>
           <ul className="flex gap-4 justify-center lg:justify-start flex-wrap">
             {group.links.map((link) => {
               return (
-                <a
-                  className="px-6 py-4 text-secondary-600 bg-secondary-50 shadow-lg rounded-lg capitalize outline-link"
-                  target="_blank"
-                  rel="noreferrer noopener"
+                <li
                   key={link.href}
-                  href={link.href}
+                  className="py-4 px-6 shadow-lg rounded-lg bg-secondary-50 relative"
                 >
-                  {link.type}
-                </a>
+                  <a
+                    className="text-secondary-600  capitalize hover:text-secondary-700 outline-link"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href={link.href}
+                  >
+                    {link.type}
+                  </a>
+                </li>
               )
             })}
           </ul>

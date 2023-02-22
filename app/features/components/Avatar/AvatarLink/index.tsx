@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react'
 import type { LinkProps } from '@remix-run/react'
 
-type AvatarLinkProps = {
+export type AvatarLinkProps = {
   children: React.ReactNode
 } & LinkProps
 

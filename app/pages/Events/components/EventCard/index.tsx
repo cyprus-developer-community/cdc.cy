@@ -19,7 +19,7 @@ export const EventCard = ({ event }: EventCardProps) => {
       <div className="grid gap-2 px-4 py-4 bg-[rgba(255,255,255,0.9)]">
         <div className="flex items-center justify-between gap-8 mb-1">
           <H2 className="text-xl lg:text-xl text-primary-700">
-            <Link to={`/events/${event.number}`} className="card-link">
+            <Link to={`/events/${event.number}`} className="outline-link">
               {event.title}
             </Link>
           </H2>
