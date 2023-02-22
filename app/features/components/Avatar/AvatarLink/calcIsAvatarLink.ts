@@ -1,6 +1,6 @@
 import React from 'react'
-import type { AvatarLinkProps } from '../AvatarLink'
-import type { AvatarLink } from '../AvatarLink'
+import type { AvatarLinkProps } from '.'
+import type { AvatarLink } from '.'
 
 export const calcIsAvatarLink = (
   node: React.ReactNode

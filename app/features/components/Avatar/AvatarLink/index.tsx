@@ -10,7 +10,7 @@ export const AvatarLink = ({ children, ...rest }: AvatarLinkProps) => {
     <Link
       target="_blank"
       rel="noopener noreferrer"
-      className="!rounded-full outline-3 outline-transparent outline hover:outline-primary-400 focus:outline-primary-400"
+      className="!rounded-full w-fit outline-3 outline-transparent outline hover:outline-primary-400 focus:outline-primary-400"
       {...rest}
     >
       {children}

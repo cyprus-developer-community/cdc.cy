@@ -1,5 +1,5 @@
 import type { Label } from '~/types'
-import { Tag } from '~/features/components/Tag'
+import { TagGroup, Tag } from '~/features/components'
 
 type LabelsListProps = {
   labels: Label[]
@@ -7,7 +7,7 @@ type LabelsListProps = {
 
 export const LabelsList = ({ labels }: LabelsListProps) => {
   return (
-    <ul className="flex gap-2">
+    <TagGroup>
       {labels.map((label) => {
         const isEventProposal = /event proposal/.test(label.description)
         if (isEventProposal) {
@@ -20,6 +20,6 @@ export const LabelsList = ({ labels }: LabelsListProps) => {
           </Tag>
         )
       })}
-    </ul>
+    </TagGroup>
   )
 }

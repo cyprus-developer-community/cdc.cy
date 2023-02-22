@@ -1,5 +1,5 @@
 import React from 'react'
-import { calcIsAvatarLink } from '../misc/calcIsAvatarLink'
+import { calcIsAvatarLink } from '../AvatarLink/calcIsAvatarLink'
 export type AvatarItemProps = React.LiHTMLAttributes<HTMLLIElement>
 
 export const AvatarItem = ({ children, ...rest }: AvatarItemProps) => {
