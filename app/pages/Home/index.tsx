@@ -1,6 +1,6 @@
-import { Events } from '~/features/components'
 import { useLoaderData } from '@remix-run/react'
-import { GroupsList } from './components/GroupsList'
+import { EventsCalendar } from './components/EventsCalendar'
+import { ParticipatingGroupsList } from './components/ParticipatingGroupsList'
 import {
   getConfig,
   getDiscordChatLink,
@@ -8,6 +8,7 @@ import {
   getGithubDiscussionsLink
 } from '~/features/configuration'
 import type { LoaderData } from './loader'
+import { H1, H2, Section } from '~/features/components'
 
 const Home = () => {
   const { groups, events } = useLoaderData() as LoaderData
@@ -15,22 +16,18 @@ const Home = () => {
   const config = getConfig()
 
   return (
-    <div>
-      <div className="text-center py-16">
-        <h1 className="text-4xl font-extrabold sm:text-5xl sm:tracking-tight lg:text-6xl text-primary-gradient">
-          Cyprus Developer Community
-        </h1>
+    <div className="grid gap-16 md:gap-28">
+      <div className="text-center">
+        <H1>Cyprus Developer Community</H1>
         <p className="max-w-xl mt-5 mx-auto text-xl text-primary-500">
           We're just starting up. There will be more content and events soon.
           Stay tuned.
         </p>
       </div>
 
-      <section className="py-16 grid gap-12 md:grid-cols-2">
+      <Section className="py-16 grid gap-12 md:grid-cols-2">
         <div>
-          <h2 className="text-3xl font-extrabold mb-12 sm:text-4xl text-center lg:text-left text-primary-gradient">
-            CDC.cy
-          </h2>
+          <H2>CDC.cy</H2>
           <p className="mt-4 max-w-3xl mx-auto text-xl text-secondary-500 text-center lg:text-left">
             The Cyprus Developer Community is an umbrella for developer and
             technology groups in Cyprus. We provide a central website and chat
@@ -52,16 +49,14 @@ const Home = () => {
             sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
           ></iframe>
         </div>
-      </section>
+      </Section>
 
-      <GroupsList groups={groups} />
-      <Events upcoming={upcoming} past={past} days={days} />
+      <ParticipatingGroupsList groups={groups} />
+      <EventsCalendar upcoming={upcoming} past={past} days={days} />
 
-      <section className="my-16">
-        <h2 className="my-2 text-lg leading-6 font-medium text-primary-700">
-          Chat
-        </h2>
-        <p>
+      <Section>
+        <H2>Chat</H2>
+        <p className="text-center lg:text-left">
           Join us on{' '}
           <a
             className="text-primary-500"
@@ -81,7 +76,7 @@ const Home = () => {
             discussions on GitHub.
           </a>
         </p>
-      </section>
+      </Section>
     </div>
   )
 }

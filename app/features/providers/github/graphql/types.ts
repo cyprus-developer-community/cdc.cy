@@ -27079,6 +27079,17 @@ export type GetEventQuery = {
             avatarUrl: any
           }
         | null
+      participants: {
+        __typename?: 'UserConnection'
+        nodes?: Array<{
+          __typename?: 'User'
+          id: string
+          name?: string | null
+          login: string
+          url: any
+          avatarUrl: any
+        } | null> | null
+      }
       reactions: {
         __typename?: 'ReactionConnection'
         totalCount: number
@@ -27145,6 +27156,17 @@ export type GetPastEventsQuery = {
         closed: boolean
         number: number
         closedAt?: any | null
+        participants: {
+          __typename?: 'UserConnection'
+          nodes?: Array<{
+            __typename?: 'User'
+            id: string
+            name?: string | null
+            login: string
+            url: any
+            avatarUrl: any
+          } | null> | null
+        }
         author?:
           | { __typename?: 'Bot' }
           | { __typename?: 'EnterpriseUserAccount' }
@@ -27246,6 +27268,17 @@ export type GetUpcomingEventsQuery = {
               avatarUrl: any
             }
           | null
+        participants: {
+          __typename?: 'UserConnection'
+          nodes?: Array<{
+            __typename?: 'User'
+            id: string
+            name?: string | null
+            login: string
+            url: any
+            avatarUrl: any
+          } | null> | null
+        }
         reactions: {
           __typename?: 'ReactionConnection'
           totalCount: number
@@ -27280,4 +27313,13 @@ export type GetUpcomingEventsQuery = {
       }
     }
   } | null
+}
+
+export type GetUpcomingEventUserFragmentFragment = {
+  __typename?: 'User'
+  id: string
+  name?: string | null
+  login: string
+  url: any
+  avatarUrl: any
 }

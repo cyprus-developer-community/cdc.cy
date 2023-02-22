@@ -3,15 +3,19 @@ import type { LoaderData } from './loader'
 import {
   BreacrumbItem,
   Breadcrumbs,
-  BreadcrumbLink
-} from '~/features/components/Breadcrumbs'
+  BreadcrumbLink,
+  H1,
+  H2,
+  Section,
+  Page
+} from '~/features/components'
 import { EventList } from './components/EventList'
 
 const Events = () => {
   const { pastEvents, upcomingEvents } = useLoaderData() as LoaderData
 
   return (
-    <article className="page">
+    <Page>
       <Breadcrumbs>
         <BreacrumbItem>
           <BreadcrumbLink to="/">Home</BreadcrumbLink>
@@ -20,22 +24,18 @@ const Events = () => {
           <BreadcrumbLink to="/events">Events</BreadcrumbLink>
         </BreacrumbItem>
       </Breadcrumbs>
-      <h1 className="page-title">Events</h1>
+      <H1>Events</H1>
       <div className="grid gap-12 lg:gap-24">
-        <section className="grid gap-8">
-          <h2 className="text-2xl lg:text-4xl text-primary-gradient">
-            Upcoming events
-          </h2>
+        <Section>
+          <H2>Upcoming events</H2>
           <EventList events={upcomingEvents.nodes} />
-        </section>
-        <section className="grid gap-8">
-          <h2 className="text-2xl lg:text-4xl text-primary-gradient">
-            Past events
-          </h2>
+        </Section>
+        <Section>
+          <H2>Past events</H2>
           <EventList events={pastEvents.nodes} />
-        </section>
+        </Section>
       </div>
-    </article>
+    </Page>
   )
 }
 

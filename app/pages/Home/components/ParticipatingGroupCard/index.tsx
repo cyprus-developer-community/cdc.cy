@@ -23,7 +23,7 @@ export const ParticipatingGroupCard: React.FC<ParticipatingGroupCardProps> = ({
         <h2>
           <Link
             to={`/groups/${group.slug}`}
-            className="inset-0 absolute cursor-pointer rounded-lg shadow-lg outline outline-transparent outline-3 hover:outline-primary-400 focus:outline-primary-400"
+            className="rounded-lg shadow-lg card-link"
           >
             <span className="sr-only">{group.name}</span>
           </Link>

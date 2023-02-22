@@ -27,7 +27,7 @@ export const Header: React.FC = () => {
         }`}
       >
         <nav className="grid grid-flow-col gap-4">
-          <Link to="/">
+          <Link className="hover:outline-none" to="/">
             <Image src="/cdc-logo.svg" width={48} height={48} />
           </Link>
           <nav className="flex items-center justify-end">

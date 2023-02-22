@@ -1,19 +1,26 @@
 import { useLoaderData } from '@remix-run/react'
 import { Image } from 'remix-image'
-import { OrganizerCard } from './components/OrganizerCard'
 import {
   BreacrumbItem,
   BreadcrumbLink,
   Breadcrumbs
 } from '~/features/components/Breadcrumbs'
 import type { LoaderData } from './loader'
+import {
+  AvatarLink,
+  Avatar,
+  Page,
+  Section,
+  H2,
+  H1
+} from '~/features/components'
 
 const ParticipatingGroup = () => {
   const { group } = useLoaderData() as LoaderData
   const groupImage = group.logo.svg ?? group.logo.png
 
   return (
-    <div className="page">
+    <Page>
       <Breadcrumbs>
         <BreacrumbItem>
           <BreadcrumbLink to="/">Home</BreadcrumbLink>
@@ -28,40 +35,42 @@ const ParticipatingGroup = () => {
         </BreacrumbItem>
       </Breadcrumbs>
       <div className="flex flex-col place-items-center gap-4 mt-4">
-        <h1 className="page-title mb-3">{group.name}</h1>
+        <H1>{group.name}</H1>
         <Image
           src={groupImage}
           className="w-40 h-40 rounded-full border-3 border-primary-500 object-contain"
         />
       </div>
-      <div className="grid gap-12">
-        <section className="grid gap-6">
-          <h2 className="text-3xl font-extrabold text-secondary-900 text-center md:text-left">
-            Description
-          </h2>
-          <p className="text-secondary-700">{group.excerpt}</p>
-        </section>
-        <section className="grid gap-6">
-          <h2 className="text-3xl font-extrabold text-secondary-900 text-center md:text-left">
-            Organizers
-          </h2>
-          <ul className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+      <div className="grid gap-16 lg:gap-12">
+        <Section>
+          <H2>Description</H2>
+          <p className="text-center lg:text-left text-secondary-700">
+            {group.excerpt}
+          </p>
+        </Section>
+        <Section>
+          <H2>Organizers</H2>
+          <ul className="flex flex-wrap justify-center lg:justify-start grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
             {group.organizers.map((organizer) => {
               return (
-                <OrganizerCard key={organizer.name} organizer={organizer} />
+                <AvatarLink key={organizer.name} to={organizer.github}>
+                  <Avatar
+                    name={organizer.name}
+                    src={organizer.avatar}
+                    className="w-lg h-lg"
+                  />
+                </AvatarLink>
               )
             })}
           </ul>
-        </section>
-        <section className="grid gap-6">
-          <h2 className="text-3xl font-extrabold text-secondary-900 text-center md:text-left">
-            Do you want to learn more?
-          </h2>
-          <ul className="flex gap-4 flex-wrap">
+        </Section>
+        <Section>
+          <H2>Do you want to learn more?</H2>
+          <ul className="flex gap-4 justify-center lg:justify-start flex-wrap">
             {group.links.map((link) => {
               return (
                 <a
-                  className="px-6 py-4 text-secondary-600 bg-secondary-50 shadow-lg rounded-lg capitalize outline outline-3 outline-secondary-100 hover:outline-primary-400 focus:outline-primary-400"
+                  className="px-6 py-4 text-secondary-600 bg-secondary-50 shadow-lg rounded-lg capitalize outline-link"
                   target="_blank"
                   rel="noreferrer noopener"
                   key={link.href}
@@ -72,9 +81,9 @@ const ParticipatingGroup = () => {
               )
             })}
           </ul>
-        </section>
+        </Section>
       </div>
-    </div>
+    </Page>
   )
 }
 

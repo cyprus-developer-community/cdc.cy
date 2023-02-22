@@ -2,7 +2,7 @@ import type { Event, Label } from '~/types'
 import { Link } from '@remix-run/react'
 import { format } from 'date-fns'
 import { LabelsList } from '../LabelsList'
-import { Avatar } from '~/features/components'
+import { Avatar, H2 } from '~/features/components'
 
 type EventCardProps = {
   event: Event
@@ -18,14 +18,11 @@ export const EventCard = ({ event }: EventCardProps) => {
     >
       <div className="grid gap-2 px-4 py-4 bg-[rgba(255,255,255,0.9)]">
         <div className="flex items-center justify-between gap-8 mb-1">
-          <h2 className="text-lg text-primary-700 rounded-t-lg py-1">
-            <Link
-              to={`/events/${event.number}`}
-              className="focus:outline-none before:absolute before:inset-0 before:content-empty before:outline-3 before:outline-secondary-100 before:outline before:rounded-lg hover:before:outline-primary-400 focus:before:outline-primary-400 hover:before:cursor-pointer"
-            >
+          <H2 className="text-xl lg:text-xl text-primary-700">
+            <Link to={`/events/${event.number}`} className="card-link">
               {event.title}
             </Link>
-          </h2>
+          </H2>
           <Avatar name={event.author.login} src={event.author.avatarUrl} />
         </div>
         <p className="italic text-xs text-secondary-500">

@@ -26,12 +26,17 @@ query getUpcomingEvents(
         number
         closedAt
         author {
-          ...getPastEventsUserFragment
+          ...getUpcomingEventUserFragment
+        }
+        participants(first: 20) {
+          nodes {
+            ...getUpcomingEventUserFragment
+          }
         }
         reactions(first: 100) {
           nodes {
             user {
-              ...getPastEventsUserFragment
+              ...getUpcomingEventUserFragment
             }
           }
           totalCount
@@ -55,7 +60,7 @@ query getUpcomingEvents(
   }
 }
 
-fragment getPastEventsUserFragment on User {
+fragment getUpcomingEventUserFragment on User {
   id
   name
   login

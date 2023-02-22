@@ -8,6 +8,7 @@ import { Menu, Transition } from '@headlessui/react'
 import type { Maybe } from '~/types'
 import type { getAllEvents } from '~/features/providers/github/commands/getAllEvents'
 import { getConfig, getGithubNewIssueLink } from '~/features/configuration'
+import { H2, Section } from '~/features/components'
 
 type GetAllEvents = Awaited<ReturnType<typeof getAllEvents>>
 type Day = GetAllEvents['days'][0]
@@ -17,15 +18,17 @@ const formatDay = (day: Day): Maybe<string> => {
   return datePart ? datePart.replace(/^0/, '') : undefined
 }
 
-export const Events: React.FC<GetAllEvents> = ({ upcoming, past, days }) => {
+export const EventsCalendar: React.FC<GetAllEvents> = ({
+  upcoming,
+  past,
+  days
+}) => {
   const config = getConfig()
 
   return (
-    <section className="py-16">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-extrabold text-primary-gradient sm:text-4xl mb-12 text-center md:text-left">
-          Upcoming events
-        </h2>
+    <Section>
+      <div>
+        <H2>Upcoming events</H2>
         <div className="lg:grid lg:grid-cols-12 lg:gap-x-16">
           <div className="mt-10 text-center lg:col-start-8 lg:col-end-13 lg:row-start-1 lg:mt-9 xl:col-start-9">
             <div className="flex items-center text-secondary-900">
@@ -200,7 +203,7 @@ export const Events: React.FC<GetAllEvents> = ({ upcoming, past, days }) => {
         </div>
       </div>
 
-      <div className="container mx-auto mt-16">
+      <div>
         <h2 className="text-lg font-semibold text-secondary-900 text-center md:text-left">
           Past events
         </h2>
@@ -250,6 +253,6 @@ export const Events: React.FC<GetAllEvents> = ({ upcoming, past, days }) => {
           ))}
         </ol>
       </div>
-    </section>
+    </Section>
   )
 }

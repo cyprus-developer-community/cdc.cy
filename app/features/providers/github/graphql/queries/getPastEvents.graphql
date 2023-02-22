@@ -25,6 +25,11 @@ query getPastEvents(
         closed
         number
         closedAt
+        participants(first: 20) {
+          nodes {
+            ...getPastEventsUserFragment
+          }
+        }
         author {
           ...getPastEventsUserFragment
         }

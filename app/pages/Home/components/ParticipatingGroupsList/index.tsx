@@ -1,22 +1,23 @@
 import type { Group } from '~/types'
 import { getConfig, getDiscordChatLink } from '~/features/configuration'
-import { ParticipatingGroupCard } from '~/features/components'
+import { ParticipatingGroupCard } from '../ParticipatingGroupCard'
+import { H2, Section } from '~/features/components'
 
 const config = getConfig()
 const discordChatLink = getDiscordChatLink(config)
 
-export type GroupsListProps = {
+export type ParticipatingGroupsListProps = {
   groups: Group[]
 }
 
-export const GroupsList: React.FC<GroupsListProps> = ({ groups }) => {
+export const ParticipatingGroupsList: React.FC<
+  ParticipatingGroupsListProps
+> = ({ groups }) => {
   return (
-    <section className="py-16 grid gap-8">
-      <div>
-        <h2 className="text-3xl font-extrabold text-primary-gradient sm:text-4xl mb-12 text-center md:text-left">
-          Participating Member Groups
-        </h2>
-        <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center">
+    <Section>
+      <div className="grid gap-12">
+        <H2>Participating Member Groups</H2>
+        <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center md:justify-items-start">
           {groups.map((group) => (
             <ParticipatingGroupCard key={group.name} group={group} />
           ))}
@@ -36,6 +37,6 @@ export const GroupsList: React.FC<GroupsListProps> = ({ groups }) => {
           to contact us.
         </p>
       </div>
-    </section>
+    </Section>
   )
 }

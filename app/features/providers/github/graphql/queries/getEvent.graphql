@@ -16,6 +16,11 @@ query getEvent($owner: String!, $repo: String!, $number: Int!) {
       author {
         ...getEventUserFragment
       }
+      participants(first: 20) {
+        nodes {
+          ...getEventUserFragment
+        }
+      }
       reactions(first: 100) {
         nodes {
           user {

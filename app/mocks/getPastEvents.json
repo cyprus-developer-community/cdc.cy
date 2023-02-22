@@ -3,6 +3,53 @@
     "issues": {
       "nodes": [
         {
+          "id": "I_kwDOG7Tv585ef1Ys",
+          "url": "https://github.com/cyprus-developer-community/events/issues/41",
+          "title": "CDC Paphos Meet & Greet",
+          "body": "### Event Description\n\n![patrickheneise_three_young_software_engineers_in_a_pub_drinking_658796ae-12f9-4766-a3e1-614ba29cb6e5](https://user-images.githubusercontent.com/74390/218968911-ad4e40c5-e9ed-4546-8f71-7ef9858cd181.png)\r\n\r\ninformal get together to discuss the latest in technology and science\n\n### Location\n\noneills-paphos\n\n### Date\n\n16.02.2023\n\n### Time\n\n19.00\n\n### Duration\n\n2h\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+          "bodyHTML": "<h3 dir=\"auto\">Event Description</h3>\n<p dir=\"auto\"><a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://user-images.githubusercontent.com/74390/218968911-ad4e40c5-e9ed-4546-8f71-7ef9858cd181.png\"><img src=\"https://user-images.githubusercontent.com/74390/218968911-ad4e40c5-e9ed-4546-8f71-7ef9858cd181.png\" alt=\"patrickheneise_three_young_software_engineers_in_a_pub_drinking_658796ae-12f9-4766-a3e1-614ba29cb6e5\" style=\"max-width: 100%;\"></a></p>\n<p dir=\"auto\">informal get together to discuss the latest in technology and science</p>\n<h3 dir=\"auto\">Location</h3>\n<p dir=\"auto\">oneills-paphos</p>\n<h3 dir=\"auto\">Date</h3>\n<p dir=\"auto\">16.02.2023</p>\n<h3 dir=\"auto\">Time</h3>\n<p dir=\"auto\">19.00</p>\n<h3 dir=\"auto\">Duration</h3>\n<p dir=\"auto\">2h</p>\n<h3 dir=\"auto\">Code of Conduct</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" id=\"\" disabled=\"\" class=\"task-list-item-checkbox\" checked=\"\"> I agree to follow this project's <a href=\"https://berlincodeofconduct.org\" rel=\"nofollow\">Code of Conduct</a></li>\n</ul>",
+          "createdAt": "2023-02-15T08:08:54Z",
+          "updatedAt": "2023-02-20T06:04:45Z",
+          "publishedAt": "2023-02-15T08:08:54Z",
+          "state": "CLOSED",
+          "closed": true,
+          "number": 41,
+          "closedAt": "2023-02-20T06:04:45Z",
+          "author": {
+            "id": "MDQ6VXNlcjc0Mzkw",
+            "name": "Patrick Heneise",
+            "login": "PatrickHeneise",
+            "url": "https://github.com/PatrickHeneise",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+          },
+          "reactions": {
+            "nodes": [],
+            "totalCount": 0
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "Event :sparkles:",
+                "description": "An event proposal.",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Event%20%3Asparkles%3A",
+                "color": "F075B7"
+              },
+              {
+                "name": "Approved :white_check_mark:",
+                "description": "approved & confirmed",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Approved%20%3Awhite_check_mark%3A",
+                "color": "2DA44E"
+              },
+              {
+                "name": "Paphos",
+                "description": "Πάφου / Baf kazası",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Paphos",
+                "color": "E3FDFE"
+              }
+            ]
+          }
+        },
+        {
           "id": "I_kwDOG7Tv585cxKSU",
           "url": "https://github.com/cyprus-developer-community/events/issues/39",
           "title": "CocoaHeads Lite Paphos",
@@ -1020,65 +1067,14 @@
               }
             ]
           }
-        },
-        {
-          "id": "I_kwDOG7Tv585HOfKx",
-          "url": "https://github.com/cyprus-developer-community/events/issues/7",
-          "title": "CDC Organizers Meetup 04/05, 20.30h",
-          "body": "### Event Description\n\nMonthly organizers sync\n\n### Location\n\nonline\n\n### Date\n\n04.05.2022\n\n### Time\n\n20:30\n\n### Duration\n\n0h30m\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
-          "bodyHTML": "<h3 dir=\"auto\">Event Description</h3>\n<p dir=\"auto\">Monthly organizers sync</p>\n<h3 dir=\"auto\">Location</h3>\n<p dir=\"auto\">online</p>\n<h3 dir=\"auto\">Date</h3>\n<p dir=\"auto\">04.05.2022</p>\n<h3 dir=\"auto\">Time</h3>\n<p dir=\"auto\">20:30</p>\n<h3 dir=\"auto\">Duration</h3>\n<p dir=\"auto\">0h30m</p>\n<h3 dir=\"auto\">Code of Conduct</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" id=\"\" disabled=\"\" class=\"task-list-item-checkbox\" checked=\"\"> I agree to follow this project's <a href=\"https://berlincodeofconduct.org\" rel=\"nofollow\">Code of Conduct</a></li>\n</ul>",
-          "createdAt": "2022-04-06T18:26:20Z",
-          "updatedAt": "2022-05-05T07:13:09Z",
-          "publishedAt": "2022-04-06T18:26:20Z",
-          "state": "CLOSED",
-          "closed": true,
-          "number": 7,
-          "closedAt": "2022-05-05T07:13:09Z",
-          "author": {
-            "id": "MDQ6VXNlcjQ0MDUyNTg3",
-            "name": null,
-            "login": "michdim",
-            "url": "https://github.com/michdim",
-            "avatarUrl": "https://avatars.githubusercontent.com/u/44052587?v=4"
-          },
-          "reactions": {
-            "nodes": [
-              {
-                "user": {
-                  "id": "MDQ6VXNlcjc0Mzkw",
-                  "name": "Patrick Heneise",
-                  "login": "PatrickHeneise",
-                  "url": "https://github.com/PatrickHeneise",
-                  "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
-                }
-              }
-            ],
-            "totalCount": 1
-          },
-          "labels": {
-            "nodes": [
-              {
-                "name": "Event :sparkles:",
-                "description": "An event proposal.",
-                "url": "https://github.com/cyprus-developer-community/events/labels/Event%20%3Asparkles%3A",
-                "color": "F075B7"
-              },
-              {
-                "name": "Approved :white_check_mark:",
-                "description": "approved & confirmed",
-                "url": "https://github.com/cyprus-developer-community/events/labels/Approved%20%3Awhite_check_mark%3A",
-                "color": "2DA44E"
-              }
-            ]
-          }
         }
       ],
       "pageInfo": {
-        "endCursor": "Y3Vyc29yOnYyOpK5MjAyMi0wNC0wNlQyMToyNjoyMCswMzowMM5HOfKx",
+        "endCursor": "Y3Vyc29yOnYyOpK5MjAyMi0wNC0wNlQyMjoyNzo0MCswMzowMM5HO2jV",
         "hasNextPage": true,
         "hasPreviousPage": false
       },
-      "totalCount": 24
+      "totalCount": 25
     }
   }
 }
