@@ -3,9 +3,9 @@ import type {
   GetUpcomingEventsQuery,
   GetPastEventsQuery
 } from '~/features/providers/github/graphql/types'
+export * from '~/features/providers/github/commands/types'
+// export * from '~/features/providers/github/graphql/types'
 export type { ApiResponse } from '~/features/providers/misc/http'
-
-export * from '~/features/providers/github/graphql/types'
 
 export type UpcomingEventConnection =
   GetUpcomingEventsQuery['repository']['issues']

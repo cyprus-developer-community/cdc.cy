@@ -1,50 +1,7 @@
 query getEvent($owner: String!, $repo: String!, $number: Int!) {
   repository(owner: $owner, name: $repo) {
     issue(number: $number) {
-      id
-      url
-      title
-      body
-      bodyHTML
-      createdAt
-      updatedAt
-      publishedAt
-      state
-      closed
-      number
-      closedAt
-      author {
-        ...getEventUserFragment
-      }
-      participants(first: 20) {
-        nodes {
-          ...getEventUserFragment
-        }
-      }
-      reactions(first: 100) {
-        nodes {
-          user {
-            ...getEventUserFragment
-          }
-        }
-        totalCount
-      }
-      labels(first: 10) {
-        nodes {
-          name
-          description
-          url
-          color
-        }
-      }
+      ...IssueFragment
     }
   }
-}
-
-fragment getEventUserFragment on User {
-  id
-  name
-  login
-  url
-  avatarUrl
 }

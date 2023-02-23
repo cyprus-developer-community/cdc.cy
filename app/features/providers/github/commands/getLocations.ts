@@ -5,15 +5,7 @@ import {
   isErrorStatus,
   newSuccessfulResponse
 } from '~/features/providers/misc/http'
-
-type Coordinates = [number, number]
-
-type Location = {
-  id: string
-  name: string
-  city?: string
-  geo: Coordinates
-}
+import type { Location } from './types'
 
 export const getLocations = async (): Promise<ApiResponse<Location[]>> => {
   const res = await fetch(

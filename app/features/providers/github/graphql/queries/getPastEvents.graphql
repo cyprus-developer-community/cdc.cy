@@ -13,42 +13,7 @@ query getPastEvents(
       states: CLOSED
     ) {
       nodes {
-        id
-        url
-        title
-        body
-        bodyHTML
-        createdAt
-        updatedAt
-        publishedAt
-        state
-        closed
-        number
-        closedAt
-        participants(first: 20) {
-          nodes {
-            ...getPastEventsUserFragment
-          }
-        }
-        author {
-          ...getPastEventsUserFragment
-        }
-        reactions(first: 100) {
-          nodes {
-            user {
-              ...getPastEventsUserFragment
-            }
-          }
-          totalCount
-        }
-        labels(first: 10) {
-          nodes {
-            name
-            description
-            url
-            color
-          }
-        }
+        ...IssueFragment
       }
       pageInfo {
         endCursor
@@ -58,12 +23,4 @@ query getPastEvents(
       totalCount
     }
   }
-}
-
-fragment getPastEventsUserFragment on User {
-  id
-  name
-  login
-  url
-  avatarUrl
 }

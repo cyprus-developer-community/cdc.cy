@@ -17,10 +17,21 @@
           "closedAt": "2023-02-20T06:04:45Z",
           "author": {
             "id": "MDQ6VXNlcjc0Mzkw",
-            "name": "Patrick Heneise",
             "login": "PatrickHeneise",
+            "name": "Patrick Heneise",
             "url": "https://github.com/PatrickHeneise",
             "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],
@@ -64,10 +75,28 @@
           "closedAt": "2023-02-15T07:51:30Z",
           "author": {
             "id": "MDQ6VXNlcjI2MjUyMzkw",
-            "name": "Mike Klyuev",
             "login": "oldtuna",
+            "name": "Mike Klyuev",
             "url": "https://github.com/oldtuna",
             "avatarUrl": "https://avatars.githubusercontent.com/u/26252390?u=8d87562c64ee284db95f497b6efbc30742cd1fae&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjI2MjUyMzkw",
+                "login": "oldtuna",
+                "name": "Mike Klyuev",
+                "url": "https://github.com/oldtuna",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/26252390?u=8d87562c64ee284db95f497b6efbc30742cd1fae&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],
@@ -105,10 +134,21 @@
           "closedAt": "2023-02-15T16:10:58Z",
           "author": {
             "id": "MDQ6VXNlcjE1NTIxODk=",
-            "name": "Michael サイトー 中村 Bashurov",
             "login": "saitonakamura",
+            "name": "Michael サイトー 中村 Bashurov",
             "url": "https://github.com/saitonakamura",
             "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjE1NTIxODk=",
+                "login": "saitonakamura",
+                "name": "Michael サイトー 中村 Bashurov",
+                "url": "https://github.com/saitonakamura",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],
@@ -146,10 +186,28 @@
           "closedAt": "2022-12-22T08:34:40Z",
           "author": {
             "id": "MDQ6VXNlcjI2MjUyMzkw",
-            "name": "Mike Klyuev",
             "login": "oldtuna",
+            "name": "Mike Klyuev",
             "url": "https://github.com/oldtuna",
             "avatarUrl": "https://avatars.githubusercontent.com/u/26252390?u=8d87562c64ee284db95f497b6efbc30742cd1fae&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjI2MjUyMzkw",
+                "login": "oldtuna",
+                "name": "Mike Klyuev",
+                "url": "https://github.com/oldtuna",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/26252390?u=8d87562c64ee284db95f497b6efbc30742cd1fae&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],
@@ -193,10 +251,35 @@
           "closedAt": "2022-12-22T08:34:40Z",
           "author": {
             "id": "U_kgDOBfVAsw",
-            "name": "Wrike TechClub",
             "login": "WrikeTechClub",
+            "name": "Wrike TechClub",
             "url": "https://github.com/WrikeTechClub",
             "avatarUrl": "https://avatars.githubusercontent.com/u/99958963?u=c8b1d99cb4e0441e640196aeec47021602394fa4&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjQ4NDE1OQ==",
+                "login": "fogrew",
+                "name": "Andrew Gurylev",
+                "url": "https://github.com/fogrew",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/484159?u=9a8a68918d15dd6dff8fea1f26645c6265de92e9&v=4"
+              },
+              {
+                "id": "U_kgDOBfVAsw",
+                "login": "WrikeTechClub",
+                "name": "Wrike TechClub",
+                "url": "https://github.com/WrikeTechClub",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/99958963?u=c8b1d99cb4e0441e640196aeec47021602394fa4&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],
@@ -240,10 +323,28 @@
           "closedAt": "2022-12-22T08:34:39Z",
           "author": {
             "id": "MDQ6VXNlcjgyNjgxMTU=",
-            "name": "Alexey Kudryavtsev",
             "login": "west0r",
+            "name": "Alexey Kudryavtsev",
             "url": "https://github.com/west0r",
             "avatarUrl": "https://avatars.githubusercontent.com/u/8268115?v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjgyNjgxMTU=",
+                "login": "west0r",
+                "name": "Alexey Kudryavtsev",
+                "url": "https://github.com/west0r",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/8268115?v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],
@@ -287,10 +388,21 @@
           "closedAt": "2022-12-22T08:34:39Z",
           "author": {
             "id": "MDQ6VXNlcjc0Mzkw",
-            "name": "Patrick Heneise",
             "login": "PatrickHeneise",
+            "name": "Patrick Heneise",
             "url": "https://github.com/PatrickHeneise",
             "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],
@@ -334,18 +446,43 @@
           "closedAt": "2023-02-01T16:27:09Z",
           "author": {
             "id": "MDQ6VXNlcjc0Mzkw",
-            "name": "Patrick Heneise",
             "login": "PatrickHeneise",
+            "name": "Patrick Heneise",
             "url": "https://github.com/PatrickHeneise",
             "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjQ5MDg4NQ==",
+                "login": "terehov",
+                "name": "Eugene Terehov",
+                "url": "https://github.com/terehov",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/490885?v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjExOTM4NDU4",
+                "login": "alexandr-bbm",
+                "name": "Alexander Gazizov",
+                "url": "https://github.com/alexandr-bbm",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/11938458?u=be5a0300b26bfb49d66b04b33291d0056c9129b7&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [
               {
                 "user": {
                   "id": "MDQ6VXNlcjMwNDEyMzIw",
-                  "name": "Sergei Waigant",
                   "login": "sergeiwaigant",
+                  "name": "Sergei Waigant",
                   "url": "https://github.com/sergeiwaigant",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/30412320?u=ee475aadc294840dcfce73411055286cab408385&v=4"
                 }
@@ -353,8 +490,8 @@
               {
                 "user": {
                   "id": "MDQ6VXNlcjIwNzEyNjk=",
-                  "name": "Stepan Seliuk",
                   "login": "stepanselyuk",
+                  "name": "Stepan Seliuk",
                   "url": "https://github.com/stepanselyuk",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/2071269?u=023248b0a3d27b1fe3ef69f1edea815f3468aafc&v=4"
                 }
@@ -362,8 +499,8 @@
               {
                 "user": {
                   "id": "MDQ6VXNlcjYxMTEwOQ==",
-                  "name": "Federico Rampazzo",
                   "login": "framp",
+                  "name": "Federico Rampazzo",
                   "url": "https://github.com/framp",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/611109?v=4"
                 }
@@ -371,8 +508,8 @@
               {
                 "user": {
                   "id": "MDQ6VXNlcjYxMTEwOQ==",
-                  "name": "Federico Rampazzo",
                   "login": "framp",
+                  "name": "Federico Rampazzo",
                   "url": "https://github.com/framp",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/611109?v=4"
                 }
@@ -380,8 +517,8 @@
               {
                 "user": {
                   "id": "U_kgDOBl6g7A",
-                  "name": "Script HUB",
                   "login": "ScriptHUBofficial",
+                  "name": "Script HUB",
                   "url": "https://github.com/ScriptHUBofficial",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/106864876?u=55b959ab14d361f1100c06ec1f3fbe31db84e632&v=4"
                 }
@@ -389,8 +526,8 @@
               {
                 "user": {
                   "id": "MDQ6VXNlcjQwNjkwMzc4",
-                  "name": "Boris Sekachev",
                   "login": "bsekachev",
+                  "name": "Boris Sekachev",
                   "url": "https://github.com/bsekachev",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/40690378?u=35b845468a42c808fc887a0975f9f9b04eb8a487&v=4"
                 }
@@ -436,10 +573,35 @@
           "closedAt": "2022-11-30T09:24:51Z",
           "author": {
             "id": "MDQ6VXNlcjE1NTIxODk=",
-            "name": "Michael サイトー 中村 Bashurov",
             "login": "saitonakamura",
+            "name": "Michael サイトー 中村 Bashurov",
             "url": "https://github.com/saitonakamura",
             "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjI0OTk3Nw==",
+                "login": "snez",
+                "name": "Christos Constantinou",
+                "url": "https://github.com/snez",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/249977?u=99214d19d98cbe310c85218a19413ac16f75c0a2&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjE1NTIxODk=",
+                "login": "saitonakamura",
+                "name": "Michael サイトー 中村 Bashurov",
+                "url": "https://github.com/saitonakamura",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],
@@ -483,10 +645,21 @@
           "closedAt": "2022-11-23T11:03:25Z",
           "author": {
             "id": "MDQ6VXNlcjE1NTIxODk=",
-            "name": "Michael サイトー 中村 Bashurov",
             "login": "saitonakamura",
+            "name": "Michael サイトー 中村 Bashurov",
             "url": "https://github.com/saitonakamura",
             "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjE1NTIxODk=",
+                "login": "saitonakamura",
+                "name": "Michael サイトー 中村 Bashurov",
+                "url": "https://github.com/saitonakamura",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],
@@ -524,10 +697,28 @@
           "closedAt": "2022-12-22T08:34:39Z",
           "author": {
             "id": "MDQ6VXNlcjc0Mzkw",
-            "name": "Patrick Heneise",
             "login": "PatrickHeneise",
+            "name": "Patrick Heneise",
             "url": "https://github.com/PatrickHeneise",
             "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjQ5MDg4NQ==",
+                "login": "terehov",
+                "name": "Eugene Terehov",
+                "url": "https://github.com/terehov",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/490885?v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],
@@ -571,18 +762,36 @@
           "closedAt": "2022-11-01T10:09:26Z",
           "author": {
             "id": "MDQ6VXNlcjE1NTIxODk=",
-            "name": "Michael サイトー 中村 Bashurov",
             "login": "saitonakamura",
+            "name": "Michael サイトー 中村 Bashurov",
             "url": "https://github.com/saitonakamura",
             "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjE1NTIxODk=",
+                "login": "saitonakamura",
+                "name": "Michael サイトー 中村 Bashurov",
+                "url": "https://github.com/saitonakamura",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [
               {
                 "user": {
                   "id": "MDQ6VXNlcjE1NTIxODk=",
-                  "name": "Michael サイトー 中村 Bashurov",
                   "login": "saitonakamura",
+                  "name": "Michael サイトー 中村 Bashurov",
                   "url": "https://github.com/saitonakamura",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
                 }
@@ -628,18 +837,29 @@
           "closedAt": "2022-11-16T06:26:35Z",
           "author": {
             "id": "MDQ6VXNlcjc0Mzkw",
-            "name": "Patrick Heneise",
             "login": "PatrickHeneise",
+            "name": "Patrick Heneise",
             "url": "https://github.com/PatrickHeneise",
             "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [
               {
                 "user": {
                   "id": "MDQ6VXNlcjE3MjE2MTE=",
-                  "name": "Sandeep Ramgolam",
                   "login": "MrSunshyne",
+                  "name": "Sandeep Ramgolam",
                   "url": "https://github.com/MrSunshyne",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/1721611?u=e9c36a27ce933b6a5a309a5033bbad3293d3e8c6&v=4"
                 }
@@ -647,8 +867,8 @@
               {
                 "user": {
                   "id": "MDQ6VXNlcjE3MjE2MTE=",
-                  "name": "Sandeep Ramgolam",
                   "login": "MrSunshyne",
+                  "name": "Sandeep Ramgolam",
                   "url": "https://github.com/MrSunshyne",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/1721611?u=e9c36a27ce933b6a5a309a5033bbad3293d3e8c6&v=4"
                 }
@@ -656,8 +876,8 @@
               {
                 "user": {
                   "id": "MDQ6VXNlcjE3MjE2MTE=",
-                  "name": "Sandeep Ramgolam",
                   "login": "MrSunshyne",
+                  "name": "Sandeep Ramgolam",
                   "url": "https://github.com/MrSunshyne",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/1721611?u=e9c36a27ce933b6a5a309a5033bbad3293d3e8c6&v=4"
                 }
@@ -665,8 +885,8 @@
               {
                 "user": {
                   "id": "MDQ6VXNlcjMwNDEyMzIw",
-                  "name": "Sergei Waigant",
                   "login": "sergeiwaigant",
+                  "name": "Sergei Waigant",
                   "url": "https://github.com/sergeiwaigant",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/30412320?u=ee475aadc294840dcfce73411055286cab408385&v=4"
                 }
@@ -674,8 +894,8 @@
               {
                 "user": {
                   "id": "MDQ6VXNlcjE0NDUyNTQ=",
-                  "name": "Vladislav Orlov",
                   "login": "orlov-vo",
+                  "name": "Vladislav Orlov",
                   "url": "https://github.com/orlov-vo",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/1445254?u=bf190ce5070e4d4c985b9ac24b926769fac710a4&v=4"
                 }
@@ -683,8 +903,8 @@
               {
                 "user": {
                   "id": "MDQ6VXNlcjYxMTEwOQ==",
-                  "name": "Federico Rampazzo",
                   "login": "framp",
+                  "name": "Federico Rampazzo",
                   "url": "https://github.com/framp",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/611109?v=4"
                 }
@@ -730,18 +950,29 @@
           "closedAt": "2022-10-21T18:35:55Z",
           "author": {
             "id": "MDQ6VXNlcjc0Mzkw",
-            "name": "Patrick Heneise",
             "login": "PatrickHeneise",
+            "name": "Patrick Heneise",
             "url": "https://github.com/PatrickHeneise",
             "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [
               {
                 "user": {
                   "id": "MDQ6VXNlcjc0Mzkw",
-                  "name": "Patrick Heneise",
                   "login": "PatrickHeneise",
+                  "name": "Patrick Heneise",
                   "url": "https://github.com/PatrickHeneise",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
                 }
@@ -749,8 +980,8 @@
               {
                 "user": {
                   "id": "MDQ6VXNlcjE1NTIxODk=",
-                  "name": "Michael サイトー 中村 Bashurov",
                   "login": "saitonakamura",
+                  "name": "Michael サイトー 中村 Bashurov",
                   "url": "https://github.com/saitonakamura",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
                 }
@@ -758,8 +989,8 @@
               {
                 "user": {
                   "id": "MDQ6VXNlcjMyMjQzNDU5",
-                  "name": "msimou",
                   "login": "MarioSimou",
+                  "name": "msimou",
                   "url": "https://github.com/MarioSimou",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/32243459?u=95acc24f98109cd72dcd6cfac98571015c0fa378&v=4"
                 }
@@ -799,18 +1030,36 @@
           "closedAt": "2022-10-10T16:56:11Z",
           "author": {
             "id": "MDQ6VXNlcjE1NTIxODk=",
-            "name": "Michael サイトー 中村 Bashurov",
             "login": "saitonakamura",
+            "name": "Michael サイトー 中村 Bashurov",
             "url": "https://github.com/saitonakamura",
             "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjE1NTIxODk=",
+                "login": "saitonakamura",
+                "name": "Michael サイトー 中村 Bashurov",
+                "url": "https://github.com/saitonakamura",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [
               {
                 "user": {
                   "id": "MDQ6VXNlcjEzOTgxNzE=",
-                  "name": "Jacek Gębal",
                   "login": "jgebal",
+                  "name": "Jacek Gębal",
                   "url": "https://github.com/jgebal",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/1398171?u=0bad9bb4031859bef9152ffb5f98654cc02a4dec&v=4"
                 }
@@ -818,8 +1067,8 @@
               {
                 "user": {
                   "id": "MDQ6VXNlcjQ3MjY4MTE0",
-                  "name": "Gennadion",
                   "login": "Gennadion",
+                  "name": "Gennadion",
                   "url": "https://github.com/Gennadion",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/47268114?u=1775c04184e7b6f0044d0a8cc213a7b28cc94882&v=4"
                 }
@@ -827,8 +1076,8 @@
               {
                 "user": {
                   "id": "MDQ6VXNlcjE3NTMyODI=",
-                  "name": "Andrey Starovoyt",
                   "login": "anstarovoyt",
+                  "name": "Andrey Starovoyt",
                   "url": "https://github.com/anstarovoyt",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/1753282?u=779afb611d647388668bfca1be047200fd4835f4&v=4"
                 }
@@ -868,10 +1117,28 @@
           "closedAt": "2022-09-06T13:34:20Z",
           "author": {
             "id": "MDQ6VXNlcjM1ODEzMzE=",
-            "name": "Nicholas Verban",
             "login": "NVerban",
+            "name": "Nicholas Verban",
             "url": "https://github.com/NVerban",
             "avatarUrl": "https://avatars.githubusercontent.com/u/3581331?u=d711e3721be68423ef984bbce4fc9c370db34352&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjM1ODEzMzE=",
+                "login": "NVerban",
+                "name": "Nicholas Verban",
+                "url": "https://github.com/NVerban",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/3581331?u=d711e3721be68423ef984bbce4fc9c370db34352&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],
@@ -909,18 +1176,36 @@
           "closedAt": "2022-09-06T13:34:32Z",
           "author": {
             "id": "MDQ6VXNlcjQ0MDUyNTg3",
-            "name": null,
             "login": "michdim",
+            "name": null,
             "url": "https://github.com/michdim",
             "avatarUrl": "https://avatars.githubusercontent.com/u/44052587?v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjQ0MDUyNTg3",
+                "login": "michdim",
+                "name": null,
+                "url": "https://github.com/michdim",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/44052587?v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [
               {
                 "user": {
                   "id": "MDQ6VXNlcjc0Mzkw",
-                  "name": "Patrick Heneise",
                   "login": "PatrickHeneise",
+                  "name": "Patrick Heneise",
                   "url": "https://github.com/PatrickHeneise",
                   "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
                 }
@@ -960,10 +1245,28 @@
           "closedAt": "2022-09-06T13:34:20Z",
           "author": {
             "id": "MDQ6VXNlcjE1NTIxODk=",
-            "name": "Michael サイトー 中村 Bashurov",
             "login": "saitonakamura",
+            "name": "Michael サイトー 中村 Bashurov",
             "url": "https://github.com/saitonakamura",
             "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjE1NTIxODk=",
+                "login": "saitonakamura",
+                "name": "Michael サイトー 中村 Bashurov",
+                "url": "https://github.com/saitonakamura",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],
@@ -1001,10 +1304,28 @@
           "closedAt": "2022-04-27T12:38:42Z",
           "author": {
             "id": "MDQ6VXNlcjM1ODEzMzE=",
-            "name": "Nicholas Verban",
             "login": "NVerban",
+            "name": "Nicholas Verban",
             "url": "https://github.com/NVerban",
             "avatarUrl": "https://avatars.githubusercontent.com/u/3581331?u=d711e3721be68423ef984bbce4fc9c370db34352&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "id": "MDQ6VXNlcjM1ODEzMzE=",
+                "login": "NVerban",
+                "name": "Nicholas Verban",
+                "url": "https://github.com/NVerban",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/3581331?u=d711e3721be68423ef984bbce4fc9c370db34352&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],
@@ -1042,10 +1363,21 @@
           "closedAt": "2022-04-27T12:38:42Z",
           "author": {
             "id": "MDQ6VXNlcjc0Mzkw",
-            "name": "Patrick Heneise",
             "login": "PatrickHeneise",
+            "name": "Patrick Heneise",
             "url": "https://github.com/PatrickHeneise",
             "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              }
+            ]
           },
           "reactions": {
             "nodes": [],

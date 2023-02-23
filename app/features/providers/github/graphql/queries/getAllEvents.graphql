@@ -5,39 +5,8 @@ query getAllEvents($owner: String!, $repo: String!) {
       orderBy: { field: CREATED_AT, direction: ASC }
       first: 100
     ) {
-      edges {
-        node {
-          id
-          url
-          title
-          body
-          createdAt
-          updatedAt
-          state
-          labels(first: 10) {
-            nodes {
-              name
-            }
-          }
-          author {
-            ... on User {
-              login
-              name
-              url
-            }
-          }
-          reactions(first: 100, content: THUMBS_UP) {
-            edges {
-              node {
-                user {
-                  name
-                  login
-                  url
-                }
-              }
-            }
-          }
-        }
+      nodes {
+        ...IssueFragment
       }
       totalCount
     }

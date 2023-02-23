@@ -5,20 +5,18 @@ import {
   MapPinIcon
 } from '@heroicons/react/24/solid'
 import { Menu, Transition } from '@headlessui/react'
-import type { Maybe } from '~/types'
-import type { getAllEvents } from '~/features/providers/github/commands/getAllEvents'
 import { getConfig, getGithubNewIssueLink } from '~/features/configuration'
 import { H2, Section } from '~/features/components'
+import type { Event, Day } from '~/features/providers/github/commands/types'
+import { formatDay } from './formatDay'
 
-type GetAllEvents = Awaited<ReturnType<typeof getAllEvents>>
-type Day = GetAllEvents['days'][0]
-
-const formatDay = (day: Day): Maybe<string> => {
-  const datePart = day.date.split('-').pop()
-  return datePart ? datePart.replace(/^0/, '') : undefined
+type EventsCalendarProps = {
+  upcoming: Event[]
+  past: Event[]
+  days: Day[]
 }
 
-export const EventsCalendar: React.FC<GetAllEvents> = ({
+export const EventsCalendar: React.FC<EventsCalendarProps> = ({
   upcoming,
   past,
   days
@@ -63,7 +61,6 @@ export const EventsCalendar: React.FC<GetAllEvents> = ({
             </div>
             <div className="isolate mt-2 grid grid-cols-7 gap-px rounded-lg bg-secondary-200 text-sm shadow ring-1 ring-secondary-200">
               {days.map((day, dayIdx) => {
-                // console.log(day, dayIdx)
                 return (
                   <button
                     key={day.date}
@@ -112,11 +109,12 @@ export const EventsCalendar: React.FC<GetAllEvents> = ({
                 key={event.id}
                 className="relative flex space-x-6 py-6 xl:static"
               >
-                <img
+                {/* The event image is not available yet */}
+                {/* <img
                   src={event.imageUrl}
                   alt=""
                   className="h-14 w-14 flex-none rounded-full"
-                />
+                /> */}
                 <div className="flex-auto">
                   {event.status === 'CANCELLED' && (
                     <h3 className="pr-10 font-semibold text-secondary-900 xl:pr-0">
@@ -204,20 +202,19 @@ export const EventsCalendar: React.FC<GetAllEvents> = ({
       </div>
 
       <div>
-        <h2 className="text-lg font-semibold text-secondary-900 text-center md:text-left">
-          Past events
-        </h2>
+        <H2>Past events</H2>
         <ol className="mt-4 divide-y divide-secondary-100 text-sm leading-6 lg:col-span-7 xl:col-span-8">
           {past.map((event) => (
             <li
               key={event.id}
               className="relative flex space-x-6 py-6 xl:static"
             >
-              <img
-                src={event.imageUrl}
-                alt=""
+              {/* The event image is not available yet */}
+              {/* <img
+                src={event.}
+                alt={event.title}
                 className="h-14 w-14 flex-none rounded-full"
-              />
+              /> */}
               <div className="flex-auto">
                 <h3 className="pr-10 font-semibold text-secondary-900 xl:pr-0">
                   {event.title}

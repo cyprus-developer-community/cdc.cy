@@ -13,42 +13,7 @@ query getUpcomingEvents(
       states: OPEN
     ) {
       nodes {
-        id
-        url
-        title
-        body
-        bodyHTML
-        createdAt
-        updatedAt
-        publishedAt
-        state
-        closed
-        number
-        closedAt
-        author {
-          ...getUpcomingEventUserFragment
-        }
-        participants(first: 20) {
-          nodes {
-            ...getUpcomingEventUserFragment
-          }
-        }
-        reactions(first: 100) {
-          nodes {
-            user {
-              ...getUpcomingEventUserFragment
-            }
-          }
-          totalCount
-        }
-        labels(first: 10) {
-          nodes {
-            name
-            description
-            url
-            color
-          }
-        }
+        ...IssueFragment
       }
       pageInfo {
         endCursor
@@ -58,12 +23,4 @@ query getUpcomingEvents(
       totalCount
     }
   }
-}
-
-fragment getUpcomingEventUserFragment on User {
-  id
-  name
-  login
-  url
-  avatarUrl
 }

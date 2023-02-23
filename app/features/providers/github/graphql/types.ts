@@ -26981,6 +26981,89 @@ export enum WorkflowRunOrderField {
   CreatedAt = 'CREATED_AT'
 }
 
+export type LabelFragmentFragment = {
+  __typename?: 'Label'
+  name: string
+  description?: string | null
+  url: any
+  color: string
+}
+
+export type UserFragmentFragment = {
+  __typename?: 'User'
+  id: string
+  login: string
+  name?: string | null
+  url: any
+  avatarUrl: any
+}
+
+export type IssueFragmentFragment = {
+  __typename?: 'Issue'
+  id: string
+  url: any
+  title: string
+  body: string
+  bodyHTML: any
+  createdAt: any
+  updatedAt: any
+  publishedAt?: any | null
+  state: IssueState
+  closed: boolean
+  number: number
+  closedAt?: any | null
+  author?:
+    | { __typename?: 'Bot' }
+    | { __typename?: 'EnterpriseUserAccount' }
+    | { __typename?: 'Mannequin' }
+    | { __typename?: 'Organization' }
+    | {
+        __typename?: 'User'
+        id: string
+        login: string
+        name?: string | null
+        url: any
+        avatarUrl: any
+      }
+    | null
+  participants: {
+    __typename?: 'UserConnection'
+    nodes?: Array<{
+      __typename?: 'User'
+      id: string
+      login: string
+      name?: string | null
+      url: any
+      avatarUrl: any
+    } | null> | null
+  }
+  reactions: {
+    __typename?: 'ReactionConnection'
+    totalCount: number
+    nodes?: Array<{
+      __typename?: 'Reaction'
+      user?: {
+        __typename?: 'User'
+        id: string
+        login: string
+        name?: string | null
+        url: any
+        avatarUrl: any
+      } | null
+    } | null> | null
+  }
+  labels?: {
+    __typename?: 'LabelConnection'
+    nodes?: Array<{
+      __typename?: 'Label'
+      name: string
+      description?: string | null
+      url: any
+      color: string
+    } | null> | null
+  } | null
+}
+
 export type GetAllEventsQueryVariables = Exact<{
   owner: Scalars['String']
   repo: Scalars['String']
@@ -26993,48 +27076,69 @@ export type GetAllEventsQuery = {
     issues: {
       __typename?: 'IssueConnection'
       totalCount: number
-      edges?: Array<{
-        __typename?: 'IssueEdge'
-        node?: {
-          __typename?: 'Issue'
-          id: string
-          url: any
-          title: string
-          body: string
-          createdAt: any
-          updatedAt: any
-          state: IssueState
-          labels?: {
-            __typename?: 'LabelConnection'
-            nodes?: Array<{ __typename?: 'Label'; name: string } | null> | null
-          } | null
-          author?:
-            | { __typename?: 'Bot' }
-            | { __typename?: 'EnterpriseUserAccount' }
-            | { __typename?: 'Mannequin' }
-            | { __typename?: 'Organization' }
-            | {
-                __typename?: 'User'
-                login: string
-                name?: string | null
-                url: any
-              }
-            | null
-          reactions: {
-            __typename?: 'ReactionConnection'
-            edges?: Array<{
-              __typename?: 'ReactionEdge'
-              node?: {
-                __typename?: 'Reaction'
-                user?: {
-                  __typename?: 'User'
-                  name?: string | null
-                  login: string
-                  url: any
-                } | null
-              } | null
-            } | null> | null
-          }
+      nodes?: Array<{
+        __typename?: 'Issue'
+        id: string
+        url: any
+        title: string
+        body: string
+        bodyHTML: any
+        createdAt: any
+        updatedAt: any
+        publishedAt?: any | null
+        state: IssueState
+        closed: boolean
+        number: number
+        closedAt?: any | null
+        author?:
+          | { __typename?: 'Bot' }
+          | { __typename?: 'EnterpriseUserAccount' }
+          | { __typename?: 'Mannequin' }
+          | { __typename?: 'Organization' }
+          | {
+              __typename?: 'User'
+              id: string
+              login: string
+              name?: string | null
+              url: any
+              avatarUrl: any
+            }
+          | null
+        participants: {
+          __typename?: 'UserConnection'
+          nodes?: Array<{
+            __typename?: 'User'
+            id: string
+            login: string
+            name?: string | null
+            url: any
+            avatarUrl: any
+          } | null> | null
+        }
+        reactions: {
+          __typename?: 'ReactionConnection'
+          totalCount: number
+          nodes?: Array<{
+            __typename?: 'Reaction'
+            user?: {
+              __typename?: 'User'
+              id: string
+              login: string
+              name?: string | null
+              url: any
+              avatarUrl: any
+            } | null
+          } | null> | null
+        }
+        labels?: {
+          __typename?: 'LabelConnection'
+          nodes?: Array<{
+            __typename?: 'Label'
+            name: string
+            description?: string | null
+            url: any
+            color: string
+          } | null> | null
         } | null
       } | null> | null
     }
@@ -27073,8 +27177,8 @@ export type GetEventQuery = {
         | {
             __typename?: 'User'
             id: string
-            name?: string | null
             login: string
+            name?: string | null
             url: any
             avatarUrl: any
           }
@@ -27084,8 +27188,8 @@ export type GetEventQuery = {
         nodes?: Array<{
           __typename?: 'User'
           id: string
-          name?: string | null
           login: string
+          name?: string | null
           url: any
           avatarUrl: any
         } | null> | null
@@ -27098,8 +27202,8 @@ export type GetEventQuery = {
           user?: {
             __typename?: 'User'
             id: string
-            name?: string | null
             login: string
+            name?: string | null
             url: any
             avatarUrl: any
           } | null
@@ -27117,15 +27221,6 @@ export type GetEventQuery = {
       } | null
     } | null
   } | null
-}
-
-export type GetEventUserFragmentFragment = {
-  __typename?: 'User'
-  id: string
-  name?: string | null
-  login: string
-  url: any
-  avatarUrl: any
 }
 
 export type GetPastEventsQueryVariables = Exact<{
@@ -27156,17 +27251,6 @@ export type GetPastEventsQuery = {
         closed: boolean
         number: number
         closedAt?: any | null
-        participants: {
-          __typename?: 'UserConnection'
-          nodes?: Array<{
-            __typename?: 'User'
-            id: string
-            name?: string | null
-            login: string
-            url: any
-            avatarUrl: any
-          } | null> | null
-        }
         author?:
           | { __typename?: 'Bot' }
           | { __typename?: 'EnterpriseUserAccount' }
@@ -27175,12 +27259,23 @@ export type GetPastEventsQuery = {
           | {
               __typename?: 'User'
               id: string
-              name?: string | null
               login: string
+              name?: string | null
               url: any
               avatarUrl: any
             }
           | null
+        participants: {
+          __typename?: 'UserConnection'
+          nodes?: Array<{
+            __typename?: 'User'
+            id: string
+            login: string
+            name?: string | null
+            url: any
+            avatarUrl: any
+          } | null> | null
+        }
         reactions: {
           __typename?: 'ReactionConnection'
           totalCount: number
@@ -27189,8 +27284,8 @@ export type GetPastEventsQuery = {
             user?: {
               __typename?: 'User'
               id: string
-              name?: string | null
               login: string
+              name?: string | null
               url: any
               avatarUrl: any
             } | null
@@ -27215,15 +27310,6 @@ export type GetPastEventsQuery = {
       }
     }
   } | null
-}
-
-export type GetPastEventsUserFragmentFragment = {
-  __typename?: 'User'
-  id: string
-  name?: string | null
-  login: string
-  url: any
-  avatarUrl: any
 }
 
 export type GetUpcomingEventsQueryVariables = Exact<{
@@ -27262,8 +27348,8 @@ export type GetUpcomingEventsQuery = {
           | {
               __typename?: 'User'
               id: string
-              name?: string | null
               login: string
+              name?: string | null
               url: any
               avatarUrl: any
             }
@@ -27273,8 +27359,8 @@ export type GetUpcomingEventsQuery = {
           nodes?: Array<{
             __typename?: 'User'
             id: string
-            name?: string | null
             login: string
+            name?: string | null
             url: any
             avatarUrl: any
           } | null> | null
@@ -27287,8 +27373,8 @@ export type GetUpcomingEventsQuery = {
             user?: {
               __typename?: 'User'
               id: string
-              name?: string | null
               login: string
+              name?: string | null
               url: any
               avatarUrl: any
             } | null
@@ -27313,13 +27399,4 @@ export type GetUpcomingEventsQuery = {
       }
     }
   } | null
-}
-
-export type GetUpcomingEventUserFragmentFragment = {
-  __typename?: 'User'
-  id: string
-  name?: string | null
-  login: string
-  url: any
-  avatarUrl: any
 }
