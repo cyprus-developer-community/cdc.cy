@@ -27034,7 +27034,6 @@ export type IssueFragmentFragment = {
   }
   reactions: {
     __typename?: 'ReactionConnection'
-    totalCount: number
     nodes?: Array<{
       __typename?: 'Reaction'
       user?: {
@@ -27069,7 +27068,6 @@ export type GetAllEventsQuery = {
     __typename?: 'Repository'
     issues: {
       __typename?: 'IssueConnection'
-      totalCount: number
       nodes?: Array<{
         __typename?: 'Issue'
         id: string
@@ -27107,7 +27105,6 @@ export type GetAllEventsQuery = {
         }
         reactions: {
           __typename?: 'ReactionConnection'
-          totalCount: number
           nodes?: Array<{
             __typename?: 'Reaction'
             user?: {
@@ -27136,7 +27133,6 @@ export type GetAllEventsQuery = {
     __typename?: 'Repository'
     issues: {
       __typename?: 'IssueConnection'
-      totalCount: number
       nodes?: Array<{
         __typename?: 'Issue'
         id: string
@@ -27174,7 +27170,6 @@ export type GetAllEventsQuery = {
         }
         reactions: {
           __typename?: 'ReactionConnection'
-          totalCount: number
           nodes?: Array<{
             __typename?: 'Reaction'
             user?: {
@@ -27248,7 +27243,6 @@ export type GetEventQuery = {
       }
       reactions: {
         __typename?: 'ReactionConnection'
-        totalCount: number
         nodes?: Array<{
           __typename?: 'Reaction'
           user?: {
@@ -27287,7 +27281,6 @@ export type GetPastEventsQuery = {
     __typename?: 'Repository'
     issues: {
       __typename?: 'IssueConnection'
-      totalCount: number
       nodes?: Array<{
         __typename?: 'Issue'
         id: string
@@ -27325,7 +27318,6 @@ export type GetPastEventsQuery = {
         }
         reactions: {
           __typename?: 'ReactionConnection'
-          totalCount: number
           nodes?: Array<{
             __typename?: 'Reaction'
             user?: {
@@ -27348,12 +27340,6 @@ export type GetPastEventsQuery = {
           } | null> | null
         } | null
       } | null> | null
-      pageInfo: {
-        __typename?: 'PageInfo'
-        endCursor?: string | null
-        hasNextPage: boolean
-        hasPreviousPage: boolean
-      }
     }
   } | null
 }
@@ -27371,7 +27357,6 @@ export type GetUpcomingEventsQuery = {
     __typename?: 'Repository'
     issues: {
       __typename?: 'IssueConnection'
-      totalCount: number
       nodes?: Array<{
         __typename?: 'Issue'
         id: string
@@ -27409,7 +27394,6 @@ export type GetUpcomingEventsQuery = {
         }
         reactions: {
           __typename?: 'ReactionConnection'
-          totalCount: number
           nodes?: Array<{
             __typename?: 'Reaction'
             user?: {
@@ -27432,12 +27416,6 @@ export type GetUpcomingEventsQuery = {
           } | null> | null
         } | null
       } | null> | null
-      pageInfo: {
-        __typename?: 'PageInfo'
-        endCursor?: string | null
-        hasNextPage: boolean
-        hasPreviousPage: boolean
-      }
     }
   } | null
 }

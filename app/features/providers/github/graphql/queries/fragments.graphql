@@ -36,7 +36,6 @@ fragment IssueFragment on Issue {
         ...UserFragment
       }
     }
-    totalCount
   }
   labels(first: 10) {
     nodes {

@@ -15,12 +15,6 @@ query getUpcomingEvents(
       nodes {
         ...IssueFragment
       }
-      pageInfo {
-        endCursor
-        hasNextPage
-        hasPreviousPage
-      }
-      totalCount
     }
   }
 }

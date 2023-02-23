@@ -9,7 +9,6 @@ query getAllEvents($owner: String!, $repo: String!) {
       nodes {
         ...IssueFragment
       }
-      totalCount
     }
   }
   getPastEvents: repository(owner: $owner, name: $repo) {
@@ -22,7 +21,6 @@ query getAllEvents($owner: String!, $repo: String!) {
       nodes {
         ...IssueFragment
       }
-      totalCount
     }
   }
 }

@@ -7,14 +7,10 @@
           "url": "https://github.com/cyprus-developer-community/events/issues/40",
           "title": "CDC Meet & Greet Ammochostos",
           "body": "### Event Description\n\nInformal meet & greet to talk about the latest in software and web development, technology and science.\n\n### Location\n\nCosta Coffee Protaras\n\n### Date\n\n25.02.2023\n\n### Time\n\n19.00\n\n### Duration\n\n2h\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
-          "bodyHTML": "<h3 dir=\"auto\">Event Description</h3>\n<p dir=\"auto\">Informal meet &amp; greet to talk about the latest in software and web development, technology and science.</p>\n<h3 dir=\"auto\">Location</h3>\n<p dir=\"auto\">Costa Coffee Protaras</p>\n<h3 dir=\"auto\">Date</h3>\n<p dir=\"auto\">25.02.2023</p>\n<h3 dir=\"auto\">Time</h3>\n<p dir=\"auto\">19.00</p>\n<h3 dir=\"auto\">Duration</h3>\n<p dir=\"auto\">2h</p>\n<h3 dir=\"auto\">Code of Conduct</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" id=\"\" disabled=\"\" class=\"task-list-item-checkbox\" checked=\"\"> I agree to follow this project's <a href=\"https://berlincodeofconduct.org\" rel=\"nofollow\">Code of Conduct</a></li>\n</ul>",
           "createdAt": "2023-02-15T07:44:18Z",
-          "updatedAt": "2023-02-15T07:50:23Z",
           "publishedAt": "2023-02-15T07:44:18Z",
           "state": "OPEN",
-          "closed": false,
           "number": 40,
-          "closedAt": null,
           "author": {
             "__typename": "User",
             "id": "MDQ6VXNlcjMyMjQzNDU5",
@@ -44,8 +40,18 @@
             ]
           },
           "reactions": {
-            "nodes": [],
-            "totalCount": 0
+            "nodes": [
+              {
+                "user": {
+                  "__typename": "User",
+                  "id": "MDQ6VXNlcjMyMjQzNDU5",
+                  "login": "MarioSimou",
+                  "name": "msimou",
+                  "url": "https://github.com/MarioSimou",
+                  "avatarUrl": "https://avatars.githubusercontent.com/u/32243459?u=95acc24f98109cd72dcd6cfac98571015c0fa378&v=4"
+                }
+              }
+            ]
           },
           "labels": {
             "nodes": [
@@ -69,14 +75,10 @@
           "url": "https://github.com/cyprus-developer-community/events/issues/42",
           "title": "Cyprus Kotlin User Group",
           "body": "### Event Description\n\nKUG Cyprus is for everyone who is interested in Kotlin. Doesn't matter whether you're a beginner or an expert, more into Android or Backend - we all want to learn more about Kotlin and have some fun together!\r\n\r\nPlease [register here.](https://www.eventbrite.com/e/cyprus-kotlin-user-group-meetup-0203-tickets-547755831437)\r\n\r\n**Agenda**\r\n19:00 - 19:30 - Gathering & Intro\r\n19:30 - 20:00 - \"10 myths about cross platform mobile development with Kotlin\" by Katerina Petrova (JetBrains)\r\nBusting myths about Kotlin Mobile Multiplatform!\r\n20:00 - 20:30 - TBA\r\n20:30 - 21:00 - Networking\r\n\r\n**СFP**\r\nWe are open to talk proposals. If you are interested in making a Kotlin-related tech talk at this meeting, please fill in an[ issue here](https://github.com/Cyprus-Kotlin-User-Group/Cyprus-KUG/issues/new?assignees=oldtuna&labels=talk+proposal&template=talk-proposal.md&title=).\n\n### Location\n\nExness office (Porto Bello Business & Cultural center), Limassol\n\n### Date\n\n02.03.2023\n\n### Time\n\n19:00\n\n### Duration\n\n2h\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
-          "bodyHTML": "<h3 dir=\"auto\">Event Description</h3>\n<p dir=\"auto\">KUG Cyprus is for everyone who is interested in Kotlin. Doesn't matter whether you're a beginner or an expert, more into Android or Backend - we all want to learn more about Kotlin and have some fun together!</p>\n<p dir=\"auto\">Please <a href=\"https://www.eventbrite.com/e/cyprus-kotlin-user-group-meetup-0203-tickets-547755831437\" rel=\"nofollow\">register here.</a></p>\n<p dir=\"auto\"><strong>Agenda</strong><br>\n19:00 - 19:30 - Gathering &amp; Intro<br>\n19:30 - 20:00 - \"10 myths about cross platform mobile development with Kotlin\" by Katerina Petrova (JetBrains)<br>\nBusting myths about Kotlin Mobile Multiplatform!<br>\n20:00 - 20:30 - TBA<br>\n20:30 - 21:00 - Networking</p>\n<p dir=\"auto\"><strong>СFP</strong><br>\nWe are open to talk proposals. If you are interested in making a Kotlin-related tech talk at this meeting, please fill in an<a href=\"https://github.com/Cyprus-Kotlin-User-Group/Cyprus-KUG/issues/new?assignees=oldtuna&amp;labels=talk+proposal&amp;template=talk-proposal.md&amp;title=\"> issue here</a>.</p>\n<h3 dir=\"auto\">Location</h3>\n<p dir=\"auto\">Exness office (Porto Bello Business &amp; Cultural center), Limassol</p>\n<h3 dir=\"auto\">Date</h3>\n<p dir=\"auto\">02.03.2023</p>\n<h3 dir=\"auto\">Time</h3>\n<p dir=\"auto\">19:00</p>\n<h3 dir=\"auto\">Duration</h3>\n<p dir=\"auto\">2h</p>\n<h3 dir=\"auto\">Code of Conduct</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" id=\"\" disabled=\"\" class=\"task-list-item-checkbox\" checked=\"\"> I agree to follow this project's <a href=\"https://berlincodeofconduct.org\" rel=\"nofollow\">Code of Conduct</a></li>\n</ul>",
           "createdAt": "2023-02-15T09:50:26Z",
-          "updatedAt": "2023-02-15T16:12:23Z",
           "publishedAt": "2023-02-15T09:50:26Z",
           "state": "OPEN",
-          "closed": false,
           "number": 42,
-          "closedAt": null,
           "author": {
             "__typename": "User",
             "id": "MDQ6VXNlcjI2MjUyMzkw",
@@ -114,8 +116,7 @@
             ]
           },
           "reactions": {
-            "nodes": [],
-            "totalCount": 0
+            "nodes": []
           },
           "labels": {
             "nodes": [
@@ -145,14 +146,10 @@
           "url": "https://github.com/cyprus-developer-community/events/issues/43",
           "title": "CDC Meet & Greet Limassol",
           "body": "### Event Description\n\nInformal meet & greet to talk about the latest in software and web development, technology and science.\n\n### Location\n\nbono\n\n### Date\n\n23.02.2023\n\n### Time\n\n19.00\n\n### Duration\n\n2h00m\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
-          "bodyHTML": "<h3 dir=\"auto\">Event Description</h3>\n<p dir=\"auto\">Informal meet &amp; greet to talk about the latest in software and web development, technology and science.</p>\n<h3 dir=\"auto\">Location</h3>\n<p dir=\"auto\">bono</p>\n<h3 dir=\"auto\">Date</h3>\n<p dir=\"auto\">23.02.2023</p>\n<h3 dir=\"auto\">Time</h3>\n<p dir=\"auto\">19.00</p>\n<h3 dir=\"auto\">Duration</h3>\n<p dir=\"auto\">2h00m</p>\n<h3 dir=\"auto\">Code of Conduct</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" id=\"\" disabled=\"\" class=\"task-list-item-checkbox\" checked=\"\"> I agree to follow this project's <a href=\"https://berlincodeofconduct.org\" rel=\"nofollow\">Code of Conduct</a></li>\n</ul>",
           "createdAt": "2023-02-15T16:11:50Z",
-          "updatedAt": "2023-02-15T16:12:14Z",
           "publishedAt": "2023-02-15T16:11:50Z",
           "state": "OPEN",
-          "closed": false,
           "number": 43,
-          "closedAt": null,
           "author": {
             "__typename": "User",
             "id": "MDQ6VXNlcjE1NTIxODk=",
@@ -174,8 +171,7 @@
             ]
           },
           "reactions": {
-            "nodes": [],
-            "totalCount": 0
+            "nodes": []
           },
           "labels": {
             "nodes": [
@@ -205,14 +201,10 @@
           "url": "https://github.com/cyprus-developer-community/events/issues/44",
           "title": "CyprusJS Meetup #1 2023",
           "body": "### Event Description\r\n\r\nCyprusJS is back with a long-awaited meetup! On the 2nd of March at [Diamante Blu](https://www.google.com/maps/place/Diamante+blu/@34.6701968,33.0439646,15z/data=!4m2!3m1!1s0x0:0x565901f7e7ddc41e?sa=X&ved=2ahUKEwjQgPmil5r9AhWkVKQEHUOrArIQ_BJ6BAhwEAg), we’ll hear about GraphQL and WebXR. [Patrick Heneise](https://twitter.com/PatrickHeneise) from [Zentered](https://zentered.co/) will talk about custom GraphQL schemas for arbitrary data sources with GraphQL Nexus, and [Michael Bashurov](https://twitter.com/saitonakamura) from [Mayflower](https://mayflower.work/) will delve into the current state of things with VR in the browser.\r\n\r\n- https://github.com/cyprusjs/CyprusJS/issues/42\r\n- https://github.com/cyprusjs/CyprusJS/issues/44\r\n\r\n*Registration:*\r\nhttps://www.eventbrite.com/e/cyprusjs-meetup-1-2023-tickets-552439871527\r\n\r\n### Location\r\n\r\ndiamante-blu\r\n\r\n### Date\r\n\r\n02.03.2023\r\n\r\n### Time\r\n\r\n18:30\r\n\r\n### Duration\r\n\r\n2h30m\r\n\r\n### Code of Conduct\r\n\r\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
-          "bodyHTML": "<h3 dir=\"auto\">Event Description</h3>\n<p dir=\"auto\">CyprusJS is back with a long-awaited meetup! On the 2nd of March at <a href=\"https://www.google.com/maps/place/Diamante+blu/@34.6701968,33.0439646,15z/data=!4m2!3m1!1s0x0:0x565901f7e7ddc41e?sa=X&amp;ved=2ahUKEwjQgPmil5r9AhWkVKQEHUOrArIQ_BJ6BAhwEAg\" rel=\"nofollow\">Diamante Blu</a>, we’ll hear about GraphQL and WebXR. <a href=\"https://twitter.com/PatrickHeneise\" rel=\"nofollow\">Patrick Heneise</a> from <a href=\"https://zentered.co/\" rel=\"nofollow\">Zentered</a> will talk about custom GraphQL schemas for arbitrary data sources with GraphQL Nexus, and <a href=\"https://twitter.com/saitonakamura\" rel=\"nofollow\">Michael Bashurov</a> from <a href=\"https://mayflower.work/\" rel=\"nofollow\">Mayflower</a> will delve into the current state of things with VR in the browser.</p>\n<ul dir=\"auto\">\n<li><a aria-label=\"Issue #42\" class=\"issue-link js-issue-link\" data-error-text=\"Failed to load title\" data-id=\"1566427031\" data-permission-text=\"Title is private\" data-url=\"https://github.com/cyprusjs/CyprusJS/issues/42\" data-hovercard-type=\"issue\" data-hovercard-url=\"/cyprusjs/CyprusJS/issues/42/hovercard\" href=\"https://github.com/cyprusjs/CyprusJS/issues/42\">cyprusjs/CyprusJS#42</a></li>\n<li><a aria-label=\"Issue #44\" class=\"issue-link js-issue-link\" data-error-text=\"Failed to load title\" data-id=\"1579685634\" data-permission-text=\"Title is private\" data-url=\"https://github.com/cyprusjs/CyprusJS/issues/44\" data-hovercard-type=\"issue\" data-hovercard-url=\"/cyprusjs/CyprusJS/issues/44/hovercard\" href=\"https://github.com/cyprusjs/CyprusJS/issues/44\">cyprusjs/CyprusJS#44</a></li>\n</ul>\n<p dir=\"auto\"><em>Registration:</em><br>\n<a href=\"https://www.eventbrite.com/e/cyprusjs-meetup-1-2023-tickets-552439871527\" rel=\"nofollow\">https://www.eventbrite.com/e/cyprusjs-meetup-1-2023-tickets-552439871527</a></p>\n<h3 dir=\"auto\">Location</h3>\n<p dir=\"auto\">diamante-blu</p>\n<h3 dir=\"auto\">Date</h3>\n<p dir=\"auto\">02.03.2023</p>\n<h3 dir=\"auto\">Time</h3>\n<p dir=\"auto\">18:30</p>\n<h3 dir=\"auto\">Duration</h3>\n<p dir=\"auto\">2h30m</p>\n<h3 dir=\"auto\">Code of Conduct</h3>\n<ul class=\"contains-task-list\">\n<li class=\"task-list-item\"><input type=\"checkbox\" id=\"\" disabled=\"\" class=\"task-list-item-checkbox\" checked=\"\"> I agree to follow this project's <a href=\"https://berlincodeofconduct.org\" rel=\"nofollow\">Code of Conduct</a></li>\n</ul>",
           "createdAt": "2023-02-17T12:50:55Z",
-          "updatedAt": "2023-02-17T14:28:11Z",
           "publishedAt": "2023-02-17T12:50:55Z",
           "state": "OPEN",
-          "closed": false,
           "number": 44,
-          "closedAt": null,
           "author": {
             "__typename": "User",
             "id": "MDQ6VXNlcjE1NTIxODk=",
@@ -234,8 +226,7 @@
             ]
           },
           "reactions": {
-            "nodes": [],
-            "totalCount": 0
+            "nodes": []
           },
           "labels": {
             "nodes": [
@@ -260,13 +251,7 @@
             ]
           }
         }
-      ],
-      "pageInfo": {
-        "endCursor": "Y3Vyc29yOnYyOpK5MjAyMy0wMi0xN1QxNDo1MDo1NSswMjowMM5euvUO",
-        "hasNextPage": false,
-        "hasPreviousPage": false
-      },
-      "totalCount": 4
+      ]
     }
   }
 }
