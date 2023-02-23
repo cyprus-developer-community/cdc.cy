@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
-import type { GroupsListProps } from '~/pages/Home/components'
-import { GroupsList } from '~/pages/Home/components'
+import type { ParticipatingGroupsListProps } from '~/pages/Home/components/ParticipatingGroupsList'
+import { ParticipatingGroupsList } from '~/pages/Home/components/ParticipatingGroupsList'
 import React from 'react'
 import { vi } from 'vitest'
 
@@ -18,7 +18,7 @@ vi.mock('@remix-run/react', () => {
   }
 })
 
-const defaultProps: GroupsListProps = {
+const defaultProps: ParticipatingGroupsListProps = {
   groups: [
     {
       name: 'group 1',
@@ -37,7 +37,7 @@ const defaultProps: GroupsListProps = {
 
 describe('Groups', () => {
   it('should render title of Groups component', () => {
-    render(<GroupsList {...defaultProps} />)
+    render(<ParticipatingGroupsList {...defaultProps} />)
     expect(
       screen.getByRole('heading', { name: 'Participating Member Groups' })
     ).toBeInTheDocument()
