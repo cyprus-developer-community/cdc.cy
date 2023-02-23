@@ -1,9 +1,14 @@
 import React from 'react'
-import { calcIsAvatarLink } from '../AvatarLink/calcIsAvatarLink'
+import { calcIsReactElement } from '../../misc/calcIsReactElement'
+import type { AvatarLink, AvatarLinkProps } from '../AvatarLink'
+
 export type AvatarItemProps = React.LiHTMLAttributes<HTMLLIElement>
 
 export const AvatarItem = ({ children, ...rest }: AvatarItemProps) => {
-  const isAvatarLink = calcIsAvatarLink(children)
+  const isAvatarLink = calcIsReactElement<AvatarLinkProps, typeof AvatarLink>(
+    children,
+    'AvatarLink'
+  )
 
   if (isAvatarLink) {
     return (

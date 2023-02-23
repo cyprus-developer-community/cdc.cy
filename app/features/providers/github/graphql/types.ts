@@ -26990,7 +26990,7 @@ export type LabelFragmentFragment = {
 }
 
 export type UserFragmentFragment = {
-  __typename?: 'User'
+  __typename: 'User'
   id: string
   login: string
   name?: string | null
@@ -27018,7 +27018,7 @@ export type IssueFragmentFragment = {
     | { __typename?: 'Mannequin' }
     | { __typename?: 'Organization' }
     | {
-        __typename?: 'User'
+        __typename: 'User'
         id: string
         login: string
         name?: string | null
@@ -27029,7 +27029,7 @@ export type IssueFragmentFragment = {
   participants: {
     __typename?: 'UserConnection'
     nodes?: Array<{
-      __typename?: 'User'
+      __typename: 'User'
       id: string
       login: string
       name?: string | null
@@ -27043,7 +27043,7 @@ export type IssueFragmentFragment = {
     nodes?: Array<{
       __typename?: 'Reaction'
       user?: {
-        __typename?: 'User'
+        __typename: 'User'
         id: string
         login: string
         name?: string | null
@@ -27071,7 +27071,7 @@ export type GetAllEventsQueryVariables = Exact<{
 
 export type GetAllEventsQuery = {
   __typename?: 'Query'
-  repository?: {
+  getUpcomingEvents?: {
     __typename?: 'Repository'
     issues: {
       __typename?: 'IssueConnection'
@@ -27096,7 +27096,7 @@ export type GetAllEventsQuery = {
           | { __typename?: 'Mannequin' }
           | { __typename?: 'Organization' }
           | {
-              __typename?: 'User'
+              __typename: 'User'
               id: string
               login: string
               name?: string | null
@@ -27107,7 +27107,7 @@ export type GetAllEventsQuery = {
         participants: {
           __typename?: 'UserConnection'
           nodes?: Array<{
-            __typename?: 'User'
+            __typename: 'User'
             id: string
             login: string
             name?: string | null
@@ -27121,7 +27121,79 @@ export type GetAllEventsQuery = {
           nodes?: Array<{
             __typename?: 'Reaction'
             user?: {
-              __typename?: 'User'
+              __typename: 'User'
+              id: string
+              login: string
+              name?: string | null
+              url: any
+              avatarUrl: any
+            } | null
+          } | null> | null
+        }
+        labels?: {
+          __typename?: 'LabelConnection'
+          nodes?: Array<{
+            __typename?: 'Label'
+            name: string
+            description?: string | null
+            url: any
+            color: string
+          } | null> | null
+        } | null
+      } | null> | null
+    }
+  } | null
+  getPastEvents?: {
+    __typename?: 'Repository'
+    issues: {
+      __typename?: 'IssueConnection'
+      totalCount: number
+      nodes?: Array<{
+        __typename?: 'Issue'
+        id: string
+        url: any
+        title: string
+        body: string
+        bodyHTML: any
+        createdAt: any
+        updatedAt: any
+        publishedAt?: any | null
+        state: IssueState
+        closed: boolean
+        number: number
+        closedAt?: any | null
+        author?:
+          | { __typename?: 'Bot' }
+          | { __typename?: 'EnterpriseUserAccount' }
+          | { __typename?: 'Mannequin' }
+          | { __typename?: 'Organization' }
+          | {
+              __typename: 'User'
+              id: string
+              login: string
+              name?: string | null
+              url: any
+              avatarUrl: any
+            }
+          | null
+        participants: {
+          __typename?: 'UserConnection'
+          nodes?: Array<{
+            __typename: 'User'
+            id: string
+            login: string
+            name?: string | null
+            url: any
+            avatarUrl: any
+          } | null> | null
+        }
+        reactions: {
+          __typename?: 'ReactionConnection'
+          totalCount: number
+          nodes?: Array<{
+            __typename?: 'Reaction'
+            user?: {
+              __typename: 'User'
               id: string
               login: string
               name?: string | null
@@ -27175,7 +27247,7 @@ export type GetEventQuery = {
         | { __typename?: 'Mannequin' }
         | { __typename?: 'Organization' }
         | {
-            __typename?: 'User'
+            __typename: 'User'
             id: string
             login: string
             name?: string | null
@@ -27186,7 +27258,7 @@ export type GetEventQuery = {
       participants: {
         __typename?: 'UserConnection'
         nodes?: Array<{
-          __typename?: 'User'
+          __typename: 'User'
           id: string
           login: string
           name?: string | null
@@ -27200,7 +27272,7 @@ export type GetEventQuery = {
         nodes?: Array<{
           __typename?: 'Reaction'
           user?: {
-            __typename?: 'User'
+            __typename: 'User'
             id: string
             login: string
             name?: string | null
@@ -27257,7 +27329,7 @@ export type GetPastEventsQuery = {
           | { __typename?: 'Mannequin' }
           | { __typename?: 'Organization' }
           | {
-              __typename?: 'User'
+              __typename: 'User'
               id: string
               login: string
               name?: string | null
@@ -27268,7 +27340,7 @@ export type GetPastEventsQuery = {
         participants: {
           __typename?: 'UserConnection'
           nodes?: Array<{
-            __typename?: 'User'
+            __typename: 'User'
             id: string
             login: string
             name?: string | null
@@ -27282,7 +27354,7 @@ export type GetPastEventsQuery = {
           nodes?: Array<{
             __typename?: 'Reaction'
             user?: {
-              __typename?: 'User'
+              __typename: 'User'
               id: string
               login: string
               name?: string | null
@@ -27346,7 +27418,7 @@ export type GetUpcomingEventsQuery = {
           | { __typename?: 'Mannequin' }
           | { __typename?: 'Organization' }
           | {
-              __typename?: 'User'
+              __typename: 'User'
               id: string
               login: string
               name?: string | null
@@ -27357,7 +27429,7 @@ export type GetUpcomingEventsQuery = {
         participants: {
           __typename?: 'UserConnection'
           nodes?: Array<{
-            __typename?: 'User'
+            __typename: 'User'
             id: string
             login: string
             name?: string | null
@@ -27371,7 +27443,7 @@ export type GetUpcomingEventsQuery = {
           nodes?: Array<{
             __typename?: 'Reaction'
             user?: {
-              __typename?: 'User'
+              __typename: 'User'
               id: string
               login: string
               name?: string | null

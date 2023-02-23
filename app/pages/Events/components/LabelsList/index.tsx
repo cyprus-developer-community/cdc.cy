@@ -1,8 +1,8 @@
-import type { Label } from '~/types'
+import type { EventLabel } from '~/types'
 import { TagGroup, Tag } from '~/features/components'
 
 type LabelsListProps = {
-  labels: Label[]
+  labels: EventLabel[]
 }
 
 export const LabelsList = ({ labels }: LabelsListProps) => {

@@ -16,6 +16,7 @@
           "number": 40,
           "closedAt": null,
           "author": {
+            "__typename": "User",
             "id": "MDQ6VXNlcjMyMjQzNDU5",
             "login": "MarioSimou",
             "name": "msimou",
@@ -25,6 +26,7 @@
           "participants": {
             "nodes": [
               {
+                "__typename": "User",
                 "id": "MDQ6VXNlcjc0Mzkw",
                 "login": "PatrickHeneise",
                 "name": "Patrick Heneise",
@@ -32,6 +34,7 @@
                 "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
               },
               {
+                "__typename": "User",
                 "id": "MDQ6VXNlcjMyMjQzNDU5",
                 "login": "MarioSimou",
                 "name": "msimou",
@@ -75,6 +78,7 @@
           "number": 42,
           "closedAt": null,
           "author": {
+            "__typename": "User",
             "id": "MDQ6VXNlcjI2MjUyMzkw",
             "login": "oldtuna",
             "name": "Mike Klyuev",
@@ -84,6 +88,7 @@
           "participants": {
             "nodes": [
               {
+                "__typename": "User",
                 "id": "MDQ6VXNlcjc0Mzkw",
                 "login": "PatrickHeneise",
                 "name": "Patrick Heneise",
@@ -91,6 +96,7 @@
                 "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
               },
               {
+                "__typename": "User",
                 "id": "MDQ6VXNlcjE1NTIxODk=",
                 "login": "saitonakamura",
                 "name": "Michael サイトー 中村 Bashurov",
@@ -98,6 +104,7 @@
                 "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
               },
               {
+                "__typename": "User",
                 "id": "MDQ6VXNlcjI2MjUyMzkw",
                 "login": "oldtuna",
                 "name": "Mike Klyuev",
@@ -147,6 +154,7 @@
           "number": 43,
           "closedAt": null,
           "author": {
+            "__typename": "User",
             "id": "MDQ6VXNlcjE1NTIxODk=",
             "login": "saitonakamura",
             "name": "Michael サイトー 中村 Bashurov",
@@ -156,6 +164,7 @@
           "participants": {
             "nodes": [
               {
+                "__typename": "User",
                 "id": "MDQ6VXNlcjE1NTIxODk=",
                 "login": "saitonakamura",
                 "name": "Michael サイトー 中村 Bashurov",
@@ -205,6 +214,7 @@
           "number": 44,
           "closedAt": null,
           "author": {
+            "__typename": "User",
             "id": "MDQ6VXNlcjE1NTIxODk=",
             "login": "saitonakamura",
             "name": "Michael サイトー 中村 Bashurov",
@@ -214,6 +224,7 @@
           "participants": {
             "nodes": [
               {
+                "__typename": "User",
                 "id": "MDQ6VXNlcjE1NTIxODk=",
                 "login": "saitonakamura",
                 "name": "Michael サイトー 中村 Bashurov",

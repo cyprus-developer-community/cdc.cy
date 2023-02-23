@@ -28,11 +28,11 @@ const Events = () => {
       <div className="grid gap-12 lg:gap-24">
         <Section>
           <H2>Upcoming events</H2>
-          <EventList events={upcomingEvents.nodes} />
+          <EventList events={upcomingEvents} />
         </Section>
         <Section>
           <H2>Past events</H2>
-          <EventList events={pastEvents.nodes} />
+          <EventList events={pastEvents} />
         </Section>
       </div>
     </Page>

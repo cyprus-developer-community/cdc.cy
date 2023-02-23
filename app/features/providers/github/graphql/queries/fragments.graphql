@@ -6,6 +6,7 @@ fragment LabelFragment on Label {
 }
 
 fragment UserFragment on User {
+  __typename
   id
   login
   name

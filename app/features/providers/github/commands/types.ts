@@ -1,7 +1,7 @@
 import type { GetAllEventsQuery } from '../graphql/types'
 import type { DurationValue } from '@zentered/issue-forms-body-parser'
 
-export type Issue = GetAllEventsQuery['repository']['issues']['nodes']['0']
+export type Issue = GetAllEventsQuery['getPastEvents']['issues']['nodes']['0']
 
 export type User = {
   id: string
@@ -11,15 +11,13 @@ export type User = {
   avatarUrl: string
 }
 
-export type Attendee = {
-  name: string
-  rsvp: true
-  partstat: 'ACCEPTED'
-  dir: string
-}
-
 export type EventStatus = 'OPEN' | 'CLOSED' | 'CONFIRMED' | 'CANCELLED'
 export type EventLocation = string | { lat: number; lon: number }
+export type EventLabel = {
+  name: string
+  color: string
+  description: string
+}
 
 export type Event = {
   type: 'upcoming' | 'past'
@@ -33,12 +31,11 @@ export type Event = {
   description: string
   url: string
   status: EventStatus
-  categories: string[]
-  // categories: issue.labels.nodes.map((l) => l.name),
-  organizer: string
-  //   organizer?: User
+  labels: EventLabel[]
+  organizer?: User
   location: string
-  attendees: Attendee[]
+  attendees: User[]
+  publishedAt: string
 }
 
 type Coordinates = [number, number]

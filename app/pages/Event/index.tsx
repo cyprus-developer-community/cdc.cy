@@ -22,8 +22,7 @@ const formatDate = (date: string) => format(new Date(date), 'do MMMM yyyy')
 
 const Event = () => {
   const { event } = useLoaderData() as LoaderData
-  const participants = event?.participants?.nodes ?? []
-  const reactions = event?.reactions?.nodes ?? []
+
   return (
     <Page>
       <Breadcrumbs>
@@ -34,21 +33,22 @@ const Event = () => {
           <BreadcrumbLink to="/events">Events</BreadcrumbLink>
         </BreacrumbItem>
         <BreacrumbItem isCurrentPage>
-          <BreadcrumbLink to={`/events/${event.number}`}>
+          <BreadcrumbLink to={`/events/${event.id}`}>
             {event.title}
           </BreadcrumbLink>
         </BreacrumbItem>
       </Breadcrumbs>
-      <div className="grid gap-8">
+      <div className="grid gap-8 justify-items-center lg:justify-items-start">
         <H1>{event.title}</H1>
         <Section>
           <H2>Description</H2>
-          <p dangerouslySetInnerHTML={{ __html: event.body }} />
+          <p className="text-secondary-500">{event.description}</p>
         </Section>
         <Section>
           <H2>Link</H2>
           <a
             href={event.url}
+            target="_blank"
             rel="noopener noreferrer"
             className="text-lg text-primary-500"
           >
@@ -56,67 +56,44 @@ const Event = () => {
           </a>
         </Section>
         <Section>
+          <H2>Status</H2>
+          <Tag>{event.status}</Tag>
+        </Section>
+        <Section>
           <H2>Published At</H2>
           <div className="text-secondary-500">
             {formatDate(event.publishedAt)}
           </div>
         </Section>
-
-        <Section>
-          <H2>Status</H2>
-          <TagGroup>
-            <Tag>{event.state}</Tag>
-          </TagGroup>
-        </Section>
         <Section>
           <H2>Labels</H2>
-          <TagGroup>
-            {event.labels.nodes.map((label) => {
+          <TagGroup className="justify-center lg:justify-start">
+            {event.labels.map((label) => {
               return <Tag key={label.name}>{label.name}</Tag>
             })}
           </TagGroup>
         </Section>
         <Section>
-          <H2>Author</H2>
-          <AvatarLink to={event.author.url}>
+          <H2>Organizer</H2>
+          <AvatarLink to={event.organizer.url} className="m-auto lg:m-none">
             <Avatar
-              name={event.author.login}
-              src={event.author.avatarUrl}
+              name={event.organizer.login}
+              src={event.organizer.avatarUrl}
               className="w-lg h-lg"
             />
           </AvatarLink>
         </Section>
-        <Show show={participants.length > 0}>
+        <Show show={event.attendees.length > 0}>
           <Section>
-            <H2>Participants</H2>
-            <AvatarGroup className="flex flex-wrap">
-              {participants.map((participant) => {
-                return (
-                  <AvatarItem key={participant.id}>
-                    <AvatarLink to={participant.url}>
-                      <Avatar
-                        name={participant.login}
-                        src={participant.avatarUrl}
-                        className="w-lg h-lg"
-                      />
-                    </AvatarLink>
-                  </AvatarItem>
-                )
-              })}
-            </AvatarGroup>
-          </Section>
-        </Show>
-        <Show show={reactions.length > 0}>
-          <Section>
-            <H2>Reactions</H2>
+            <H2>Attendees</H2>
             <AvatarGroup>
-              {reactions.map((reaction) => {
+              {event.attendees.map((attendee) => {
                 return (
-                  <AvatarItem key={reaction.user.id}>
-                    <AvatarLink to={reaction.user.url}>
+                  <AvatarItem key={attendee.id}>
+                    <AvatarLink to={attendee.url}>
                       <Avatar
-                        name={reaction.user.login}
-                        src={reaction.user.avatarUrl}
+                        name={attendee.login}
+                        src={attendee.avatarUrl}
                         className="w-lg h-lg"
                       />
                     </AvatarLink>

@@ -1,8 +1,8 @@
-import type { Event, Label } from '~/types'
+import type { Event } from '~/types'
 import { Link } from '@remix-run/react'
 import { format } from 'date-fns'
 import { LabelsList } from '../LabelsList'
-import { Avatar, H2 } from '~/features/components'
+import { Avatar, Show, H2 } from '~/features/components'
 
 type EventCardProps = {
   event: Event
@@ -19,16 +19,21 @@ export const EventCard = ({ event }: EventCardProps) => {
       <div className="grid gap-2 px-4 py-4 bg-[rgba(255,255,255,0.9)]">
         <div className="flex items-center justify-between gap-8 mb-1">
           <H2 className="text-xl lg:text-xl text-primary-700">
-            <Link to={`/events/${event.number}`} className="outline-link">
+            <Link to={`/events/${event.id}`} className="outline-link">
               {event.title}
             </Link>
           </H2>
-          <Avatar name={event.author.login} src={event.author.avatarUrl} />
+          <Show show={Boolean(event.organizer)}>
+            <Avatar
+              name={event?.organizer.login}
+              src={event?.organizer.avatarUrl}
+            />
+          </Show>
         </div>
         <p className="italic text-xs text-secondary-500">
           Published on {formatDate(event.publishedAt)}
         </p>
-        <LabelsList labels={event.labels.nodes as Label[]} />
+        <LabelsList labels={event.labels} />
       </div>
     </li>
   )

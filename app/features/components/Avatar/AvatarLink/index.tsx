@@ -5,12 +5,16 @@ export type AvatarLinkProps = {
   children: React.ReactNode
 } & LinkProps
 
-export const AvatarLink = ({ children, ...rest }: AvatarLinkProps) => {
+export const AvatarLink = ({
+  children,
+  className = '',
+  ...rest
+}: AvatarLinkProps) => {
   return (
     <Link
       target="_blank"
       rel="noopener noreferrer"
-      className="!rounded-full w-fit outline-3 outline-transparent outline hover:outline-primary-400 focus:outline-primary-400"
+      className={`!rounded-full w-fit outline-3 outline-transparent outline hover:outline-primary-400 focus:outline-primary-400 ${className}`}
       {...rest}
     >
       {children}

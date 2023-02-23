@@ -1,8 +1,8 @@
 type PageProps = React.HTMLAttributes<HTMLElement>
 
-export const Page = ({ children, ...rest }: PageProps) => {
+export const Page = ({ children, className, ...rest }: PageProps) => {
   return (
-    <article className="page" {...rest}>
+    <article className={`page ${className}`} {...rest}>
       {children}
     </article>
   )

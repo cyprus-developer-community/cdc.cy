@@ -13,8 +13,14 @@ export const loader = async () => {
     throw new Response(message, { status })
   }
 
+  const getAllEventsResult = await providers.github.getAllEvents()
+  if (getAllEventsResult.success === false) {
+    const { message, status } = getAllEventsResult
+    throw new Response(message, { status })
+  }
+
   return {
-    events: await providers.github.getAllEvents(),
+    events: getAllEventsResult.data,
     groups: getParticipatingGroupsResult.data
   }
 }
