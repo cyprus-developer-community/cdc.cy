@@ -39,10 +39,13 @@ const Event = () => {
         </BreacrumbItem>
       </Breadcrumbs>
       <div className="grid gap-8 justify-items-center lg:justify-items-start">
-        <H1>{event.title}</H1>
+        <H1 className="justify-self-center">{event.title}</H1>
         <Section>
           <H2>Description</H2>
-          <p className="text-secondary-500">{event.description}</p>
+          <p
+            className="text-secondary-500"
+            dangerouslySetInnerHTML={{ __html: event.description }}
+          />
         </Section>
         <Section>
           <H2>Link</H2>

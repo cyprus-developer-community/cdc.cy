@@ -1,8 +1,10 @@
 import pkg from 'date-fns-tz'
 import type { Maybe } from '~/types'
-import type { Issue, EventStatus, Event, User } from '../types'
+import type { Issue, EventStatus, Event } from '../types'
 import type { ParsedIssue } from '@zentered/issue-forms-body-parser'
 import { calcIsUser } from './calcIsUser'
+import { tryParseDescription } from './tryParseDescription'
+import { mapToAttendees } from './mapToAttendees'
 
 const { zonedTimeToUtc } = pkg
 const timeZone = 'Europe/Nicosia'
@@ -16,22 +18,6 @@ const getIssueStatus = (isUpcoming: boolean, issue: Issue): EventStatus => {
     return 'CONFIRMED'
   }
   return 'CANCELLED'
-}
-
-const getAttendees = (
-  participants: Issue['participants'],
-  reactions: Issue['reactions']
-): User[] => {
-  const unfilteredAttendees = [
-    ...reactions.nodes.map(({ user }): User => user),
-    ...participants.nodes
-  ]
-  return Object.values(
-    unfilteredAttendees.reduce(
-      (attendees, user) => ({ ...attendees, [user.login]: user }),
-      {} as Record<string, User>
-    )
-  )
 }
 
 export const mapIssueToEvent = async (issue: Issue): Promise<Maybe<Event>> => {
@@ -56,7 +42,7 @@ export const mapIssueToEvent = async (issue: Issue): Promise<Maybe<Event>> => {
     color
   }))
 
-  const attendees = getAttendees(issue.participants, issue.reactions)
+  const attendees = mapToAttendees(issue.participants, issue.reactions)
 
   const zonedDateTime = `${startDate.date}T${startTime.time}`
 
@@ -72,7 +58,7 @@ export const mapIssueToEvent = async (issue: Issue): Promise<Maybe<Event>> => {
     duration: duration,
     title: issue.title,
     datetime: utcDate,
-    description: content.text,
+    description: tryParseDescription(content.text),
     url: issue.url,
     status: getIssueStatus(isUpcoming, issue),
     labels,

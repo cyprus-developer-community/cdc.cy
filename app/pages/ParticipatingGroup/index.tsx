@@ -44,7 +44,7 @@ const ParticipatingGroup = () => {
       <div className="grid gap-16 lg:gap-12">
         <Section>
           <H2>Description</H2>
-          <p className="text-center lg:text-left text-secondary-700">
+          <p className="text-center lg:text-left text-secondary-500">
             {group.excerpt}
           </p>
         </Section>
