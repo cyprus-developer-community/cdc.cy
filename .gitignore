@@ -1,5 +1,5 @@
 node_modules
-
+.vscode/
 /.cache
 /functions/\[\[path\]\].js
 /public/build

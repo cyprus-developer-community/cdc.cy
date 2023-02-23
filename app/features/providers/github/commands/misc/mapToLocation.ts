@@ -1,9 +1,9 @@
 import type { Location, EventLocation } from '../types'
-import type { ParsedIssue } from '@zentered/issue-forms-body-parser'
+import type { ParsedIssueBody } from '@zentered/issue-forms-body-parser'
 
 export const mapToLocation = (
   locations: Location[],
-  eventLocation: ParsedIssue['location']
+  eventLocation: ParsedIssueBody['location']
 ): EventLocation => {
   const locationsHash = locations.reduce(
     (hash, location) => ({

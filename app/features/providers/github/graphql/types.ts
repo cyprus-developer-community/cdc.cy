@@ -26985,7 +26985,6 @@ export type LabelFragmentFragment = {
   __typename?: 'Label'
   name: string
   description?: string | null
-  url: any
   color: string
 }
 
@@ -27004,14 +27003,10 @@ export type IssueFragmentFragment = {
   url: any
   title: string
   body: string
-  bodyHTML: any
   createdAt: any
-  updatedAt: any
   publishedAt?: any | null
   state: IssueState
-  closed: boolean
   number: number
-  closedAt?: any | null
   author?:
     | { __typename?: 'Bot' }
     | { __typename?: 'EnterpriseUserAccount' }
@@ -27058,7 +27053,6 @@ export type IssueFragmentFragment = {
       __typename?: 'Label'
       name: string
       description?: string | null
-      url: any
       color: string
     } | null> | null
   } | null
@@ -27082,14 +27076,10 @@ export type GetAllEventsQuery = {
         url: any
         title: string
         body: string
-        bodyHTML: any
         createdAt: any
-        updatedAt: any
         publishedAt?: any | null
         state: IssueState
-        closed: boolean
         number: number
-        closedAt?: any | null
         author?:
           | { __typename?: 'Bot' }
           | { __typename?: 'EnterpriseUserAccount' }
@@ -27136,7 +27126,6 @@ export type GetAllEventsQuery = {
             __typename?: 'Label'
             name: string
             description?: string | null
-            url: any
             color: string
           } | null> | null
         } | null
@@ -27154,14 +27143,10 @@ export type GetAllEventsQuery = {
         url: any
         title: string
         body: string
-        bodyHTML: any
         createdAt: any
-        updatedAt: any
         publishedAt?: any | null
         state: IssueState
-        closed: boolean
         number: number
-        closedAt?: any | null
         author?:
           | { __typename?: 'Bot' }
           | { __typename?: 'EnterpriseUserAccount' }
@@ -27208,7 +27193,6 @@ export type GetAllEventsQuery = {
             __typename?: 'Label'
             name: string
             description?: string | null
-            url: any
             color: string
           } | null> | null
         } | null
@@ -27233,14 +27217,10 @@ export type GetEventQuery = {
       url: any
       title: string
       body: string
-      bodyHTML: any
       createdAt: any
-      updatedAt: any
       publishedAt?: any | null
       state: IssueState
-      closed: boolean
       number: number
-      closedAt?: any | null
       author?:
         | { __typename?: 'Bot' }
         | { __typename?: 'EnterpriseUserAccount' }
@@ -27287,7 +27267,6 @@ export type GetEventQuery = {
           __typename?: 'Label'
           name: string
           description?: string | null
-          url: any
           color: string
         } | null> | null
       } | null
@@ -27315,14 +27294,10 @@ export type GetPastEventsQuery = {
         url: any
         title: string
         body: string
-        bodyHTML: any
         createdAt: any
-        updatedAt: any
         publishedAt?: any | null
         state: IssueState
-        closed: boolean
         number: number
-        closedAt?: any | null
         author?:
           | { __typename?: 'Bot' }
           | { __typename?: 'EnterpriseUserAccount' }
@@ -27369,7 +27344,6 @@ export type GetPastEventsQuery = {
             __typename?: 'Label'
             name: string
             description?: string | null
-            url: any
             color: string
           } | null> | null
         } | null
@@ -27404,14 +27378,10 @@ export type GetUpcomingEventsQuery = {
         url: any
         title: string
         body: string
-        bodyHTML: any
         createdAt: any
-        updatedAt: any
         publishedAt?: any | null
         state: IssueState
-        closed: boolean
         number: number
-        closedAt?: any | null
         author?:
           | { __typename?: 'Bot' }
           | { __typename?: 'EnterpriseUserAccount' }
@@ -27458,7 +27428,6 @@ export type GetUpcomingEventsQuery = {
             __typename?: 'Label'
             name: string
             description?: string | null
-            url: any
             color: string
           } | null> | null
         } | null

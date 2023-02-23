@@ -1,5 +1,5 @@
 import type { GetAllEventsQuery } from '../graphql/types'
-import type { DurationValue } from '@zentered/issue-forms-body-parser'
+import type { ParsedIssueBody } from '@zentered/issue-forms-body-parser'
 
 export type Issue = GetAllEventsQuery['getPastEvents']['issues']['nodes']['0']
 
@@ -25,7 +25,7 @@ export type Event = {
   start: string
   date: string
   time: string
-  duration: DurationValue['duration']
+  duration: ParsedIssueBody['duration']
   title: string
   datetime: string
   description: string

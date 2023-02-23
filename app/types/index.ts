@@ -2,7 +2,6 @@ import type { LoaderArgs, LoaderFunction } from '@remix-run/node'
 export type {
   Event,
   User,
-  Attendee,
   EventLabel,
   EventLocation,
   EventStatus,

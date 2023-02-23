@@ -1,4 +1,4 @@
-declare module '@zentered/issue-forms-body-parser' {
+declare module '@zentered/issue-forms-body-parser*' {
   type BaseValue = {
     title: string
     heading: number
@@ -17,16 +17,16 @@ declare module '@zentered/issue-forms-body-parser' {
     duration?: { hours: number; minutes: number }
   }
   type CodeOfConductValue = BaseValue & {
-    list: CodeOfConductListitem[]
+    list: {
+      checked: boolean
+      link: string
+      text: string
+    }[]
   }
 
-  type CodeOfConductListitem = {
-    checked: boolean
-    link: string
-    text: string
-  }
+  export type EmptyParsedIssueBody = {}
 
-  type ParsedIssue = {
+  export type ParsedIssueBody = {
     date: DateValue
     time: TimeValue
     duration: DurationValue
@@ -34,4 +34,7 @@ declare module '@zentered/issue-forms-body-parser' {
     'event-description': BaseValue
     'code-of-conduct': CodeOfConductValue
   }
+
+  function parser(body: string): Promise<ParsedIssueBody | EmptyParsedIssueBody>
+  export = parser
 }

@@ -1,7 +1,6 @@
 fragment LabelFragment on Label {
   name
   description
-  url
   color
 }
 
@@ -19,16 +18,10 @@ fragment IssueFragment on Issue {
   url
   title
   body
-  bodyHTML
   createdAt
-  updatedAt
-  createdAt
-  updatedAt
   publishedAt
   state
-  closed
   number
-  closedAt
   author {
     ...UserFragment
   }
