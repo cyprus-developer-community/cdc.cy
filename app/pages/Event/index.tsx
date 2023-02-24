@@ -46,7 +46,7 @@ const Event = () => {
           <H2>Description</H2>
           <p
             className="text-secondary-500"
-            dangerouslySetInnerHTML={{ __html: event.description }}
+            dangerouslySetInnerHTML={{ __html: event.descriptionHtml }}
           />
         </Section>
         <Section>

@@ -4,6 +4,7 @@ import type { Issue, EventStatus, Event } from '../types'
 import { calcIsUser } from './calcIsUser'
 import { tryParseDescription } from './tryParseDescription'
 import { mapToAttendees } from './mapToAttendees'
+import { mapHtmlToText } from './mapHtmlToText'
 import { calcIsIBodyParsed } from './calcIsBodyParsed'
 
 const { zonedTimeToUtc } = pkg
@@ -50,6 +51,8 @@ export const mapIssueToEvent = async (issue: Issue): Promise<Maybe<Event>> => {
 
     const utcDate = zonedTimeToUtc(zonedDateTime, timeZone).toJSON()
     const isUpcoming = new Date(utcDate).valueOf() > Date.now()
+    const descriptionHtml = tryParseDescription(content.text)
+    const description = mapHtmlToText(descriptionHtml)
 
     return {
       type: isUpcoming ? 'upcoming' : 'past',
@@ -60,7 +63,8 @@ export const mapIssueToEvent = async (issue: Issue): Promise<Maybe<Event>> => {
       duration: duration,
       title: issue.title,
       datetime: utcDate,
-      description: tryParseDescription(content.text),
+      description,
+      descriptionHtml,
       url: issue.url,
       status: getIssueStatus(isUpcoming, issue),
       labels,

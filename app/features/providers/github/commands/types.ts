@@ -28,6 +28,7 @@ export type Event = {
   duration: ParsedIssueBody['duration']['duration']
   title: string
   datetime: string
+  descriptionHtml: string
   description: string
   url: string
   status: EventStatus
