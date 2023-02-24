@@ -1,0 +1,257 @@
+{
+  "repository": {
+    "issues": {
+      "nodes": [
+        {
+          "id": "I_kwDOG7Tv585efuCt",
+          "url": "https://github.com/cyprus-developer-community/events/issues/40",
+          "title": "CDC Meet & Greet Ammochostos",
+          "body": "### Event Description\n\nInformal meet & greet to talk about the latest in software and web development, technology and science.\n\n### Location\n\nCosta Coffee Protaras\n\n### Date\n\n25.02.2023\n\n### Time\n\n19.00\n\n### Duration\n\n2h\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+          "createdAt": "2023-02-15T07:44:18Z",
+          "publishedAt": "2023-02-15T07:44:18Z",
+          "state": "OPEN",
+          "number": 40,
+          "author": {
+            "__typename": "User",
+            "id": "MDQ6VXNlcjMyMjQzNDU5",
+            "login": "MarioSimou",
+            "name": "msimou",
+            "url": "https://github.com/MarioSimou",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/32243459?u=95acc24f98109cd72dcd6cfac98571015c0fa378&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "__typename": "User",
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "__typename": "User",
+                "id": "MDQ6VXNlcjMyMjQzNDU5",
+                "login": "MarioSimou",
+                "name": "msimou",
+                "url": "https://github.com/MarioSimou",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/32243459?u=95acc24f98109cd72dcd6cfac98571015c0fa378&v=4"
+              }
+            ]
+          },
+          "reactions": {
+            "nodes": [
+              {
+                "user": {
+                  "__typename": "User",
+                  "id": "MDQ6VXNlcjMyMjQzNDU5",
+                  "login": "MarioSimou",
+                  "name": "msimou",
+                  "url": "https://github.com/MarioSimou",
+                  "avatarUrl": "https://avatars.githubusercontent.com/u/32243459?u=95acc24f98109cd72dcd6cfac98571015c0fa378&v=4"
+                }
+              }
+            ]
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "Event :sparkles:",
+                "description": "An event proposal.",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Event%20%3Asparkles%3A",
+                "color": "F075B7"
+              },
+              {
+                "name": "Approved :white_check_mark:",
+                "description": "approved & confirmed",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Approved%20%3Awhite_check_mark%3A",
+                "color": "2DA44E"
+              }
+            ]
+          }
+        },
+        {
+          "id": "I_kwDOG7Tv585egXkb",
+          "url": "https://github.com/cyprus-developer-community/events/issues/42",
+          "title": "Cyprus Kotlin User Group",
+          "body": "### Event Description\n\nKUG Cyprus is for everyone who is interested in Kotlin. Doesn't matter whether you're a beginner or an expert, more into Android or Backend - we all want to learn more about Kotlin and have some fun together!\r\n\r\nPlease [register here.](https://www.eventbrite.com/e/cyprus-kotlin-user-group-meetup-0203-tickets-547755831437)\r\n\r\n**Agenda**\r\n19:00 - 19:30 - Gathering & Intro\r\n19:30 - 20:00 - \"10 myths about cross platform mobile development with Kotlin\" by Katerina Petrova (JetBrains)\r\nBusting myths about Kotlin Mobile Multiplatform!\r\n20:00 - 20:30 - TBA\r\n20:30 - 21:00 - Networking\r\n\r\n**СFP**\r\nWe are open to talk proposals. If you are interested in making a Kotlin-related tech talk at this meeting, please fill in an[ issue here](https://github.com/Cyprus-Kotlin-User-Group/Cyprus-KUG/issues/new?assignees=oldtuna&labels=talk+proposal&template=talk-proposal.md&title=).\n\n### Location\n\nExness office (Porto Bello Business & Cultural center), Limassol\n\n### Date\n\n02.03.2023\n\n### Time\n\n19:00\n\n### Duration\n\n2h\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+          "createdAt": "2023-02-15T09:50:26Z",
+          "publishedAt": "2023-02-15T09:50:26Z",
+          "state": "OPEN",
+          "number": 42,
+          "author": {
+            "__typename": "User",
+            "id": "MDQ6VXNlcjI2MjUyMzkw",
+            "login": "oldtuna",
+            "name": "Mike Klyuev",
+            "url": "https://github.com/oldtuna",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/26252390?u=8d87562c64ee284db95f497b6efbc30742cd1fae&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "__typename": "User",
+                "id": "MDQ6VXNlcjc0Mzkw",
+                "login": "PatrickHeneise",
+                "name": "Patrick Heneise",
+                "url": "https://github.com/PatrickHeneise",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/74390?u=a4ca023ac7d0d9a4e4319faa05588d054b85ef3a&v=4"
+              },
+              {
+                "__typename": "User",
+                "id": "MDQ6VXNlcjE1NTIxODk=",
+                "login": "saitonakamura",
+                "name": "Michael サイトー 中村 Bashurov",
+                "url": "https://github.com/saitonakamura",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+              },
+              {
+                "__typename": "User",
+                "id": "MDQ6VXNlcjI2MjUyMzkw",
+                "login": "oldtuna",
+                "name": "Mike Klyuev",
+                "url": "https://github.com/oldtuna",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/26252390?u=8d87562c64ee284db95f497b6efbc30742cd1fae&v=4"
+              }
+            ]
+          },
+          "reactions": {
+            "nodes": []
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "Event :sparkles:",
+                "description": "An event proposal.",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Event%20%3Asparkles%3A",
+                "color": "F075B7"
+              },
+              {
+                "name": "Approved :white_check_mark:",
+                "description": "approved & confirmed",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Approved%20%3Awhite_check_mark%3A",
+                "color": "2DA44E"
+              },
+              {
+                "name": "Limassol",
+                "description": "Λεμεσός / Limasol",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Limassol",
+                "color": "FEFCDF"
+              }
+            ]
+          }
+        },
+        {
+          "id": "I_kwDOG7Tv585ein8g",
+          "url": "https://github.com/cyprus-developer-community/events/issues/43",
+          "title": "CDC Meet & Greet Limassol",
+          "body": "### Event Description\n\nInformal meet & greet to talk about the latest in software and web development, technology and science.\n\n### Location\n\nbono\n\n### Date\n\n23.02.2023\n\n### Time\n\n19.00\n\n### Duration\n\n2h00m\n\n### Code of Conduct\n\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+          "createdAt": "2023-02-15T16:11:50Z",
+          "publishedAt": "2023-02-15T16:11:50Z",
+          "state": "OPEN",
+          "number": 43,
+          "author": {
+            "__typename": "User",
+            "id": "MDQ6VXNlcjE1NTIxODk=",
+            "login": "saitonakamura",
+            "name": "Michael サイトー 中村 Bashurov",
+            "url": "https://github.com/saitonakamura",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "__typename": "User",
+                "id": "MDQ6VXNlcjE1NTIxODk=",
+                "login": "saitonakamura",
+                "name": "Michael サイトー 中村 Bashurov",
+                "url": "https://github.com/saitonakamura",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+              }
+            ]
+          },
+          "reactions": {
+            "nodes": []
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "Event :sparkles:",
+                "description": "An event proposal.",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Event%20%3Asparkles%3A",
+                "color": "F075B7"
+              },
+              {
+                "name": "Approved :white_check_mark:",
+                "description": "approved & confirmed",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Approved%20%3Awhite_check_mark%3A",
+                "color": "2DA44E"
+              },
+              {
+                "name": "Limassol",
+                "description": "Λεμεσός / Limasol",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Limassol",
+                "color": "FEFCDF"
+              }
+            ]
+          }
+        },
+        {
+          "id": "I_kwDOG7Tv585euvUO",
+          "url": "https://github.com/cyprus-developer-community/events/issues/44",
+          "title": "CyprusJS Meetup #1 2023",
+          "body": "### Event Description\r\n\r\nCyprusJS is back with a long-awaited meetup! On the 2nd of March at [Diamante Blu](https://www.google.com/maps/place/Diamante+blu/@34.6701968,33.0439646,15z/data=!4m2!3m1!1s0x0:0x565901f7e7ddc41e?sa=X&ved=2ahUKEwjQgPmil5r9AhWkVKQEHUOrArIQ_BJ6BAhwEAg), we’ll hear about GraphQL and WebXR. [Patrick Heneise](https://twitter.com/PatrickHeneise) from [Zentered](https://zentered.co/) will talk about custom GraphQL schemas for arbitrary data sources with GraphQL Nexus, and [Michael Bashurov](https://twitter.com/saitonakamura) from [Mayflower](https://mayflower.work/) will delve into the current state of things with VR in the browser.\r\n\r\n- https://github.com/cyprusjs/CyprusJS/issues/42\r\n- https://github.com/cyprusjs/CyprusJS/issues/44\r\n\r\n*Registration:*\r\nhttps://www.eventbrite.com/e/cyprusjs-meetup-1-2023-tickets-552439871527\r\n\r\n### Location\r\n\r\ndiamante-blu\r\n\r\n### Date\r\n\r\n02.03.2023\r\n\r\n### Time\r\n\r\n18:30\r\n\r\n### Duration\r\n\r\n2h30m\r\n\r\n### Code of Conduct\r\n\r\n- [X] I agree to follow this project's [Code of Conduct](https://berlincodeofconduct.org)",
+          "createdAt": "2023-02-17T12:50:55Z",
+          "publishedAt": "2023-02-17T12:50:55Z",
+          "state": "OPEN",
+          "number": 44,
+          "author": {
+            "__typename": "User",
+            "id": "MDQ6VXNlcjE1NTIxODk=",
+            "login": "saitonakamura",
+            "name": "Michael サイトー 中村 Bashurov",
+            "url": "https://github.com/saitonakamura",
+            "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+          },
+          "participants": {
+            "nodes": [
+              {
+                "__typename": "User",
+                "id": "MDQ6VXNlcjE1NTIxODk=",
+                "login": "saitonakamura",
+                "name": "Michael サイトー 中村 Bashurov",
+                "url": "https://github.com/saitonakamura",
+                "avatarUrl": "https://avatars.githubusercontent.com/u/1552189?u=4271c51c9ea6bb177181ba58f92b6576a8859536&v=4"
+              }
+            ]
+          },
+          "reactions": {
+            "nodes": []
+          },
+          "labels": {
+            "nodes": [
+              {
+                "name": "Event :sparkles:",
+                "description": "An event proposal.",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Event%20%3Asparkles%3A",
+                "color": "F075B7"
+              },
+              {
+                "name": "Approved :white_check_mark:",
+                "description": "approved & confirmed",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Approved%20%3Awhite_check_mark%3A",
+                "color": "2DA44E"
+              },
+              {
+                "name": "Limassol",
+                "description": "Λεμεσός / Limasol",
+                "url": "https://github.com/cyprus-developer-community/events/labels/Limassol",
+                "color": "FEFCDF"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

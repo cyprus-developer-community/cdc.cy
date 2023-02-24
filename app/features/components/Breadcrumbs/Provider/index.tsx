@@ -1,4 +1,4 @@
-import type { Maybe } from '@types'
+import type { Maybe } from '~/types'
 import React from 'react'
 import type { Separator } from '../types'
 

@@ -8,6 +8,7 @@ module.exports = {
     'plugin:json/recommended'
   ],
   rules: {
-    '@typescript-eslint/no-unused-vars': 'error'
+    '@typescript-eslint/no-unused-vars': 'error',
+    'no-console': 'error'
   }
 }

@@ -24,12 +24,13 @@
     "typecheck": "tsc -b",
     "prettier": "prettier .",
     "prettier:check": "pnpm prettier --check",
-    "prettier:format": "pnpm prettier --write",
+    "prettier:format": "pnpm prettier -l --write",
     "lint:check": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "lint:format": "pnpm lint:check --fix",
     "test:unit": "vitest run",
     "test:unit:watch": "vitest dev",
-    "prepare": "is-ci || husky install"
+    "prepare": "is-ci || husky install",
+    "github:codegen": "graphql-codegen -c ./codegen.ts"
   },
   "commitlint": {
     "extends": [
@@ -54,16 +55,25 @@
     "@remix-run/react": "^1.12.0",
     "@remix-run/serve": "^1.12.0",
     "@remix-run/server-runtime": "^1.12.0",
+    "@types/marked": "^4.0.8",
     "@zentered/issue-forms-body-parser": "^2.1.1",
     "date-fns": "^2.29.3",
     "date-fns-tz": "^1.3.7",
+    "graphql": "^16.6.0",
+    "marked": "^4.2.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remix-image": "^1.4.0"
+    "react-schemaorg": "^2.0.0",
+    "remix-image": "^1.4.0",
+    "schema-dts": "^1.1.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
+    "@graphql-codegen/cli": "3.0.0",
+    "@graphql-codegen/typed-document-node": "^3.0.0",
+    "@graphql-codegen/typescript": "^3.0.0",
+    "@graphql-codegen/typescript-operations": "^3.0.0",
     "@remix-run/dev": "^1.12.0",
     "@remix-run/eslint-config": "^1.12.0",
     "@testing-library/jest-dom": "^5.16.5",

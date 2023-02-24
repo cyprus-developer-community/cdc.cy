@@ -14,16 +14,16 @@ const primary = {
   900: '#4BA0D0'
 }
 const secondary = {
-  50: '#f9fafb',
-  100: '#f3f4f6',
-  200: '#e5e7eb',
-  300: '#d1d5db',
-  400: '#9ca3af',
-  500: '#6b7280',
-  600: '#4b5563',
-  700: '#374151',
-  800: '#1f2937',
-  900: '#111827'
+  50: '#F7FAFC',
+  100: '#EDF2F7',
+  200: '#E2E8F0',
+  300: '#CBD5E0',
+  400: '#A0AEC0',
+  500: '#718096',
+  600: '#4A5568',
+  700: '#2D3748',
+  800: '#1A202C',
+  900: '#171923'
 }
 const colors = {
   primary,
@@ -33,24 +33,47 @@ const colors = {
 const globalOverrides = ({
   theme
 }: PreflightContext<{ colors: typeof colors }>) => `
-a:focus-visible {
+a:focus-visible,a:focus {
   outline-color: ${theme.colors.primary[200]};
   outline-width: 3px;
   outline-style: solid;
   border-radius: 0.15rem;
+}
+a:hover {
+  color: ${theme.colors.primary[900]}
 }
 `
 
 export default defineConfig({
   presets: [presetUno(), presetTypography()],
   rules: [
-    ['group-card', { display: 'grid', 'grid-template-rows': '225px 1fr' }]
+    ['group-card', { display: 'grid', 'grid-template-rows': '225px 1fr' }],
+    ['content-empty', { content: '""' }]
   ],
+  shortcuts: {
+    'text-primary-gradient':
+      'bg-clip-text text-transparent bg-gradient-to-r from-primary-300 to-primary-900',
+    page: 'grid gap-8 max-w-screen-xl mx-auto',
+    'page-title':
+      'text-4xl lg:text-6xl font-extrabold text-center text-primary-gradient mt-8 mb-8',
+    'outline-link':
+      'focus:outline-none hover:outline-none focus:outline-transparent before:content-empty before:absolute before:inset-0 before:rounded-lg before:outline-transparent before:outline before:outline-3 hover:cursor-pointer hover:before:outline-primary-400 focus:before:outline-primary-400 focus:before:cursor-pointer hover:before:cursor-pointer'
+  },
   theme: {
     fontFamily: {
       sans: 'sans-serif'
     },
-    colors
+    colors,
+    width: {
+      sm: '2.5rem',
+      md: '3rem',
+      lg: '3.5rem'
+    },
+    height: {
+      sm: '2.5rem',
+      md: '3rem',
+      lg: '3.5rem'
+    }
   },
   preflights: [
     {

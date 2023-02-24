@@ -1,0 +1,45 @@
+fragment LabelFragment on Label {
+  name
+  description
+  color
+}
+
+fragment UserFragment on User {
+  __typename
+  id
+  login
+  name
+  url
+  avatarUrl
+}
+
+fragment IssueFragment on Issue {
+  id
+  url
+  title
+  body
+  createdAt
+  publishedAt
+  state
+  number
+  author {
+    ...UserFragment
+  }
+  participants(first: 20) {
+    nodes {
+      ...UserFragment
+    }
+  }
+  reactions(first: 100) {
+    nodes {
+      user {
+        ...UserFragment
+      }
+    }
+  }
+  labels(first: 10) {
+    nodes {
+      ...LabelFragment
+    }
+  }
+}

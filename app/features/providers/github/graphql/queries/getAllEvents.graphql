@@ -1,0 +1,26 @@
+query getAllEvents($owner: String!, $repo: String!) {
+  getUpcomingEvents: repository(owner: $owner, name: $repo) {
+    issues(
+      filterBy: { labels: "Approved :white_check_mark:" }
+      orderBy: { field: CREATED_AT, direction: ASC }
+      first: 100
+      states: OPEN
+    ) {
+      nodes {
+        ...IssueFragment
+      }
+    }
+  }
+  getPastEvents: repository(owner: $owner, name: $repo) {
+    issues(
+      filterBy: { labels: "Approved :white_check_mark:" }
+      orderBy: { field: CREATED_AT, direction: ASC }
+      first: 100
+      states: CLOSED
+    ) {
+      nodes {
+        ...IssueFragment
+      }
+    }
+  }
+}

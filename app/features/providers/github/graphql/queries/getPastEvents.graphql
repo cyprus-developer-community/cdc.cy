@@ -1,0 +1,20 @@
+query getPastEvents(
+  $owner: String!
+  $repo: String!
+  $size: Int!
+  $after: String
+) {
+  repository(owner: $owner, name: $repo) {
+    issues(
+      filterBy: { labels: "Approved :white_check_mark:" }
+      orderBy: { field: CREATED_AT, direction: DESC }
+      after: $after
+      first: $size
+      states: CLOSED
+    ) {
+      nodes {
+        ...IssueFragment
+      }
+    }
+  }
+}

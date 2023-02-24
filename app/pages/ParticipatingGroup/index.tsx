@@ -1,41 +1,26 @@
 import { useLoaderData } from '@remix-run/react'
 import { Image } from 'remix-image'
-import {
-  newDataProvider,
-  ErrGroupNotFound,
-  StatusNotFound
-} from '~/features/dataProvider'
-import type { Group } from '~/features/dataProvider'
-import { OrganizerCard } from './components/OrganizerCard'
+import type { LoaderData } from './loader'
 import {
   BreacrumbItem,
   BreadcrumbLink,
-  Breadcrumbs
-} from '~/features/components/Breadcrumbs'
-
-type LoaderData = { group: Group }
-export const loader = async ({ params }) => {
-  const dataProvider = newDataProvider()
-  const { slug } = params
-
-  if (!slug) {
-    throw new Response(ErrGroupNotFound.message, { status: StatusNotFound })
-  }
-
-  const [e, group] = await dataProvider.commands.getParticipatingGroup(slug)
-  if (e === ErrGroupNotFound) {
-    throw new Response(ErrGroupNotFound.message, { status: StatusNotFound })
-  }
-
-  return { group }
-}
+  Breadcrumbs,
+  AvatarGroup,
+  AvatarItem,
+  AvatarLink,
+  Avatar,
+  Page,
+  Section,
+  H2,
+  H1
+} from '~/features/components'
 
 const ParticipatingGroup = () => {
   const { group } = useLoaderData() as LoaderData
   const groupImage = group.logo.svg ?? group.logo.png
 
   return (
-    <div className="grid gap-8">
+    <Page>
       <Breadcrumbs>
         <BreacrumbItem>
           <BreadcrumbLink to="/">Home</BreadcrumbLink>
@@ -50,55 +35,61 @@ const ParticipatingGroup = () => {
         </BreacrumbItem>
       </Breadcrumbs>
       <div className="flex flex-col place-items-center gap-4 mt-4">
-        <h1 className="text-4xl lg:text-6xl font-extrabold text-center text-primary-900">
-          {group.name}
-        </h1>
+        <H1>{group.name}</H1>
         <Image
           src={groupImage}
           className="w-40 h-40 rounded-full border-3 border-primary-500 object-contain"
         />
       </div>
-      <div className="grid gap-12">
-        <section className="grid gap-6">
-          <h2 className="text-3xl font-extrabold text-secondary-900 text-center md:text-left">
-            Description
-          </h2>
-          <p className="text-secondary-700">{group.excerpt}</p>
-        </section>
-        <section className="grid gap-6">
-          <h2 className="text-3xl font-extrabold text-secondary-900 text-center md:text-left">
-            Organizers
-          </h2>
-          <ul className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+      <div className="grid gap-16 lg:gap-12">
+        <Section>
+          <H2>Description</H2>
+          <p className="text-center lg:text-left text-secondary-500">
+            {group.excerpt}
+          </p>
+        </Section>
+        <Section>
+          <H2>Organizers</H2>
+          <AvatarGroup>
             {group.organizers.map((organizer) => {
               return (
-                <OrganizerCard key={organizer.name} organizer={organizer} />
+                <AvatarItem key={organizer.name}>
+                  <AvatarLink to={organizer.github}>
+                    <Avatar
+                      name={organizer.name}
+                      src={organizer.avatar}
+                      className="w-lg h-lg"
+                    />
+                  </AvatarLink>
+                </AvatarItem>
               )
             })}
-          </ul>
-        </section>
-        <section className="grid gap-6">
-          <h2 className="text-3xl font-extrabold text-secondary-900 text-center md:text-left">
-            Do you want to learn more?
-          </h2>
-          <ul className="flex gap-4 flex-wrap">
+          </AvatarGroup>
+        </Section>
+        <Section>
+          <H2>Do you want to learn more?</H2>
+          <ul className="flex gap-4 justify-center lg:justify-start flex-wrap">
             {group.links.map((link) => {
               return (
-                <a
-                  className="px-6 py-4 text-secondary-600 bg-secondary-100 shadow-lg rounded-lg capitalize outline outline-3 outline-secondary-200 hover:outline-primary-400 focus:outline-primary-400"
-                  target="_blank"
-                  rel="noreferrer noopener"
+                <li
                   key={link.href}
-                  href={link.href}
+                  className="py-4 px-6 shadow-lg rounded-lg bg-secondary-50 relative"
                 >
-                  {link.type}
-                </a>
+                  <a
+                    className="text-secondary-600  capitalize hover:text-secondary-700 outline-link"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    href={link.href}
+                  >
+                    {link.type}
+                  </a>
+                </li>
               )
             })}
           </ul>
-        </section>
+        </Section>
       </div>
-    </div>
+    </Page>
   )
 }
 

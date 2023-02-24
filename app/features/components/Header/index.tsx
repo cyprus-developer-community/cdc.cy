@@ -1,17 +1,17 @@
 import React from 'react'
 import type { NavLinkProps } from '@remix-run/react'
-import { NavLink, Link } from '@remix-run/react'
+import { NavLink as RemixNavLink, Link } from '@remix-run/react'
 import { Image } from 'remix-image'
 import { useScroll } from '~/features/hooks'
 
-const HeaderLink: React.FC<NavLinkProps> = ({ children, ...rest }) => {
+const NavLink: React.FC<NavLinkProps> = ({ children, ...rest }) => {
   return (
-    <NavLink
+    <RemixNavLink
       className="text-lg font-bold text-primary-900 hover:text-primary-400 ml-4"
       {...rest}
     >
       {children}
-    </NavLink>
+    </RemixNavLink>
   )
 }
 
@@ -27,13 +27,14 @@ export const Header: React.FC = () => {
         }`}
       >
         <nav className="grid grid-flow-col gap-4">
-          <Link to="/">
+          <Link className="hover:outline-none" to="/">
             <Image src="/cdc-logo.svg" width={48} height={48} />
           </Link>
-          <div className="flex items-center justify-end">
-            <HeaderLink to="/">Home</HeaderLink>
-            <HeaderLink to="/groups">Groups</HeaderLink>
-          </div>
+          <nav className="flex items-center justify-end">
+            <NavLink to="/">Home</NavLink>
+            <NavLink to="/groups">Groups</NavLink>
+            <NavLink to="/events">Events</NavLink>
+          </nav>
         </nav>
       </div>
     </header>
