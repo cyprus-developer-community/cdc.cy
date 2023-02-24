@@ -17,6 +17,7 @@ import {
 } from '~/features/components'
 import type { LoaderData } from './loader'
 import { format } from 'date-fns'
+import { JsonLd } from './JsonLd'
 
 const formatDate = (date: string) => format(new Date(date), 'do MMMM yyyy')
 
@@ -25,6 +26,7 @@ const Event = () => {
 
   return (
     <Page>
+      <JsonLd event={event} />
       <Breadcrumbs>
         <BreacrumbItem>
           <BreadcrumbLink to="/">Home</BreadcrumbLink>

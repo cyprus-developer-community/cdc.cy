@@ -25,7 +25,7 @@ export type Event = {
   start: string
   date: string
   time: string
-  duration: ParsedIssueBody['duration']
+  duration: ParsedIssueBody['duration']['duration']
   title: string
   datetime: string
   description: string
