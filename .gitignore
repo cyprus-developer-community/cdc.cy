@@ -4,6 +4,7 @@ node_modules
 /functions/\[\[path\]\].js
 /public/build
 .env
+.env.*
 keyfile.pem
 build
 .pnpm-debug.log
