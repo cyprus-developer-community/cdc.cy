@@ -11,6 +11,7 @@ export const ParticipatingGroupCard: React.FC<ParticipatingGroupCardProps> = ({
 }) => {
   return (
     <li
+      data-test-e2e="participating-group-card"
       key={group.name}
       className="group-card max-w-sm border-solid border-3 border-secondary-100 shadow-lg rounded-lg relative w-full"
     >

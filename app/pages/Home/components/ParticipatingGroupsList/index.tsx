@@ -14,7 +14,7 @@ export const ParticipatingGroupsList: React.FC<
   ParticipatingGroupsListProps
 > = ({ groups }) => {
   return (
-    <Section>
+    <Section data-test-e2e="participating-groups-section">
       <div className="grid gap-12">
         <H2>Participating Member Groups</H2>
         <ul className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center md:justify-items-start">

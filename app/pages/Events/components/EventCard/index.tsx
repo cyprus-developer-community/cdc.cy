@@ -13,6 +13,7 @@ const formatDate = (date: string) => format(new Date(date), 'do MMMM yyyy')
 export const EventCard = ({ event }: EventCardProps) => {
   return (
     <li
+      data-test-e2e="event-card"
       className="grid gap-2 shadow-lg rounded-lg relative bg-no-repeat bg-contain bg-center"
       style={{ backgroundImage: "url('/cdc-logo.svg')" }}
     >
