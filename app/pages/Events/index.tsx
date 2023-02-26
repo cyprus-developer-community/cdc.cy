@@ -26,11 +26,11 @@ const Events = () => {
       </Breadcrumbs>
       <H1>Events</H1>
       <div className="grid gap-12 lg:gap-24">
-        <Section>
+        <Section data-test-e2e="upcoming-events-section">
           <H2>Upcoming events</H2>
           <EventList events={upcomingEvents} />
         </Section>
-        <Section>
+        <Section data-test-e2e="past-events-section">
           <H2>Past events</H2>
           <EventList events={pastEvents} />
         </Section>

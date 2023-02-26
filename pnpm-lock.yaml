@@ -11,6 +11,7 @@ specifiers:
   '@heroicons/react': ^2.0.15
   '@octokit/auth-app': ^4.0.9
   '@octokit/graphql': ^5.0.5
+  '@playwright/test': ^1.31.1
   '@remix-run/dev': ^1.12.0
   '@remix-run/eslint-config': ^1.12.0
   '@remix-run/node': ^1.12.0
@@ -82,6 +83,7 @@ devDependencies:
   '@graphql-codegen/typed-document-node': 3.0.0_graphql@16.6.0
   '@graphql-codegen/typescript': 3.0.0_graphql@16.6.0
   '@graphql-codegen/typescript-operations': 3.0.0_graphql@16.6.0
+  '@playwright/test': 1.31.1
   '@remix-run/dev': 1.12.0_@remix-run+serve@1.12.0
   '@remix-run/eslint-config': 1.12.0_wvykjhgtukofhefoe5m2qcm46i
   '@testing-library/jest-dom': 5.16.5
@@ -3574,6 +3576,17 @@ packages:
       picocolors: 1.0.0
       tiny-glob: 0.2.9
       tslib: 2.4.0
+    dev: true
+
+  /@playwright/test/1.31.1:
+    resolution: {integrity: sha512-IsytVZ+0QLDh1Hj83XatGp/GsI1CDJWbyDaBGbainsh0p2zC7F4toUocqowmjS6sQff2NGT3D9WbDj/3K2CJiA==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      '@types/node': 18.13.0
+      playwright-core: 1.31.1
+    optionalDependencies:
+      fsevents: 2.3.2
     dev: true
 
   /@polka/url/1.0.0-next.21:
@@ -9968,6 +9981,12 @@ packages:
       jsonc-parser: 3.2.0
       mlly: 1.1.0
       pathe: 1.0.0
+    dev: true
+
+  /playwright-core/1.31.1:
+    resolution: {integrity: sha512-JTyX4kV3/LXsvpHkLzL2I36aCdml4zeE35x+G5aPc4bkLsiRiQshU5lWeVpHFAuC8xAcbI6FDcw/8z3q2xtJSQ==}
+    engines: {node: '>=14'}
+    hasBin: true
     dev: true
 
   /postcss-discard-duplicates/5.1.0_postcss@8.4.21:

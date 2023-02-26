@@ -28,3 +28,12 @@ jobs:
             github.sha }}'
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+  e2e:
+    name: Testing
+    needs: [deploy]
+    if: needs.deploy.result == 'success'
+    uses: ./.github/workflows/e2e.yml
+    with:
+      node-version: lts/hydrogen
+      pnpm-version: 7.x

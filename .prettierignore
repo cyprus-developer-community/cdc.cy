@@ -3,3 +3,4 @@ node_modules/
 app/styles/uno.css
 .pnpm-store
 pnpm-lock.yaml
+playwright-report

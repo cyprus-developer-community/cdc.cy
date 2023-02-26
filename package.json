@@ -29,6 +29,8 @@
     "lint:format": "pnpm lint:check --fix",
     "test:unit": "vitest run",
     "test:unit:watch": "vitest dev",
+    "test:e2e": "playwright test",
+    "test:e2e:report": "playwright show-report",
     "prepare": "is-ci || husky install",
     "github:codegen": "graphql-codegen -c ./codegen.ts"
   },
@@ -74,6 +76,7 @@
     "@graphql-codegen/typed-document-node": "^3.0.0",
     "@graphql-codegen/typescript": "^3.0.0",
     "@graphql-codegen/typescript-operations": "^3.0.0",
+    "@playwright/test": "^1.31.1",
     "@remix-run/dev": "^1.12.0",
     "@remix-run/eslint-config": "^1.12.0",
     "@testing-library/jest-dom": "^5.16.5",
