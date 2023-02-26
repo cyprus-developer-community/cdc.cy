@@ -17,7 +17,6 @@
       "~/*": ["./app/*"]
     },
     "skipLibCheck": true,
-    "types": ["node", "vitest/globals"],
     "noEmit": true
   },
   "include": ["**/*.ts", "**/*.tsx"]

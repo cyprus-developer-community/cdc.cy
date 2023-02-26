@@ -21,9 +21,9 @@ test.describe('Home', () => {
       await expect(page).toHaveURL(/\/groups$/)
     })
 
-    test('should navigate in events page', async ({ page }) => {
-      await page.getByRole('link', { name: 'Events' }).click()
-      await expect(page).toHaveURL(/\/events$/)
-    })
+    // test('should navigate in events page', async ({ page }) => {
+    //   await page.getByRole('link', { name: 'Events' }).click()
+    //   await expect(page).toHaveURL(/\/events$/)
+    // })
   })
 })

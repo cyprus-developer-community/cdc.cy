@@ -9,6 +9,10 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'jsdom',
+    include: ['./test/**/*.spec.ts', './test/**/*.spec.tsx'],
+    typecheck: {
+      tsconfig: './tesconfig.test.json'
+    },
     setupFiles: ['./test/setup-test-env.ts'],
     css: false
   }

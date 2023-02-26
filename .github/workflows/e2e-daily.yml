@@ -1,0 +1,13 @@
+# Run E2E every day at 09:00am and 21:00am
+name: E2E Testing
+
+on:
+  schedule:
+    - cron: '0 9,21 * * *'
+
+jobs:
+  e2e:
+    uses: ./.github/workflows/e2e.yml
+    with:
+      node-version: lts/hydrogen
+      pnpm-version: 7.x

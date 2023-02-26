@@ -1,0 +1,43 @@
+name: End To End Testing
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        type: string
+        required: true
+      pnpm-version:
+        type: string
+        required: true
+
+jobs:
+  e2e:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 10
+    env:
+      CI: true
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2.2.4
+        with:
+          version: ${{ inputs.pnpm-version }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ inputs.node-version }}
+          cache: 'pnpm'
+
+      - name: Install Node Modules
+        run: pnpm i
+
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+
+      - name: End To End
+        run: pnpm test:e2e
+
+      - uses: actions/upload-artifact@v3
+        if: always()
+        with:
+          name: e2e-report
+          path: playwright-report
+          retention-days: 30

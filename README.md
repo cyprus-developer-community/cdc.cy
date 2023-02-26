@@ -24,6 +24,29 @@ EOF
 2. Run `pnpm dev:remix` and access the page in the browser. The page is
    available in `http://localhost:3000`
 
+## End-To-End(E2E) Testing
+
+```
+# All test suites
+pnpm exec playwright test
+
+# Only the Home page test suite
+pnpm exec playwright test ./e2e/home.spec.ts
+pnpm exec playwright test -g 'Home'
+
+# Only the test on line 8
+pnpm exec playwright test ./e2e/home.spec.ts:8
+
+# Only a single browser
+pnpm exec playwright test --project=chromium
+
+# Spin-up a dev server and show report
+pnpm exec playwright show-report
+
+# Debug mode
+pnpm exec playwright test --debug
+```
+
 ## Code of Conduct
 
 Our goal is to have an awesome, inclusive and safe community meetup where people
