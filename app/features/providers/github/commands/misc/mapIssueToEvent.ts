@@ -1,4 +1,4 @@
-import pkg from 'date-fns-tz'
+import { zonedTimeToUtc } from 'date-fns-tz'
 import type { Maybe } from '~/types'
 import type { Issue, EventStatus, Event } from '../types'
 import { calcIsUser } from './calcIsUser'
@@ -7,7 +7,6 @@ import { mapToAttendees } from './mapToAttendees'
 import { mapHtmlToText } from './mapHtmlToText'
 import { calcIsIBodyParsed } from './calcIsBodyParsed'
 
-const { zonedTimeToUtc } = pkg
 const timeZone = 'Europe/Nicosia'
 
 const getIssueStatus = (isUpcoming: boolean, issue: Issue): EventStatus => {
