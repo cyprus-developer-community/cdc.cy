@@ -11,4 +11,13 @@ test.describe('Groups', () => {
     ).toBeVisible()
     await expect(page).toHaveTitle('Cyprus Developer Community | CDC.cy')
   })
+
+  test('should select a group and navigate to it', async ({ page }) => {
+    const group = page.getByTestId('participating-group-card').first()
+    const groupTitle = await group.textContent()
+    await group.click()
+    await expect(
+      page.getByRole('heading', { name: groupTitle, level: 1 })
+    ).toBeVisible()
+  })
 })
