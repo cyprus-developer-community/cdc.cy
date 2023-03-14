@@ -1,0 +1,192 @@
+[
+  {
+    "name": "CyprusJS",
+    "slug": "cyprus-js",
+    "logo": {
+      "svg": "https://raw.githubusercontent.com/cyprus-developer-community/home/main/assets/cyprusjs.svg",
+      "png": "https://github.com/cyprus-developer-community/home/blob/main/assets/cyprusjs.png?raw=true",
+      "width": 600,
+      "height": 337
+    },
+    "organizers": [
+      {
+        "name": "Michael Bashurov",
+        "github": "https://github.com/saitonakamura",
+        "avatar": "https://avatars.githubusercontent.com/u/1552189?s=150&v=4"
+      }
+    ],
+    "links": [
+      {
+        "type": "website",
+        "href": "https://cyprusjs.org"
+      }
+    ],
+    "excerpt": "CyprusJS is place for JavaScript enthusiasts in Cyprus to come together and discuss JavaScript and related technologies, learn from each other and solve problems."
+  },
+  {
+    "name": "AWS User Group Cyprus",
+    "slug": "aws-cy",
+    "logo": {
+      "png": "https://github.com/cyprus-developer-community/home/blob/main/assets/aws-user-group-cyprus.png?raw=true",
+      "width": 1251,
+      "height": 790
+    },
+    "organizers": [
+      {
+        "name": "Nicholas Verban",
+        "github": "https://github.com/NVerban",
+        "avatar": "https://avatars.githubusercontent.com/u/3581331?s=150&v=4"
+      },
+      {
+        "name": "xanthos-symeou",
+        "github": "https://github.com/xanthos-sym",
+        "avatar": "https://avatars.githubusercontent.com/u/63235638?s=150&v=4"
+      }
+    ],
+    "links": [
+      {
+        "type": "meetup",
+        "href": "https://www.meetup.com/aws-users-cyprus"
+      },
+      {
+        "type": "linkedin",
+        "href": "https://www.linkedin.com/groups/8915327"
+      },
+      {
+        "type": "facebook",
+        "href": "https://www.facebook.com/groups/1064046920727809"
+      }
+    ],
+    "excerpt": "AWS User Group Cyprus has a mission to gather all informational technology enthusiasts, as well as all of those who are interested in Amazon Web Services, Cloud Computing, DevOps and are located in on the island and/or want to be part of our dev community."
+  },
+  {
+    "name": "GDG Cyprus",
+    "slug": "gdg-cy",
+    "logo": {
+      "png": "https://github.com/cyprus-developer-community/home/blob/main/assets/gdgcyprus.png?raw=true",
+      "width": 525,
+      "height": 525
+    },
+    "organizers": [
+      {
+        "name": "Andreas Loizou",
+        "github": "https://github.com/lack3r",
+        "avatar": "https://avatars.githubusercontent.com/u/5957042?s=150&v=4"
+      },
+      {
+        "name": "Galatia Partheniou",
+        "github": "https://github.com/GalatiaPar",
+        "avatar": "https://avatars.githubusercontent.com/u/1167460?s=150&v=4"
+      },
+      {
+        "name": "Maria Stylianou",
+        "github": "https://github.com/marsty5",
+        "avatar": "https://avatars.githubusercontent.com/u/2454869?s=150&v=4"
+      },
+      {
+        "name": "Andreas Lefkatis",
+        "github": "https://github.com/lefkatis",
+        "avatar": "https://avatars.githubusercontent.com/u/6929760?s=150&v=4"
+      },
+      {
+        "name": "Michalis Dimitriou",
+        "github": "https://github.com/michdim",
+        "avatar": "https://avatars.githubusercontent.com/u/44052587?s=150&v=4"
+      }
+    ],
+    "links": [
+      {
+        "type": "website",
+        "href": "https://gdg.community.dev/gdg-cyprus"
+      },
+      {
+        "type": "meetup",
+        "href": "https://www.meetup.com/gdg-cyprus"
+      },
+      {
+        "type": "facebook",
+        "href": "https://www.facebook.com/GDGCyprus"
+      }
+    ],
+    "excerpt": "GDG Cyprus is an independent group of developers across Cyprus. We aim to run tech talks, workshops, study groups, networking events and hackathons as well as partner with major initiatives in Cyprus to promote and support the technical community of Cyprus."
+  },
+  {
+    "name": "Py-Data-Cy",
+    "slug": "py-data-cy",
+    "logo": {
+      "png": "https://github.com/cyprus-developer-community/home/blob/main/assets/pydata-cyprus.png?raw=true",
+      "width": 952,
+      "height": 718
+    },
+    "organizers": [
+      {
+        "name": "Christos Christodoulou",
+        "github": "https://github.com/chr7stos",
+        "avatar": "https://avatars.githubusercontent.com/u/3687203?s=150&v=4"
+      },
+      {
+        "name": "Nick Sorros",
+        "github": "https://github.com/nsorros",
+        "avatar": "https://avatars.githubusercontent.com/u/4975761?s=150v=4"
+      },
+      {
+        "name": "Argyris Argyrou",
+        "github": "https://github.com/argyris",
+        "avatar": "https://avatars.githubusercontent.com/u/632662?s=150&v=4"
+      }
+    ],
+    "links": [
+      {
+        "type": "meetup",
+        "href": "https://www.meetup.com/pydata-cyprus"
+      }
+    ],
+    "excerpt": "PyData Cyprus is the Cyprus chapter of the international PyData community. This is a group for anyone interested in data science. All skill levels are welcome. We started this group because we want to meet other enthusiasts in the area. We're looking forward to exploring exciting new ideas with everybody!"
+  },
+  {
+    "name": "Cyprus Software Craftsmanship Community",
+    "slug": "cyprus-software-craftsmanship-community",
+    "logo": {
+      "png": "https://github.com/cyprus-developer-community/home/blob/main/assets/cyprus-software-craftsmanship-community.png?raw=true",
+      "width": 800,
+      "height": 385
+    },
+    "organizers": [
+      {
+        "name": "Andreas Loizou",
+        "github": "https://github.com/lack3r",
+        "avatar": "https://avatars.githubusercontent.com/u/5957042?s=150&v=4"
+      }
+    ],
+    "links": [
+      {
+        "type": "meetup",
+        "href": "https://www.meetup.com/software-craftsmanship-community-cyprus"
+      }
+    ],
+    "excerpt": "This is an open community for everyone who deeply cares about software development. We are a group of professionals who want to share their knowledge and learn from each other."
+  },
+  {
+    "name": "CyprusRust",
+    "slug": "cyprus-rust",
+    "logo": {
+      "png": "https://github.com/cyprusrust/CyprusRust/raw/master/assets/cyprus-rust.png?raw=true",
+      "width": 540,
+      "height": 540
+    },
+    "organizers": [
+      {
+        "name": "Federico Rampazzo",
+        "github": "https://github.com/framp",
+        "avatar": "https://avatars.githubusercontent.com/u/611109?s=150&v=4"
+      }
+    ],
+    "links": [
+      {
+        "type": "website",
+        "href": "https://cyprusrust.org"
+      }
+    ],
+    "excerpt": "CyprusRus is a community of Rust users in Cyprus who are passioned about sharing our knowledge and experiences with the language. Whether you are new to Rust or have been using the language for some time, we welcome you to join our community. We believe that by working together, we can all improve our skills and advance our knowledge of the language."
+  }
+]

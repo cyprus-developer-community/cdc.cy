@@ -4,6 +4,7 @@ import getAllEvents from './getAllEvents.json'
 import getUpcomingEvents from './getUpcomingEvents.json'
 import getPastEvents from './getPastEvents.json'
 import getLocations from './getLocations.json'
+import getParticipatingGroups from './getParticipatingGroups.json'
 
 export const handlers = [
   rest.post(
@@ -13,6 +14,10 @@ export const handlers = [
   rest.get(
     'https://raw.githubusercontent.com/cyprus-developer-community/events/main/locations.json',
     (_, res, ctx) => res(ctx.json(getLocations))
+  ),
+  rest.get(
+    'https://raw.githubusercontent.com/cyprus-developer-community/home/main/groups.json',
+    (_, res, ctx) => res(ctx.json(getParticipatingGroups))
   ),
   graphql.query('getAllEvents', async (_, res, ctx) =>
     res(ctx.data(getAllEvents))
