@@ -5,12 +5,11 @@ import {
   Breadcrumbs,
   BreadcrumbLink,
   H1,
-  H2,
-  Section,
   Page,
   Spinner
 } from '~/features/components'
-import { EventList } from './components/EventList'
+import { PastEvents } from './components/PastEvents'
+import { UpcomingEvents } from './components/UpcomingEvents'
 import { Suspense } from 'react'
 
 const Events = () => {
@@ -31,31 +30,10 @@ const Events = () => {
       <div className="grid gap-12 lg:gap-24">
         <Suspense fallback={<Spinner className="m-auto" />}>
           <Await resolve={upcomingEventsPromise}>
-            {(res) => {
-              if (res.success === false) {
-                return null
-              }
-              return (
-                <Section data-test-e2e="upcoming-events-section">
-                  <H2>Upcoming events</H2>
-                  <EventList events={res.data} />
-                </Section>
-              )
-            }}
+            <UpcomingEvents />
           </Await>
           <Await resolve={pastEventsPromise}>
-            {(res) => {
-              if (res.success === false) {
-                return null
-              }
-
-              return (
-                <Section data-test-e2e="past-events-section">
-                  <H2>Past events</H2>
-                  <EventList events={res.data} />
-                </Section>
-              )
-            }}
+            <PastEvents />
           </Await>
         </Suspense>
       </div>
