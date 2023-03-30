@@ -1,4 +1,4 @@
-import { useLoaderData } from '@remix-run/react'
+import { useLoaderData, Await } from '@remix-run/react'
 import { EventsCalendar } from './components/EventsCalendar'
 import { ParticipatingGroupsList } from './components/ParticipatingGroupsList'
 import {
@@ -8,11 +8,11 @@ import {
   getGithubDiscussionsLink
 } from '~/features/configuration'
 import type { LoaderData } from './loader'
-import { H1, H2, Section } from '~/features/components'
+import { H1, H2, Section, Spinner } from '~/features/components'
+import { Suspense } from 'react'
 
 const Home = () => {
   const { groups, events } = useLoaderData() as LoaderData
-  const { upcoming, past, days } = events
   const config = getConfig()
 
   return (
@@ -52,8 +52,11 @@ const Home = () => {
       </Section>
 
       <ParticipatingGroupsList groups={groups} />
-      <EventsCalendar upcoming={upcoming} past={past} days={days} />
-
+      <Suspense fallback={<Spinner className="m-auto" />}>
+        <Await resolve={events}>
+          <EventsCalendar />
+        </Await>
+      </Suspense>
       <Section>
         <H2>Chat</H2>
         <p className="text-center lg:text-left">

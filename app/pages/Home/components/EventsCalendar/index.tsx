@@ -7,21 +7,19 @@ import {
 import { Menu, Transition } from '@headlessui/react'
 import { getConfig, getGithubNewIssueLink } from '~/features/configuration'
 import { H2, Section } from '~/features/components'
-import type { Event, Day } from '~/features/providers/github/commands/types'
 import { formatDay } from './formatDay'
+import { useAsyncValue } from '@remix-run/react'
+import type { LoaderData } from '../../loader'
 
-type EventsCalendarProps = {
-  upcoming: Event[]
-  past: Event[]
-  days: Day[]
-}
-
-export const EventsCalendar: React.FC<EventsCalendarProps> = ({
-  upcoming,
-  past,
-  days
-}) => {
+export const EventsCalendar = () => {
   const config = getConfig()
+  const res = useAsyncValue() as Awaited<LoaderData['events']>
+
+  if (res.success === false) {
+    return null
+  }
+
+  const { upcoming, past, days } = res.data
 
   return (
     <Section>
