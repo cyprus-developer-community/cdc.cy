@@ -1,4 +1,6 @@
 import type { LoaderArgs, LoaderFunction } from '@remix-run/node'
+
+import type { TypedDeferredData } from '@remix-run/node'
 export type {
   Event,
   User,
@@ -22,6 +24,14 @@ export type {
 
 export type ReturnLoaderData<TFn extends LoaderFunction> = TFn extends (
   args: LoaderArgs
-) => Promise<infer D>
+) => Promise<TypedDeferredData<infer AsyncData>>
+  ? AsyncData
+  : TFn extends (args: LoaderArgs) => Promise<infer SyncData>
+  ? SyncData
+  : never
+
+export type ReturnDeferredLoaderData<TFn extends LoaderFunction> = TFn extends (
+  ...args: any[]
+) => Promise<TypedDeferredData<infer D>>
   ? D
   : never
