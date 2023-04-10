@@ -2,7 +2,8 @@ import { test, expect } from '@playwright/test'
 
 test.describe('Events', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('/events')
+    await page.goto('/')
+    await page.locator('header').getByRole('link', { name: 'Events' }).click()
   })
 
   test('should check the page title', async ({ page }) => {
