@@ -1,5 +1,5 @@
 # base node image
-FROM node:16-bullseye-slim as base
+FROM node:hydrogen-bullseye-slim as base
 RUN npm install -g pnpm is-ci husky 
 
 # Install all node_modules, including dev dependencies
