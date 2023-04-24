@@ -73,7 +73,7 @@
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@graphql-codegen/cli": "3.2.2",
-    "@graphql-codegen/typed-document-node": "^3.0.1",
+    "@graphql-codegen/typed-document-node": "^4.0.1",
     "@graphql-codegen/typescript": "^3.0.1",
     "@graphql-codegen/typescript-operations": "^3.0.1",
     "@playwright/test": "^1.31.1",
