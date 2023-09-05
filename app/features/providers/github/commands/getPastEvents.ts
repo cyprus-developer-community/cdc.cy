@@ -8,13 +8,17 @@ import {
 } from '~/features/providers/misc/http'
 import { mapIssuesToEvents } from './misc/mapIssueToEvent'
 import type { Event } from './types'
+import { cache } from './misc/cache'
 
 export const getPastEvents = async (
   nextToken?: String
 ): Promise<ApiResponse<Event[]>> => {
   try {
-    const client = newGraphQLClientFactory()
+    if (cache.has('pastEvents')) {
+      return newSuccessfulResponse(cache.get('pastEvents'))
+    }
 
+    const client = newGraphQLClientFactory()
     const res = await client<GetPastEventsQuery>(getPastEventsQuery, {
       owner: 'cyprus-developer-community',
       repo: 'events',
@@ -23,7 +27,7 @@ export const getPastEvents = async (
     })
 
     const events = await mapIssuesToEvents(res.repository.issues.nodes)
-
+    cache.set('pastEvents', events, 60 * 60 * 24)
     return newSuccessfulResponse(events)
   } catch (e) {
     return newErrorResponse(e)
