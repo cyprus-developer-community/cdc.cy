@@ -28,7 +28,7 @@ cache.on('expired', (key) => {
 const fetchCached = async <T>(
   cacheKey: string,
   fetcher: () => Promise<T>,
-  ttl = 60 * 60 * 24
+  ttl = 60 * 5
 ) => {
   let response: T
   if (cache.has(cacheKey)) {
