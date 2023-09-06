@@ -6,14 +6,16 @@ import {
   BreadcrumbLink,
   H1,
   Page,
-  Spinner
+  Spinner,
+  Section,
+  H2,
+  CatchErrorBoundary
 } from '~/features/components'
-import { PastEvents } from './components/PastEvents'
-import { UpcomingEvents } from './components/UpcomingEvents'
 import { Suspense } from 'react'
+import { EventList } from './components/EventList'
 
 const Events = () => {
-  const { pastEventsPromise, upcomingEventsPromise } =
+  const { upcomingEventsPromise, pastEventsPromise } =
     useLoaderData() as LoaderData
 
   return (
@@ -28,14 +30,36 @@ const Events = () => {
       </Breadcrumbs>
       <H1>Events</H1>
       <div className="grid gap-12 lg:gap-24">
-        <Suspense fallback={<Spinner className="m-auto" />}>
-          <Await resolve={upcomingEventsPromise}>
-            <UpcomingEvents />
-          </Await>
-          <Await resolve={pastEventsPromise}>
-            <PastEvents />
-          </Await>
-        </Suspense>
+        <Section data-test-e2e="upcoming-events-section">
+          <H2>Upcoming events</H2>
+          <Suspense fallback={<Spinner className="mx-auto" />}>
+            <CatchErrorBoundary>
+              <Await resolve={upcomingEventsPromise}>
+                {(res) => {
+                  if (res.success === false) {
+                    throw new Error(res.message)
+                  }
+                  return <EventList events={res.data} />
+                }}
+              </Await>
+            </CatchErrorBoundary>
+          </Suspense>
+        </Section>
+        <Section data-test-e2e="past-events-section">
+          <H2>Past events</H2>
+          <Suspense fallback={<Spinner className="mx-auto" />}>
+            <CatchErrorBoundary>
+              <Await resolve={pastEventsPromise}>
+                {(res) => {
+                  if (res.success === false) {
+                    throw new Error(res.message)
+                  }
+                  return <EventList events={res.data} />
+                }}
+              </Await>
+            </CatchErrorBoundary>
+          </Suspense>
+        </Section>
       </div>
     </Page>
   )

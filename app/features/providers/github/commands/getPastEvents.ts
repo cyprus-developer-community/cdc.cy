@@ -8,6 +8,7 @@ import {
 } from '~/features/providers/misc/http'
 import { mapIssuesToEvents } from './misc/mapIssueToEvent'
 import type { Event } from './types'
+import { fetchCached } from './misc/cache'
 
 export const getPastEvents = async (
   nextToken?: String
@@ -15,15 +16,17 @@ export const getPastEvents = async (
   try {
     const client = newGraphQLClientFactory()
 
-    const res = await client<GetPastEventsQuery>(getPastEventsQuery, {
-      owner: 'cyprus-developer-community',
-      repo: 'events',
-      size: 20,
-      after: nextToken
+    const cacheKey = 'pastEvents'
+    const events = await fetchCached(cacheKey, async () => {
+      const res = await client<GetPastEventsQuery>(getPastEventsQuery, {
+        owner: 'cyprus-developer-community',
+        repo: 'events',
+        size: 20,
+        after: nextToken
+      })
+
+      return mapIssuesToEvents(res.repository.issues.nodes)
     })
-
-    const events = await mapIssuesToEvents(res.repository.issues.nodes)
-
     return newSuccessfulResponse(events)
   } catch (e) {
     return newErrorResponse(e)

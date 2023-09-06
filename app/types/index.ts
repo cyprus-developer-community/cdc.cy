@@ -1,6 +1,9 @@
-import type { LoaderArgs, LoaderFunction } from '@remix-run/node'
+import type {
+  LoaderArgs,
+  LoaderFunction,
+  TypedDeferredData
+} from '@remix-run/node'
 
-import type { TypedDeferredData } from '@remix-run/node'
 export type {
   Event,
   User,

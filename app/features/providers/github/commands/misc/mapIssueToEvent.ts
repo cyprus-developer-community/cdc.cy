@@ -23,7 +23,7 @@ const getIssueStatus = (isUpcoming: boolean, issue: Issue): EventStatus => {
 export const mapIssueToEvent = async (issue: Issue): Promise<Maybe<Event>> => {
   try {
     const { default: issueBodyParser } = await import(
-      '@zentered/issue-forms-body-parser/src/parse.js'
+      '@zentered/issue-forms-body-parser'
     )
 
     const parsedBody = await issueBodyParser(issue.body)
