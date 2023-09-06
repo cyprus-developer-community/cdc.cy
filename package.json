@@ -114,5 +114,8 @@
     "branches": [
       "main"
     ]
+  },
+  "volta": {
+    "node": "18.17.1"
   }
 }

@@ -6,12 +6,13 @@ import {
   BreadcrumbLink,
   H1,
   Page,
-  Spinner
+  Spinner,
+  Section,
+  H2,
+  CatchErrorBoundary
 } from '~/features/components'
 import { Suspense } from 'react'
-import { Section, H2 } from '~/features/components'
 import { EventList } from './components/EventList'
-import { CatchErrorBoundary } from '~/features/components'
 
 const Events = () => {
   const { upcomingEventsPromise, pastEventsPromise } =
