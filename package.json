@@ -78,7 +78,7 @@
     "@graphql-codegen/typed-document-node": "^5.0.1",
     "@graphql-codegen/typescript": "^4.0.1",
     "@graphql-codegen/typescript-operations": "^4.0.1",
-    "@playwright/test": "^1.37.1",
+    "@playwright/test": "^1.38.1",
     "@remix-run/dev": "^1.19.3",
     "@remix-run/eslint-config": "^1.19.3",
     "@testing-library/jest-dom": "^6.1.3",
