@@ -2,7 +2,7 @@ import { gql } from '@solid-primitives/graphql'
 
 export default {
   gql: gql`
-    query ($organization: String!, $repository: String!) {
+    query ($organization: String!) {
       organization(login: $organization) {
         name
         description
@@ -12,7 +12,6 @@ export default {
     }
   `,
   vars: {
-    organization: process.env.GH_ORG,
-    repository: 'home'
+    organization: process.env.GH_ORG
   }
 }
