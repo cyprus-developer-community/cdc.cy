@@ -6,4 +6,4 @@ type = "javascript"
 route = "cdc.cy/*"
 
 [site]
-bucket = "./dist/public"
+bucket= "./dist/public"
