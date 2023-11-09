@@ -3,6 +3,9 @@ import { Container } from '~/components/Container'
 import Logo from '~/assets/cdc-logo.png'
 import { GitHubIcon, LinkedInIcon } from '~/components/SocialIcons'
 import clsx from 'clsx'
+import organizationQuery from '~/graphql/organization.query.js'
+import graphql from '~/data/graphql.server.js'
+import { useRouteData } from 'solid-start'
 
 function SocialLink(props) {
   return (
@@ -29,7 +32,14 @@ function MailIcon(props) {
   )
 }
 
+export function routeData() {
+  const [data] = graphql(organizationQuery.gql, organizationQuery.vars)
+  return data
+}
+
 export default function About() {
+  const data = useRouteData()
+
   return (
     <Container class="mt-16 sm:mt-32">
       <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
@@ -45,22 +55,16 @@ export default function About() {
         </div>
         <div class="lg:order-first lg:row-span-2">
           <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Cyprus Developer Community
+            {data()?.organization?.name}
           </h1>
           <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-            The Cyprus Developer Community is an umbrella for developer and
-            technology groups in Cyprus. We provide a central website and chat
-            for all things tech/engineering/development. You can join our
-            Discord server (it's like Slack, but for communities, and free) and
-            chat with other developers, share your knowledge, and get help from
-            other members; or join our regular events that we organize with our
-            participating groups.
+            {data()?.organization?.description}
           </div>
         </div>
         <div class="lg:pl-20">
           <ul role="list">
             <SocialLink
-              href="https://github.com/cyprus-developer-community"
+              href={data()?.organization?.url}
               icon={GitHubIcon}
               class="mt-4"
             >

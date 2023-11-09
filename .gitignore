@@ -14,3 +14,5 @@ build
 /playwright-report/
 /playwright/.cache/
 /e2e-report/
+.solid
+dist

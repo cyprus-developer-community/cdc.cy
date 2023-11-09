@@ -15,6 +15,7 @@
   "scripts": {
     "build": "solid-start build",
     "dev": "solid-start dev",
+    "gqlgen": "graphql-codegen --config codegen.yml",
     "lint": "eslint --fix . --ext .js --ext .ts --ext .tsx --ext md",
     "pretty": "prettier -l --write \"src/**/*.{js,ts,tsx,md,mdx,css,scss}\"",
     "preview": "vite preview",
@@ -49,15 +50,29 @@
     ]
   },
   "dependencies": {
+    "@octokit/auth-app": "^6.0.1",
+    "@octokit/core": "^5.0.1",
+    "@solid-primitives/graphql": "^2.0.1",
     "@solidjs/meta": "^0.29.1",
-    "@solidjs/router": "^0.8.3",
+    "@solidjs/router": "^0.9.0",
+    "@zentered/issue-forms-body-parser": "^2.1.4",
     "clsx": "^2.0.0",
+    "graphql": "^16.8.1",
+    "solid-heroicons": "^3.2.4",
     "solid-js": "^1.8.5",
+    "solid-markdown": "^2.0.0",
     "solid-start": "^0.3.10",
+    "solid-start-cloudflare-pages": "^0.3.10",
+    "undici": "^5.27.2",
     "vite-plugin-solid-svg": "^0.7.0"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^18.1.0",
+    "@graphql-codegen/cli": "^5.0.0",
+    "@graphql-codegen/typed-document-node": "^5.0.1",
+    "@graphql-codegen/typescript": "^4.0.1",
+    "@graphql-codegen/typescript-operations": "^4.0.1",
+    "@graphql-typed-document-node/core": "^3.2.0",
     "@solidjs/testing-library": "^0.8.4",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.53.0",
@@ -71,7 +86,8 @@
     "solid-start-node": "0.3.10",
     "tailwindcss": "^3.3.5",
     "vite": "^4.5.0",
-    "vite-plugin-solid": "^2.7.2"
+    "vite-plugin-solid": "^2.7.2",
+    "wrangler": "^3.15.0"
   },
   "engines": {
     "node": ">=20"

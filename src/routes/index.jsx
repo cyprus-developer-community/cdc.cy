@@ -1,6 +1,5 @@
 import { For, splitProps } from 'solid-js'
 import clsx from 'clsx'
-import solidLogo from '~/assets/cdc-logo.png'
 import { Container } from '~/components/Container'
 import { GitHubIcon, LinkedInIcon } from '~/components/SocialIcons'
 import { A } from 'solid-start'
@@ -11,7 +10,7 @@ function Photos() {
   return (
     <div class="mt-16 sm:mt-20">
       <div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
-        <For each={[solidLogo, solidLogo, solidLogo, solidLogo, solidLogo]}>
+        <For each={new Array(5)}>
           {(image, imageIndex) => (
             <div
               class={clsx(
@@ -20,8 +19,8 @@ function Photos() {
               )}
             >
               <img
-                src={image}
-                alt=""
+                src={`/photos/feature/${imageIndex()}.jpeg`}
+                alt="Featured event photo"
                 sizes="(min-width: 640px) 18rem, 11rem"
                 class="absolute inset-0 h-full w-full object-cover"
               />

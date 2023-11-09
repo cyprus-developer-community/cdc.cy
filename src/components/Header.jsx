@@ -29,7 +29,7 @@ export function Header() {
   return (
     <header class="">
       <nav
-        class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8 "
         aria-label="Global"
       >
         <div class="flex flex-1">
@@ -38,7 +38,7 @@ export function Header() {
               {(item) => (
                 <A
                   href={item.href}
-                  class="text-sm font-semibold leading-6 text-gray-900"
+                  class="text-sm font-semibold leading-6 text-gray-900 dark:text-zinc-400"
                 >
                   {item.name}
                 </A>
@@ -112,7 +112,7 @@ export function Header() {
               {(item) => (
                 <A
                   href={item.href}
-                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 dark:text-zinc-400"
                 >
                   {item.name}
                 </A>
