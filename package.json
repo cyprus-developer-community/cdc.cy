@@ -63,6 +63,7 @@
     "solid-markdown": "^2.0.0",
     "solid-start": "^0.3.10",
     "solid-start-cloudflare-pages": "^0.3.10",
+    "solid-start-cloudflare-workers": "^0.3.10",
     "undici": "^5.27.2",
     "vite-plugin-solid-svg": "^0.7.0"
   },
