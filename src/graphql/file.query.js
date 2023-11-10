@@ -2,11 +2,11 @@ import { gql } from '@solid-primitives/graphql'
 
 export default {
   gql: gql`
-    query ($organization: String!, $repository: String!, $path: String!) {
+    query ($organization: String!, $repository: String!) {
       repository(owner: $organization, name: $repository) {
         id
         name
-        object(expression: "main:$path") {
+        object(expression: "main:README.md") {
           ... on Blob {
             text
           }

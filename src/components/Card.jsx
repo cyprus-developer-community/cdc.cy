@@ -56,6 +56,7 @@ Card.Title = function CardTitle(props) {
 
 Card.Description = function CardDescription(props) {
   const [local] = splitProps(props, ['children'])
+
   return (
     <SolidMarkdown class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
       {local.children}
@@ -65,6 +66,7 @@ Card.Description = function CardDescription(props) {
 
 Card.Cta = function CardCta(props) {
   const [local] = splitProps(props, ['children'])
+
   return (
     <div
       aria-hidden="true"

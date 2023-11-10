@@ -4,7 +4,7 @@ import Logo from '~/assets/cdc-logo.png'
 import { GitHubIcon, LinkedInIcon } from '~/components/SocialIcons'
 import clsx from 'clsx'
 import organizationQuery from '~/graphql/organization.query.js'
-import graphql from '~/data/graphql.server.js'
+import graphql from '~/lib/graphql.server.js'
 import { useRouteData } from 'solid-start'
 
 function SocialLink(props) {

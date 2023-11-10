@@ -55,6 +55,7 @@
     "@solid-primitives/graphql": "^2.0.1",
     "@solidjs/meta": "^0.29.1",
     "@solidjs/router": "^0.9.0",
+    "@tailwindcss/typography": "^0.5.10",
     "@zentered/issue-forms-body-parser": "^2.1.4",
     "clsx": "^2.0.0",
     "graphql": "^16.8.1",

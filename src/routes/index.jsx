@@ -1,8 +1,13 @@
-import { For, splitProps } from 'solid-js'
+import { For, createResource, splitProps, Show } from 'solid-js'
 import clsx from 'clsx'
 import { Container } from '~/components/Container'
 import { GitHubIcon, LinkedInIcon } from '~/components/SocialIcons'
 import { A } from 'solid-start'
+import graphql from '~/lib/graphql.server.js'
+import fileQuery from '~/graphql/file.query.js'
+import issuesQuery from '~/graphql/issues.query.js'
+import bodyParser from '@zentered/issue-forms-body-parser'
+import { H1, H2, H3 } from '~/components/Atomic'
 
 function Photos() {
   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
@@ -41,23 +46,83 @@ function SocialLink(props) {
   )
 }
 
+function EventBox(props) {
+  const [issueData] = createResource(async () => {
+    const data = await bodyParser(props.event.body)
+    return data
+  })
+
+  return (
+    <article class="flex flex-col items-start justify-between">
+      <div class="relative w-full">
+        <img
+          src={props.event.imageUrl}
+          alt=""
+          class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+        />
+        <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+      </div>
+      <div class="max-w-xl">
+        <div class="mt-8 flex items-center gap-x-4 text-xs">
+          <time dateTime={issueData()?.date.date} class="text-gray-500">
+            {issueData()?.date.date}
+          </time>
+        </div>
+        <div class="group relative">
+          <H3>
+            <a href={props.event.href}>
+              <span class="absolute inset-0" />
+              <A href="/" class="">
+                {props.event.title}
+              </A>
+            </a>
+          </H3>
+        </div>
+        {/* <div class="relative mt-8 flex items-center gap-x-4">
+        <img
+          src={props.event.author.imageUrl}
+          alt=""
+          class="h-10 w-10 rounded-full bg-gray-100"
+        />
+        <div class="text-sm leading-6">
+          <p class="font-semibold text-gray-900">
+            <a href={props.event.author.href}>
+              <span class="absolute inset-0" />
+              {props.event.author.name}
+            </a>
+          </p>
+        </div>
+      </div> */}
+      </div>
+    </article>
+  )
+}
+
 export default function App() {
+  const [readmeFile] = graphql(fileQuery.gql, {
+    repository: 'home',
+    path: 'README.md',
+    ...fileQuery.vars
+  })
+  const [readmeData] = createResource(readmeFile, async () => {
+    const data = await bodyParser(readmeFile().repository.object.text)
+    return data
+  })
+  const [events] = graphql(issuesQuery.gql, {
+    repository: 'events',
+    ...issuesQuery.vars
+  })
+
   return (
     <>
-      <h1 class="text-black">Vite + Solid</h1>
       <Container class="mt-9">
         <div class="max-w-2xl">
-          <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Cyprus Developer Community
-          </h1>
-          <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            The Cyprus Developer Community is an umbrella for developer and
-            technology groups in Cyprus. You can join our Discord server (it's
-            like Slack, but for communities) to chat with other developers,
-            share your knowledge, and get help from other community members; or
-            join our regular events that we organize with our participating
-            groups.
-          </p>
+          <H1>Cyprus Developer Community</H1>
+          <Show when={readmeData}>
+            <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+              {readmeData()?.about?.content}
+            </p>
+          </Show>
           <div class="mt-6 flex gap-6">
             <SocialLink
               href="https://github.com/cyprus-developer-community"
@@ -73,6 +138,14 @@ export default function App() {
         </div>
       </Container>
       <Photos />
+      <Container class="bg-white py-24 sm:py-32">
+        <H2>Upcoming Events</H2>
+        <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          <For each={events()?.repository?.issues.nodes}>
+            {(event) => <EventBox event={event} />}
+          </For>
+        </div>
+      </Container>
     </>
   )
 }

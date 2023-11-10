@@ -12,6 +12,7 @@ export const ContainerOuter = (props) => {
 
 export const ContainerInner = (props) => {
   const [local, other] = splitProps(props, ['class', 'ref', 'children'])
+
   return (
     <div
       ref={local.ref}
@@ -25,6 +26,7 @@ export const ContainerInner = (props) => {
 
 export const Container = (props) => {
   const [local, other] = splitProps(props, ['children', 'ref'])
+
   return (
     <ContainerOuter ref={local.ref} {...other}>
       <ContainerInner>{local.children}</ContainerInner>

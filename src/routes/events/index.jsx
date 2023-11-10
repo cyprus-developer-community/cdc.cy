@@ -1,7 +1,7 @@
 import { Card } from '~/components/Card'
 import { formatDate } from '~/lib/formatDate'
 import issuesQuery from '~/graphql/issues.query.js'
-import graphql from '~/data/graphql.server.js'
+import graphql from '~/lib/graphql.server.js'
 import { useRouteData } from 'solid-start'
 import { For, createResource } from 'solid-js'
 import bodyParser from '@zentered/issue-forms-body-parser'
@@ -18,16 +18,16 @@ function EventLine(props) {
       <Card class="md:col-span-3">
         <Card.Title href={`/articles/${slug}`}>{props.event.title}</Card.Title>
         <Card.Description>
-          {issueData()['event-description'].text}
+          {issueData()?.['event-description'].text}
         </Card.Description>
         <Card.Cta>Event Details</Card.Cta>
       </Card>
       <Card.Eyebrow
         as="time"
-        dateTime={issueData().date.date}
+        dateTime={issueData()?.date.date}
         class="mt-1 hidden md:block"
       >
-        {formatDate(issueData().date.date)}
+        {formatDate(issueData()?.date.date)}
       </Card.Eyebrow>
     </article>
   )

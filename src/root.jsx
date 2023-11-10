@@ -16,7 +16,7 @@ import './root.css'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import announcementQuery from '~/graphql/announcement.query.js'
-import graphql from '~/data/graphql.server.js'
+import graphql from '~/lib/graphql.server.js'
 import { createMemo } from 'solid-js'
 
 const destructBody = (body) => {
