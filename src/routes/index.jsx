@@ -9,7 +9,7 @@ import {
 } from 'solid-js'
 import clsx from 'clsx'
 import { Container } from '~/components/Container'
-import { GitHubIcon, LinkedInIcon } from '~/components/SocialIcons'
+import { GitHubIcon, LinkedInIcon, DiscordIcon } from '~/components/SocialIcons'
 import { A } from 'solid-start'
 import graphql from '~/lib/graphql.server.js'
 import fileQuery from '~/graphql/file.query.js'
@@ -210,6 +210,11 @@ export default function App() {
               href="https://www.linkedin.com/groups/12659214/"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
+            />
+            <SocialLink
+              href="https://chat.cdc.cy"
+              aria-label="Join on Discord"
+              icon={DiscordIcon}
             />
           </div>
         </div>
