@@ -3,7 +3,7 @@ import solid from 'solid-start/vite'
 import devtools from 'solid-devtools/vite'
 import solidSvg from 'vite-plugin-solid-svg'
 // import cloudflare from 'solid-start-cloudflare-workers'
-import cloudflare from 'solid-start-cloudflare-pages'
+// import cloudflare from 'solid-start-cloudflare-pages'
 
 export default defineConfig({
   plugins: [
@@ -17,7 +17,7 @@ export default defineConfig({
     }),
     solidSvg(),
     solid({
-      adapter: cloudflare({})
+      // adapter: cloudflare({})
     })
   ],
   server: {
