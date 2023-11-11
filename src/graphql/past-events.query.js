@@ -6,7 +6,8 @@ export default {
       repository(owner: $organization, name: $repository) {
         issues(
           first: 100
-          states: OPEN
+          states: CLOSED
+          orderBy: { field: CREATED_AT, direction: DESC }
           labels: "Approved :white_check_mark:"
         ) {
           nodes {

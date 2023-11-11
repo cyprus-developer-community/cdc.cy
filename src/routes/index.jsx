@@ -14,7 +14,7 @@ import { A } from 'solid-start'
 import graphql from '~/lib/graphql.server.js'
 import fileQuery from '~/graphql/file.query.js'
 import organizationQuery from '~/graphql/organization.query.js'
-import issuesQuery from '~/graphql/issues.query.js'
+import issuesQuery from '~/graphql/upcoming-events.query.js'
 import bodyParser from '@zentered/issue-forms-body-parser'
 import { H1, H2, H3 } from '~/components/Atomic'
 
