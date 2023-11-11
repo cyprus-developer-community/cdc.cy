@@ -5,6 +5,7 @@ import graphql from '~/lib/graphql.server.js'
 import { useRouteData } from 'solid-start'
 import { For, createResource } from 'solid-js'
 import bodyParser from '@zentered/issue-forms-body-parser'
+import { SimpleLayout } from '~/components/SimpleLayout'
 
 function EventLine(props) {
   const [issueData] = createResource(async () => {
@@ -46,12 +47,14 @@ export default function Event() {
   const data = useRouteData()
 
   return (
-    <div class="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
-      <div class="flex flex-col space-y-16">
-        <For each={data()?.repository?.issues.nodes}>
-          {(event) => <EventLine event={event} />}
-        </For>
-      </div>
-    </div>
+    <SimpleLayout
+      title="Meet our team"
+      intro="We’re a dynamic group of individuals who are passionate about what
+      we do."
+    >
+      <For each={data()?.repository?.issues.nodes}>
+        {(event) => <EventLine event={event} />}
+      </For>
+    </SimpleLayout>
   )
 }

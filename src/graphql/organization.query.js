@@ -11,6 +11,20 @@ export default {
         membersWithRole {
           totalCount
         }
+        teams(first: 1, query: "Advocates") {
+          nodes {
+            name
+            members(first: 100, orderBy: { field: LOGIN, direction: ASC }) {
+              nodes {
+                name
+                login
+                url
+                avatarUrl
+                bio
+              }
+            }
+          }
+        }
       }
       repository(owner: $organization, name: $repository) {
         issues(labels: ["Approved :white_check_mark:", "Event :sparkles:"]) {

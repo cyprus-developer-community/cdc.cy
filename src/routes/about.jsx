@@ -1,11 +1,12 @@
 import { A } from 'solid-start'
-import { Container } from '~/components/Container'
-import Logo from '~/assets/cdc-logo.png'
 import { GitHubIcon, LinkedInIcon } from '~/components/SocialIcons'
 import clsx from 'clsx'
 import organizationQuery from '~/graphql/organization.query.js'
 import graphql from '~/lib/graphql.server.js'
 import { useRouteData } from 'solid-start'
+import { SimpleLayout } from '~/components/SimpleLayout'
+import { For } from 'solid-js'
+import { H2, H3 } from '~/components/Atomic'
 
 function SocialLink(props) {
   return (
@@ -41,52 +42,88 @@ export default function About() {
   const data = useRouteData()
 
   return (
-    <Container class="mt-16 sm:mt-32">
-      <div class="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
-        <div class="lg:pl-20">
-          <div class="max-w-xs px-2.5 lg:max-w-none">
-            <img
-              src={Logo}
-              alt=""
-              sizes="(min-width: 1024px) 32rem, 20rem"
-              class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
-            />
-          </div>
+    <SimpleLayout
+      title={data()?.organization?.name}
+      intro={data()?.organization?.description}
+    >
+      <div class="flex min-w-full">
+        <div class="w-1/3 mr-8">
+          <img
+            src="/assets/cdc-logo.svg"
+            alt="CDC Logo"
+            sizes="(min-width: 1024px) 32rem, 20rem"
+            class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-contain dark:bg-zinc-800"
+          />
         </div>
-        <div class="lg:order-first lg:row-span-2">
-          <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            {data()?.organization?.name}
-          </h1>
-          <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-            {data()?.organization?.description}
-          </div>
+        <ul role="list">
+          <SocialLink
+            href={data()?.organization?.url}
+            icon={GitHubIcon}
+            class="mt-4"
+          >
+            Follow on GitHub
+          </SocialLink>
+          <SocialLink
+            href="https://www.linkedin.com/groups/12659214/"
+            icon={LinkedInIcon}
+            class="mt-4"
+          >
+            Follow on LinkedIn
+          </SocialLink>
+          <SocialLink
+            href="mailto:contact@cdc.cy"
+            icon={MailIcon}
+            class="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+          >
+            contact@cdc.cy
+          </SocialLink>
+        </ul>
+      </div>
+
+      <div class="mt-16">
+        <div class="">
+          <H2 class="">Meet the team</H2>
+          <p class="">
+            We’re a dynamic group of individuals who are passionate about what
+            we do.
+          </p>
         </div>
-        <div class="lg:pl-20">
-          <ul role="list">
-            <SocialLink
-              href={data()?.organization?.url}
-              icon={GitHubIcon}
-              class="mt-4"
-            >
-              Follow on GitHub
-            </SocialLink>
-            <SocialLink
-              href="https://www.linkedin.com/groups/12659214/"
-              icon={LinkedInIcon}
-              class="mt-4"
-            >
-              Follow on LinkedIn
-            </SocialLink>
-            <SocialLink
-              href="mailto:contact@cdc.cy"
-              icon={MailIcon}
-              class="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-            >
-              contact@cdc.cy
-            </SocialLink>
+        <div class="mx-auto text-center">
+          <ul
+            role="list"
+            class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+          >
+            <For each={data()?.organization.teams.nodes[0].members.nodes}>
+              {(person) => (
+                <li>
+                  <img
+                    class="mx-auto h-56 w-56 rounded-full"
+                    src={person.avatarUrl}
+                    alt={person.name}
+                  />
+                  <H3 class="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">
+                    {person.name}
+                  </H3>
+                  <p class="text-sm leading-6 text-gray-600">
+                    {data()?.organization.teams.name}
+                  </p>
+                  <ul role="list" class="mt-6 flex justify-center gap-x-6">
+                    <li>
+                      <a
+                        href={person.url}
+                        class="text-gray-400 hover:text-gray-500"
+                      >
+                        <span class="sr-only">GitHub</span>
+                        <GitHubIcon class="h-5 w-5" />
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              )}
+            </For>
           </ul>
         </div>
       </div>
-    </Container>
+    </SimpleLayout>
   )
 }
