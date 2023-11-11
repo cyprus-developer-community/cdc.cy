@@ -58,14 +58,14 @@ function EventBox(props) {
       <A href={`/events/${props.event.number}`}>
         <div class="relative w-full">
           <Switch>
-            <Match when={issueData()?.['event-description']?.images?.[0]}>
+            <Match when={issueData()?.['featured-image']?.images?.[0]}>
               <img
-                src={issueData()?.['event-description']?.images?.[0]?.src}
-                alt={issueData()?.['event-description']?.images?.[0]?.alt}
+                src={issueData()?.['featured-image']?.images?.[0]?.src}
+                alt={issueData()?.['featured-image']?.images?.[0]?.alt}
                 class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </Match>
-            <Match when={!issueData()?.['event-description']?.images?.[0]}>
+            <Match when={!issueData()?.['featured-image']?.images?.[0]}>
               <img
                 src="/assets/cdc-logo.svg"
                 alt="Cyprus Developer Community Logo"
