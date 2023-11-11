@@ -1,4 +1,4 @@
-import { For, createResource, splitProps, Show } from 'solid-js'
+import { For, createResource, splitProps, Show, Switch, Match } from 'solid-js'
 import clsx from 'clsx'
 import { Container } from '~/components/Container'
 import { GitHubIcon, LinkedInIcon } from '~/components/SocialIcons'
@@ -39,6 +39,7 @@ function Photos() {
 
 function SocialLink(props) {
   const [local, other] = splitProps(props, ['icon'])
+
   return (
     <A class="group -m-1 p-1" {...other}>
       <local.icon class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
@@ -54,14 +55,27 @@ function EventBox(props) {
 
   return (
     <article class="flex flex-col items-start justify-between">
-      <div class="relative w-full">
-        <img
-          src={props.event.imageUrl}
-          alt=""
-          class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-        />
-        <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
-      </div>
+      <A href={`/events/${props.event.number}`}>
+        <div class="relative w-full">
+          <Switch>
+            <Match when={issueData()?.['event-description']?.images?.[0]}>
+              <img
+                src={issueData()?.['event-description']?.images?.[0]?.src}
+                alt={issueData()?.['event-description']?.images?.[0]?.alt}
+                class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+              />
+            </Match>
+            <Match when={!issueData()?.['event-description']?.images?.[0]}>
+              <img
+                src="/assets/cdc-logo.svg"
+                alt="Cyprus Developer Community Logo"
+                class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-contain sm:aspect-[2/1] lg:aspect-[3/2]"
+              />
+            </Match>
+          </Switch>
+          <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+        </div>
+      </A>
       <div class="max-w-xl">
         <div class="mt-8 flex items-center gap-x-4 text-xs">
           <time dateTime={issueData()?.date.date} class="text-gray-500">
@@ -72,9 +86,7 @@ function EventBox(props) {
           <H3>
             <a href={props.event.href}>
               <span class="absolute inset-0" />
-              <A href="/" class="">
-                {props.event.title}
-              </A>
+              <A href={`/events/${props.event.number}`}>{props.event.title}</A>
             </a>
           </H3>
         </div>
@@ -99,13 +111,13 @@ function EventBox(props) {
 }
 
 export default function App() {
-  const [readmeFile] = graphql(fileQuery.gql, {
+  const [readmeFile] = graphql(fileQuery.gql(), {
     repository: 'home',
     path: 'README.md',
     ...fileQuery.vars
   })
   const [readmeData] = createResource(readmeFile, async () => {
-    const data = await bodyParser(readmeFile().repository.object.text)
+    const data = await bodyParser(readmeFile()?.repository.object.text)
     return data
   })
   const [events] = graphql(issuesQuery.gql, {

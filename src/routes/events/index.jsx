@@ -11,12 +11,13 @@ function EventLine(props) {
     const data = await bodyParser(props.event.body)
     return data
   })
-  const slug = props.event.title
 
   return (
     <article class="md:grid md:grid-cols-4 md:items-baseline">
       <Card class="md:col-span-3">
-        <Card.Title href={`/articles/${slug}`}>{props.event.title}</Card.Title>
+        <Card.Title href={`/events/${props.event.number}`}>
+          {props.event.title}
+        </Card.Title>
         <Card.Description>
           {issueData()?.['event-description'].text}
         </Card.Description>

@@ -4,8 +4,14 @@ export default {
   gql: gql`
     query ($organization: String!, $repository: String!) {
       repository(owner: $organization, name: $repository) {
-        issues(first: 100, states: OPEN) {
+        issues(
+          first: 100
+          states: OPEN
+          labels: "Approved :white_check_mark:"
+        ) {
           nodes {
+            id
+            number
             title
             url
             body
