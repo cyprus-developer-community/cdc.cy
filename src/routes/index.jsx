@@ -232,3 +232,11 @@ export default function App() {
     </>
   )
 }
+
+// TODO: CTAs
+// - Subscribe calendar: https://calendar.cdc.cy
+// - Join Discord: https://chat.cdc.cy
+// - Follow on GitHub: https://github.com/cyprus-developer-community
+// - Follow on LinkedIn: https://www.linkedin.com/groups/12659214/
+// - Interact on GitHub to get invited to the organization
+// - Subscribe email: mailerlite
