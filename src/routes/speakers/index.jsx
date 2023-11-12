@@ -1,3 +1,4 @@
+import { A } from '@solidjs/router'
 import { For } from 'solid-js'
 import { useRouteData } from 'solid-start'
 import { SimpleLayout } from '~/components/SimpleLayout'
@@ -26,7 +27,9 @@ export default function Speakers() {
         <For each={data.authors}>
           {(person) => (
             <li class="flex flex-col gap-10 pt-12 sm:flex-row">
-              <Speaker person={person} />
+              <A href={`/speakers/${person}`} class="flex-none">
+                <Speaker person={person} />
+              </A>
             </li>
           )}
         </For>

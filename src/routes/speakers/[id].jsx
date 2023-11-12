@@ -1,11 +1,11 @@
-import { A } from 'solid-start'
+import { A, useParams } from 'solid-start'
 import { Container } from '~/components/Container'
-import Logo from '~/assets/cdc-logo.png'
-import { GitHubIcon, LinkedInIcon } from '~/components/SocialIcons'
+import { GitHubIcon } from '~/components/SocialIcons'
 import clsx from 'clsx'
-import organizationQuery from '~/graphql/organization.query.js'
 import graphql from '~/lib/graphql.server.js'
 import { useRouteData } from 'solid-start'
+import speakerQuery from '~/graphql/speaker.query'
+import fileQuery from '~/graphql/file.query'
 
 function SocialLink(props) {
   return (
@@ -21,20 +21,20 @@ function SocialLink(props) {
   )
 }
 
-function MailIcon(props) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
-      />
-    </svg>
-  )
-}
-
 export function routeData() {
-  const [data] = graphql(organizationQuery.gql, organizationQuery.vars)
-  return data
+  const params = useParams()
+  const [user] = graphql(speakerQuery.gql, {
+    login: params.id
+  })
+  // Fetch the "special repo" readme that's shown on a user profile page
+  const [readme] = graphql(fileQuery.gql('README.md'), {
+    repository: params.id,
+    organization: params.id
+  })
+  return {
+    user,
+    readme
+  }
 }
 
 export default function Speaker() {
@@ -46,7 +46,7 @@ export default function Speaker() {
         <div class="lg:pl-20">
           <div class="max-w-xs px-2.5 lg:max-w-none">
             <img
-              src={Logo}
+              src={data.user().user.avatarUrl}
               alt=""
               sizes="(min-width: 1024px) 32rem, 20rem"
               class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
@@ -55,34 +55,20 @@ export default function Speaker() {
         </div>
         <div class="lg:order-first lg:row-span-2">
           <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            {data()?.organization?.name}
+            {data.user().user.name}
           </h1>
           <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
-            {data()?.organization?.description}
+            {data.user().user.bio}
           </div>
         </div>
         <div class="lg:pl-20">
           <ul role="list">
             <SocialLink
-              href={data()?.organization?.url}
+              href={data.user().user.url}
               icon={GitHubIcon}
               class="mt-4"
             >
               Follow on GitHub
-            </SocialLink>
-            <SocialLink
-              href="https://www.linkedin.com/groups/12659214/"
-              icon={LinkedInIcon}
-              class="mt-4"
-            >
-              Follow on LinkedIn
-            </SocialLink>
-            <SocialLink
-              href="mailto:contact@cdc.cy"
-              icon={MailIcon}
-              class="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-            >
-              contact@cdc.cy
             </SocialLink>
           </ul>
         </div>

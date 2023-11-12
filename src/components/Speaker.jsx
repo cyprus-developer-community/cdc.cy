@@ -7,11 +7,6 @@ export default function Speaker(props) {
   const [user] = graphql(speakerQuery.gql, {
     login: props.person
   })
-  // Fetch the "special repo" readme that's shown on a user profile page
-  // const [readmeFile] = graphql(fileQuery.gql('README.md'), {
-  //   repository: props.person,
-  //   organization: props.person
-  // })
 
   return (
     <Show when={user}>
