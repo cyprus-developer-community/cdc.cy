@@ -7,7 +7,9 @@ import graphql from '~/lib/graphql.server'
 
 export function routeData() {
   const [data] = graphql(talksQuery.gql, talksQuery.vars)
-  const authors = data()?.repository?.issues?.nodes.map((t) => t.author.login)
+  const authors = data()
+    ?.repository?.issues?.nodes.map((t) => t.author.login)
+    .filter((t, i, a) => a.indexOf(t) === i)
   return {
     authors
   }
