@@ -2,3 +2,4 @@ name = "cdc-cy"
 compatibility_date = "2023-11-09"
 account_id = "271eeb53885906a3b50a8cb07c5f0763"
 compatibility_flags = [ "nodejs_compat" ]
+main = "./dist/server.js"
