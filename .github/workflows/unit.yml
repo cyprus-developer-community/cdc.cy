@@ -15,11 +15,11 @@ jobs:
   unit:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '${{ inputs.node-version }}'
-      - uses: pnpm/action-setup@v2.2.4
+      - uses: pnpm/action-setup@v2.4.0
         with:
           version: '${{ inputs.pnpm-version }}'
 

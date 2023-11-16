@@ -89,7 +89,7 @@
     "tailwindcss": "^3.3.5",
     "vite": "^4.5.0",
     "vite-plugin-solid": "^2.7.2",
-    "wrangler": "^3.15.0"
+    "wrangler": "^3.16.0"
   },
   "engines": {
     "node": ">=18"
