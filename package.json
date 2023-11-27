@@ -54,7 +54,7 @@
     "@octokit/auth-app": "^6.0.0",
     "@octokit/graphql": "^7.0.1",
     "@remix-run/node": "^1.19.3",
-    "@remix-run/react": "^1.19.3",
+    "@remix-run/react": "^2.3.1",
     "@remix-run/serve": "^1.19.3",
     "@remix-run/server-runtime": "^1.19.3",
     "@types/marked": "^5.0.1",
