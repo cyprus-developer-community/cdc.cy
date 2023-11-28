@@ -2,8 +2,8 @@ import { defineConfig } from 'vite'
 import solid from 'solid-start/vite'
 // import devtools from 'solid-devtools/vite'
 // import solidSvg from 'vite-plugin-solid-svg'
-import adapter from 'solid-start-cloudflare-workers'
-// import cloudflare from 'solid-start-cloudflare-pages'
+// import adapter from 'solid-start-cloudflare-workers'
+import adapter from 'solid-start-cloudflare-pages'
 // import staticSite from 'solid-start-static'
 
 export default defineConfig({
