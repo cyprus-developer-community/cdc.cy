@@ -1,4 +1,4 @@
-import { A, useParams } from 'solid-start'
+import { A, useParams } from '@solidjs/router'
 import { Container } from '~/components/Container'
 import { GitHubIcon } from '~/components/SocialIcons'
 import clsx from 'clsx'

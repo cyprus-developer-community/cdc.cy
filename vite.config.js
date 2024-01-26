@@ -1,30 +1,11 @@
-import { defineConfig } from 'vite'
-import solid from 'solid-start/vite'
-// import devtools from 'solid-devtools/vite'
-// import solidSvg from 'vite-plugin-solid-svg'
-// import adapter from 'solid-start-cloudflare-workers'
-import adapter from 'solid-start-cloudflare-pages'
-// import staticSite from 'solid-start-static'
-
+import { defineConfig } from '@solidjs/start/config'
 export default defineConfig({
-  plugins: [
-    // devtools({
-    //   locator: {
-    //     targetIDE: 'vscode',
-    //     componentLocation: true,
-    //     jsxLocation: true
-    //   },
-    //   autoname: true // e.g. enable autoname
-    // }),
-    // solidSvg(),
-    solid({
-      adapter: adapter({})
-    })
-  ],
-  server: {
-    port: 3000
+  start: {
+    server: {
+      preset: 'cloudflare_module',
+      rollupConfig: {
+        external: ['__STATIC_CONTENT_MANIFEST', 'node:async_hooks']
+      }
+    }
   }
-  // build: {
-  //   target: 'esnext'
-  // }
 })

@@ -1,6 +1,5 @@
 import { For } from 'solid-js'
-import { A } from 'solid-start'
-import Logo from '~/assets/cdc-logo.svg'
+import { A } from '@solidjs/router'
 
 const navItems = [
   {
@@ -70,11 +69,11 @@ export function Header() {
         </div>
         <A href="/" class="-m-1.5 p-1.5">
           <span class="sr-only">Cyprus Developer Community</span>
-          <Logo
+          <img
+            src="/assets/cdc-logo.svg"
             width="100%"
             height="100%"
             class="w-24 h-24"
-            viewBox="0 0 100 100"
           />
         </A>
         <div class="flex flex-1 justify-end" />

@@ -10,7 +10,7 @@ import {
 import clsx from 'clsx'
 import { Container } from '~/components/Container'
 import { GitHubIcon, LinkedInIcon, DiscordIcon } from '~/components/SocialIcons'
-import { A } from 'solid-start'
+import { A } from '@solidjs/router'
 import graphql from '~/lib/graphql.server.js'
 import fileQuery from '~/graphql/file.query.js'
 import organizationQuery from '~/graphql/organization.query.js'

@@ -3,10 +3,10 @@ import { formatDate } from '~/lib/formatDate'
 import upcomingEventsQuery from '~/graphql/upcoming-events.query.js'
 import pastEventsQuery from '~/graphql/past-events.query.js'
 import graphql from '~/lib/graphql.server.js'
-import { useRouteData } from 'solid-start'
 import { For, createResource } from 'solid-js'
 import bodyParser from '@zentered/issue-forms-body-parser'
 import { SimpleLayout } from '~/components/SimpleLayout'
+import { createAsync, cache } from '@solidjs/router'
 
 function EventLine(props) {
   const [issueData] = createResource(async () => {
@@ -61,36 +61,40 @@ function EventReduced(props) {
   )
 }
 
-export function routeData() {
-  const [upcoming] = graphql(upcomingEventsQuery.gql, {
+const getEvents = cache(async () => {
+  const [upcoming] = await graphql(upcomingEventsQuery.gql, {
     ...upcomingEventsQuery.vars,
     repository: 'events'
   })
-  const [past] = graphql(pastEventsQuery.gql, {
-    ...pastEventsQuery.vars,
-    repository: 'events'
-  })
-  return {
-    upcoming,
-    past
-  }
+  const data = upcoming()
+  console.log(data)
+  return data
+}, 'events')
+
+export const route = {
+  load: () => getEvents()
 }
 
 export default function Event() {
-  const data = useRouteData()
+  const events = createAsync(getEvents)
+
+  // const [past] = graphql(pastEventsQuery.gql, {
+  //   ...pastEventsQuery.vars,
+  //   repository: 'events'
+  // })
 
   return (
     <>
       <SimpleLayout title="Upcoming Events" intro="">
-        <For each={data.upcoming().repository?.issues.nodes}>
+        <For each={events.repository?.issues.nodes}>
           {(event) => <EventLine event={event} />}
         </For>
       </SimpleLayout>
-      <SimpleLayout title="Past Events" intro="">
-        <For each={data.past()?.repository?.issues.nodes}>
+      {/* <SimpleLayout title="Past Events" intro="">
+        <For each={events.past()?.repository?.issues.nodes}>
           {(event) => <EventReduced event={event} />}
         </For>
-      </SimpleLayout>
+      </SimpleLayout> */}
     </>
   )
 }

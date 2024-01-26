@@ -1,4 +1,4 @@
-import { A } from 'solid-start'
+import { A } from '@solidjs/router'
 import { GitHubIcon, LinkedInIcon } from '~/components/SocialIcons'
 import clsx from 'clsx'
 import organizationQuery from '~/graphql/organization.query.js'

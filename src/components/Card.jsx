@@ -1,6 +1,6 @@
 import clsx from 'clsx'
 import { splitProps } from 'solid-js'
-import { A } from 'solid-start'
+import { A } from '@solidjs/router'
 import { SolidMarkdown } from 'solid-markdown'
 
 function ChevronRightIcon(props) {
