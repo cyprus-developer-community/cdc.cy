@@ -10,7 +10,7 @@ import announcementQuery from '~/graphql/announcement.query.js'
 import graphql from '~/lib/graphql.server.js'
 import { createMemo } from 'solid-js'
 
-import './App.css'
+import './app.css'
 
 const destructBody = (body) => {
   const urlRegex = new RegExp(/(((https?:\/\/)|(www\.))[^\s]+)/g)
