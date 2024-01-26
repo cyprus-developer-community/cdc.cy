@@ -15,3 +15,4 @@ build
 /e2e-report/
 .solid
 dist
+.output
