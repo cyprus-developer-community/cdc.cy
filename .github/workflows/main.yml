@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: styfle/cancel-workflow-action@0.12.0
       - uses: actions/checkout@v4
-      - uses: superfly/flyctl-actions@1.4
+      - uses: superfly/flyctl-actions@1.5
         with:
           args:
             'deploy --app cdc-cy --remote-only --build-arg COMMIT_SHA=${{
