@@ -12,24 +12,24 @@ import { createMemo } from 'solid-js'
 
 import './app.css'
 
-const destructBody = (body) => {
-  const urlRegex = new RegExp(/(((https?:\/\/)|(www\.))[^\s]+)/g)
+// const destructBody = (body) => {
+//   const urlRegex = new RegExp(/(((https?:\/\/)|(www\.))[^\s]+)/g)
 
-  const [content, link] = body.split('\r\n\r\n')
-  const [text] = link.split(':')
-  const href = link.match(urlRegex)[0]
+//   const [content, link] = body.split('\r\n\r\n')
+//   const [text] = link.split(':')
+//   const href = link.match(urlRegex)[0]
 
-  return {
-    content: content,
-    linkText: text,
-    linkHref: href
-  }
-}
+//   return {
+//     content: content,
+//     linkText: text,
+//     linkHref: href
+//   }
+// }
 
 function Announcement(props) {
-  const announcement = createMemo(() =>
-    destructBody(props?.data?.repository?.discussions.nodes[0].body)
-  )
+  // const announcement = createMemo(() =>
+  //   destructBody(props?.data?.repository?.discussions.nodes[0].body)
+  // )
 
   return (
     <div class="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
@@ -57,7 +57,7 @@ function Announcement(props) {
           }}
         />
       </div>
-      <p class="text-sm leading-6 text-gray-900">
+      {/* <p class="text-sm leading-6 text-gray-900">
         {announcement()?.content}&nbsp;
         <A
           href={announcement()?.linkHref}
@@ -65,7 +65,7 @@ function Announcement(props) {
         >
           {announcement()?.linkText}&nbsp;<span aria-hidden="true">&rarr;</span>
         </A>
-      </p>
+      </p> */}
       <div class="flex flex-1 justify-end" />
     </div>
   )
