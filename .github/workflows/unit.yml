@@ -7,10 +7,6 @@ on:
         type: string
         required: false
         default: lts/hydrogen
-      pnpm-version:
-        type: string
-        required: false
-        default: 7.x
 jobs:
   unit:
     runs-on: ubuntu-20.04
@@ -19,12 +15,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '${{ inputs.node-version }}'
-      - uses: pnpm/action-setup@v2.4.0
-        with:
-          version: '${{ inputs.pnpm-version }}'
 
       - name: Install Node Modules
-        run: pnpm i
+        run: npm ci
 
       - name: Unit Tests
         run: npm run test:unit

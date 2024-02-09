@@ -7,32 +7,25 @@ on:
         type: string
         required: false
         default: lts/hydrogen
-      pnpm-version:
-        type: string
-        required: false
-        default: 7.x
 
 jobs:
   codequality:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2.4.0
-        with:
-          version: '${{ inputs.pnpm-version }}'
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ inputs.node-version }}
-          cache: 'pnpm'
+          cache: 'npm'
 
       - name: Install Node Modules
-        run: pnpm i
+        run: npm ci
 
       - name: Prettier
-        run: pnpm prettier:check
+        run: npm run prettier:check
 
       - name: Lint
-        run: pnpm lint:check
+        run: npm run lint:check
 
       # - name: Type check
       #   run: pnpm typecheck
