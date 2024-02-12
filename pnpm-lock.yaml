@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: false
@@ -12,8 +12,8 @@ dependencies:
     specifier: ^2.0.18
     version: 2.0.18(react@18.2.0)
   '@octokit/auth-app':
-    specifier: ^6.0.0
-    version: 6.0.0
+    specifier: ^6.0.3
+    version: 6.0.3
   '@octokit/graphql':
     specifier: ^7.0.1
     version: 7.0.1
@@ -2959,18 +2959,18 @@ packages:
       json-parse-even-better-errors: 2.3.1
     dev: true
 
-  /@octokit/auth-app@6.0.0:
-    resolution: {integrity: sha512-OKct7Rukf3g9DjpzcpdacQsdmd6oPrJ7fZND22JkjzhDvfhttUOnmh+qPS4kHhaNNyTxqSThnfrUWvkqNLd1nw==}
+  /@octokit/auth-app@6.0.3:
+    resolution: {integrity: sha512-9N7IlBAKEJR3tJgPSubCxIDYGXSdc+2xbkjYpk9nCyqREnH8qEMoMhiEB1WgoA9yTFp91El92XNXAi+AjuKnfw==}
     engines: {node: '>= 18'}
     dependencies:
       '@octokit/auth-oauth-app': 7.0.0
       '@octokit/auth-oauth-user': 4.0.0
       '@octokit/request': 8.1.1
       '@octokit/request-error': 5.0.0
-      '@octokit/types': 11.1.0
+      '@octokit/types': 12.4.0
       deprecation: 2.3.1
       lru-cache: 10.0.1
-      universal-github-app-jwt: 1.1.1
+      universal-github-app-jwt: 1.1.2
       universal-user-agent: 6.0.0
     dev: false
 
@@ -3089,6 +3089,10 @@ packages:
     resolution: {integrity: sha512-V8GImKs3TeQRxRtXFpG2wl19V7444NIOTDF24AWuIbmNaNYOQMWRbjcGDXV5B+0n887fgDcuMNOmlul+k+oJtw==}
     dev: false
 
+  /@octokit/openapi-types@19.1.0:
+    resolution: {integrity: sha512-6G+ywGClliGQwRsjvqVYpklIfa7oRPA0vyhPQG/1Feh+B+wU0vGH1JiJ5T25d3g1JZYBHzR2qefLi9x8Gt+cpw==}
+    dev: false
+
   /@octokit/plugin-paginate-rest@2.21.3(@octokit/core@3.6.0):
     resolution: {integrity: sha512-aCZTEf0y2h3OLbrgKkrfFdjRL6eSOo8komneVQJnYecAxIej7Bafor2xhuDJOIFau4pk0i/P28/XgtbyPF0ZHw==}
     peerDependencies:
@@ -3153,6 +3157,12 @@ packages:
     resolution: {integrity: sha512-Fz0+7GyLm/bHt8fwEqgvRBWwIV1S6wRRyq+V6exRKLVWaKGsuy6H9QFYeBVDV7rK6fO3XwHgQOPxv+cLj2zpXQ==}
     dependencies:
       '@octokit/openapi-types': 18.0.0
+    dev: false
+
+  /@octokit/types@12.4.0:
+    resolution: {integrity: sha512-FLWs/AvZllw/AGVs+nJ+ELCDZZJk+kY0zMen118xhL2zD0s1etIUHm1odgjP7epxYU1ln7SZxEUWYop5bhsdgQ==}
+    dependencies:
+      '@octokit/openapi-types': 19.1.0
     dev: false
 
   /@octokit/types@6.41.0:
@@ -4783,6 +4793,7 @@ packages:
 
   /bindings@1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
+    requiresBuild: true
     dependencies:
       file-uri-to-path: 1.0.0
     dev: true
@@ -6732,6 +6743,7 @@ packages:
 
   /file-uri-to-path@1.0.0:
     resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -9341,6 +9353,7 @@ packages:
 
   /node-addon-api@1.7.2:
     resolution: {integrity: sha512-ibPK3iA+vaY1eEjESkQkM0BbCqFOaZMiXRTtdB0u7b4djtY6JnsjvPdUHVMg6xQt3B8fpTTWHI9A+ADjM9frzg==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -11705,8 +11718,8 @@ packages:
       unist-util-is: 5.2.1
       unist-util-visit-parents: 5.1.3
 
-  /universal-github-app-jwt@1.1.1:
-    resolution: {integrity: sha512-G33RTLrIBMFmlDV4u4CBF7dh71eWwykck4XgaxaIVeZKOYZRAAxvcGMRFTUclVY6xoUPQvO4Ne5wKGxYm/Yy9w==}
+  /universal-github-app-jwt@1.1.2:
+    resolution: {integrity: sha512-t1iB2FmLFE+yyJY9+3wMx0ejB+MQpEVkH0gQv7dR6FZyltyq+ZZO0uDpbopxhrZ3SLEO4dCEkIujOMldEQ2iOA==}
     dependencies:
       '@types/jsonwebtoken': 9.0.2
       jsonwebtoken: 9.0.2
