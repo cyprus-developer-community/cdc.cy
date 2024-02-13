@@ -1,5 +1,5 @@
 import speakerQuery from '~/graphql/speaker.query'
-import graphql from '~/lib/graphql.server'
+import graphql from '~/server/graphql'
 import { Show } from 'solid-js'
 import { GitHubIcon } from './SocialIcons'
 

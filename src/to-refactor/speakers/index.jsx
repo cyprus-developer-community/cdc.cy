@@ -4,7 +4,7 @@ import { useRouteData } from 'solid-start'
 import { SimpleLayout } from '~/components/SimpleLayout'
 import Speaker from '~/components/Speaker'
 import talksQuery from '~/graphql/talks.query'
-import graphql from '~/lib/graphql.server'
+import graphql from '~/server/graphql'
 
 export function routeData() {
   const [data] = graphql(talksQuery.gql, talksQuery.vars)

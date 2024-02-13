@@ -1,17 +1,9 @@
-import {
-  For,
-  createResource,
-  splitProps,
-  Show,
-  Switch,
-  Match,
-  createMemo
-} from 'solid-js'
+import { For, splitProps, Show, Switch, Match, createMemo } from 'solid-js'
+import { A, createAsync, cache } from '@solidjs/router'
 import clsx from 'clsx'
 import { Container } from '~/components/Container'
 import { GitHubIcon, LinkedInIcon, DiscordIcon } from '~/components/SocialIcons'
-import { A } from '@solidjs/router'
-import graphql from '~/lib/graphql.server.js'
+import graphql from '~/server/graphql.js'
 import fileQuery from '~/graphql/file.query.js'
 import organizationQuery from '~/graphql/organization.query.js'
 import issuesQuery from '~/graphql/upcoming-events.query.js'
@@ -25,7 +17,7 @@ function Photos() {
     <div class="mt-16 sm:mt-20">
       <div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
         <For each={new Array(5)}>
-          {(image, imageIndex) => (
+          {(_, imageIndex) => (
             <div
               class={clsx(
                 'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
@@ -57,24 +49,23 @@ function SocialLink(props) {
 }
 
 function EventBox(props) {
-  const [issueData] = createResource(async () => {
-    const data = await bodyParser(props.event.body)
-    return data
-  })
+  const [local] = splitProps(props, ['event'])
+  const event = local.event
+  const issueData = event.parsed
 
   return (
     <article class="flex flex-col items-start justify-between">
-      <A href={`/events/${props.event.number}`}>
+      <A href={`/events/${event.number}`}>
         <div class="relative w-full">
           <Switch>
-            <Match when={issueData()?.['featured-image']?.images?.[0]}>
+            <Match when={issueData['featured-image']?.images?.[0]}>
               <img
-                src={issueData()?.['featured-image']?.images?.[0]?.src}
-                alt={issueData()?.['featured-image']?.images?.[0]?.alt}
+                src={issueData['featured-image']?.images?.[0]?.src}
+                alt={issueData['featured-image']?.images?.[0]?.alt}
                 class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </Match>
-            <Match when={!issueData()?.['featured-image']?.images?.[0]}>
+            <Match when={!issueData['featured-image']?.images?.[0]}>
               <img
                 src="/assets/cdc-logo.svg"
                 alt="Cyprus Developer Community Logo"
@@ -87,33 +78,33 @@ function EventBox(props) {
       </A>
       <div class="max-w-xl">
         <div class="mt-8 flex items-center gap-x-4 text-xs">
-          <time dateTime={issueData()?.date.date} class="text-gray-500">
-            {issueData()?.date.date}
+          <time dateTime={issueData.date.date} class="text-gray-500">
+            {issueData.date.date}
           </time>
         </div>
         <div class="group relative">
           <H3>
-            <a href={props.event.href}>
+            <a href={event.href}>
               <span class="absolute inset-0" />
-              <A href={`/events/${props.event.number}`}>{props.event.title}</A>
+              <A href={`/events/${event.number}`}>{event.title}</A>
             </a>
           </H3>
         </div>
         {/* <div class="relative mt-8 flex items-center gap-x-4">
-        <img
-          src={props.event.author.imageUrl}
-          alt=""
-          class="h-10 w-10 rounded-full bg-gray-100"
-        />
-        <div class="text-sm leading-6">
-          <p class="font-semibold text-gray-900">
-            <a href={props.event.author.href}>
-              <span class="absolute inset-0" />
-              {props.event.author.name}
-            </a>
-          </p>
-        </div>
-      </div> */}
+          <img
+            src={props.event.author.imageUrl}
+            alt=""
+            class="h-10 w-10 rounded-full bg-gray-100"
+          />
+          <div class="text-sm leading-6">
+            <p class="font-semibold text-gray-900">
+              <a href={props.event.author.href}>
+                <span class="absolute inset-0" />
+                {props.event.author.name}
+              </a>
+            </p>
+          </div>
+        </div> */}
       </div>
     </article>
   )
@@ -174,30 +165,48 @@ function Stats(props) {
   )
 }
 
-export default function App() {
-  const [readmeFile] = graphql(fileQuery.gql(), {
+const readmeData = cache(async () => {
+  'use server'
+  const readmeFile = await graphql(fileQuery.gql(), {
     repository: 'home',
     path: 'README.md',
     ...fileQuery.vars
   })
-  const [organization] = graphql(organizationQuery.gql, organizationQuery.vars)
-  const [readmeData] = createResource(readmeFile, async () => {
-    const data = await bodyParser(readmeFile()?.repository.object.text)
-    return data
-  })
-  const [events] = graphql(issuesQuery.gql, {
+  return bodyParser(readmeFile.repository.object.text)
+}, 'readmeData')
+
+const organizationData = cache(async () => {
+  return graphql(organizationQuery.gql, organizationQuery.vars)
+}, 'organizationData')
+
+const eventsData = cache(async () => {
+  const events = await graphql(issuesQuery.gql, {
     repository: 'events',
     ...issuesQuery.vars
   })
+  for (const event of events.repository.issues.nodes) {
+    event.parsed = await bodyParser(event.body)
+  }
+  return events
+}, 'eventsData')
+
+export const route = {
+  load: () => [eventsData(), readmeData(), organizationData()]
+}
+
+export default function App() {
+  const events = createAsync(eventsData)
+  const readme = createAsync(readmeData)
+  const organization = createAsync(organizationData)
 
   return (
     <>
       <Container class="mt-9">
         <div class="max-w-2xl">
           <H1>{organization()?.organization.name}</H1>
-          <Show when={readmeData}>
+          <Show when={readme}>
             <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-              {readmeData()?.about?.content}
+              {readme()?.about?.content}
             </p>
           </Show>
           <div class="mt-6 flex gap-6">
@@ -225,7 +234,7 @@ export default function App() {
         <H2>Upcoming Events</H2>
         <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           <For each={events()?.repository?.issues.nodes}>
-            {(event) => <EventBox event={event} />}
+            {(node) => <EventBox event={node} />}
           </For>
         </div>
       </Container>

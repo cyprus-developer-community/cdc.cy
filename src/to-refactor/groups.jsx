@@ -1,6 +1,6 @@
 import { A } from '@solidjs/router'
 import fileQuery from '~/graphql/file.query.js'
-import graphql from '~/lib/graphql.server.js'
+import graphql from '~/server/graphql.js'
 import { useRouteData } from 'solid-start'
 import { For, createResource } from 'solid-js'
 import { SimpleLayout } from '~/components/SimpleLayout'

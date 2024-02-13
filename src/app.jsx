@@ -7,8 +7,7 @@ import { FileRoutes } from '@solidjs/start'
 import { Header } from './components/Header'
 import { Footer } from './components/Footer'
 import announcementQuery from '~/graphql/announcement.query.js'
-import graphql from '~/lib/graphql.server.js'
-import { createMemo } from 'solid-js'
+import graphql from '~/server/graphql.js'
 
 import './app.css'
 
@@ -72,7 +71,7 @@ function Announcement(props) {
 }
 
 export default function App() {
-  const [data] = graphql(announcementQuery.gql, announcementQuery.vars)
+  // const [data] = graphql(announcementQuery.gql, announcementQuery.vars)
 
   return (
     <Router
@@ -80,9 +79,9 @@ export default function App() {
         <MetaProvider>
           <div class="h-full bg-zinc-50 dark:bg-black">
             <Title>Cyprus Developer Community - Home</Title>
-            <Show when={data()?.repository?.discussions.nodes[0].body}>
+            {/* <Show when={data()?.repository?.discussions.nodes[0].body}>
               <Announcement data={data()} />
-            </Show>
+            </Show> */}
             <Header />
             <Suspense>{props.children}</Suspense>
             <Footer />

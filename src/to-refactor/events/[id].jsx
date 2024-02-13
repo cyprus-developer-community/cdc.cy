@@ -1,4 +1,4 @@
-import graphql from '~/lib/graphql.server.js'
+import graphql from '~/server/graphql.js'
 import issueQuery from '~/graphql/issue.query.js'
 import { useParams, useRouteData } from 'solid-start'
 import { Match, Show, Switch, createMemo, createResource } from 'solid-js'

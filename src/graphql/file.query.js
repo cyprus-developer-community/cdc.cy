@@ -1,4 +1,4 @@
-import { gql } from '@solid-primitives/graphql'
+import { gql } from './utils.js'
 
 export default {
   gql: function (p) {
