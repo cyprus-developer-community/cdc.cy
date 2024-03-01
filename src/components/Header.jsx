@@ -1,4 +1,4 @@
-import { For } from 'solid-js'
+import { For, createSignal } from 'solid-js'
 import { A } from '@solidjs/router'
 
 const navItems = [
@@ -25,6 +25,8 @@ const navItems = [
 ]
 
 export function Header() {
+  const [menuOpen, setMenuOpen] = createSignal(false)
+
   return (
     <header class="">
       <nav
@@ -48,6 +50,7 @@ export function Header() {
             <button
               type="button"
               class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+              onClick={() => setMenuOpen(true)}
             >
               <span class="sr-only">Open main menu</span>
               <svg
@@ -78,7 +81,11 @@ export function Header() {
         </A>
         <div class="flex flex-1 justify-end" />
       </nav>
-      <div class="lg:hidden" role="dialog" aria-modal="true">
+      <div
+        class={menuOpen() ? 'lg:hidden' : 'hidden'}
+        role="dialog"
+        aria-modal="true"
+      >
         <div class="fixed inset-0 z-10" />
         <div class="fixed inset-y-0 left-0 z-10 w-full overflow-y-auto bg-white px-6 py-6">
           <div class="flex items-center justify-between">
@@ -86,6 +93,7 @@ export function Header() {
               <button
                 type="button"
                 class="-m-2.5 rounded-md p-2.5 text-gray-700"
+                onClick={() => setMenuOpen(false)}
               >
                 <span class="sr-only">Close menu</span>
                 <svg
