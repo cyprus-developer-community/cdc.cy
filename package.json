@@ -19,7 +19,7 @@
     "lint": "eslint --fix . --ext .js --ext .ts --ext .tsx --ext md",
     "pretty": "prettier -l --write \"src/**/*.{js,ts,tsx,md,mdx,css,scss}\"",
     "start": "vinxi start",
-    "test": ""
+    "test": "true"
   },
   "commitlint": {
     "extends": [

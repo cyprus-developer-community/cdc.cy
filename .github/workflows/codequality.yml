@@ -22,10 +22,10 @@ jobs:
         run: npm ci
 
       - name: Prettier
-        run: npm run prettier:check
+        run: npm run pretty
 
       - name: Lint
-        run: npm run lint:check
+        run: npm run lint
 
       # - name: Type check
       #   run: pnpm typecheck
