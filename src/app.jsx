@@ -1,5 +1,5 @@
 // @refresh reload
-import { Show, Suspense } from 'solid-js'
+import { Show, Suspense, createMemo, createResource } from 'solid-js'
 import { A } from '@solidjs/router'
 import { MetaProvider, Title } from '@solidjs/meta'
 import { Router } from '@solidjs/router'
@@ -11,24 +11,24 @@ import graphql from '~/server/graphql.js'
 
 import './app.css'
 
-// const destructBody = (body) => {
-//   const urlRegex = new RegExp(/(((https?:\/\/)|(www\.))[^\s]+)/g)
+const destructBody = (body) => {
+  const urlRegex = new RegExp(/(((https?:\/\/)|(www\.))[^\s]+)/g)
 
-//   const [content, link] = body.split('\r\n\r\n')
-//   const [text] = link.split(':')
-//   const href = link.match(urlRegex)[0]
+  const [content, link] = body.split('\r\n\r\n')
+  const [text] = link.split(':')
+  const href = link.match(urlRegex)[0]
 
-//   return {
-//     content: content,
-//     linkText: text,
-//     linkHref: href
-//   }
-// }
+  return {
+    content: content,
+    linkText: text,
+    linkHref: href
+  }
+}
 
 function Announcement(props) {
-  // const announcement = createMemo(() =>
-  //   destructBody(props?.data?.repository?.discussions.nodes[0].body)
-  // )
+  const announcement = createMemo(() =>
+    destructBody(props.announcement().repository.discussions.nodes[0].body)
+  )
 
   return (
     <div class="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1">
@@ -56,22 +56,25 @@ function Announcement(props) {
           }}
         />
       </div>
-      {/* <p class="text-sm leading-6 text-gray-900">
+      <p class="text-sm leading-6 text-gray-900">
         {announcement()?.content}&nbsp;
         <A
           href={announcement()?.linkHref}
           class="whitespace-nowrap font-semibold"
         >
-          {announcement()?.linkText}&nbsp;<span aria-hidden="true">&rarr;</span>
+          {announcement()?.linkText}&nbsp;
+          <span aria-hidden="true">&rarr;</span>
         </A>
-      </p> */}
+      </p>
       <div class="flex flex-1 justify-end" />
     </div>
   )
 }
 
 export default function App() {
-  // const [data] = graphql(announcementQuery.gql, announcementQuery.vars)
+  const [announcement] = createResource(async () => {
+    return graphql(announcementQuery.gql, announcementQuery.vars)
+  })
 
   return (
     <Router
@@ -79,9 +82,11 @@ export default function App() {
         <MetaProvider>
           <div class="h-full bg-zinc-50 dark:bg-black">
             <Title>Cyprus Developer Community - Home</Title>
-            {/* <Show when={data()?.repository?.discussions.nodes[0].body}>
-              <Announcement data={data()} />
-            </Show> */}
+            <Suspense>
+              <Show when={announcement()}>
+                <Announcement announcement={announcement} />
+              </Show>
+            </Suspense>
             <Header />
             <Suspense>{props.children}</Suspense>
             <Footer />

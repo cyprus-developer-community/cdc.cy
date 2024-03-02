@@ -50,22 +50,21 @@ function SocialLink(props) {
 
 function EventBox(props) {
   const [local] = splitProps(props, ['event'])
-  const event = local.event
-  const issueData = event.parsed
+  const issueData = createMemo(() => local.event.parsed)
 
   return (
     <article class="flex flex-col items-start justify-between">
-      <A href={`/events/${event.number}`}>
+      <A href={`/events/${local.event.number}`}>
         <div class="relative w-full">
           <Switch>
-            <Match when={issueData['featured-image']?.images?.[0]}>
+            <Match when={issueData()['featured-image']?.images?.[0]}>
               <img
-                src={issueData['featured-image']?.images?.[0]?.src}
-                alt={issueData['featured-image']?.images?.[0]?.alt}
+                src={issueData()['featured-image']?.images?.[0]?.src}
+                alt={issueData()['featured-image']?.images?.[0]?.alt}
                 class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
               />
             </Match>
-            <Match when={!issueData['featured-image']?.images?.[0]}>
+            <Match when={!issueData()['featured-image']?.images?.[0]}>
               <img
                 src="/assets/cdc-logo.svg"
                 alt="Cyprus Developer Community Logo"
@@ -78,15 +77,15 @@ function EventBox(props) {
       </A>
       <div class="max-w-xl">
         <div class="mt-8 flex items-center gap-x-4 text-xs">
-          <time dateTime={issueData.date.date} class="text-gray-500">
-            {issueData.date.date}
+          <time dateTime={issueData().date.date} class="text-gray-500">
+            {issueData().date.date}
           </time>
         </div>
         <div class="group relative">
           <H3>
-            <a href={event.href}>
+            <a href={local.event.href}>
               <span class="absolute inset-0" />
-              <A href={`/events/${event.number}`}>{event.title}</A>
+              <A href={`/events/${local.event.number}`}>{local.event.title}</A>
             </a>
           </H3>
         </div>
