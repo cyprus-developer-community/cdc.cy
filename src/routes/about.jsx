@@ -1,21 +1,22 @@
-import { A } from '@solidjs/router'
 import { GitHubIcon, LinkedInIcon } from '~/components/SocialIcons'
 import clsx from 'clsx'
 import organizationQuery from '~/graphql/organization.query.js'
 import graphql from '~/server/graphql.js'
-import { useRouteData } from 'solid-start'
-import { SimpleLayout } from '~/components/SimpleLayout'
-import { For } from 'solid-js'
+import { Container } from '~/components/Container'
+import { For, splitProps } from 'solid-js'
+import { A, createAsync, cache } from '@solidjs/router'
 import { H2, H3 } from '~/components/Atomic'
 
 function SocialLink(props) {
+  const [local, other] = splitProps(props, ['icon'])
+
   return (
     <li class={clsx(props.class, 'flex')}>
       <A
-        href={props.href}
+        {...other}
         class="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
       >
-        <props.icon class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <local.icon class="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
         <span class="ml-4">{props.children}</span>
       </A>
     </li>
@@ -33,19 +34,19 @@ function MailIcon(props) {
   )
 }
 
-export function routeData() {
-  const [data] = graphql(organizationQuery.gql, organizationQuery.vars)
-  return data
+const organizationData = cache(async () => {
+  return graphql(organizationQuery.gql, organizationQuery.vars)
+}, 'organizationData')
+
+export const route = {
+  load: () => [organizationData()]
 }
 
 export default function About() {
-  const data = useRouteData()
+  const organization = createAsync(organizationData)
 
   return (
-    <SimpleLayout
-      title={data()?.organization?.name}
-      intro={data()?.organization?.description}
-    >
+    <Container class="mt-9">
       <div class="flex min-w-full">
         <div class="w-1/3 mr-8">
           <img
@@ -57,7 +58,7 @@ export default function About() {
         </div>
         <ul role="list">
           <SocialLink
-            href={data()?.organization?.url}
+            href={'https://github.com/cyprus-developer-community'}
             icon={GitHubIcon}
             class="mt-4"
           >
@@ -93,7 +94,9 @@ export default function About() {
             role="list"
             class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           >
-            <For each={data()?.organization.teams.nodes[0].members.nodes}>
+            <For
+              each={organization()?.organization.teams.nodes[0].members.nodes}
+            >
               {(person) => (
                 <li>
                   <img
@@ -105,7 +108,7 @@ export default function About() {
                     {person.name}
                   </H3>
                   <p class="text-sm leading-6 text-gray-600">
-                    {data()?.organization.teams.name}
+                    {organization()?.organization.teams.name}
                   </p>
                   <ul role="list" class="mt-6 flex justify-center gap-x-6">
                     <li>
@@ -124,6 +127,6 @@ export default function About() {
           </ul>
         </div>
       </div>
-    </SimpleLayout>
+    </Container>
   )
 }
