@@ -13,7 +13,7 @@ export function SimpleLayout(props) {
           {local.intro}
         </p>
       </header>
-      {local.children && <div class="mt-16 sm:mt-20">{local.children}</div>}
+      <div class="mt-16 sm:mt-20">{local.children}</div>
     </Container>
   )
 }

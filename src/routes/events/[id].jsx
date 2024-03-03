@@ -1,67 +1,56 @@
 import graphql from '~/server/graphql.js'
 import issueQuery from '~/graphql/issue.query.js'
-import { useParams, useRouteData } from 'solid-start'
-import { Match, Show, Switch, createMemo, createResource } from 'solid-js'
+import fileQuery from '~/graphql/file.query.js'
+import { Match, Show, Switch, createMemo } from 'solid-js'
 import bodyParser from '@zentered/issue-forms-body-parser'
 import { SolidMarkdown } from 'solid-markdown'
 import { Prose } from '~/components/Prose'
 import { formatDate } from '~/lib/formatDate'
-import fileQuery from '~/graphql/file.query.js'
-import { A } from '@solidjs/router'
+import { A, useParams, createAsync, cache } from '@solidjs/router'
 import { SimpleLayout } from '~/components/SimpleLayout'
 
-export function routeData() {
+const eventsData = cache(async () => {
   const params = useParams()
-  const [data] = graphql(issueQuery.gql, {
+  const issue = await graphql(issueQuery.gql, {
     ...issueQuery.vars,
     repository: 'events',
     number: parseInt(params.id)
   })
+  issue.parsedBody = await bodyParser(issue.repository.issue.body)
+  return issue
+}, 'eventsData')
 
-  const [locationsFile] = graphql(fileQuery.gql('locations.json'), {
+const locationsFile = cache(async () => {
+  const file = await graphql(fileQuery.gql('locations.json'), {
     ...fileQuery.vars,
     repository: 'events'
   })
+  return JSON.parse(file.repository.object.text)
+}, 'locationsFile')
 
-  const [issueData] = createResource(data, async () => {
-    const issue = await bodyParser(data()?.repository.issue.body)
-    return issue
-  })
-
-  const locations = createMemo(() => {
-    if (locationsFile()) {
-      return JSON.parse(locationsFile().repository.object.text)
-    }
-  })
-
-  const location = locations()?.find((l) => l.id === issueData()?.location.text)
-
-  return {
-    data,
-    issueData,
-    location
-  }
+export const route = {
+  load: () => [eventsData(), locationsFile()]
 }
 
 export default function Event() {
-  const { data, issueData, location } = useRouteData()
+  const issueData = createAsync(eventsData)
+  const locationsList = createAsync(locationsFile)
+  const location = createMemo(() => {
+    locationsList()?.find((l) => l.id === issueData()?.parsedBody.location.text)
+  })
 
   return (
-    <SimpleLayout
-      title="Meet our team"
-      intro="We’re a dynamic group of individuals who are passionate about what
-      we do."
-    >
+    <SimpleLayout title="Upcoming Event" intro="">
       <Switch>
-        <Match when={issueData()?.['featured-image']?.images?.[0]}>
+        <Match when={issueData()?.parsedBody['featured-image']?.images[0]}>
           <img
-            src={issueData()['featured-image']?.images?.[0]?.src}
-            alt={issueData()['featured-image']?.images?.[0]?.alt}
+            src={issueData()['featured-image']?.images[0]?.src}
+            alt={issueData()['featured-image']?.images[0]?.alt}
             sizes="(min-width: 1024px) 32rem, 20rem"
             class="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
           />
         </Match>
-        <Match when={!issueData()?.['featured-image']?.images}>
+        <Match when={!issueData()?.parsedBody['featured-image']?.images}>
           <img
             src="/assets/cdc-logo.svg"
             alt="CDC logo"
@@ -72,20 +61,20 @@ export default function Event() {
       </Switch>
       <div class="lg:pl-20">
         <dl class="w-64 space-y-8 xl:w-80">
-          <Show when={location}>
+          <Show when={location() && location().name}>
             <div class="flex flex-col-reverse gap-y-4">
               <dt class="text-base leading-7 text-gray-600">
-                {location.name}, {location.city}
+                {location().name}, {location().city}
                 <br />
-                <Show when={location.what3words}>
+                <Show when={location().what3words}>
                   <A
-                    href={`https://w3w.co/${location.what3words.replace(
+                    href={`https://w3w.co/${location().what3words.replace(
                       '///',
                       ''
                     )}`}
                     target="_blank"
                   >
-                    {location.what3words}
+                    {location().what3words}
                   </A>
                 </Show>
               </dt>
@@ -98,10 +87,10 @@ export default function Event() {
         <dl class="w-64 space-y-8 xl:w-80">
           <div class="flex flex-col-reverse gap-y-4">
             <dt class="text-base leading-7 text-gray-600">
-              {formatDate(issueData()?.['date'].date)} -{' '}
-              {issueData()?.['time'].time}
+              {formatDate(issueData()?.parsedBody.date.date)} -{' '}
+              {issueData()?.parsedBody['time'].time}
               <br />
-              Duration: {issueData()?.['duration'].text}
+              Duration: {issueData()?.parsedBody['duration'].text}
             </dt>
             <dd class="text-5xl font-semibold tracking-tight text-gray-900">
               When
@@ -109,11 +98,11 @@ export default function Event() {
           </div>
         </dl>
         <dl class="w-64 space-y-8 xl:w-80">
-          <Show when={issueData()?.['code-of-conduct']}>
+          <Show when={issueData()?.parsedBody['code-of-conduct']}>
             <div class="flex flex-col-reverse gap-y-4">
               <dt class="text-base leading-7 text-gray-600">
                 <SolidMarkdown>
-                  {issueData()['code-of-conduct'].list[0].text}
+                  {issueData()?.parsedBody['code-of-conduct'].list[0].text}
                 </SolidMarkdown>
               </dt>
               <dd class="text-5xl font-semibold tracking-tight text-gray-900">
@@ -123,23 +112,23 @@ export default function Event() {
           </Show>
         </dl>
       </div>
-      <Show when={issueData()?.['date']}>
+      <Show when={issueData()?.parsedBody.date}>
         <div class="lg:order-first lg:row-span-2">
           <time
             class={
               'relative z-10 order-first mb-3 flex items-center text-sm text-zinc-800 dark:text-zinc-500 pl-3.5'
             }
           >
-            {formatDate(issueData()?.['date'].date)} -{' '}
-            {issueData()['time'].time}
+            {formatDate(issueData()?.parsedBody.date.date)} -{' '}
+            {issueData()?.parsedBody['time'].time}
           </time>
           <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            {data()?.repository.issue.title}
+            {issueData()?.repository.issue.title}
           </h1>
           <div class="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <Prose>
               <SolidMarkdown>
-                {issueData()?.['event-description'].text}
+                {issueData()?.parsedBody['event-description'].text}
               </SolidMarkdown>
             </Prose>
           </div>

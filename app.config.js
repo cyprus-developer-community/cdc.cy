@@ -9,10 +9,10 @@ export default defineConfig({
     preset: 'cloudflare_module',
     rollupConfig: {
       external: ['__STATIC_CONTENT_MANIFEST', 'node:async_hooks']
-    },
-    prerender: {
-      crawlLinks: true
     }
+    // prerender: {
+    //   routes: ['/']
+    // }
   },
   vite: {
     optimizeDeps: {
