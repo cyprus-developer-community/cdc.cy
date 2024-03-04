@@ -77,7 +77,7 @@
     "@graphql-codegen/cli": "5.0.0",
     "@graphql-codegen/typed-document-node": "^5.0.1",
     "@graphql-codegen/typescript": "^4.0.1",
-    "@graphql-codegen/typescript-operations": "^4.0.1",
+    "@graphql-codegen/typescript-operations": "^4.2.0",
     "@playwright/test": "^1.37.1",
     "@remix-run/dev": "^1.19.3",
     "@remix-run/eslint-config": "^1.19.3",
