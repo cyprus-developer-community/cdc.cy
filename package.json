@@ -91,7 +91,7 @@
     "@unocss/reset": "^0.55.7",
     "@vitejs/plugin-react": "^4.0.4",
     "eslint": "^8.48.0",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-markdown": "^3.0.1",
     "husky": "8.0.3",
