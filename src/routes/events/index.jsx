@@ -63,7 +63,7 @@ export default function Event() {
       <SimpleLayout title="Upcoming Events" intro="">
         <Suspense>
           <Show when={events()}>
-            <For each={events().repository.issues.nodes}>
+            <For each={events()?.repository?.issues?.nodes}>
               {(event) => <EventLine event={event} />}
             </For>
           </Show>

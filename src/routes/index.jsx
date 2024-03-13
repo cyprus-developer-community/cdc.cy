@@ -114,7 +114,7 @@ function Stats(props) {
     return [
       {
         name: 'GitHub Organization Members',
-        value: props.organization()?.organization.membersWithRole.totalCount
+        value: props.organization()?.organization?.membersWithRole?.totalCount
       },
       {
         name: 'Users on Discord',
@@ -123,7 +123,7 @@ function Stats(props) {
       },
       {
         name: 'Events',
-        value: props.organization()?.repository.issues.totalCount
+        value: props.organization()?.repository?.issues?.totalCount
       },
       {
         name: 'Cyprus',
@@ -184,7 +184,7 @@ const eventsData = cache(async () => {
     ...issuesQuery.vars
   })
   for (const event of events.repository.issues.nodes) {
-    event.parsed = await bodyParser(event.body)
+    event.parsed = await bodyParser(event?.body)
   }
   return events
 }, 'eventsData')
