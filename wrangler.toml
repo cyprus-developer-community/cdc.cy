@@ -1,5 +1,15 @@
 name = "cdc-cy"
 compatibility_date = "2023-11-09"
 account_id = "271eeb53885906a3b50a8cb07c5f0763"
+
+main = "./.output/server/index.mjs"
+type = "javascript"
+route = "start.solidjs.com/*"
 compatibility_flags = [ "nodejs_compat" ]
 
+rules = [
+  { type = "ESModule", globs = ["**/*.js", "**/*.mjs"]},
+]
+
+[site]
+bucket = ".output/public"

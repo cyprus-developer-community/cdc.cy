@@ -11,7 +11,7 @@ export default defineConfig({
       external: ['__STATIC_CONTENT_MANIFEST', 'node:async_hooks']
     },
     prerender: {
-      routes: ['/']
+      crawlLinks: true
     }
   },
   vite: {
