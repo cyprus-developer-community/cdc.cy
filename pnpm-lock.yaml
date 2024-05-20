@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: false
@@ -80,8 +80,8 @@ devDependencies:
     specifier: 5.0.0
     version: 5.0.0(@types/node@20.5.9)(graphql@16.8.0)(typescript@5.2.2)
   '@graphql-codegen/typed-document-node':
-    specifier: ^5.0.1
-    version: 5.0.1(graphql@16.8.0)
+    specifier: ^5.0.7
+    version: 5.0.7(graphql@16.8.0)
   '@graphql-codegen/typescript':
     specifier: ^4.0.1
     version: 4.0.1(graphql@16.8.0)
@@ -2305,6 +2305,20 @@ packages:
       tslib: 2.5.3
     dev: true
 
+  /@graphql-codegen/plugin-helpers@5.0.4(graphql@16.8.0):
+    resolution: {integrity: sha512-MOIuHFNWUnFnqVmiXtrI+4UziMTYrcquljaI5f/T/Bc7oO7sXcfkAvgkNWEEi9xWreYwvuer3VHCuPI/lAFWbw==}
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      '@graphql-tools/utils': 10.0.6(graphql@16.8.0)
+      change-case-all: 1.0.15
+      common-tags: 1.8.2
+      graphql: 16.8.0
+      import-from: 4.0.0
+      lodash: 4.17.21
+      tslib: 2.6.2
+    dev: true
+
   /@graphql-codegen/schema-ast@4.0.0(graphql@16.8.0):
     resolution: {integrity: sha512-WIzkJFa9Gz28FITAPILbt+7A8+yzOyd1NxgwFh7ie+EmO9a5zQK6UQ3U/BviirguXCYnn+AR4dXsoDrSrtRA1g==}
     peerDependencies:
@@ -2316,17 +2330,17 @@ packages:
       tslib: 2.5.3
     dev: true
 
-  /@graphql-codegen/typed-document-node@5.0.1(graphql@16.8.0):
-    resolution: {integrity: sha512-VFkhCuJnkgtbbgzoCAwTdJe2G1H6sd3LfCrDqWUrQe53y2ukfSb5Ov1PhAIkCBStKCMQBUY9YgGz9GKR40qQ8g==}
+  /@graphql-codegen/typed-document-node@5.0.7(graphql@16.8.0):
+    resolution: {integrity: sha512-rgFh96hAbNwPUxLVlRcNhGaw2+y7ZGx7giuETtdO8XzPasTQGWGRkZ3wXQ5UUiTX4X3eLmjnuoXYKT7HoxSznQ==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
-      '@graphql-codegen/plugin-helpers': 5.0.1(graphql@16.8.0)
-      '@graphql-codegen/visitor-plugin-common': 4.0.1(graphql@16.8.0)
+      '@graphql-codegen/plugin-helpers': 5.0.4(graphql@16.8.0)
+      '@graphql-codegen/visitor-plugin-common': 5.2.0(graphql@16.8.0)
       auto-bind: 4.0.0
       change-case-all: 1.0.15
       graphql: 16.8.0
-      tslib: 2.5.3
+      tslib: 2.6.2
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -2380,6 +2394,27 @@ packages:
       graphql-tag: 2.12.6(graphql@16.8.0)
       parse-filepath: 1.0.2
       tslib: 2.5.3
+    transitivePeerDependencies:
+      - encoding
+      - supports-color
+    dev: true
+
+  /@graphql-codegen/visitor-plugin-common@5.2.0(graphql@16.8.0):
+    resolution: {integrity: sha512-0p8AwmARaZCAlDFfQu6Sz+JV6SjbPDx3y2nNM7WAAf0au7Im/GpJ7Ke3xaIYBc1b2rTZ+DqSTJI/zomENGD9NA==}
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      '@graphql-codegen/plugin-helpers': 5.0.4(graphql@16.8.0)
+      '@graphql-tools/optimize': 2.0.0(graphql@16.8.0)
+      '@graphql-tools/relay-operation-optimizer': 7.0.0(graphql@16.8.0)
+      '@graphql-tools/utils': 10.0.6(graphql@16.8.0)
+      auto-bind: 4.0.0
+      change-case-all: 1.0.15
+      dependency-graph: 0.11.0
+      graphql: 16.8.0
+      graphql-tag: 2.12.6(graphql@16.8.0)
+      parse-filepath: 1.0.2
+      tslib: 2.6.2
     transitivePeerDependencies:
       - encoding
       - supports-color
@@ -4783,6 +4818,7 @@ packages:
 
   /bindings@1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
+    requiresBuild: true
     dependencies:
       file-uri-to-path: 1.0.0
     dev: true
@@ -6732,6 +6768,7 @@ packages:
 
   /file-uri-to-path@1.0.0:
     resolution: {integrity: sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==}
+    requiresBuild: true
     dev: true
     optional: true
 
@@ -9341,6 +9378,7 @@ packages:
 
   /node-addon-api@1.7.2:
     resolution: {integrity: sha512-ibPK3iA+vaY1eEjESkQkM0BbCqFOaZMiXRTtdB0u7b4djtY6JnsjvPdUHVMg6xQt3B8fpTTWHI9A+ADjM9frzg==}
+    requiresBuild: true
     dev: true
     optional: true
 
