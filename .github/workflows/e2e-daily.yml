@@ -10,4 +10,3 @@ jobs:
     uses: ./.github/workflows/e2e.yml
     with:
       node-version: lts/hydrogen
-      pnpm-version: 7.x
