@@ -1,7 +1,0 @@
-export * from './getParticipatingGroups'
-export * from './getParticipatingGroup'
-export * from './getAllEvents'
-export * from './getPastEvents'
-export * from './getUpcomingEvents'
-export * from './getLocations'
-export * from './getEvent'
