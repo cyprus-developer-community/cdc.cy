@@ -23,6 +23,11 @@ try {
   stats = calculateOrganizationStats(upcomingEvents, pastEvents)
 } catch (error) {
   console.error('Error fetching data:', error)
+  // Ensure we have empty arrays even on error
+  upcomingEvents = []
+  pastEvents = []
+  teamMembers = []
+  stats = calculateOrganizationStats([], [])
 }
 
 const photoRotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
