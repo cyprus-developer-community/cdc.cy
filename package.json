@@ -1,7 +1,7 @@
 {
   "name": "cdc.cy",
   "version": "2.0.0",
-  "description": "Cyprus Developer Communtiy",
+  "description": "Cyprus Developer Community",
   "bugs": {
     "url": "https://github.com/cyprus-developer-community/cdc.cy/issues"
   },
@@ -13,12 +13,12 @@
   ],
   "type": "module",
   "scripts": {
-    "build": "vinxi build",
-    "dev": "vinxi dev",
-    "gqlgen": "graphql-codegen --config codegen.yml",
-    "lint": "eslint --fix . --ext .js --ext .ts --ext .tsx --ext md",
-    "pretty": "prettier -l --write \"src/**/*.{js,ts,tsx,md,mdx,css,scss}\"",
-    "start": "vinxi start",
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "lint": "eslint --fix .",
+    "pretty": "prettier -l --write \"src/**/*.{js,jsx,md,css}\"",
+    "start": "astro dev",
     "test": "true"
   },
   "commitlint": {
@@ -27,64 +27,45 @@
     ]
   },
   "lint-staged": {
-    "*.{ts,js,tsx,jsx,json,md,yaml}": [
+    "*.{js,jsx,json,md,yaml}": [
       "prettier --write"
     ],
-    "*.{ts,js,tsx,jsx}": [
-      "eslint --cache --fix",
-      "npm run test related"
-    ],
-    "*.{ts,tsx}": [
-      "tsc-files --noEmit"
+    "*.{js,jsx}": [
+      "eslint --cache --fix"
     ]
   },
-  "eslintIgnore": [
-    "/node_modules",
-    "/build",
-    "/public/build"
-  ],
   "release": {
     "branches": [
       "main"
     ]
   },
   "dependencies": {
-    "@octokit/auth-app": "^6.0.4",
-    "@octokit/core": "^6.0.1",
-    "@solidjs/meta": "^0.29.3",
-    "@solidjs/router": "^0.13.1",
-    "@solidjs/start": "^0.7.7",
-    "@tailwindcss/typography": "^0.5.12",
+    "@astrojs/cloudflare": "^12.6.10",
+    "@astrojs/solid-js": "^5.1.2",
     "@zentered/issue-forms-body-parser": "^2.2.0",
-    "clsx": "^2.1.0",
-    "graphql": "^16.8.1",
-    "solid-heroicons": "^3.2.4",
-    "solid-js": "^1.8.16",
-    "solid-markdown": "^2.0.1",
-    "solid-start-cloudflare-pages": "^0.3.11",
-    "undici": "^6.10.2",
-    "vinxi": "^0.3.11",
-    "vite-plugin-solid-svg": "^0.8.1"
+    "astro": "^5.15.2",
+    "gitevents-fetch": "^1.4.0",
+    "solid-js": "^1.9.10"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^19.1.0",
-    "@graphql-codegen/cli": "^5.0.2",
-    "@graphql-codegen/typed-document-node": "^5.0.6",
-    "@graphql-codegen/typescript": "^4.0.6",
-    "@graphql-codegen/typescript-operations": "^4.2.0",
-    "@graphql-typed-document-node/core": "^3.2.0",
-    "@solidjs/testing-library": "^0.8.7",
-    "autoprefixer": "^10.4.19",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-markdown": "^4.0.1",
-    "eslint-plugin-solid": "^0.13.2",
-    "lint-staged": "^15.2.2",
-    "prettier": "^3.2.5",
-    "tailwindcss": "^3.4.3",
-    "vite": "^5.2.7",
-    "vite-plugin-solid": "^2.10.2",
-    "wrangler": "^3.41.0"
+    "@commitlint/config-conventional": "^20.0.0",
+    "@eslint/js": "^9.38.0",
+    "@playwright/test": "^1.56.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "@tailwindcss/vite": "^4.1.16",
+    "autoprefixer": "^10.4.21",
+    "clsx": "^2.1.1",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-markdown": "^5.1.0",
+    "eslint-plugin-solid": "^0.14.5",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.1.16",
+    "vite": "^7.1.12",
+    "vite-plugin-graphql-loader": "^4.0.4",
+    "wrangler": "^4.45.2"
   },
   "engines": {
     "node": ">=18"

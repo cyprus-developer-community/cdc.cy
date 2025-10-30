@@ -1,7 +1,5 @@
 import clsx from 'clsx'
 import { splitProps } from 'solid-js'
-import { A } from '@solidjs/router'
-import { SolidMarkdown } from 'solid-markdown'
 
 function ChevronRightIcon(props) {
   return (
@@ -17,7 +15,7 @@ function ChevronRightIcon(props) {
 }
 
 export function Card(props) {
-  const [local] = splitProps(props, ['children', 'href'])
+  const [local] = splitProps(props, ['children', 'class'])
 
   return (
     <div class={clsx(local.class, 'group relative flex flex-col items-start')}>
@@ -32,10 +30,10 @@ Card.Link = function CardLink(props) {
   return (
     <>
       <div class="absolute -inset-x-4 -inset-y-6 z-0 scale-95 bg-zinc-50 opacity-0 transition group-hover:scale-100 group-hover:opacity-100 dark:bg-zinc-800/50 sm:-inset-x-6 sm:rounded-2xl" />
-      <A {...other}>
+      <a {...other}>
         <span class="absolute -inset-x-4 -inset-y-6 z-20 sm:-inset-x-6 sm:rounded-2xl" />
         <span class="relative z-10">{local.children}</span>
-      </A>
+      </a>
     </>
   )
 }
@@ -58,9 +56,9 @@ Card.Description = function CardDescription(props) {
   const [local] = splitProps(props, ['children'])
 
   return (
-    <SolidMarkdown class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+    <p class="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
       {local.children}
-    </SolidMarkdown>
+    </p>
   )
 }
 
