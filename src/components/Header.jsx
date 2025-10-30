@@ -84,7 +84,7 @@ export function Header() {
             class="fixed inset-0 z-10 bg-black/20"
             onClick={() => setMenuOpen(false)}
           />
-          <div class="fixed inset-y-0 left-0 z-10 w-full overflow-y-auto bg-white dark:bg-zinc-900 px-6 py-6">
+          <div class="fixed inset-y-0 left-0 z-10 h-screen w-full overflow-y-auto bg-white dark:bg-zinc-900 px-6 py-6">
             <div class="flex items-center justify-between">
               <div class="flex flex-1">
                 <button
