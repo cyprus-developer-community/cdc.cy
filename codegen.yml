@@ -1,0 +1,8 @@
+schema: https://docs.github.com/public/schema.docs.graphql
+documents: './src/graphql/*.{js,ts}'
+generates:
+  ./gqlgen.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typed-document-node

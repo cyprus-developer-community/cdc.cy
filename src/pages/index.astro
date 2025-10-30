@@ -1,0 +1,304 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import { Container } from '../components/Container'
+import { Card } from '../components/Card'
+import { GitHubIcon, LinkedInIcon, DiscordIcon } from '../components/SocialIcons'
+import { fetchUpcomingEvents, fetchPastEvents, fetchTeamMembers, calculateOrganizationStats } from '../lib/events'
+import clsx from 'clsx'
+
+// Fetch all data - initialize with safe defaults
+let upcomingEvents = []
+let pastEvents = []
+let teamMembers = []
+let stats = {
+  totalEvents: 0,
+  upcomingEvents: 0,
+  members: null,
+  discordUsers: '300+'
+}
+
+try {
+  const results = await Promise.all([
+    fetchUpcomingEvents().catch(() => []),
+    fetchPastEvents().catch(() => []),
+    fetchTeamMembers('advocates').catch(() => [])
+  ])
+
+  upcomingEvents = results[0] || []
+  pastEvents = results[1] || []
+  teamMembers = results[2] || []
+
+  // Calculate stats from already-fetched events (no duplicate API calls)
+  stats = calculateOrganizationStats(upcomingEvents, pastEvents)
+} catch (error) {
+  console.error('Error fetching data:', error?.message || error)
+  // Safe defaults already set above
+}
+
+const photoRotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+---
+
+<BaseLayout title="Cyprus Developer Community">
+  <!-- Hero Section -->
+  <section id="home" class="scroll-mt-20">
+    <Container class="mt-9">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
+          Cyprus Developer Community
+        </h1>
+        <p class="mt-6 text-base text-zinc-600 dark:text-zinc-400">
+          Building a vibrant tech community in Cyprus through meetups, talks, and collaboration.
+          Join developers, engineers, and tech enthusiasts as we learn, share, and grow together.
+        </p>
+        <div class="mt-6 flex gap-6">
+          <a
+            href="https://github.com/cyprus-developer-community"
+            aria-label="Follow on GitHub"
+            class="group -m-1 p-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <GitHubIcon class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+          </a>
+          <a
+            href="https://www.linkedin.com/groups/12659214/"
+            aria-label="Follow on LinkedIn"
+            class="group -m-1 p-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <LinkedInIcon class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+          </a>
+          <a
+            href="https://chat.cdc.cy"
+            aria-label="Join on Discord"
+            class="group -m-1 p-1"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <DiscordIcon class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+          </a>
+        </div>
+      </div>
+    </Container>
+
+    <!-- Photos Carousel -->
+    <div class="mt-16 sm:mt-20">
+      <div class="-my-4 flex justify-center gap-5 overflow-hidden py-4 sm:gap-8">
+        {[0, 1, 2, 3, 4].map((index) => (
+          <div
+            class={clsx(
+              'relative aspect-[9/10] w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 dark:bg-zinc-800 sm:w-72 sm:rounded-2xl',
+              photoRotations[index]
+            )}
+          >
+            <img
+              src={`/photos/feature/${index}.jpeg`}
+              alt="Featured event photo"
+              loading="lazy"
+              class="absolute inset-0 h-full w-full object-cover"
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="bg-white dark:bg-black py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-2xl lg:max-w-none">
+          <div class="text-center">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-zinc-100 sm:text-4xl">
+              Your Tech Community in Cyprus
+            </h2>
+          </div>
+          <dl class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
+            <div class="flex flex-col bg-gray-400/5 dark:bg-zinc-800/50 p-8">
+              <dt class="text-sm font-semibold leading-6 text-gray-600 dark:text-zinc-400">
+                Total Events
+              </dt>
+              <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-zinc-100">
+                {stats?.totalEvents || 0}
+              </dd>
+            </div>
+            <div class="flex flex-col bg-gray-400/5 dark:bg-zinc-800/50 p-8">
+              <dt class="text-sm font-semibold leading-6 text-gray-600 dark:text-zinc-400">
+                Upcoming Events
+              </dt>
+              <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-zinc-100">
+                {stats?.upcomingEvents || 0}
+              </dd>
+            </div>
+            <div class="flex flex-col bg-gray-400/5 dark:bg-zinc-800/50 p-8">
+              <dt class="text-sm font-semibold leading-6 text-gray-600 dark:text-zinc-400">
+                Users on Discord
+              </dt>
+              <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-zinc-100">
+                {stats?.discordUsers || '300+'}
+              </dd>
+            </div>
+            <div class="flex flex-col bg-gray-400/5 dark:bg-zinc-800/50 p-8">
+              <dt class="text-sm font-semibold leading-6 text-gray-600 dark:text-zinc-400">
+                Cyprus
+              </dt>
+              <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-zinc-100">
+                100%
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section id="events" class="scroll-mt-20 bg-white dark:bg-black py-24 sm:py-32">
+    <Container>
+      <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-zinc-100 sm:text-4xl mb-4">
+        Upcoming Events
+      </h2>
+      {upcomingEvents.length > 0 ? (
+        <div class="mt-16 grid max-w-2xl mx-auto grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          {upcomingEvents.map((event) => (
+            <article class="flex flex-col items-start justify-between">
+              <a href={event.url} target="_blank" rel="noopener noreferrer">
+                <div class="relative w-full">
+                  {event.parsed?.['featured-image']?.images?.[0] ? (
+                    <img
+                      src={event.parsed['featured-image'].images[0].src}
+                      alt={event.parsed['featured-image'].images[0].alt || event.title}
+                      class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <img
+                      src="/assets/cdc-logo.svg"
+                      alt="Cyprus Developer Community Logo"
+                      class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-contain p-8 sm:aspect-[2/1] lg:aspect-[3/2]"
+                      loading="lazy"
+                    />
+                  )}
+                  <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+                </div>
+              </a>
+              <div class="max-w-xl">
+                <div class="mt-8 flex items-center gap-x-4 text-xs">
+                  <time datetime={event.date?.toISOString()} class="text-gray-500 dark:text-zinc-400">
+                    {event.dateString}
+                  </time>
+                </div>
+                <div class="group relative">
+                  <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 dark:text-zinc-100">
+                    <a href={event.url} target="_blank" rel="noopener noreferrer">
+                      <span class="absolute inset-0" />
+                      {event.title}
+                    </a>
+                  </h3>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      ) : (
+        <p class="text-zinc-600 dark:text-zinc-400 mt-4">
+          No upcoming events at the moment. Check back soon!
+        </p>
+      )}
+
+      {pastEvents.length > 0 && (
+        <>
+          <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-zinc-100 mt-24 mb-8">
+            Past Events
+          </h3>
+          <div class="space-y-4">
+            {pastEvents.slice(0, 10).map((event) => (
+              <Card client:load>
+                <Card.Eyebrow datetime={event.date?.toISOString()}>
+                  {event.dateString}
+                </Card.Eyebrow>
+                <Card.Title href={event.url}>
+                  {event.title}
+                </Card.Title>
+              </Card>
+            ))}
+          </div>
+        </>
+      )}
+    </Container>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="scroll-mt-20 bg-zinc-50 dark:bg-zinc-900 py-24 sm:py-32">
+    <Container>
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-zinc-100 sm:text-4xl mb-8">
+          About Us
+        </h2>
+        <div class="flex items-center gap-4 mb-8">
+          <img
+            src="/assets/cdc-logo.svg"
+            alt="Cyprus Developer Community Logo"
+            class="w-24 h-24"
+          />
+          <div class="flex gap-6">
+            <a
+              href="https://github.com/cyprus-developer-community"
+              aria-label="Follow on GitHub"
+              class="group -m-1 p-1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GitHubIcon class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+            </a>
+            <a
+              href="https://www.linkedin.com/groups/12659214/"
+              aria-label="Follow on LinkedIn"
+              class="group -m-1 p-1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <LinkedInIcon class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+            </a>
+            <a
+              href="mailto:hello@cdc.cy"
+              aria-label="Email us"
+              class="group -m-1 p-1"
+            >
+              <svg class="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill-rule="evenodd" d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        {teamMembers.length > 0 && (
+          <>
+            <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-zinc-100 mt-12 mb-6">
+              Advocates
+            </h3>
+            <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
+              {teamMembers.map((member) => (
+                <a
+                  href={`https://github.com/${member.login}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex flex-col items-center gap-2 group"
+                >
+                  <img
+                    src={member.avatarUrl}
+                    alt={member.login}
+                    class="w-20 h-20 rounded-full ring-2 ring-zinc-200 dark:ring-zinc-700 group-hover:ring-teal-500 transition"
+                    loading="lazy"
+                  />
+                  <span class="text-sm font-medium text-zinc-800 dark:text-zinc-200 group-hover:text-teal-500 transition">
+                    {member.name || member.login}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+      </div>
+    </Container>
+  </section>
+</BaseLayout>
