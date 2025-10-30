@@ -6,28 +6,33 @@ import { GitHubIcon, LinkedInIcon, DiscordIcon } from '../components/SocialIcons
 import { fetchUpcomingEvents, fetchPastEvents, fetchTeamMembers, calculateOrganizationStats } from '../lib/events'
 import clsx from 'clsx'
 
-// Fetch all data
+// Fetch all data - initialize with safe defaults
 let upcomingEvents = []
 let pastEvents = []
 let teamMembers = []
-let stats = null
+let stats = {
+  totalEvents: 0,
+  upcomingEvents: 0,
+  members: null,
+  discordUsers: '300+'
+}
 
 try {
-  [upcomingEvents, pastEvents, teamMembers] = await Promise.all([
-    fetchUpcomingEvents(),
-    fetchPastEvents(),
-    fetchTeamMembers('advocates')
+  const results = await Promise.all([
+    fetchUpcomingEvents().catch(() => []),
+    fetchPastEvents().catch(() => []),
+    fetchTeamMembers('advocates').catch(() => [])
   ])
+
+  upcomingEvents = results[0] || []
+  pastEvents = results[1] || []
+  teamMembers = results[2] || []
 
   // Calculate stats from already-fetched events (no duplicate API calls)
   stats = calculateOrganizationStats(upcomingEvents, pastEvents)
 } catch (error) {
-  console.error('Error fetching data:', error)
-  // Ensure we have empty arrays even on error
-  upcomingEvents = []
-  pastEvents = []
-  teamMembers = []
-  stats = calculateOrganizationStats([], [])
+  console.error('Error fetching data:', error?.message || error)
+  // Safe defaults already set above
 }
 
 const photoRotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
