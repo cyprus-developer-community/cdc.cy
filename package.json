@@ -55,7 +55,7 @@
     "@tailwindcss/vite": "^4.1.16",
     "autoprefixer": "^10.4.21",
     "clsx": "^2.1.1",
-    "eslint": "^9.38.0",
+    "eslint": "^9.39.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-markdown": "^5.1.0",
     "eslint-plugin-solid": "^0.14.5",
