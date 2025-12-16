@@ -7,23 +7,21 @@ import {
   pastEvents as getPastEvents,
   getTeam as getTeamMembers
 } from 'gitevents-fetch'
-import bodyParser from '@zentered/issue-forms-body-parser'
 
 const ORG = 'cyprus-developer-community'
 const EVENTS_REPO = 'events'
 
 /**
- * Transform event data from gitevents-fetch to UI format with parsed body
+ * Transform event data from gitevents-fetch to UI format
+ * Note: gitevents-fetch already parses the body and returns facets + Date objects
  */
-async function transformEvent(event) {
-  // Parse the issue body using issue-forms-body-parser
-  const parsed = await bodyParser(event.body || '')
+function transformEvent(event) {
+  // gitevents-fetch already provides a Date object (or null)
+  const eventDate = event.date
 
-  // Extract date from parsed data
-  const eventDate = parsed?.date?.date ? new Date(parsed.date.date) : null
-
-  // Extract only serializable data from parsed object
-  const featuredImage = parsed?.['featured-image']?.images?.[0] || null
+  // Extract only primitive serializable data from facets (already parsed by gitevents-fetch)
+  const featuredImageSrc = event.facets?.['featured-image']?.images?.[0]?.src || null
+  const featuredImageAlt = event.facets?.['featured-image']?.images?.[0]?.alt || null
 
   return {
     number: event.number,
@@ -38,9 +36,8 @@ async function transformEvent(event) {
           year: 'numeric'
         })
       : 'TBA',
-    parsed: {
-      'featured-image': featuredImage ? { images: [featuredImage] } : null
-    }
+    featuredImageSrc,
+    featuredImageAlt
   }
 }
 
@@ -51,10 +48,8 @@ export async function fetchUpcomingEvents() {
   try {
     const events = await getUpcomingEvents(ORG, EVENTS_REPO)
 
-    // Transform and parse all events
-    const transformedEvents = await Promise.all(
-      events.map((event) => transformEvent(event))
-    )
+    // Transform all events (synchronous now)
+    const transformedEvents = events.map((event) => transformEvent(event))
 
     // Filter for future events only
     const now = new Date()
@@ -72,10 +67,8 @@ export async function fetchPastEvents() {
   try {
     const events = await getPastEvents(ORG, EVENTS_REPO)
 
-    // Transform and parse all events
-    const transformedEvents = await Promise.all(
-      events.map((event) => transformEvent(event))
-    )
+    // Transform all events (synchronous now)
+    const transformedEvents = events.map((event) => transformEvent(event))
 
     return transformedEvents
   } catch (error) {
