@@ -18,3 +18,4 @@ dist
 .output
 .vinxi
 .claude/settings.local.json
+.astro
