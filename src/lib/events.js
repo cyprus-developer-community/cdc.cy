@@ -22,6 +22,9 @@ async function transformEvent(event) {
   // Extract date from parsed data
   const eventDate = parsed?.date?.date ? new Date(parsed.date.date) : null
 
+  // Extract only serializable data from parsed object
+  const featuredImage = parsed?.['featured-image']?.images?.[0] || null
+
   return {
     number: event.number,
     title: event.title,
@@ -35,7 +38,9 @@ async function transformEvent(event) {
           year: 'numeric'
         })
       : 'TBA',
-    parsed // Include all parsed data for featured images, etc.
+    parsed: {
+      'featured-image': featuredImage ? { images: [featuredImage] } : null
+    }
   }
 }
 
