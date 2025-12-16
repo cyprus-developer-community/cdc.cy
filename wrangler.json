@@ -1,9 +1,14 @@
 {
   "name": "cdc-cy",
-  "compatibility_date": "2025-01-13",
+  "compatibility_date": "2025-11-17",
   "compatibility_flags": [
     "nodejs_compat",
     "nodejs_compat_populate_process_env"
   ],
-  "pages_build_output_dir": "dist"
+  "pages_build_output_dir": "dist",
+  "vars": {
+    "GH_ORG": "cyprus-developer-community",
+    "GH_APP_ID": "176361",
+    "GH_APP_INSTALLATION_ID": "23713825"
+  }
 }
