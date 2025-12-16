@@ -183,7 +183,7 @@ const photoRotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotat
               </a>
               <div class="max-w-xl">
                 <div class="mt-8 flex items-center gap-x-4 text-xs">
-                  <time datetime={event.date?.toISOString()} class="text-gray-500 dark:text-zinc-400">
+                  <time datetime={event.date} class="text-gray-500 dark:text-zinc-400">
                     {event.dateString}
                   </time>
                 </div>
@@ -213,7 +213,7 @@ const photoRotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotat
           <div class="space-y-4">
             {pastEvents.slice(0, 10).map((event) => (
               <Card client:load>
-                <Card.Eyebrow datetime={event.date?.toISOString()}>
+                <Card.Eyebrow datetime={event.date}>
                   {event.dateString}
                 </Card.Eyebrow>
                 <Card.Title href={event.url}>

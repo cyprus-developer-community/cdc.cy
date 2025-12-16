@@ -27,7 +27,7 @@ async function transformEvent(event) {
     title: event.title,
     body: event.body,
     url: event.url,
-    date: eventDate,
+    date: eventDate?.toISOString() || null,
     dateString: eventDate
       ? eventDate.toLocaleDateString('en-US', {
           month: 'long',
@@ -53,7 +53,7 @@ export async function fetchUpcomingEvents() {
 
     // Filter for future events only
     const now = new Date()
-    return transformedEvents.filter((event) => !event.date || event.date >= now)
+    return transformedEvents.filter((event) => !event.date || new Date(event.date) >= now)
   } catch (error) {
     console.error('Error fetching upcoming events:', error)
     return []
