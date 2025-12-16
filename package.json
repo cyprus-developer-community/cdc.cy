@@ -42,7 +42,6 @@
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/solid-js": "^5.1.3",
-    "@zentered/issue-forms-body-parser": "^2.2.0",
     "astro": "^5.16.6",
     "gitevents-fetch": "^1.4.0",
     "solid-js": "^1.9.10"

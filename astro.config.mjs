@@ -10,16 +10,11 @@ export default defineConfig({
   adapter: cloudflare({
     imageService: 'compile'
   }),
-  integrations: [
-    solidJs()
-  ],
+  integrations: [solidJs()],
   vite: {
-    plugins: [
-      tailwindcss(),
-      graphqlLoader()
-    ],
+    plugins: [tailwindcss(), graphqlLoader()],
     ssr: {
-      noExternal: ['gitevents-fetch', '@zentered/issue-forms-body-parser']
+      noExternal: ['gitevents-fetch']
     }
   }
 })
