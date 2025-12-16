@@ -1,38 +1,28 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import { Container } from '../components/Container'
+import Container from '../components/Container.astro'
 import { Card } from '../components/Card'
 import { GitHubIcon, LinkedInIcon, DiscordIcon } from '../components/SocialIcons'
-import { fetchUpcomingEvents, fetchPastEvents, fetchTeamMembers, calculateOrganizationStats } from '../lib/events'
+import { fetchUpcomingEvents, fetchPastEvents, getSpeakers, fetchTeamMembers, fetchOrganization } from '../lib/events'
 import clsx from 'clsx'
 
-// Fetch all data - initialize with safe defaults
-let upcomingEvents = []
+// Server-side data fetching using gitevents-fetch
+let events = []
 let pastEvents = []
-let teamMembers = []
-let stats = {
-  totalEvents: 0,
-  upcomingEvents: 0,
-  members: null,
-  discordUsers: '300+'
-}
+let speakers = []
+let advocates = []
+let orgData = null
 
 try {
-  const results = await Promise.all([
-    fetchUpcomingEvents().catch(() => []),
-    fetchPastEvents().catch(() => []),
-    fetchTeamMembers('advocates').catch(() => [])
-  ])
-
-  upcomingEvents = results[0] || []
-  pastEvents = results[1] || []
-  teamMembers = results[2] || []
-
-  // Calculate stats from already-fetched events (no duplicate API calls)
-  stats = calculateOrganizationStats(upcomingEvents, pastEvents)
+  // Fetch from GitHub using gitevents-fetch package
+  events = await fetchUpcomingEvents()
+  pastEvents = await fetchPastEvents()
+  speakers = getSpeakers(events)
+  advocates = await fetchTeamMembers('cyprus-developer-community', 'advocates')
+  orgData = await fetchOrganization('cyprus-developer-community')
+  console.log(`Fetched ${events.length} upcoming events, ${pastEvents.length} past events, ${speakers.length} speakers, ${advocates.length} advocates, and org data`)
 } catch (error) {
-  console.error('Error fetching data:', error?.message || error)
-  // Safe defaults already set above
+  console.error('Failed to fetch events:', error)
 }
 
 const photoRotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
@@ -126,7 +116,7 @@ const photoRotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotat
                 Upcoming Events
               </dt>
               <dd class="order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-zinc-100">
-                {stats?.upcomingEvents || 0}
+                {events.length}
               </dd>
             </div>
             <div class="flex flex-col bg-gray-400/5 dark:bg-zinc-800/50 p-8">
@@ -157,27 +147,18 @@ const photoRotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotat
       <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-zinc-100 sm:text-4xl mb-4">
         Upcoming Events
       </h2>
-      {upcomingEvents.length > 0 ? (
+      {events.length > 0 ? (
         <div class="mt-16 grid max-w-2xl mx-auto grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {upcomingEvents.map((event) => (
+          {events.map((event) => (
             <article class="flex flex-col items-start justify-between">
               <a href={event.url} target="_blank" rel="noopener noreferrer">
                 <div class="relative w-full">
-                  {event.featuredImageSrc ? (
-                    <img
-                      src={event.featuredImageSrc}
-                      alt={event.featuredImageAlt || event.title}
-                      class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <img
-                      src="/assets/cdc-logo.svg"
-                      alt="Cyprus Developer Community Logo"
-                      class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-contain p-8 sm:aspect-[2/1] lg:aspect-[3/2]"
-                      loading="lazy"
-                    />
-                  )}
+                  <img
+                    src="/assets/cdc-logo.svg"
+                    alt="Cyprus Developer Community Logo"
+                    class="aspect-[16/9] w-full rounded-2xl bg-gray-100 object-contain p-8 sm:aspect-[2/1] lg:aspect-[3/2]"
+                    loading="lazy"
+                  />
                   <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
               </a>
@@ -271,13 +252,13 @@ const photoRotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotat
           </div>
         </div>
 
-        {teamMembers.length > 0 && (
+        {advocates.length > 0 && (
           <>
             <h3 class="text-xl font-bold tracking-tight text-gray-900 dark:text-zinc-100 mt-12 mb-6">
               Advocates
             </h3>
             <div class="grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4">
-              {teamMembers.map((member) => (
+              {advocates.map((member) => (
                 <a
                   href={`https://github.com/${member.login}`}
                   target="_blank"
