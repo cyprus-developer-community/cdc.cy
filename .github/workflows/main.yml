@@ -19,7 +19,7 @@ jobs:
     needs: [codequality, unit]
     if: needs.codequality.result == 'success' && needs.unit.result == 'success'
     steps:
-      - uses: styfle/cancel-workflow-action@0.12.0
+      - uses: styfle/cancel-workflow-action@0.13.0
       - uses: actions/checkout@v6
       - uses: superfly/flyctl-actions@1.4
         with:
